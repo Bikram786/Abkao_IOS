@@ -15,7 +15,7 @@ class SettingsControl: AbstractControl {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+        setViewShadow.viewdraw(setViewShadow.bounds)
     }
 
     // MARK: - Super Class Method

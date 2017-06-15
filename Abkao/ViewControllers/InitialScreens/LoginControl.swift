@@ -12,6 +12,7 @@ class LoginControl: AbstractControl {
 
     // IBOutlets
     
+    @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txt_UserID: UITextField!
     @IBOutlet weak var txt_Password: UITextField!
@@ -20,17 +21,16 @@ class LoginControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setShadow()
+        setStartingFields()       
     }
-    
-    //MARK: - Set Shadow
-    
-    func setShadow() {
         
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
-        txt_UserID = UITextField.addShadowToTextfield(view: txt_UserID)
-        txt_Password = UITextField.addShadowToTextfield(view: txt_Password)
-
+    func setStartingFields() {
+        
+        // upperView.upperdraw(upperView.bounds)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txt_UserID.addShadowToTextfield()
+        txt_Password.addShadowToTextfield()
+        
     }
     
     // MARK: - Super Class Method

@@ -33,8 +33,58 @@ class RegisterControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStartingFields()
+    }
+    
+    func setStartingFields() {
+        
+        // upperView.upperdraw(upperView.bounds)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txt_FirstName.addShadowToTextfield()
+        txt_LastName.addShadowToTextfield()
+        txt_AccountNo.addShadowToTextfield()
+        txt_City.addShadowToTextfield()
+        txt_Country.addShadowToTextfield()
+        txt_UserID.addShadowToTextfield()
+        txt_AccountName.addShadowToTextfield()
+        txt_State.addShadowToTextfield()
+        txt_Telephone.addShadowToTextfield()
+        txt_Password.addShadowToTextfield()
+        txt_Company.addShadowToTextfield()
+        txt_Address.addShadowToTextfield()
+        txt_ZipCode.addShadowToTextfield()
+        txt_Email.addShadowToTextfield()
+        txt_ConfirmPassword.addShadowToTextfield()
+    }
 
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+    // MARK: - Validation Method
+    
+    func checkValues(){
+        
+        if (txt_FirstName.text?.isEmpty)! || (txt_LastName.text?.isEmpty)! || (txt_AccountNo.text?.isEmpty)! || (txt_City.text?.isEmpty)! || (txt_Country.text?.isEmpty)! || (txt_UserID.text?.isEmpty)! || (txt_AccountName.text?.isEmpty)! || (txt_State.text?.isEmpty)! || (txt_Telephone.text?.isEmpty)! || (txt_Password.text?.isEmpty)! || (txt_Company.text?.isEmpty)! || (txt_Address.text?.isEmpty)! || (txt_ZipCode.text?.isEmpty)! || (txt_Email.text?.isEmpty)! || (txt_ConfirmPassword.text?.isEmpty)! {
+            
+        }else {
+            
+            let checkEmail = isValidEmail(testStr: txt_Email.text!)
+            
+            print(checkEmail)
+            
+            if checkEmail == true {
+                
+            }else{
+                
+            }
+            
+        }
+        
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
     
     // MARK: - Super Class Method
@@ -48,7 +98,7 @@ class RegisterControl: AbstractControl {
     
     @IBAction func btn_RegisterAction(_ sender: UIButton) {
         
-        _ = self.navigationController?.popViewController(animated: true)
+        checkValues()
     }
     
     // MARK: - Memory Management Method

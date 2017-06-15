@@ -19,7 +19,15 @@ class ForgotPasswordControl: AbstractControl {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+        setStartingFields()
+    }
+    
+    func setStartingFields() {
+        
+        // upperView.upperdraw(upperView.bounds)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txt_Email.addShadowToTextfield()
+       
     }
     
      // MARK: - Super Class Method

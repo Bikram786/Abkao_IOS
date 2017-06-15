@@ -10,13 +10,28 @@ import UIKit
 
 class ImageItemControl: AbstractControl {
 
-     @IBOutlet weak var setViewShadow: UIView!
+    @IBOutlet weak var setViewShadow: UIView!
+    @IBOutlet weak var txt_ImageURL: UITextField!
+    @IBOutlet weak var txt_ProductName: UITextField!
+    @IBOutlet weak var txt_ProductPrice: UITextField!    
+    @IBOutlet weak var txt_VideoURL: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+        setStartingFields()
     }
+    
+    func setStartingFields() {
+        
+        // upperView.upperdraw(upperView.bounds)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txt_ImageURL.addShadowToTextfield()
+        txt_ProductName.addShadowToTextfield()
+        txt_ProductPrice.addShadowToTextfield()
+        txt_VideoURL.addShadowToTextfield()
+        
+    }
+
 
     // MARK: - Super Class Method
     

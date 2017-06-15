@@ -11,11 +11,19 @@ import UIKit
 class ProductDetailsControl: AbstractControl {
 
     @IBOutlet weak var setViewShadow: UIView!
+    @IBOutlet weak var locationNameView: UIView!
+    @IBOutlet weak var itemNameView: UIView!
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var promotionView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        locationNameView.setViewBoarder()
+        itemNameView.setViewBoarder()
+        priceView.setViewBoarder()
+        promotionView.setViewBoarder()
     }
 
     override var navTitle: String{

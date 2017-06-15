@@ -10,14 +10,23 @@ import UIKit
 
 class PriceItemControl: AbstractControl {
 
-     @IBOutlet weak var setViewShadow: UIView!
+    @IBOutlet weak var setViewShadow: UIView!
+    @IBOutlet weak var txt_ProductName: UITextField!
+    @IBOutlet weak var txt_ProductPrice: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setViewShadow = UIView.addShadowToView(view: setViewShadow)
+        setStartingFields()
     }
 
+    func setStartingFields() {
+        
+        // upperView.upperdraw(upperView.bounds)
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txt_ProductName.addShadowToTextfield()
+        txt_ProductPrice.addShadowToTextfield()
+        
+    }
     // MARK: - Super Class Method
     
     override var navTitle: String{

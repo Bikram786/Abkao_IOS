@@ -11,13 +11,34 @@ import UIKit
 
 extension UIView {
     
-    class func addShadowToView(view : UIView) -> UIView{
-        view.layer.cornerRadius = 5
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        view.layer.shadowRadius = 5.0
-        view.layer.shadowColor = UIColor.gray.cgColor
-        return view
+    func viewdraw(_ rect: CGRect) {
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 5.0
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    func upperdraw(_ rect: CGRect) {
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowRadius = 5.0
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 
+    func setViewBoarder(){
+        
+        self.layer.cornerRadius = 3.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.masksToBounds = true
+    }
+    
 }
