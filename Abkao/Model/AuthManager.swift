@@ -10,10 +10,21 @@ import UIKit
 import CoreData
 
 class AuthManager: NSObject {
-
+    
     func userSignUp(userInfo: NSMutableDictionary, handler : @escaping (UserI, Bool , NSString) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: false, params: userInfo, result:
+        //        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: true, params: userInfo, result:
+        //            {
+        //                (jsonDict,statusCode) in
+        //                // success code
+        //                print(jsonDict)
+        //
+        //        })
+    }
+    
+    func userLogin(userInfo: [String : Any], handler : @escaping (UserI, Bool , NSString) -> Void)
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "logincontroller/login", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code

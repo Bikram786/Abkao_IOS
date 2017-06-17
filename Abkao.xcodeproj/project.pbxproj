@@ -48,6 +48,14 @@
 		B659DE081EF05BA400409825 /* UINavigationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DDD41EF05BA400409825 /* UINavigationControl.swift */; };
 		B659DE091EF05BA400409825 /* VideoSchedulerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DDD61EF05BA400409825 /* VideoSchedulerControl.swift */; };
 		B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DDD81EF05BA400409825 /* BaseWebAccessLayer.swift */; };
+		B65ABF491EF429800040D260 /* ImageControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65ABF461EF4297F0040D260 /* ImageControl.xib */; };
+		B65ABF4A1EF429800040D260 /* ItemDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65ABF471EF4297F0040D260 /* ItemDetails.xib */; };
+		B65ABF4B1EF429800040D260 /* PriceGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65ABF481EF4297F0040D260 /* PriceGrid.xib */; };
+		B65ABF4F1EF429A70040D260 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF4C1EF429A70040D260 /* ImageControl.swift */; };
+		B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF4D1EF429A70040D260 /* ItemDetails.swift */; };
+		B65ABF511EF429A70040D260 /* PriceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF4E1EF429A70040D260 /* PriceGrid.swift */; };
+		B65ABF531EF429C20040D260 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF521EF429C20040D260 /* PriceCell.swift */; };
+		B65ABF561EF4461E0040D260 /* Cormorant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B65ABF551EF4461E0040D260 /* Cormorant-Regular.ttf */; };
 		F496B4BCF744F163B8018596 /* Pods_Abkao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +107,14 @@
 		B659DDD41EF05BA400409825 /* UINavigationControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControl.swift; sourceTree = "<group>"; };
 		B659DDD61EF05BA400409825 /* VideoSchedulerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSchedulerControl.swift; sourceTree = "<group>"; };
 		B659DDD81EF05BA400409825 /* BaseWebAccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebAccessLayer.swift; sourceTree = "<group>"; };
+		B65ABF461EF4297F0040D260 /* ImageControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageControl.xib; sourceTree = "<group>"; };
+		B65ABF471EF4297F0040D260 /* ItemDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetails.xib; sourceTree = "<group>"; };
+		B65ABF481EF4297F0040D260 /* PriceGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceGrid.xib; sourceTree = "<group>"; };
+		B65ABF4C1EF429A70040D260 /* ImageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
+		B65ABF4D1EF429A70040D260 /* ItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
+		B65ABF4E1EF429A70040D260 /* PriceGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceGrid.swift; sourceTree = "<group>"; };
+		B65ABF521EF429C20040D260 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		B65ABF551EF4461E0040D260 /* Cormorant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cormorant-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +150,8 @@
 		B659DD701EF0568000409825 /* Abkao */ = {
 			isa = PBXGroup;
 			children = (
+				B65ABF411EF427D30040D260 /* TableViewCell */,
+				B65ABF421EF427D30040D260 /* CollectionViewCell */,
 				B659DD961EF05BA400409825 /* Resources */,
 				B659DD861EF05BA400409825 /* Interfaces */,
 				B659DD8D1EF05BA400409825 /* Model */,
@@ -180,6 +198,7 @@
 		B659DD961EF05BA400409825 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B65ABF541EF4457D0040D260 /* CustomFonts */,
 				B659DD971EF05BA400409825 /* Abkao-Bridging-Header.h */,
 				B659DD981EF05BA400409825 /* Categories */,
 				B659DD9D1EF05BA400409825 /* Config.swift */,
@@ -333,6 +352,59 @@
 			path = WebAccessLayer;
 			sourceTree = "<group>";
 		};
+		B65ABF411EF427D30040D260 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF431EF428BF0040D260 /* Classes */,
+				B65ABF441EF428BF0040D260 /* Xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		B65ABF421EF427D30040D260 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF451EF428D50040D260 /* Classes */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B65ABF431EF428BF0040D260 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF4C1EF429A70040D260 /* ImageControl.swift */,
+				B65ABF4D1EF429A70040D260 /* ItemDetails.swift */,
+				B65ABF4E1EF429A70040D260 /* PriceGrid.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B65ABF441EF428BF0040D260 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF461EF4297F0040D260 /* ImageControl.xib */,
+				B65ABF471EF4297F0040D260 /* ItemDetails.xib */,
+				B65ABF481EF4297F0040D260 /* PriceGrid.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		B65ABF451EF428D50040D260 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF521EF429C20040D260 /* PriceCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B65ABF541EF4457D0040D260 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				B65ABF551EF4461E0040D260 /* Cormorant-Regular.ttf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
 		CC45D00BECDDD2126B707732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +485,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65ABF561EF4461E0040D260 /* Cormorant-Regular.ttf in Resources */,
 				B659DD7F1EF0568100409825 /* LaunchScreen.storyboard in Resources */,
+				B65ABF4A1EF429800040D260 /* ItemDetails.xib in Resources */,
+				B65ABF491EF429800040D260 /* ImageControl.xib in Resources */,
+				B65ABF4B1EF429800040D260 /* PriceGrid.xib in Resources */,
 				B659DD7C1EF0568100409825 /* Assets.xcassets in Resources */,
 				B659DD771EF0568000409825 /* Main.storyboard in Resources */,
 			);
@@ -475,6 +551,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B659DDFC1EF05BA400409825 /* AbstractControl.swift in Sources */,
+				B65ABF531EF429C20040D260 /* PriceCell.swift in Sources */,
+				B65ABF511EF429A70040D260 /* PriceGrid.swift in Sources */,
 				B659DDFE1EF05BA400409825 /* HomeControl.swift in Sources */,
 				B659DE001EF05BA400409825 /* ImageItemControl.swift in Sources */,
 				B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */,
@@ -491,6 +569,7 @@
 				B659DDEA1EF05BA400409825 /* UIView+Customization.swift in Sources */,
 				B659DDED1EF05BA400409825 /* UIColor+Hex.swift in Sources */,
 				B659DE051EF05BA400409825 /* PriceItemControl.swift in Sources */,
+				B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */,
 				B659DDDB1EF05BA400409825 /* ProductI.swift in Sources */,
 				B659DDFD1EF05BA400409825 /* BarCodeScannerControl.swift in Sources */,
 				B659DE071EF05BA400409825 /* SettingsControl.swift in Sources */,
@@ -512,6 +591,7 @@
 				B659DDDF1EF05BA400409825 /* AuthManager.swift in Sources */,
 				B659DDE81EF05BA400409825 /* UILabel+Customization.swift in Sources */,
 				B659DE081EF05BA400409825 /* UINavigationControl.swift in Sources */,
+				B65ABF4F1EF429A70040D260 /* ImageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

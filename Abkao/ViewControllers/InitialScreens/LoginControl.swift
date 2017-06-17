@@ -46,8 +46,36 @@ class LoginControl: AbstractControl {
     // MARK: - IBAction Methods
     
     @IBAction func btn_LoginAction(_ sender: UIButton) {
+        
+        // self.data_request()
+        
+        //self.performSegue(withIdentifier: "goto_homeview", sender: nil)
+        
+        
+        // self.data_request()
+        
+        
+        
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["username"] = "npurwar"
+        dictData["password"] = "123456"
+        
+        
+        //        dictData.setValue("username", forKey: "npurwar")
+        //        dictData.setValue("password", forKey: "123456")
+        
+        
+        ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            
+            if(isSuccess)
+            {
+                
+            }
+            
+        }
+        
     }
-    
     
     // MARK: - Memory Management Method
     

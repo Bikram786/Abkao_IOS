@@ -13,14 +13,14 @@ import Alamofire
 import ReachabilitySwift
 
 class BaseWebAccessLayer: NSObject {
-   
-   static let reachability = Reachability()
+    
+    static let reachability = Reachability()
     
     override init() {
         
-       BaseWebAccessLayer.isInternetReachable { (isInternetAvailable, strMessage) in
-        
-         
+        BaseWebAccessLayer.isInternetReachable { (isInternetAvailable, strMessage) in
+            
+            
         }
     }
     
@@ -31,10 +31,10 @@ class BaseWebAccessLayer: NSObject {
             // this is called on a background thread, but UI updates must
             // be on the main thread, like this:
             DispatchQueue.main.async {
-              reachabilityHandler(true,"")
+                reachabilityHandler(true,"")
                 
                 print("Internet Reachable")
-
+                
             }
         }
         reachability?.whenUnreachable = { reachability in
@@ -43,7 +43,7 @@ class BaseWebAccessLayer: NSObject {
             DispatchQueue.main.async {
                 print("Not reachable")
                 reachabilityHandler(false,"No Internet Available")
-
+                
             }
         }
         
@@ -53,49 +53,114 @@ class BaseWebAccessLayer: NSObject {
             print("Unable to start notifier")
         }
     }
- 
     
-    class func requestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : NSDictionary?, result:@escaping (NSDictionary , Int) -> Void) {
+    
+    class func requestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (NSDictionary , Int) -> Void) {
         
         
-            if (reachability?.isReachable)!
-            {
-                // proceed
+        if (reachability?.isReachable)!
+        {
+            // proceed
+            
+            var finalStrUrl = String()
+            
+            finalStrUrl = Constants.baseUrl + strURL
+            
+            print("API Url : \(finalStrUrl)")
+            
+            let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            
+            let headersHttp = [
+                // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
+                "Content-Type": "application/json"
+            ]
+            
+            
+            let alamofiremManager = Alamofire.SessionManager.default
+            
+            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+            
+            alamofiremManager.request(escapedUrl!, method: requestType, parameters: params!, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
                 
-                var finalStrUrl = String()
+                print(responseObject)
                 
-                finalStrUrl = Constants.baseUrl + strURL
-                
-                print("API Url : \(finalStrUrl)")
-                
-                let headersHttp = [
-                     // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
-                    "Content-Type": "application/json"
+                if responseObject.result.isSuccess {
                     
-                ]
-                let alamofiremManager = Alamofire.SessionManager.default
-                alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
-                alamofiremManager.request(finalStrUrl, method: requestType, parameters: params as? Parameters, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
-                    print(responseObject)
+                    let statusCode : Int = (responseObject.response?.statusCode)!
+                    let resJson = responseObject.result.value as! NSDictionary
                     
-                    if responseObject.result.isSuccess {
-                        
-                        let statusCode : Int = (responseObject.response?.statusCode)!
-                        let resJson = responseObject.result.value as! NSDictionary
-                        
-                        result(resJson , statusCode)
-                        
-                    }
+                    result(resJson , statusCode)
+                    
                 }
-
             }
-            else
-            {
-                // show message
-                
-                // unreachable
-            }
+            
+        }
+        else
+        {
+            // show message
+            
+            // unreachable
+        }
         
     }
+    
+    
+    
+    
+    //
+    //    class func tempRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool, params : NSDictionary?, result:@escaping (NSDictionary , Int) -> Void) {
+    //
+    //
+    //        if (reachability?.isReachable)!
+    //        {
+    //            // proceed
+    //
+    //            var finalStrUrl = String()
+    //
+    //            finalStrUrl = Constants.baseUrl + strURL
+    //
+    //            print("API Url : \(finalStrUrl)")
+    //
+    //            let dict : NSMutableDictionary = params as! NSMutableDictionary
+    //            dict.setValue("application/json", forKey: "Content-Type",
+    //
+    //
+    //            let headersHttp = [
+    //                // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
+    //                //"Content-Type": "application/json",
+    //
+    //                dict
+    //
+    //
+    //                ]
+    //            let alamofiremManager = Alamofire.SessionManager.default
+    //
+    //            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+    //
+    //
+    //            alamofiremManager.request(finalStrUrl, method: "POST" , parameters: nil, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+    //                print(responseObject)
+    //
+    //                if responseObject.result.isSuccess {
+    //
+    //                    let statusCode : Int = (responseObject.response?.statusCode)!
+    //
+    //                    let resJson = responseObject.result.value as! NSDictionary
+    //
+    //                    result(resJson , statusCode)
+    //
+    //                }
+    //            }
+    //
+    //        }
+    //        else
+    //        {
+    //            // show message
+    //            
+    //            // unreachable
+    //        }
+    //        
+    //    }
+    
     
 }
