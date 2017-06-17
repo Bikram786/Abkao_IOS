@@ -34,26 +34,28 @@ class ProductI: NSObject {
 
     }
     
-    public func setProductDescData(productObj : [String : AnyObject])
+    public func setProductsData(productObj : [String : AnyObject])
     {
-        self.productVedUrl =  (productObj["canceled_by"] as? String ?? "")
+        
+        print("Product data : \(productObj)")
+        //self.productVedUrl =  (productObj["canceled_by"] as? String ?? "")
   
         
-//        if let tempObj = productObj["trip_rides"] as? NSArray
-//        {
-//            for leg in tempObj
-//            {
-//                let tripLeg  = leg  as! [String : AnyObject]
-//                
-//                let tripRideCustomObj = TripRideI()
-//                
-//                tripRideCustomObj.setTripRideData(tripRideObj: tripLeg)
-//                
-//                self.arrProductDesc?.append(tripRideCustomObj)
-//                
-//            }
+        if let tempObj = productObj["products"] as? NSArray
+        {
+            for productInfo in tempObj
+            {
+                let product  = productInfo  as! [String : AnyObject]
+                
+                let productDesc = ProductDescI()
+                
+                productDesc.setProductDescData(productInfoObj: product)
+
+                self.arrProductDesc?.append(productDesc)
+                
+            }
             
-//        }
+        }
         
         
 //        if let tripRidesSrvrObj = tripObj["trip_rides"] as? NSArray
