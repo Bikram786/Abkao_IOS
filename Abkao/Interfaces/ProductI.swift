@@ -18,11 +18,12 @@ class ProductI: NSObject {
     public var priceGridRowValue: Int?
     
     override init() {
+        
         self.productVedUrl = ""
         self.arrProductDesc = [ProductDescI]()
         self.arrProductPrice = [ProductPriceI]()
-        imageGridRowValue = 0
-        priceGridRowValue = 0
+        self.imageGridRowValue = 0
+        self.priceGridRowValue = 0
 
     }
     
@@ -31,8 +32,8 @@ class ProductI: NSObject {
         self.productVedUrl = ""
         self.arrProductDesc?.removeAll()
         self.arrProductPrice?.removeAll()
-        imageGridRowValue = 0
-        priceGridRowValue = 0
+        self.imageGridRowValue = 0
+        self.priceGridRowValue = 0
 
     }
     
@@ -40,7 +41,6 @@ class ProductI: NSObject {
     {
         
         print("Product data : \(productObj)")
-        //self.productVedUrl =  (productObj["canceled_by"] as? String ?? "")
         
         if let tempObj = productObj["image_grid"] as? NSArray
         {
@@ -59,8 +59,6 @@ class ProductI: NSObject {
         }
         
         
-        imageGridRowValue = Int((productObj["image_grid_row"] as? String)!)
-        
         if let tempObj = productObj["price_grid"] as? NSArray
         {
             for priceInfo in tempObj
@@ -72,13 +70,13 @@ class ProductI: NSObject {
                 priceDesc.setProductPriceData(priceObjInfo: price)
                 
                 self.arrProductPrice?.append(priceDesc)
-                
             }
             
         }
         
-        imageGridRowValue = Int((productObj["price_grid_dimension"] as? String)!)
-        
+        self.productVedUrl =  (productObj["video_url"] as? String ?? "")
+        self.imageGridRowValue = Int((productObj["image_grid_row"] as? String)!)
+        self.priceGridRowValue = Int((productObj["price_grid_dimension"] as? String)!)
         
     }
     

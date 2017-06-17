@@ -9,5 +9,17 @@
 import UIKit
 
 class ProductDescManager: NSObject {
+    
+    func getProductDetail(productID : String?, handler : @escaping (ProductDescI, Bool , String) -> Void)  {
+        
+    }
+    
+    func updateProductDetail(productID : String?, handler : @escaping (ProductDescI, Bool , String) -> Void)  {
+        
+    }
+    
+    func deleteProduct(productID : String?, handler : @escaping (ProductDescI, Bool , String) -> Void)  {
+        
+    }
 
 }

@@ -26,6 +26,10 @@ class UserI: NSObject {
     public var username: String?
     public var userID: Int?
     
+    public var imageGridSize: Int?
+    public var priceGridSize: Int?
+    public var defaultUrl : String?
+    
     
     override init(){
         self.email = ""
@@ -41,6 +45,9 @@ class UserI: NSObject {
         self.country = ""
         self.telephone = ""
         self.username = ""
+        self.defaultUrl = ""
+        self.imageGridSize = 0
+        self.priceGridSize = 0
         self.userID = 0
     }
     
@@ -59,29 +66,43 @@ class UserI: NSObject {
         self.telephone = ""
         self.username = ""
         self.userID = 0
+        self.defaultUrl = ""
+        self.imageGridSize = 0
+        self.priceGridSize = 0
     }
     
-    public func setUserInfo(userObj : [String : AnyObject]){
+    public func setUserInfo(userObj : [String : AnyObject])
+    {
         
-        print(userObj)
+        print("Login response : \(userObj)")
         
-//                self.email =  (userObj["country_code"] as? String ?? "")
-//                self.firstName =  (userObj["country_code"] as? String ?? "")
-//                self.lastName = (userObj["country_code"] as? String ?? "")
-//                self.password = (userObj["country_code"] as? String ?? "")
-//                self.accountName = (userObj["country_code"] as? String ?? "")
-//                self.accountNo = (userObj["country_code"] as? String ?? "")
-//                self.address = (userObj["country_code"] as? String ?? "")
-//                self.city = (userObj["country_code"] as? String ?? "")
-//                self.state = (userObj["country_code"] as? String ?? "")
-//                self.zip = (userObj["country_code"] as? String ?? "")
-//                self.country = (userObj["country_code"] as? String ?? "")
-//                self.telephone = (userObj["country_code"] as? String ?? "")
-//                self.username = (userObj["country_code"] as? String ?? "")
+        let arrData : NSArray = userObj["userdetails"] as! NSArray
+        let dictData : [String : AnyObject]  = arrData.object(at: 0) as! [String : AnyObject]
+        
+        /*
+                self.email =  (userObj["email"] as? String ?? "")
+                self.firstName =  (userObj["first_name"] as? String ?? "")
+                self.lastName = (userObj["last_name"] as? String ?? "")
+                self.password = (userObj["password"] as? String ?? "")
+                self.accountName = (userObj["account_name"] as? String ?? "")
+                self.accountNo = (userObj["account_number"] as? String ?? "")
+                self.address = (userObj["address"] as? String ?? "")
+                self.city = (userObj["city"] as? String ?? "")
+                self.state = (userObj["state"] as? String ?? "")
+                self.zip = (userObj["zip"] as? String ?? "")
+                self.country = (userObj["country"] as? String ?? "")
+                self.telephone = (userObj["telephone"] as? String ?? "")
+                self.username = (userObj["username"] as? String ?? "")
+        */
+        
+                self.userID = dictData["userid"] as? Int
+                self.defaultUrl = (userObj["video_url"] as? String ?? "")
+                self.imageGridSize = userObj["image_grid_row"] as? Int
+                self.priceGridSize = userObj["price_grid_dimension"] as? Int
         
                 UserDefaults.standard.set(userObj["userid"] as? Int, forKey: "userID")
                 UserDefaults.standard.synchronize()
-                self.userID = userObj["userid"] as? Int
+        
                 print("user id : \(String(describing: self.userID!))")
         
     }

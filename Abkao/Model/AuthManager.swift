@@ -11,6 +11,8 @@ import CoreData
 
 class AuthManager: NSObject {
     
+    
+    
     func userSignUp(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: true, params: userInfo, result:
@@ -32,7 +34,7 @@ class AuthManager: NSObject {
     
     func userLogin(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "logincontroller/login", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "login", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
