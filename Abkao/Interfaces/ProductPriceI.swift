@@ -29,11 +29,11 @@ class ProductPriceI: NSObject {
         self.productID = ""
     }
     
-    public func setProductPriceData(riderObj : [String : AnyObject])
+    public func setProductPriceData(priceObjInfo : [String : AnyObject])
     {
-        self.productName =  (riderObj["country_code"] as? String ?? "")
-        self.productRate =  (riderObj["external_id"] as? String ?? "")
-        self.productID =  (riderObj["first_name"] as? String ?? "")
+        self.productName =  (priceObjInfo["country_code"] as? String ?? "")
+        self.productRate =  (priceObjInfo["external_id"] as? String ?? "")
+        self.productID =  (priceObjInfo["first_name"] as? String ?? "")
     }
 
 }

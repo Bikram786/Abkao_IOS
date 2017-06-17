@@ -56,10 +56,17 @@
 		B65ABF511EF429A70040D260 /* PriceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF4E1EF429A70040D260 /* PriceGrid.swift */; };
 		B65ABF531EF429C20040D260 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ABF521EF429C20040D260 /* PriceCell.swift */; };
 		B65ABF561EF4461E0040D260 /* Cormorant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B65ABF551EF4461E0040D260 /* Cormorant-Regular.ttf */; };
+		B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */; };
+		B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */; };
+		B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */; };
+		B6F57C121EF6F5AB00E0B808 /* ImageCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */; };
+		B6F57C141EF6F61900E0B808 /* PriceCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C131EF6F61900E0B808 /* PriceCelll.swift */; };
 		B6FF57111EF67F3C0010301E /* VideoScheduler.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FF57101EF67F3C0010301E /* VideoScheduler.xib */; };
 		B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FF57121EF681FA0010301E /* VideoScheduler.swift */; };
 		B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FF57141EF6888E0010301E /* VideoSchedulerHeader.xib */; };
 		B6FF57171EF688AF0010301E /* VideoSchedulerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FF57161EF688AF0010301E /* VideoSchedulerHeader.swift */; };
+		B6FF57191EF6C22F0010301E /* ItemDetails2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FF57181EF6C22F0010301E /* ItemDetails2.swift */; };
+		B6FF571B1EF6C2410010301E /* ItemDetails2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FF571A1EF6C2410010301E /* ItemDetails2.xib */; };
 		F496B4BCF744F163B8018596 /* Pods_Abkao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,10 +126,17 @@
 		B65ABF4E1EF429A70040D260 /* PriceGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceGrid.swift; sourceTree = "<group>"; };
 		B65ABF521EF429C20040D260 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		B65ABF551EF4461E0040D260 /* Cormorant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cormorant-Regular.ttf"; sourceTree = "<group>"; };
+		B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settingsl.swift; sourceTree = "<group>"; };
+		B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCellManager.swift; sourceTree = "<group>"; };
+		B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCellManager.swift; sourceTree = "<group>"; };
+		B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCelll.swift; sourceTree = "<group>"; };
+		B6F57C131EF6F61900E0B808 /* PriceCelll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCelll.swift; sourceTree = "<group>"; };
 		B6FF57101EF67F3C0010301E /* VideoScheduler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoScheduler.xib; sourceTree = "<group>"; };
 		B6FF57121EF681FA0010301E /* VideoScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScheduler.swift; sourceTree = "<group>"; };
 		B6FF57141EF6888E0010301E /* VideoSchedulerHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoSchedulerHeader.xib; sourceTree = "<group>"; };
 		B6FF57161EF688AF0010301E /* VideoSchedulerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSchedulerHeader.swift; sourceTree = "<group>"; };
+		B6FF57181EF6C22F0010301E /* ItemDetails2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetails2.swift; path = ../Xib/ItemDetails2.swift; sourceTree = "<group>"; };
+		B6FF571A1EF6C2410010301E /* ItemDetails2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetails2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +198,9 @@
 				B659DD8A1EF05BA400409825 /* ProductPriceI.swift */,
 				B659DD8B1EF05BA400409825 /* SchedulerI.swift */,
 				B659DD8C1EF05BA400409825 /* UserI.swift */,
+				B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */,
+				B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */,
+				B6F57C131EF6F61900E0B808 /* PriceCelll.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -199,6 +216,8 @@
 				B659DD931EF05BA400409825 /* ProductPriceManager.swift */,
 				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
 				B659DD951EF05BA400409825 /* SettingsManager.swift */,
+				B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */,
+				B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +399,7 @@
 		B65ABF431EF428BF0040D260 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B6FF57181EF6C22F0010301E /* ItemDetails2.swift */,
 				B65ABF4C1EF429A70040D260 /* ImageControl.swift */,
 				B65ABF4D1EF429A70040D260 /* ItemDetails.swift */,
 				B65ABF4E1EF429A70040D260 /* PriceGrid.swift */,
@@ -397,6 +417,7 @@
 				B65ABF471EF4297F0040D260 /* ItemDetails.xib */,
 				B65ABF481EF4297F0040D260 /* PriceGrid.xib */,
 				B6FF57101EF67F3C0010301E /* VideoScheduler.xib */,
+				B6FF571A1EF6C2410010301E /* ItemDetails2.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -503,6 +524,7 @@
 				B65ABF4A1EF429800040D260 /* ItemDetails.xib in Resources */,
 				B65ABF491EF429800040D260 /* ImageControl.xib in Resources */,
 				B65ABF4B1EF429800040D260 /* PriceGrid.xib in Resources */,
+				B6FF571B1EF6C2410010301E /* ItemDetails2.xib in Resources */,
 				B659DD7C1EF0568100409825 /* Assets.xcassets in Resources */,
 				B659DD771EF0568000409825 /* Main.storyboard in Resources */,
 				B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */,
@@ -572,12 +594,15 @@
 				B659DE001EF05BA400409825 /* ImageItemControl.swift in Sources */,
 				B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */,
 				B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */,
+				B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */,
 				B659DDDC1EF05BA400409825 /* ProductPriceI.swift in Sources */,
 				B659DE021EF05BA400409825 /* LoginControl.swift in Sources */,
 				B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */,
 				B659DDDD1EF05BA400409825 /* SchedulerI.swift in Sources */,
 				B659DDE01EF05BA400409825 /* BarcodeManager.swift in Sources */,
+				B6F57C141EF6F61900E0B808 /* PriceCelll.swift in Sources */,
 				B659DE061EF05BA400409825 /* ProductDetailsControl.swift in Sources */,
+				B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */,
 				B659DDE11EF05BA400409825 /* ModelManager.swift in Sources */,
 				B659DDEC1EF05BA400409825 /* Constants.swift in Sources */,
 				B659DE031EF05BA400409825 /* RegisterControl.swift in Sources */,
@@ -586,7 +611,9 @@
 				B659DDED1EF05BA400409825 /* UIColor+Hex.swift in Sources */,
 				B659DE051EF05BA400409825 /* PriceItemControl.swift in Sources */,
 				B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */,
+				B6FF57191EF6C22F0010301E /* ItemDetails2.swift in Sources */,
 				B659DDDB1EF05BA400409825 /* ProductI.swift in Sources */,
+				B6F57C121EF6F5AB00E0B808 /* ImageCelll.swift in Sources */,
 				B659DDFD1EF05BA400409825 /* BarCodeScannerControl.swift in Sources */,
 				B659DE071EF05BA400409825 /* SettingsControl.swift in Sources */,
 				B659DDE51EF05BA400409825 /* ScheduleManager.swift in Sources */,
@@ -599,6 +626,7 @@
 				B659DDE91EF05BA400409825 /* UITextfield+Customization.swift in Sources */,
 				B659DDEB1EF05BA400409825 /* Config.swift in Sources */,
 				B659DDFF1EF05BA400409825 /* ImageCellControl.swift in Sources */,
+				B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */,
 				B659DD721EF0568000409825 /* AppDelegate.swift in Sources */,
 				B659DDE21EF05BA400409825 /* ProductDescManager.swift in Sources */,
 				B659DE011EF05BA400409825 /* ForgotPasswordControl.swift in Sources */,
