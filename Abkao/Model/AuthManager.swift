@@ -20,7 +20,8 @@ class AuthManager: NSObject {
                 print(jsonDict)
                 
                 let userObj = UserI()
-                userObj.userID = jsonDict.value(forKey: "userid") as? Int
+                userObj.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                //userObj.userID = jsonDict.value(forKey: "userid") as? Int
                 
                 //  print(userObj.userID!)
                 
@@ -60,5 +61,16 @@ class AuthManager: NSObject {
         })
     }
     
-    
+    func forgotPassword(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "forgot", headers: true, params: userInfo, result:
+            {
+                (jsonDict,statusCode) in
+                // success code
+                print(jsonDict)
+                
+                handler(true,"User logout successfully")
+                
+        })
+    }
 }

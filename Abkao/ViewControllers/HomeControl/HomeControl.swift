@@ -14,12 +14,27 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var leftTbl: UITableView!
     @IBOutlet weak var rightTbl: UITableView!
     
+    var productObj : ProductI?
+    var setImageGrid : Int?
+    
+    //var arrProductDes : NSMutableArray = NSMutableArray()
+    //var arrProductPrice : NSMutableArray = NSMutableArray()
+
+    //// Defined new 
+    
+    var arrProductDes = NSMutableArray()
+    var arrProductPrice = NSMutableArray()
+    var leftData = NSMutableArray()
+    var rightData = NSMutableArray()
+    
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4"]
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        setImageGrid = 0
         
         leftTbl.delegate = self
         leftTbl.dataSource = self
@@ -70,14 +85,37 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = "5"
         
-        
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
+            self.productObj = productObj
+            self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
+            
             print("Product array : \(String(describing: productObj.arrProductDesc!))")
+            
+            for i in (0..<self.arrProductDes.count){
+                
+                if i % 2 == 0 {
+                    
+                    self.leftData.add(self.arrProductDes[i])
+                    
+                }else{
+                    
+                    self.rightData.add(self.arrProductDes[i])
+                }
+                
+            }
+            
+            self.setImageGrid = Int(productObj.imageGridRowValue!)
+            
+            print(self.setImageGrid!)
+            
+            self.leftTbl.reloadData()
+            self.rightTbl.reloadData()
                         
         }
         
        
+        
     }
     
     override var navTitle: String {
@@ -114,17 +152,59 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     //MARK: - UITableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+           return setImageGrid!
+            
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemDetails
-        cell.ItemImage.image = #imageLiteral(resourceName: "test")
-        cell.lbl_ItemTitle.text = "Bikram"
-        cell.lbl_ItemPrice.text = "5.0"
-        cell.setShadow.viewdraw(cell.setShadow.bounds)
-        return cell
+        var cell:ItemDetails?
+        
+            if tableView == leftTbl {
+                
+                cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                
+                if indexPath.row >= leftData.count {
+                    
+                    cell?.lbl_ItemTitle.text = ""
+                    cell?.lbl_ItemPrice.text = ""
+                    
+                }else{
+                    
+                    let proDescObj = leftData[indexPath.row] as! ProductDescI
+                    
+                    //cell.ItemImage.image = #imageLiteral(resourceName: "test")
+                    cell?.lbl_ItemTitle.text = proDescObj.productName
+                    cell?.lbl_ItemPrice.text = proDescObj.productPrice
+                    cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
+                }
+                
+              
+            }
+            
+            if tableView == rightTbl {
+                
+                cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                
+                if indexPath.row >= rightData.count {
+                    cell?.lbl_ItemTitle.text = ""
+                    cell?.lbl_ItemPrice.text = ""
+                    
+                }else{
+                    
+                    let proDescObj = rightData[indexPath.row] as! ProductDescI
+                    
+                    //cell.ItemImage.image = #imageLiteral(resourceName: "test")
+                    cell?.lbl_ItemTitle.text = proDescObj.productName
+                    cell?.lbl_ItemPrice.text = proDescObj.productPrice
+                    cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
+                }
+                
+            }
+        
+        
+        return cell!
         
     }
     

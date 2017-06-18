@@ -63,6 +63,8 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
+            SVProgressHUD.setStatus("Loging.....")
+            
             var finalStrUrl = String()
             
             finalStrUrl = Constants.baseUrl + strURL
@@ -83,13 +85,11 @@ class BaseWebAccessLayer: NSObject {
             
             alamofiremManager.request(escapedUrl!, method: requestType, parameters: params!, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
                 
-                print(responseObject)
-                
                 if responseObject.result.isSuccess {
                     
+                    SVProgressHUD.dismiss()
                     let statusCode : Int = (responseObject.response?.statusCode)!
                     let resJson = responseObject.result.value as! NSDictionary
-                    
                     result(resJson , statusCode)
                     
                 }
