@@ -78,9 +78,15 @@ class UserI: NSObject {
         //        self.telephone = (userObj["country_code"] as? String ?? "")
         //        self.username = (userObj["country_code"] as? String ?? "")
         
+        UserDefaults.standard.set(userObj["userid"] as? Int, forKey: "userID")
+        UserDefaults.standard.synchronize()
         self.userID = userObj["userid"] as? Int
         print("user id : \(String(describing: self.userID!))")
         
     }
     
+    public func getUserSavedID(){
+    
+        self.userID = UserDefaults.standard.value(forKey: "userID") as? Int
+   }
 }

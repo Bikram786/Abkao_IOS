@@ -16,7 +16,6 @@ class ProductDescI: NSObject {
     public var productImgUrl: String?
     public var productRate: String?
     public var productID: String?
-
     
     override init()
     {

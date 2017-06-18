@@ -14,12 +14,8 @@ class ProductI: NSObject {
     public var productVedUrl: String?
     public var arrProductDesc : [ProductDescI]?
     public var arrProductPrice : [ProductPriceI]?
-
-
     
-    
-    override init()
-    {
+    override init() {
         self.productVedUrl = ""
         self.arrProductDesc = [ProductDescI]()
         self.arrProductPrice = [ProductPriceI]()

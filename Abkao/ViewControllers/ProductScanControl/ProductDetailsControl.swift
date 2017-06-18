@@ -29,11 +29,7 @@ class ProductDetailsControl: AbstractControl {
     override var navTitle: String{
         return "Logout"
     }
-    
-    override func gotoLoginView() {
         
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

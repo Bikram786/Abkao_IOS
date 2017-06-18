@@ -66,11 +66,18 @@ class AuthManager: NSObject {
     }
 
     
-    func logout()  {
-        
-        
+    func logout(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "logout", headers: true, params: userInfo, result:
+            {
+                (jsonDict,statusCode) in
+                // success code
+                print(jsonDict)
+                
+                handler(true,"User logout successfully")
+                
+        })
     }
-    
     
     
 }

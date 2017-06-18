@@ -181,7 +181,24 @@ func goback() {
 }
 
 func gotoLoginView() {
-        _ = self.navigationController?.popToRootViewController(animated: true)
+    
+    var  dictData : [String : Any] =  [String : Any]()
+    let obj = UserI()
+    dictData["userid"] = String(describing: obj.userID)
+    
+    ModelManager.sharedInstance.authManager.logout(userInfo: dictData) { (isSuccess, strMessage) in
+        
+        if(isSuccess)
+        {
+            print(strMessage)
+            
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+    }
+
+    
+    
 }
 
     

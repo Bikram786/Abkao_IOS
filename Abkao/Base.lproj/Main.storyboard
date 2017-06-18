@@ -902,7 +902,7 @@
         <!--Home Control-->
         <scene sceneID="Urk-t5-A4d">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1X7-M9-cwu" customClass="HomeControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeControl" automaticallyAdjustsScrollViewInsets="NO" id="1X7-M9-cwu" customClass="HomeControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9SW-jm-QkZ"/>
                         <viewControllerLayoutGuide type="bottom" id="S0e-F5-HYW"/>

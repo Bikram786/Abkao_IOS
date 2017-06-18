@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Alamofire
+import SVProgressHUD
 
 import ReachabilitySwift
 

@@ -49,8 +49,6 @@ class LoginControl: AbstractControl {
     
     @IBAction func btn_LoginAction(_ sender: UIButton) {
         
-        //self.performSegue(withIdentifier: "goto_homeview", sender: nil)
-        
         var  dictData : [String : Any] =  [String : Any]()
         dictData["username"] = "npurwar"
         dictData["password"] = "123456"
@@ -59,7 +57,6 @@ class LoginControl: AbstractControl {
             
             if(isSuccess)
             {
-                
                  print(userObj.userID!)
                 
                 self.performSegue(withIdentifier: "goto_homeview", sender: nil)
