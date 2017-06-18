@@ -18,11 +18,8 @@ class ProductManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                
-                
                 let productObj = ProductI()
                 productObj.setProductsData(productObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                
                 
                 handler(productObj,true,"Products Received")
                 

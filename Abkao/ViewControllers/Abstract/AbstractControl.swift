@@ -89,7 +89,6 @@ class AbstractControl: UIViewController {
                 
                 _leftSettingBtn = UIButton(type: .custom)
                 _leftSettingBtn.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
-               // _leftSettingBtn.backgroundColor = .black
                 _leftSettingBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
                 _leftSettingBtn.addTarget(self, action: #selector(gotoSettingView), for: .touchUpInside)
                 _leftSettingBtn.isHidden = !showLeftSetting

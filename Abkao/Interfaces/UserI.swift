@@ -10,7 +10,6 @@ import UIKit
 
 class UserI: NSObject {
     
-    
     //setter and getters
     public var email: String?
     public var firstName: String?

@@ -47,25 +47,6 @@ class AuthManager: NSObject {
         })
     }
     
-    func getProductByID(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
-    {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductByUserid", headers: true, params: userInfo, result:
-            {
-                (jsonDict,statusCode) in
-                // success code
-                print(jsonDict)
-                
-                let userObj = UserI()
-                userObj.userID = jsonDict.value(forKey: "userid") as? Int
-                
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
-                
-        })
-    }
-
-    
     func logout(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "logout", headers: true, params: userInfo, result:

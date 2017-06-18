@@ -17,16 +17,13 @@ class ProductPriceI: NSObject {
     public var productID: String?
     
     
-    override init()
-    {
+    override init(){
         self.productName = ""
         self.productRate = ""
         self.productID = ""
-        
     }
     
-    func resetData()
-    {
+    func resetData(){
         self.productName = ""
         self.productRate = ""
         self.productID = ""
