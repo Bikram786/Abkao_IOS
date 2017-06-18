@@ -61,21 +61,50 @@ class RegisterControl: AbstractControl {
     
     func checkValues(){
         
-        if (txt_FirstName.text?.isEmpty)! || (txt_LastName.text?.isEmpty)! || (txt_AccountNo.text?.isEmpty)! || (txt_City.text?.isEmpty)! || (txt_Country.text?.isEmpty)! || (txt_UserID.text?.isEmpty)! || (txt_AccountName.text?.isEmpty)! || (txt_State.text?.isEmpty)! || (txt_Telephone.text?.isEmpty)! || (txt_Password.text?.isEmpty)! || (txt_Company.text?.isEmpty)! || (txt_Address.text?.isEmpty)! || (txt_ZipCode.text?.isEmpty)! || (txt_Email.text?.isEmpty)! || (txt_ConfirmPassword.text?.isEmpty)! {
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["first_name"] = "Nikita"
+        dictData["last_name"] = "Purwar"
+        dictData["username"] = "npurwar"
+        dictData["email"] = "test@gmail.com"
+        dictData["password"] = "123456"
+        dictData["account_name"] = "test"
+        dictData["account_number"] = "9076856787"
+        dictData["address"] = "BTM 1st Stage"
+        dictData["city"] = "Bangalore"
+        dictData["state"] = "Karnataka"
+        dictData["zip"] = "560064"
+        dictData["country"] = "India"
+        dictData["telephone"] = "2445656767"
+        
+        ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             
-        }else {
-            
-            let checkEmail = isValidEmail(testStr: txt_Email.text!)
-            
-            print(checkEmail)
-            
-            if checkEmail == true {
+            if(isSuccess)
+            {
                 
-            }else{
+                print(strMessage)
                 
+                // self.performSegue(withIdentifier: "goto_homeview", sender: nil)
             }
             
         }
+        
+        
+//        if (txt_FirstName.text?.isEmpty)! || (txt_LastName.text?.isEmpty)! || (txt_AccountNo.text?.isEmpty)! || (txt_City.text?.isEmpty)! || (txt_Country.text?.isEmpty)! || (txt_UserID.text?.isEmpty)! || (txt_AccountName.text?.isEmpty)! || (txt_State.text?.isEmpty)! || (txt_Telephone.text?.isEmpty)! || (txt_Password.text?.isEmpty)! || (txt_Company.text?.isEmpty)! || (txt_Address.text?.isEmpty)! || (txt_ZipCode.text?.isEmpty)! || (txt_Email.text?.isEmpty)! || (txt_ConfirmPassword.text?.isEmpty)! {
+//            
+//        }else {
+//            
+//            let checkEmail = isValidEmail(testStr: txt_Email.text!)
+//            
+//            print(checkEmail)
+//            
+//            if checkEmail == true {
+//                
+//            }else{
+//                
+//            }
+//            
+//        }
         
     }
     

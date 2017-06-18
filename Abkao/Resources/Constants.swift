@@ -13,7 +13,7 @@ public struct Constants {
     
     static let kMainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
     
-    static let baseUrl = "http://5.abkao-webservices.appspot.com/"
+    static let baseUrl = "http://6.abkao-webservices.appspot.com/"
     
     enum AvenirNextCondensed : String {
         case Regular    = "AvenirNextCondensed-Regular"

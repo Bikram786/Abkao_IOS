@@ -11,6 +11,7 @@ import UIKit
 class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var priceTable: UITableView!
+    @IBOutlet weak var setBoarderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +19,11 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.delegate = self
         priceTable.dataSource = self
         priceTable.register(UINib(nibName: "PriceGrid", bundle: nil), forCellReuseIdentifier: "PriceGrid")
-        priceTable.estimatedRowHeight = 50.0
+        priceTable.estimatedRowHeight = 100
         priceTable.rowHeight = UITableViewAutomaticDimension
+        priceTable.separatorStyle = .none
+        priceTable.tableFooterView = UIView()
+        setBoarderView.viewdraw(setBoarderView.bounds)
     }
     
     // MARK: - Super Class Method
@@ -38,7 +42,9 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceGrid", for: indexPath) as! PriceGrid
         cell.lbl_ProductName.text = "hiiiii"
+        cell.productNameView.setViewBoarder()
         cell.lbl_ProductPrice.text = "5.0"
+        cell.productPriceView.setViewBoarder()
         return cell
         
     }

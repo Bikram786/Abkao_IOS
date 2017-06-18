@@ -8,5 +8,5 @@ target 'Abkao' do
   # Pods for Abkao
   pod 'Alamofire'
   pod 'ReachabilitySwift', '~> 3'
-
+  pod 'SVProgressHUD'
 end

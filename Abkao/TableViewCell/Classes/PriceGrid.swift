@@ -10,8 +10,12 @@ import UIKit
 
 class PriceGrid: UITableViewCell {
 
+    
+    @IBOutlet weak var setBoarderView: UIView!
     @IBOutlet weak var lbl_ProductName: UILabel!    
-    @IBOutlet weak var lbl_ProductPrice: UILabel!
+    @IBOutlet weak var lbl_ProductPrice: UILabel!    
+    @IBOutlet weak var productNameView: UIView!
+    @IBOutlet weak var productPriceView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

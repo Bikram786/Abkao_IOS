@@ -11,18 +11,25 @@ import CoreData
 
 class AuthManager: NSObject {
     
-    func userSignUp(userInfo: NSMutableDictionary, handler : @escaping (UserI, Bool , NSString) -> Void)
+    func userSignUp(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
     {
-        //        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: true, params: userInfo, result:
-        //            {
-        //                (jsonDict,statusCode) in
-        //                // success code
-        //                print(jsonDict)
-        //
-        //        })
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: true, params: userInfo, result:
+            {
+                (jsonDict,statusCode) in
+                // success code
+                print(jsonDict)
+                
+                let userObj = UserI()
+                userObj.userID = jsonDict.value(forKey: "userid") as? Int
+                
+                //  print(userObj.userID!)
+                
+                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                
+        })
     }
     
-    func userLogin(userInfo: [String : Any], handler : @escaping (UserI, Bool , NSString) -> Void)
+    func userLogin(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "logincontroller/login", headers: true, params: userInfo, result:
             {
@@ -30,12 +37,40 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
+                let userObj = UserI()
+                userObj.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                
+                print(jsonDict)
+                
+                handler(userObj, true,"User login successfully")
+                
         })
     }
+    
+    func getProductByID(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductByUserid", headers: true, params: userInfo, result:
+            {
+                (jsonDict,statusCode) in
+                // success code
+                print(jsonDict)
+                
+                let userObj = UserI()
+                userObj.userID = jsonDict.value(forKey: "userid") as? Int
+                
+                //  print(userObj.userID!)
+                
+                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                
+        })
+    }
+
     
     func logout()  {
         
         
     }
+    
+    
     
 }

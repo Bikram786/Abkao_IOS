@@ -15,7 +15,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var rightTbl: UITableView!
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4","1", "2", "3", "4",""]
+    var items = ["1", "2", "3", "4"]
     
     override func viewDidLoad() {
         
@@ -33,13 +33,17 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         leftTbl.rowHeight = UITableViewAutomaticDimension
         rightTbl.estimatedRowHeight = 200.0
         rightTbl.rowHeight = UITableViewAutomaticDimension
+        leftTbl.separatorStyle = .none
+        rightTbl.separatorStyle = .none
+        leftTbl.tableFooterView = UIView()
+        rightTbl.tableFooterView = UIView()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
         //Get device width
         let width = setClv.frame.width - 6
         
-        let setItemsCount = 3
+        let setItemsCount = 2
         
         print((Int(width)/setItemsCount)*setItemsCount)
         
@@ -52,7 +56,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         layout.sectionInset = UIEdgeInsets(top: CGFloat(setInset/setItemsCount), left: CGFloat(setInset/setItemsCount), bottom: CGFloat(setInset/setItemsCount), right: CGFloat(setInset/setItemsCount))
         
         //set cell item size here
-        layout.itemSize = CGSize(width: Int(width)/setItemsCount , height: Int(width)/setItemsCount)
+        layout.itemSize = CGSize(width: Int(width)/setItemsCount , height: Int(view.frame.height/7))
         
         //set Minimum spacing between 2 items
         layout.minimumInteritemSpacing = 3
@@ -62,6 +66,22 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         //apply defined layout to collectionview
         setClv!.collectionViewLayout = layout
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "5"
+        
+        
+//        ModelManager.sharedInstance.authManager.getProductByID(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+//            
+//            if(isSuccess)
+//            {
+//                
+//                print(strMessage)
+//                
+//                // self.performSegue(withIdentifier: "goto_homeview", sender: nil)
+//            }
+//            
+//        }
     }
     
     override var navTitle: String {

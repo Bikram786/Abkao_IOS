@@ -17,6 +17,8 @@ class LoginControl: AbstractControl {
     @IBOutlet weak var txt_UserID: UITextField!
     @IBOutlet weak var txt_Password: UITextField!
     
+    @IBOutlet weak var setUpper: UIView!
+    
     // MARK: - View Lifecycle Method
     
     override func viewDidLoad() {
@@ -26,7 +28,7 @@ class LoginControl: AbstractControl {
         
     func setStartingFields() {
         
-        // upperView.upperdraw(upperView.bounds)
+      
         setViewShadow.viewdraw(setViewShadow.bounds)
         txt_UserID.addShadowToTextfield()
         txt_Password.addShadowToTextfield()
@@ -47,30 +49,20 @@ class LoginControl: AbstractControl {
     
     @IBAction func btn_LoginAction(_ sender: UIButton) {
         
-        // self.data_request()
-        
         //self.performSegue(withIdentifier: "goto_homeview", sender: nil)
-        
-        
-        // self.data_request()
-        
-        
-        
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["username"] = "npurwar"
         dictData["password"] = "123456"
-        
-        
-        //        dictData.setValue("username", forKey: "npurwar")
-        //        dictData.setValue("password", forKey: "123456")
-        
         
         ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             
             if(isSuccess)
             {
                 
+                 print(userObj.userID!)
+                
+                self.performSegue(withIdentifier: "goto_homeview", sender: nil)
             }
             
         }

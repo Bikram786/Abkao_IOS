@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.4.0)
   - ReachabilitySwift (3)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Alamofire
   - ReachabilitySwift (~> 3)
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: be3ff00da5d12f0344314474ae4828638be872a1
+PODFILE CHECKSUM: d9e871b7c2195506dd9463772867a4d65d0dec6c
 
 COCOAPODS: 1.2.1

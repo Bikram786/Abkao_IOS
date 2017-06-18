@@ -8,12 +8,23 @@
 
 import UIKit
 
-class VideoSchedulerControl: AbstractControl {
+class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var VideoSchedulerTable: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        VideoSchedulerTable.delegate = self
+        VideoSchedulerTable.dataSource = self
+        VideoSchedulerTable.register(UINib(nibName: "VideoScheduler", bundle: nil), forCellReuseIdentifier: "VideoScheduler")
+        VideoSchedulerTable.register(UINib(nibName: "VideoSchedulerHeader", bundle: nil), forCellReuseIdentifier: "VideoSchedulerHeader")
+        VideoSchedulerTable.estimatedRowHeight = 100
+        VideoSchedulerTable.rowHeight = UITableViewAutomaticDimension
+        VideoSchedulerTable.separatorStyle = .none
+        VideoSchedulerTable.tableFooterView = UIView()
+
     }
 
     override var navTitle: String{
@@ -23,6 +34,31 @@ class VideoSchedulerControl: AbstractControl {
     override func gotoLoginView() {
         
     }
+    
+    //MARK: - UITableView Methods
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        // This is where you would change section header content
+        return tableView.dequeueReusableCell(withIdentifier: "VideoSchedulerHeader")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoScheduler", for: indexPath) as! VideoScheduler
+        return cell
+        
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
