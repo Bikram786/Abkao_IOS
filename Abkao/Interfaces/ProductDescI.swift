@@ -14,31 +14,31 @@ class ProductDescI: NSObject {
     //setter and getters
     public var productName: String?
     public var productImgUrl: String?
-    public var productRate: String?
-    public var productID: String?
+    public var productPrice: String?
+    public var productID: Int?
     
     override init()
     {
         self.productName = ""
         self.productImgUrl = ""
-        self.productRate = ""
-        self.productID = ""
+        self.productPrice = ""
+        self.productID = 0
     }
     
     func resetData()
     {
         self.productName = ""
         self.productImgUrl = ""
-        self.productRate = ""
-        self.productID = ""
+        self.productPrice = ""
+        self.productID = 0
     }
     
-    public func setProductDescData(riderObj : [String : AnyObject])
+    public func setProductDescData(productInfoObj : [String : AnyObject])
     {
-        self.productName =  (riderObj["country_code"] as? String ?? "")
-        self.productImgUrl =  (riderObj["country_code"] as? String ?? "")
-        self.productRate =  (riderObj["external_id"] as? String ?? "")
-        self.productID =  (riderObj["first_name"] as? String ?? "")
+        self.productName =  (productInfoObj["product_name"] as? String ?? "")
+        //self.productImgUrl =  (productInfoObj["country_code"] as? String ?? "")
+        self.productPrice =  (productInfoObj["product_price"] as? String ?? "")
+        self.productID =  (productInfoObj["product_id"] as? Int)
     }
     
 }

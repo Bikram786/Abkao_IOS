@@ -71,17 +71,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         dictData["userid"] = "5"
         
         
-//        ModelManager.sharedInstance.authManager.getProductByID(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-//            
-//            if(isSuccess)
-//            {
-//                
-//                print(strMessage)
-//                
-//                // self.performSegue(withIdentifier: "goto_homeview", sender: nil)
-//            }
-//            
-//        }
+        ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
+            
+            print("Product array : \(String(describing: productObj.arrProductDesc!))")
+                        
+        }
+        
+       
     }
     
     override var navTitle: String {

@@ -193,9 +193,9 @@
 			children = (
 				B659DD8E1EF05BA400409825 /* AuthManager.swift */,
 				B659DD8F1EF05BA400409825 /* BarcodeManager.swift */,
+				B659DD921EF05BA400409825 /* ProductManager.swift */,
 				B659DD901EF05BA400409825 /* ModelManager.swift */,
 				B659DD911EF05BA400409825 /* ProductDescManager.swift */,
-				B659DD921EF05BA400409825 /* ProductManager.swift */,
 				B659DD931EF05BA400409825 /* ProductPriceManager.swift */,
 				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
 				B659DD951EF05BA400409825 /* SettingsManager.swift */,
