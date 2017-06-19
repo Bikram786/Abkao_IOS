@@ -35,6 +35,8 @@ class ProductDescI: NSObject {
     
     public func setProductDescData(productInfoObj : [String : AnyObject])
     {
+        print(productInfoObj)
+        
         self.productName =  (productInfoObj["product_name"] as? String ?? "")
         //self.productImgUrl =  (productInfoObj["country_code"] as? String ?? "")
         self.productPrice =  (productInfoObj["product_price"] as? String ?? "")

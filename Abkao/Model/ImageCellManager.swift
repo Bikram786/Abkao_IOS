@@ -46,7 +46,7 @@ class ImageCellManager: NSObject {
     
     func deleteRecord(userInfo: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "delete", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "deleteProduct", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
@@ -63,15 +63,14 @@ class ImageCellManager: NSObject {
     
     func getAllRecords(userID: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getallrecords", headers: true, params: userID, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductInImageGrid", headers: true, params: userID, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
                 
                 let productObj = ImageCelll()
-                //productObj.setProductsData(productObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                
+                productObj.setProductImageData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
                 handler(productObj,true,"Products Received")
                 
                 //userObj.userID = jsonDict.value(forKey: "userid") as? Int

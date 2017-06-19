@@ -29,9 +29,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.separatorStyle = .none
         priceTable.tableFooterView = UIView()
         setBoarderView.viewdraw(setBoarderView.bounds)
-        
         let setValue = "Add " + String(getPriceGridValue!*getPriceGridValue!) + " Items"
-        
         btn_ShowItems.setTitle(setValue, for: .normal)
         
     }
@@ -61,6 +59,35 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    
+    func callProductDeleteAPI(productID: Int){
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["product_id"] = String(productID)
+        dictData["userid"] = "5"
+        
+        ModelManager.sharedInstance.priceCellManager.deleteRecord(userInfo: dictData) { (isSuccess, responseMessage) in
+            
+            self.callProductAPI()
+        }
+        
+    }
+
+    func callProductupdateAPI(){
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "5"
+        
+        ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
+            self.arrProductPrice.removeAllObjects()
+            self.productObj = productObj
+            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+            self.priceTable.reloadData()
+            
+        }
+        
+    }
+
 
     //MARK: - UITableView Methods
     
@@ -83,6 +110,8 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+        
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
             //TODO: edit the row at indexPath here
            
@@ -92,9 +121,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             
-            //TODO: Delete the row at indexPath here
-            
-          
+          self.callProductDeleteAPI(productID: proDescObj.productID!)
             
         }
         deleteAction.backgroundColor = .red

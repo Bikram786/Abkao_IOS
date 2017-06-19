@@ -14,6 +14,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     
     
     let imagePicker = UIImagePickerController()
+    var sendFinalImage = ""
     
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txt_ImageURL: UITextField!
@@ -26,29 +27,34 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         setStartingFields()
     }
     
+    // MARK: - Super Class Method
+    
+    override var navTitle: String{
+        return "Logout"
+    }
+    
+    
     func setStartingFields() {
         
         imagePicker.delegate = self
-       
         setViewShadow.viewdraw(setViewShadow.bounds)
         txt_ImageURL.addShadowToTextfield()
         txt_ProductName.addShadowToTextfield()
         txt_ProductPrice.addShadowToTextfield()
         txt_VideoURL.addShadowToTextfield()
         
-        
     }
     
     
-    private func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
-        dismiss(animated:true, completion: nil) //5
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
+//    private func imagePickerController(_ picker: UIImagePickerController,
+//                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+//    {
+//        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+//        dismiss(animated:true, completion: nil) //5
+//    }
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
 
     
     
@@ -56,34 +62,35 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         
         setImageFromGaleryOrCamera()
         
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-//        imagePicker.modalPresentationStyle = .popover
-//        let presentationController = imagePicker.popoverPresentationController
-//        presentationController?.sourceView = sender
-//        self.present(imagePicker, animated: true) {}
-        
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-//        
-//        if UIDevice.current.userInterfaceIdiom == .phone
-//        {
-//            present(imagePicker, animated: true, completion: nil)
-//        }
-//        else
-//        {
-//            
-//            imagePicker.modalPresentationStyle = .popover
-//            let presentationController = imagePicker.popoverPresentationController
-//            // You must set a sourceView or barButtonItem so that it can
-//            // draw a "bubble" with an arrow pointing at the right thing.
-//            presentationController?.sourceView = sender
-//            self.present(imagePicker, animated: true) {}
-//        }
-        
     }
+    
+    @IBAction func btn_SaveAction(_ sender: UIButton) {
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["product_name"] = "Guru 12"
+        dictData["product_price"] = "20"
+        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
+        
+        var  imageDictData : [String : Any] =  [String : Any]()
+        imageDictData["mimetype"] = "image/jpeg"
+        imageDictData["filecontent"] = sendFinalImage
+        dictData["fileUpload"] = imageDictData
+        dictData["userid"] = "5"
+        
+        print(dictData)
+        
+        ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            
+            if(isSuccess)
+            {
+                
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+            
+        }
+
+    }
+    
 
     func setImageFromGaleryOrCamera() {
         
@@ -129,7 +136,9 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 // Do something with your image here.
                 // If cropping is enabled this image will be the cropped version
                 
-                print(image)
+                let imageData = UIImageJPEGRepresentation(image!, 0.2)
+                
+                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!
                 
                 self?.dismiss(animated: true, completion: nil)
             }
@@ -149,12 +158,6 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         
         //Present the AlertController
         self.present(actionSheetController, animated: true, completion: nil)
-    }
-    
-    // MARK: - Super Class Method
-    
-    override var navTitle: String{
-        return "Logout"
     }
     
     override func didReceiveMemoryWarning() {

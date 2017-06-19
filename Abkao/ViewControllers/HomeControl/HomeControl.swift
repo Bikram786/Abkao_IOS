@@ -90,7 +90,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             if productObj.arrProductDesc?.count != 0 {
                 
                 self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
-                self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+               
                 
                 for i in (0..<self.arrProductDes.count){
                     
@@ -111,9 +111,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 self.leftTbl.reloadData()
                 self.rightTbl.reloadData()
                 
+                
+            }
+            if productObj.arrProductPrice?.count != 0 {
+                
+                self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
                 self.setPriceGridView(priceItems: self.setPriceGrid!)
             }
-            
         }
 
     }
@@ -229,6 +233,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        print(setPriceGrid!)
+        
         return setPriceGrid!
     }
     // make a cell for each cell index path
@@ -236,10 +242,21 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PriceCell
-        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
-        cell.lbl_Name.text = proDescObj.productName
-        cell.lbl_Price.text = proDescObj.productRate
-        cell.setShadow.viewdraw(cell.setShadow.bounds)
+        
+        if indexPath.row >= arrProductPrice.count {
+            
+            cell.lbl_Name.text = ""
+            cell.lbl_Price.text = ""
+            
+        }else{
+            
+            let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+            cell.lbl_Name.text = proDescObj.productName
+            cell.lbl_Price.text = proDescObj.productRate
+            cell.setShadow.viewdraw(cell.setShadow.bounds)
+        }
+        
+        
         return cell
     }
     

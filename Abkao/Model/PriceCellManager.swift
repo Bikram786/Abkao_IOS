@@ -27,7 +27,7 @@ class PriceCellManager: NSObject {
     
     func updateRecord(userInfo: [String : Any], handler : @escaping (PriceCelll, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateProductImageGrid", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateProductPriceGrid", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
@@ -42,19 +42,13 @@ class PriceCellManager: NSObject {
         })
     }
     
-    func deleteRecord(userInfo: [String : Any], handler : @escaping (PriceCelll, Bool , String) -> Void)
+    func deleteRecord(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "delete", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "deleteProduct", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
-                // success code
-                print(jsonDict)
                 
-                let userObj = PriceCelll()
-                
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                handler( true ,"Product deleted successfully")
                 
         })
     }

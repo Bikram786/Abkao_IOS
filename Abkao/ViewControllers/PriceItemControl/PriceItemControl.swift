@@ -38,7 +38,9 @@ class PriceItemControl: AbstractControl {
         
         if (txt_ProductName.text?.isEmpty)! || (txt_ProductPrice.text?.isEmpty)! {
             
+            
         }else{
+            
             var  dictData : [String : Any] =  [String : Any]()
             dictData["product_name"] = txt_ProductName.text!
             dictData["product_price"] = txt_ProductPrice.text!

@@ -51,5 +51,4 @@ class PriceCelll: NSObject {
 
     }
 
-
 }
