@@ -10,6 +10,8 @@ import UIKit
 
 class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSource{
     
+    var getImageGridValue:Int?
+    
     @IBOutlet weak var imageControlTbl: UITableView!
     
     override func viewDidLoad() {

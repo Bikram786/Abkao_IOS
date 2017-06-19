@@ -52,7 +52,7 @@ class LoginControl: AbstractControl {
         var  dictData : [String : Any] =  [String : Any]()
         dictData["username"] = "npurwar"
         dictData["password"] = "123456"
-        
+                
         ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             
             if(isSuccess)

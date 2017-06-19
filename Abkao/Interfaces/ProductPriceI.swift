@@ -14,26 +14,27 @@ class ProductPriceI: NSObject {
     //setter and getters
     public var productName: String?
     public var productRate: String?
-    public var productID: String?
+    public var productID: Int?
     
     
     override init(){
         self.productName = ""
         self.productRate = ""
-        self.productID = ""
+        self.productID = 0
     }
     
     func resetData(){
         self.productName = ""
         self.productRate = ""
-        self.productID = ""
+        self.productID = 0
     }
     
-    public func setProductPriceData(priceObjInfo : [String : AnyObject])
+    public func setProductPriceData(productInfoObj : [String : AnyObject])
     {
-        self.productName =  (priceObjInfo["country_code"] as? String ?? "")
-        self.productRate =  (priceObjInfo["external_id"] as? String ?? "")
-        self.productID =  (priceObjInfo["first_name"] as? String ?? "")
+        self.productName =  (productInfoObj["product_name"] as? String ?? "")
+        //self.productImgUrl =  (productInfoObj["country_code"] as? String ?? "")
+        self.productRate =  (productInfoObj["product_price"] as? String ?? "")
+        self.productID =  (productInfoObj["product_id"] as? Int)
     }
 
 }

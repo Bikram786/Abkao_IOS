@@ -21,13 +21,9 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                let userObj = UserI()
-                userObj.setUserInfo(userObj: jsonDict as! [String : AnyObject])
-                //userObj.userID = jsonDict.value(forKey: "userid") as? Int
+                ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
                 
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })
     }
@@ -40,12 +36,14 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                let userObj = UserI()
-                userObj.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
                 
-                print(jsonDict)
+                handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
-                handler(userObj, true,"User login successfully")
+                print("user id : \(String(describing: (ModelManager.sharedInstance.profileManager.userObj?.userID)!))")
+                //print(jsonDict)
+                
+                //handler(userObj, true,"User login successfully")
                 
         })
     }

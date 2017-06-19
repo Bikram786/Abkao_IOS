@@ -9,6 +9,6 @@
 #ifndef Abkao_Bridging_Header_h
 #define Abkao_Bridging_Header_h
 
-
+#import "GKImagePicker.h"
 
 #endif

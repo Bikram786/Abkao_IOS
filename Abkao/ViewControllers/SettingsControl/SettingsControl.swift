@@ -10,12 +10,18 @@ import UIKit
 
 class SettingsControl: AbstractControl {
 
+    var setGridRows:Int?
+    var setPriceRows:Int?
+    
      @IBOutlet weak var setViewShadow: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setViewShadow.viewdraw(setViewShadow.bounds)
+        setGridRows=2
+        setPriceRows=0
+        
     }
 
     // MARK: - Super Class Method
@@ -23,6 +29,47 @@ class SettingsControl: AbstractControl {
     override var navTitle: String{
         return "Logout"
     }
+    
+    
+    @IBAction func setImageGridRowsAction(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            setGridRows = 2
+        }else if (sender.selectedSegmentIndex == 1) {
+            setGridRows = 4
+        }else{
+            setGridRows = 3
+        }
+        
+    }
+    
+    @IBAction func btn_SetImageGridAction(_ sender: UIButton) {
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "ImageCellControl") as! ImageCellControl
+        myVC.getImageGridValue = setGridRows
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    
+    @IBAction func setImagePriceRowsAction(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            setPriceRows = 0
+        }else if (sender.selectedSegmentIndex == 1) {
+            setPriceRows = 2
+        }else{
+            setPriceRows = 3
+        }
+        
+    }
+    
+    @IBAction func btn_SetPriceGridAction(_ sender: UIButton) {
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "PriceGridControl") as! PriceGridControl
+        myVC.getPriceGridValue = setPriceRows
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

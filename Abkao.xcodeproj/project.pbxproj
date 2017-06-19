@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA21EF7C41300173984 /* ShowAlerts.swift */; };
+		B6131FA51EF7C73400173984 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA41EF7C73400173984 /* ProfileManager.swift */; };
+		B6131FBD1EF7CA8300173984 /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA91EF7CA8300173984 /* GKCropBorderView.m */; };
+		B6131FBE1EF7CA8300173984 /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FAB1EF7CA8300173984 /* GKImageCropOverlayView.m */; };
+		B6131FBF1EF7CA8300173984 /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FAD1EF7CA8300173984 /* GKImageCropView.m */; };
+		B6131FC01EF7CA8300173984 /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FAF1EF7CA8300173984 /* GKImageCropViewController.m */; };
+		B6131FC11EF7CA8300173984 /* GKImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FB11EF7CA8300173984 /* GKImagePicker.m */; };
+		B6131FC21EF7CA8300173984 /* GKResizeableCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FB31EF7CA8300173984 /* GKResizeableCropOverlayView.m */; };
+		B6131FC31EF7CA8300173984 /* PLCameraSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FB51EF7CA8300173984 /* PLCameraSheetButton.png */; };
+		B6131FC41EF7CA8300173984 /* PLCameraSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FB61EF7CA8300173984 /* PLCameraSheetButton@2x.png */; };
+		B6131FC51EF7CA8300173984 /* PLCameraSheetButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FB71EF7CA8300173984 /* PLCameraSheetButtonPressed.png */; };
+		B6131FC61EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FB81EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png */; };
+		B6131FC71EF7CA8300173984 /* PLCameraSheetDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FB91EF7CA8300173984 /* PLCameraSheetDoneButton.png */; };
+		B6131FC81EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBA1EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png */; };
+		B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */; };
+		B6131FCA1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */; };
 		B659DD721EF0568000409825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD711EF0568000409825 /* AppDelegate.swift */; };
 		B659DD771EF0568000409825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B659DD751EF0568000409825 /* Main.storyboard */; };
 		B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B659DD781EF0568000409825 /* Abkao.xcdatamodeld */; };
@@ -74,6 +90,28 @@
 		34C2F26954D0D6F84280EBB7 /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
 		49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abkao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3BC0CB0CF2AAECFEF04FAC /* Pods-Abkao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.debug.xcconfig"; sourceTree = "<group>"; };
+		B6131FA21EF7C41300173984 /* ShowAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlerts.swift; sourceTree = "<group>"; };
+		B6131FA41EF7C73400173984 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		B6131FA81EF7CA8300173984 /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		B6131FA91EF7CA8300173984 /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		B6131FAA1EF7CA8300173984 /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		B6131FAB1EF7CA8300173984 /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		B6131FAC1EF7CA8300173984 /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		B6131FAD1EF7CA8300173984 /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		B6131FAE1EF7CA8300173984 /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		B6131FAF1EF7CA8300173984 /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		B6131FB01EF7CA8300173984 /* GKImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImagePicker.h; sourceTree = "<group>"; };
+		B6131FB11EF7CA8300173984 /* GKImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImagePicker.m; sourceTree = "<group>"; };
+		B6131FB21EF7CA8300173984 /* GKResizeableCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizeableCropOverlayView.h; sourceTree = "<group>"; };
+		B6131FB31EF7CA8300173984 /* GKResizeableCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizeableCropOverlayView.m; sourceTree = "<group>"; };
+		B6131FB51EF7CA8300173984 /* PLCameraSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButton.png; sourceTree = "<group>"; };
+		B6131FB61EF7CA8300173984 /* PLCameraSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButton@2x.png"; sourceTree = "<group>"; };
+		B6131FB71EF7CA8300173984 /* PLCameraSheetButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButtonPressed.png; sourceTree = "<group>"; };
+		B6131FB81EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButtonPressed@2x.png"; sourceTree = "<group>"; };
+		B6131FB91EF7CA8300173984 /* PLCameraSheetDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButton.png; sourceTree = "<group>"; };
+		B6131FBA1EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
+		B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
+		B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
 		B659DD6E1EF0568000409825 /* Abkao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abkao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659DD711EF0568000409825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659DD761EF0568000409825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +189,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6131FA11EF7C41300173984 /* UIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				B6131FA21EF7C41300173984 /* ShowAlerts.swift */,
+			);
+			path = UIAlertView;
+			sourceTree = "<group>";
+		};
+		B6131FA61EF7CA8300173984 /* GKImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B6131FA71EF7CA8300173984 /* GKClasses */,
+				B6131FB41EF7CA8300173984 /* GKImages */,
+			);
+			path = GKImagePicker;
+			sourceTree = "<group>";
+		};
+		B6131FA71EF7CA8300173984 /* GKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B6131FA81EF7CA8300173984 /* GKCropBorderView.h */,
+				B6131FA91EF7CA8300173984 /* GKCropBorderView.m */,
+				B6131FAA1EF7CA8300173984 /* GKImageCropOverlayView.h */,
+				B6131FAB1EF7CA8300173984 /* GKImageCropOverlayView.m */,
+				B6131FAC1EF7CA8300173984 /* GKImageCropView.h */,
+				B6131FAD1EF7CA8300173984 /* GKImageCropView.m */,
+				B6131FAE1EF7CA8300173984 /* GKImageCropViewController.h */,
+				B6131FAF1EF7CA8300173984 /* GKImageCropViewController.m */,
+				B6131FB01EF7CA8300173984 /* GKImagePicker.h */,
+				B6131FB11EF7CA8300173984 /* GKImagePicker.m */,
+				B6131FB21EF7CA8300173984 /* GKResizeableCropOverlayView.h */,
+				B6131FB31EF7CA8300173984 /* GKResizeableCropOverlayView.m */,
+			);
+			path = GKClasses;
+			sourceTree = "<group>";
+		};
+		B6131FB41EF7CA8300173984 /* GKImages */ = {
+			isa = PBXGroup;
+			children = (
+				B6131FB51EF7CA8300173984 /* PLCameraSheetButton.png */,
+				B6131FB61EF7CA8300173984 /* PLCameraSheetButton@2x.png */,
+				B6131FB71EF7CA8300173984 /* PLCameraSheetButtonPressed.png */,
+				B6131FB81EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png */,
+				B6131FB91EF7CA8300173984 /* PLCameraSheetDoneButton.png */,
+				B6131FBA1EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png */,
+				B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */,
+				B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */,
+			);
+			path = GKImages;
+			sourceTree = "<group>";
+		};
 		B659DD651EF0568000409825 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +297,7 @@
 		B659DD8D1EF05BA400409825 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6131FA41EF7C73400173984 /* ProfileManager.swift */,
 				B659DD8E1EF05BA400409825 /* AuthManager.swift */,
 				B659DD8F1EF05BA400409825 /* BarcodeManager.swift */,
 				B659DD921EF05BA400409825 /* ProductManager.swift */,
@@ -225,6 +315,8 @@
 		B659DD961EF05BA400409825 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6131FA61EF7CA8300173984 /* GKImagePicker */,
+				B6131FA11EF7C41300173984 /* UIAlertView */,
 				B65ABF541EF4457D0040D260 /* CustomFonts */,
 				B659DD971EF05BA400409825 /* Abkao-Bridging-Header.h */,
 				B659DD981EF05BA400409825 /* Categories */,
@@ -519,13 +611,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65ABF561EF4461E0040D260 /* Cormorant-Regular.ttf in Resources */,
+				B6131FC41EF7CA8300173984 /* PLCameraSheetButton@2x.png in Resources */,
 				B6FF57111EF67F3C0010301E /* VideoScheduler.xib in Resources */,
 				B659DD7F1EF0568100409825 /* LaunchScreen.storyboard in Resources */,
+				B6131FCA1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
+				B6131FC61EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png in Resources */,
 				B65ABF4A1EF429800040D260 /* ItemDetails.xib in Resources */,
 				B65ABF491EF429800040D260 /* ImageControl.xib in Resources */,
 				B65ABF4B1EF429800040D260 /* PriceGrid.xib in Resources */,
+				B6131FC71EF7CA8300173984 /* PLCameraSheetDoneButton.png in Resources */,
 				B6FF571B1EF6C2410010301E /* ItemDetails2.xib in Resources */,
+				B6131FC31EF7CA8300173984 /* PLCameraSheetButton.png in Resources */,
+				B6131FC81EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png in Resources */,
 				B659DD7C1EF0568100409825 /* Assets.xcassets in Resources */,
+				B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */,
+				B6131FC51EF7CA8300173984 /* PLCameraSheetButtonPressed.png in Resources */,
 				B659DD771EF0568000409825 /* Main.storyboard in Resources */,
 				B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */,
 			);
@@ -592,22 +692,28 @@
 				B659DDFE1EF05BA400409825 /* HomeControl.swift in Sources */,
 				B6FF57171EF688AF0010301E /* VideoSchedulerHeader.swift in Sources */,
 				B659DE001EF05BA400409825 /* ImageItemControl.swift in Sources */,
+				B6131FC01EF7CA8300173984 /* GKImageCropViewController.m in Sources */,
 				B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */,
 				B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */,
+				B6131FBD1EF7CA8300173984 /* GKCropBorderView.m in Sources */,
 				B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */,
 				B659DDDC1EF05BA400409825 /* ProductPriceI.swift in Sources */,
 				B659DE021EF05BA400409825 /* LoginControl.swift in Sources */,
 				B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */,
+				B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */,
 				B659DDDD1EF05BA400409825 /* SchedulerI.swift in Sources */,
 				B659DDE01EF05BA400409825 /* BarcodeManager.swift in Sources */,
 				B6F57C141EF6F61900E0B808 /* PriceCelll.swift in Sources */,
+				B6131FBE1EF7CA8300173984 /* GKImageCropOverlayView.m in Sources */,
 				B659DE061EF05BA400409825 /* ProductDetailsControl.swift in Sources */,
 				B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */,
 				B659DDE11EF05BA400409825 /* ModelManager.swift in Sources */,
 				B659DDEC1EF05BA400409825 /* Constants.swift in Sources */,
 				B659DE031EF05BA400409825 /* RegisterControl.swift in Sources */,
 				B659DDD91EF05BA400409825 /* BarcodeI.swift in Sources */,
+				B6131FBF1EF7CA8300173984 /* GKImageCropView.m in Sources */,
 				B659DDEA1EF05BA400409825 /* UIView+Customization.swift in Sources */,
+				B6131FA51EF7C73400173984 /* ProfileManager.swift in Sources */,
 				B659DDED1EF05BA400409825 /* UIColor+Hex.swift in Sources */,
 				B659DE051EF05BA400409825 /* PriceItemControl.swift in Sources */,
 				B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */,
@@ -623,9 +729,11 @@
 				B659DDE31EF05BA400409825 /* ProductManager.swift in Sources */,
 				B659DE041EF05BA400409825 /* PriceGridControl.swift in Sources */,
 				B659DE091EF05BA400409825 /* VideoSchedulerControl.swift in Sources */,
+				B6131FC21EF7CA8300173984 /* GKResizeableCropOverlayView.m in Sources */,
 				B659DDE91EF05BA400409825 /* UITextfield+Customization.swift in Sources */,
 				B659DDEB1EF05BA400409825 /* Config.swift in Sources */,
 				B659DDFF1EF05BA400409825 /* ImageCellControl.swift in Sources */,
+				B6131FC11EF7CA8300173984 /* GKImagePicker.m in Sources */,
 				B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */,
 				B659DD721EF0568000409825 /* AppDelegate.swift in Sources */,
 				B659DDE21EF05BA400409825 /* ProductDescManager.swift in Sources */,
@@ -761,6 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VX4JL6YFM7;
 				INFOPLIST_FILE = Abkao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.developer.Abkao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -776,6 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VX4JL6YFM7;
 				INFOPLIST_FILE = Abkao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.developer.Abkao;
 				PRODUCT_NAME = "$(TARGET_NAME)";

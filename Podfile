@@ -9,4 +9,5 @@ target 'Abkao' do
   pod 'Alamofire'
   pod 'ReachabilitySwift', '~> 3'
   pod 'SVProgressHUD'
+  pod 'ALCameraViewController'
 end

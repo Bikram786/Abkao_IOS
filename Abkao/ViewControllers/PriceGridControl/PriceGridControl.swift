@@ -10,8 +10,11 @@ import UIKit
 
 class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
     
+    var getPriceGridValue:Int?
+    
     @IBOutlet weak var priceTable: UITableView!
     @IBOutlet weak var setBoarderView: UIView!
+    @IBOutlet weak var btn_ShowItems: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,13 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.separatorStyle = .none
         priceTable.tableFooterView = UIView()
         setBoarderView.viewdraw(setBoarderView.bounds)
+        
+        print(String(getPriceGridValue!*getPriceGridValue!))
+        
+        let setValue = "Add " + String(getPriceGridValue!*getPriceGridValue!) + " Items"
+        
+        btn_ShowItems.setTitle(setValue, for: .normal)
+        
     }
     
     // MARK: - Super Class Method
@@ -35,7 +45,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     //MARK: - UITableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

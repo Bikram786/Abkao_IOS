@@ -40,8 +40,6 @@ class ProductI: NSObject {
     public func setProductsData(productObj : [String : AnyObject])
     {
         
-        print("Product data : \(productObj)")
-        
         if let tempObj = productObj["image_grid"] as? NSArray
         {
             for productInfo in tempObj
@@ -67,7 +65,7 @@ class ProductI: NSObject {
                 
                 let priceDesc = ProductPriceI()
                 
-                priceDesc.setProductPriceData(priceObjInfo: price)
+                priceDesc.setProductPriceData(productInfoObj: price)
                 
                 self.arrProductPrice?.append(priceDesc)
             }

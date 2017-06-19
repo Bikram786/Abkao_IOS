@@ -33,6 +33,29 @@ class PriceItemControl: AbstractControl {
         return "Logout"
     }
     
+    
+    @IBAction func btn_SaveAction(_ sender: UIButton) {
+        
+        if (txt_ProductName.text?.isEmpty)! || (txt_ProductPrice.text?.isEmpty)! {
+            
+        }else{
+            var  dictData : [String : Any] =  [String : Any]()
+            dictData["product_name"] = txt_ProductName.text!
+            dictData["product_price"] = txt_ProductPrice.text!
+            dictData["userid"] = "5"
+            
+            ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+                
+                if(isSuccess)
+                {
+                    
+                    
+                }
+                
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

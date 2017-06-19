@@ -76,8 +76,8 @@ class UserI: NSObject {
         
         print("Login response : \(userObj)")
         
-        let arrData : NSArray = userObj["userdetails"] as! NSArray
-        let dictData : [String : AnyObject]  = arrData.object(at: 0) as! [String : AnyObject]
+        //let arrData : NSArray = userObj["userdetails"] as! NSArray
+        let dictData : [String : AnyObject]  = userObj["userdetails"] as! [String : AnyObject]
         
         /*
                 self.email =  (userObj["email"] as? String ?? "")
@@ -99,8 +99,10 @@ class UserI: NSObject {
                 self.defaultUrl = (userObj["video_url"] as? String ?? "")
                 self.imageGridSize = userObj["image_grid_row"] as? Int
                 self.priceGridSize = userObj["price_grid_dimension"] as? Int
+                self.accountName = userObj["account_name"] as? String
+                self.accountNo = userObj["account_number"] as? String
         
-                UserDefaults.standard.set(userObj["userid"] as? Int, forKey: "userID")
+                UserDefaults.standard.set(dictData["userid"] as? Int, forKey: "userID")
                 UserDefaults.standard.synchronize()
         
                 print("user id : \(String(describing: self.userID!))")
@@ -108,7 +110,8 @@ class UserI: NSObject {
     }
     
     public func getUserSavedID(){
-    
+        
         self.userID = UserDefaults.standard.value(forKey: "userID") as? Int
-   }
+        
+    }
 }

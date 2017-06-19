@@ -16,11 +16,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     var productObj : ProductI?
     var setImageGrid : Int?
-    
-    //var arrProductDes : NSMutableArray = NSMutableArray()
-    //var arrProductPrice : NSMutableArray = NSMutableArray()
-
-    //// Defined new 
+    var setPriceGrid : Int?
     
     var arrProductDes = NSMutableArray()
     var arrProductPrice = NSMutableArray()
@@ -34,7 +30,31 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewDidLoad()
         
+        setIntialMethods()
+        
+    }
+    
+    override var navTitle: String {
+        
+        return "Setting"
+    }
+    
+    
+    override func gotoScanView() {
+        
+        self.performSegue(withIdentifier: "goto_scanbarcodeview", sender: nil)
+    }
+    
+    override func gotoSettingView() {
+        
+        self.performSegue(withIdentifier: "goto_settingview", sender: nil)
+    }
+    
+    func setIntialMethods(){
+        
+        
         setImageGrid = 0
+        setPriceGrid = 0
         
         leftTbl.delegate = self
         leftTbl.dataSource = self
@@ -53,34 +73,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+       callProductAPI()
+    }
+    
+    
+    func callProductAPI(){
         
-        //Get device width
-        let width = setClv.frame.width - 6
-        
-        let setItemsCount = 2
-        
-        print((Int(width)/setItemsCount)*setItemsCount)
-        
-        let setInset = Int(width) - Int(Int(width)/setItemsCount)*setItemsCount
-        
-        print(setInset)
-        
-        //set section inset as per your requirement.
-        
-        layout.sectionInset = UIEdgeInsets(top: CGFloat(setInset/setItemsCount), left: CGFloat(setInset/setItemsCount), bottom: CGFloat(setInset/setItemsCount), right: CGFloat(setInset/setItemsCount))
-        
-        //set cell item size here
-        layout.itemSize = CGSize(width: Int(width)/setItemsCount , height: Int(view.frame.height/7))
-        
-        //set Minimum spacing between 2 items
-        layout.minimumInteritemSpacing = 3
-        
-        //set minimum vertical line spacing here between two lines in collectionview
-        layout.minimumLineSpacing = 3
-        
-        //apply defined layout to collectionview
-        setClv!.collectionViewLayout = layout
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = "5"
@@ -89,8 +87,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             self.productObj = productObj
             self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
-            
-            print("Product array : \(String(describing: productObj.arrProductDesc!))")
+            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
             
             for i in (0..<self.arrProductDes.count){
                 
@@ -106,43 +103,58 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             }
             
             self.setImageGrid = Int(productObj.imageGridRowValue!)
-            
-            print(self.setImageGrid!)
+            self.setPriceGrid = Int(productObj.priceGridRowValue!)
             
             self.leftTbl.reloadData()
             self.rightTbl.reloadData()
-                        
+            
+            self.setPriceGridView(priceItems: self.setPriceGrid!)
+            
         }
+
+    }
+    
+    func setPriceGridView(priceItems: Int){
         
-       
+        //let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        let layout = setClv.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let setItemsCount:Int = priceItems
+        
+        print(setItemsCount)
+        
+        //Get device width
+        let width = Int(setClv.frame.width) - setItemsCount*setItemsCount
+        
+        print((Int(width)/setItemsCount)*setItemsCount)
+        
+        let setInset = Int(width) - Int(Int(width)/setItemsCount)*setItemsCount
+        
+        print(setInset)
+        
+        //set section inset as per your requirement.
+        
+        layout.sectionInset = UIEdgeInsets(top: CGFloat(setInset/setItemsCount), left: CGFloat(setInset/setItemsCount), bottom: CGFloat(setInset/setItemsCount), right: CGFloat(setInset/setItemsCount))
+        
+        //set cell item size here
+        layout.itemSize = CGSize(width: Int(Int(width)/setItemsCount), height: Int(view.frame.height/7))
+        
+        //set Minimum spacing between 2 items
+        layout.minimumInteritemSpacing = CGFloat(setItemsCount)
+        
+        //set minimum vertical line spacing here between two lines in collectionview
+        layout.minimumLineSpacing = CGFloat(setItemsCount)
+        
+        //apply defined layout to collectionview
+        setClv!.collectionViewLayout = layout
+        
+       // setClv.invalidateIntrinsicContentSize()
+        
+        setClv.reloadData()
         
     }
     
-    override var navTitle: String {
-        
-        return "Setting"
-    }
-    
-    //    override var showLeft: Bool{
-    //        return false
-    //    }
-    //
-    //    override var showLeftSetting: Bool{
-    //
-    //        return true
-    //    }
-    
-    
-    
-    override func gotoScanView() {
-        
-        self.performSegue(withIdentifier: "goto_scanbarcodeview", sender: nil)
-    }
-    
-    override func gotoSettingView() {
-        
-        self.performSegue(withIdentifier: "goto_settingview", sender: nil)
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -212,15 +224,17 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        
+        return setPriceGrid!
     }
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PriceCell
-        cell.lbl_Name.text = "Bikram"
-        cell.lbl_Price.text = "5.0"
+        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+        cell.lbl_Name.text = proDescObj.productName
+        cell.lbl_Price.text = proDescObj.productRate
         cell.setShadow.viewdraw(cell.setShadow.bounds)
         return cell
     }

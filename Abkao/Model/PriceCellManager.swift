@@ -13,16 +13,14 @@ class PriceCellManager: NSObject {
     
     func addNewRecord(userInfo: [String : Any], handler : @escaping (PriceCelll, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addProductImageGrid", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addProductPriceGrid", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
                 
                 let userObj = PriceCelll()
-                
-                //  print(userObj.userID!)
-                
+                userObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
                 handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })

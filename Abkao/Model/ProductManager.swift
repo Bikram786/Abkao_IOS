@@ -16,6 +16,7 @@ class ProductManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
+                
                 print(jsonDict)
                 
                 let productObj = ProductI()
@@ -23,11 +24,6 @@ class ProductManager: NSObject {
                 
                 handler(productObj,true,"Products Received")
                 
-                //userObj.userID = jsonDict.value(forKey: "userid") as? Int
-                
-                //  print(userObj.userID!)
-                
-                //handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })
     }
