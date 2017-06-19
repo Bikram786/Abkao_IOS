@@ -49,7 +49,7 @@ class PriceItemControl: AbstractControl {
                 if(isSuccess)
                 {
                     
-                    
+                    _ = self.navigationController?.popViewController(animated: true)
                 }
                 
             }

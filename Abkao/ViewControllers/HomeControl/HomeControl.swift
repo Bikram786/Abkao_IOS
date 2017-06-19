@@ -86,29 +86,33 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             self.productObj = productObj
-            self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
-            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
             
-            for i in (0..<self.arrProductDes.count){
+            if productObj.arrProductDesc?.count != 0 {
                 
-                if i % 2 == 0 {
+                self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
+                self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                
+                for i in (0..<self.arrProductDes.count){
                     
-                    self.leftData.add(self.arrProductDes[i])
+                    if i % 2 == 0 {
+                        
+                        self.leftData.add(self.arrProductDes[i])
+                        
+                    }else{
+                        
+                        self.rightData.add(self.arrProductDes[i])
+                    }
                     
-                }else{
-                    
-                    self.rightData.add(self.arrProductDes[i])
                 }
                 
+                self.setImageGrid = Int(productObj.imageGridRowValue!)
+                self.setPriceGrid = Int(productObj.priceGridRowValue!)
+                
+                self.leftTbl.reloadData()
+                self.rightTbl.reloadData()
+                
+                self.setPriceGridView(priceItems: self.setPriceGrid!)
             }
-            
-            self.setImageGrid = Int(productObj.imageGridRowValue!)
-            self.setPriceGrid = Int(productObj.priceGridRowValue!)
-            
-            self.leftTbl.reloadData()
-            self.rightTbl.reloadData()
-            
-            self.setPriceGridView(priceItems: self.setPriceGrid!)
             
         }
 

@@ -18,7 +18,6 @@ class PriceCellManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
-                
                 let userObj = PriceCelll()
                 userObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
                 handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
@@ -62,22 +61,17 @@ class PriceCellManager: NSObject {
     
     func getAllRecords(userID: [String : Any], handler : @escaping (PriceCelll, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getallrecords", headers: true, params: userID, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductInPriceGrid", headers: true, params: userID, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
                 
                 let productObj = PriceCelll()
-                //productObj.setProductsData(productObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
+                productObj.setProductPriceData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
                 
                 handler(productObj,true,"Products Received")
-                
-                //userObj.userID = jsonDict.value(forKey: "userid") as? Int
-                
-                //  print(userObj.userID!)
-                
-                //handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+               
                 
         })
     }

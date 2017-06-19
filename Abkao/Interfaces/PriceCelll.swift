@@ -11,27 +11,44 @@ import UIKit
 class PriceCelll: NSObject {
     
     //setter and getters
+    public var arrProductPrice : [ProductPriceI]?
     public var productName: String?
     public var productRate: String?
+    public var productID: Int?
     
     
     override init(){
+        self.arrProductPrice = [ProductPriceI]()
         self.productName = ""
         self.productRate = ""
+        self.productID = 0
     }
     
     func resetData(){
+        self.arrProductPrice = [ProductPriceI]()
         self.productName = ""
         self.productRate = ""
+        self.productID = 0
     }
     
     public func setProductPriceData(productInfoObj : [String : AnyObject])
     {
         
-        print(productInfoObj)
-        self.productName =  (productInfoObj["product_name"] as? String ?? "")
-        self.productRate =  (productInfoObj["product_price"] as? String ?? "")
-        
+        if let tempObj = productInfoObj["price_grid"] as? NSArray
+        {
+            for priceInfo in tempObj
+            {
+                let price  = priceInfo  as! [String : AnyObject]
+                
+                let priceDesc = ProductPriceI()
+                
+                priceDesc.setProductPriceData(productInfoObj: price)
+                
+                self.arrProductPrice?.append(priceDesc)
+            }
+            
+        }
+
     }
 
 

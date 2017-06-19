@@ -10,7 +10,9 @@ import UIKit
 
 class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
     
+    var productObj : PriceCelll?
     var getPriceGridValue:Int?
+    var arrProductPrice = NSMutableArray()
     
     @IBOutlet weak var priceTable: UITableView!
     @IBOutlet weak var setBoarderView: UIView!
@@ -28,12 +30,15 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.tableFooterView = UIView()
         setBoarderView.viewdraw(setBoarderView.bounds)
         
-        print(String(getPriceGridValue!*getPriceGridValue!))
-        
         let setValue = "Add " + String(getPriceGridValue!*getPriceGridValue!) + " Items"
         
         btn_ShowItems.setTitle(setValue, for: .normal)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        callProductAPI()
     }
     
     // MARK: - Super Class Method
@@ -42,22 +47,61 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         return "Logout"
     }
     
+    func callProductAPI(){
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "5"
+        
+        ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
+            self.arrProductPrice.removeAllObjects()
+            self.productObj = productObj
+            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+            self.priceTable.reloadData()
+            
+        }
+        
+    }
+
     //MARK: - UITableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        
+        return arrProductPrice.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceGrid", for: indexPath) as! PriceGrid
-        cell.lbl_ProductName.text = "hiiiii"
+        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+        cell.lbl_ProductName.text = proDescObj.productName
         cell.productNameView.setViewBoarder()
-        cell.lbl_ProductPrice.text = "5.0"
+        cell.lbl_ProductPrice.text = proDescObj.productRate
         cell.productPriceView.setViewBoarder()
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+            //TODO: edit the row at indexPath here
+           
+            
+        }
+        editAction.backgroundColor = .blue
+        
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
+            
+            //TODO: Delete the row at indexPath here
+            
+          
+            
+        }
+        deleteAction.backgroundColor = .red
+        
+        return [editAction,deleteAction]
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
