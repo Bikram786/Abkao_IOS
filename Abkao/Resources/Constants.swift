@@ -14,7 +14,9 @@ public struct Constants {
     static let kMainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
     
     static let baseUrl = "http://6.abkao-webservices.appspot.com/"
-        
+    
+    static let baseUrlBarCode = "http://nexportretail.azurewebsites.net/API/PriceBookQuery/GetProduct/?parameters="
+    
     enum AvenirNextCondensed : String {
         case Regular    = "AvenirNextCondensed-Regular"
         case Bold       = "AvenirNextCondensed-Bold"

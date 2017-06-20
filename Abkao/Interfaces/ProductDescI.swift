@@ -37,8 +37,13 @@ class ProductDescI: NSObject {
     {
         print(productInfoObj)
         
+        
+//        let escapedString = (productInfoObj["product_url"] as? String ?? "")
+//        let strUrl = escapedString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
+
         self.productName =  (productInfoObj["product_name"] as? String ?? "")
-        //self.productImgUrl =  (productInfoObj["country_code"] as? String ?? "")
+        self.productImgUrl =  (productInfoObj["product_url"] as? String ?? "")
+        //print("Image url : \(String(describing: (self.productImgUrl)!))")
         self.productPrice =  (productInfoObj["product_price"] as? String ?? "")
         self.productID =  (productInfoObj["product_id"] as? Int)
     }
