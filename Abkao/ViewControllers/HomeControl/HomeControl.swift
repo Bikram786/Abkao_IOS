@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import YouTubePlayer
+import AVKit
+import AVFoundation
 
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var setClv: UICollectionView!
     @IBOutlet weak var leftTbl: UITableView!
     @IBOutlet weak var rightTbl: UITableView!
+    @IBOutlet weak var youTubeView: YouTubePlayerView!
+    @IBOutlet weak var simpleVideoView: UIView!
     
     var productObj : ProductI?
     var setImageGrid : Int?
@@ -31,6 +36,22 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         super.viewDidLoad()
         
         setIntialMethods()
+        
+        simpleVideoView.isHidden = true
+        
+        //        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        //        let player = AVPlayer(url: videoURL!)
+        //        let playerController = AVPlayerViewController()
+        //        playerController.player = player
+        //        self.addChildViewController(playerController)
+        //        simpleView.addSubview(playerController.view)
+        //        playerController.view.frame = simpleView.frame
+        //        simpleView.layoutIfNeeded()
+        //        player.play()
+        
+        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
+        youTubeView.loadVideoURL(myVideoURL! as URL)
+
         
     }
     

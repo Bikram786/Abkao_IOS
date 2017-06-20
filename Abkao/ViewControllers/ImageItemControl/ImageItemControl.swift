@@ -136,10 +136,9 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 // Do something with your image here.
                 // If cropping is enabled this image will be the cropped version
                 
-                let imageData = UIImageJPEGRepresentation(image!, 0.2)
-                
-                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!
-                
+                let getImage = self?.resizeImage(image: image!, newWidth: 300)
+                let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
+                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!                
                 self?.dismiss(animated: true, completion: nil)
             }
 
@@ -160,6 +159,17 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

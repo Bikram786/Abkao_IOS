@@ -923,7 +923,27 @@
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEW-Bb-kp3">
                                         <rect key="frame" x="242" y="0.0" width="500" height="279.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d80-P3-JMG" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                                <rect key="frame" x="0.0" y="0.0" width="500" height="279.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-kG-qJb">
+                                                <rect key="frame" x="0.0" y="0.0" width="500" height="279.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="C3z-kG-qJb" firstAttribute="leading" secondItem="eEW-Bb-kp3" secondAttribute="leading" id="6rv-Qo-gdB"/>
+                                            <constraint firstAttribute="bottom" secondItem="C3z-kG-qJb" secondAttribute="bottom" id="CN9-hv-7fe"/>
+                                            <constraint firstItem="d80-P3-JMG" firstAttribute="top" secondItem="eEW-Bb-kp3" secondAttribute="top" id="H4z-Wf-yVT"/>
+                                            <constraint firstAttribute="trailing" secondItem="d80-P3-JMG" secondAttribute="trailing" id="LTS-0q-UY2"/>
+                                            <constraint firstAttribute="bottom" secondItem="d80-P3-JMG" secondAttribute="bottom" id="OCI-Bg-qkd"/>
+                                            <constraint firstItem="d80-P3-JMG" firstAttribute="leading" secondItem="eEW-Bb-kp3" secondAttribute="leading" id="Ojn-Fu-VgV"/>
+                                            <constraint firstItem="C3z-kG-qJb" firstAttribute="top" secondItem="eEW-Bb-kp3" secondAttribute="top" id="RZT-7Y-5FB"/>
+                                            <constraint firstAttribute="trailing" secondItem="C3z-kG-qJb" secondAttribute="trailing" id="Yfc-o4-fgd"/>
+                                        </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-wP-0ak">
                                         <rect key="frame" x="242" y="299.5" width="500" height="279.5"/>
@@ -1038,13 +1058,15 @@
                         <outlet property="leftTbl" destination="G1r-Z8-ody" id="VBF-Ze-pFW"/>
                         <outlet property="rightTbl" destination="AGZ-zf-kGC" id="w9G-oZ-4XI"/>
                         <outlet property="setClv" destination="vaA-wP-0ak" id="mCd-Tx-11M"/>
+                        <outlet property="simpleVideoView" destination="C3z-kG-qJb" id="2nc-Qo-0vS"/>
+                        <outlet property="youTubeView" destination="d80-P3-JMG" id="4A0-9x-I1J"/>
                         <segue destination="02r-Ra-XxG" kind="show" identifier="goto_scanbarcodeview" id="iOp-Pd-u0K"/>
                         <segue destination="yBk-j3-QLz" kind="show" identifier="goto_settingview" id="1Ma-5W-Ulc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7T-nO-jD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046" y="-598"/>
+            <point key="canvasLocation" x="2045.5078124999998" y="-598.4375"/>
         </scene>
         <!--Bar Code Scanner Control-->
         <scene sceneID="neg-4p-AuJ">

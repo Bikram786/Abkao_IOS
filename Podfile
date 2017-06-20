@@ -10,4 +10,5 @@ target 'Abkao' do
   pod 'ReachabilitySwift', '~> 3'
   pod 'SVProgressHUD'
   pod 'ALCameraViewController'
+  pod 'YouTubePlayer'
 end
