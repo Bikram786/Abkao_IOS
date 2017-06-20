@@ -7,8 +7,10 @@ target 'Abkao' do
 
   # Pods for Abkao
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'ReachabilitySwift', '~> 3'
   pod 'SVProgressHUD'
   pod 'ALCameraViewController'
   pod 'YouTubePlayer'
+  
 end

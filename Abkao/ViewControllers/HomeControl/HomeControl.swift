@@ -10,6 +10,7 @@ import UIKit
 import YouTubePlayer
 import AVKit
 import AVFoundation
+import AlamofireImage
 
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -205,6 +206,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             if tableView == leftTbl {
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                cell?.selectionStyle = .none
                 
                 if indexPath.row >= leftData.count {
                     
@@ -214,8 +216,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }else{
                     
                     let proDescObj = leftData[indexPath.row] as! ProductDescI
-                    
-                    //cell.ItemImage.image = #imageLiteral(resourceName: "test")
+                    let url = URL(string: proDescObj.productImgUrl!)
+                    cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
                     cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
@@ -227,6 +229,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             if tableView == rightTbl {
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                cell?.selectionStyle = .none
                 
                 if indexPath.row >= rightData.count {
                     cell?.lbl_ItemTitle.text = ""
@@ -235,8 +238,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }else{
                     
                     let proDescObj = rightData[indexPath.row] as! ProductDescI
-                    
-                    //cell.ItemImage.image = #imageLiteral(resourceName: "test")
+                    let url = URL(string: proDescObj.productImgUrl!)
+                    cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
                     cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
