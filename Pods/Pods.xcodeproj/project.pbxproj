@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04A620B8F7A9DF431B022A24B4355E7C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2CE2E8D5A0AF940E67063FE797C91 /* UIViewExtensions.swift */; };
-		04F70AFABCC0D9B5E02B9BA27D81938D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
 		05006BDD7301FCF2678618DEDCC69B94 /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF367122EFA63C9D8574B87BA71A975 /* UIImage+AlamofireImage.swift */; };
 		0AFDB91CAB32B63E9877CE50A73792DF /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3C0E5264EF548F6845433C23D4F2C /* PhotoLibraryViewController.swift */; };
 		0DE2B989EA1F1592E67AED334AAB6B98 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596EFD5DB145E156A89FBE3EB7F57AE6 /* CameraView.swift */; };
@@ -20,18 +19,21 @@
 		19A2983E2CC133E1C50E8FB6AEAC9D9D /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAD7B78E096CCD3C60832F87CDAE4F /* PermissionsView.swift */; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48317204BEE9AC410A43B9DDDDF36936 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		202822E4668C16D115A8F68F3ADF0E0F /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762AF89288AB2487EA1C4D66E3288085 /* ImageDownloader.swift */; };
-		26479B07464784F3BF8C0853CA049976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
+		245DAEE5793271CA5BECA7A816092142 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		27996F52CCABBD6D0874B79D1B913598 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC875B31D127A7F6B2F36AEBAD96966 /* ImageFilter.swift */; };
 		2B7B1C4B141251B7154840885562AA93 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6F1951CD3951AA0E292B71A152AC1 /* Utilities.swift */; };
 		2BD7CFD41DACC439E8C0A527F1643495 /* Request+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F04E48CC385460DA4249213777371 /* Request+AlamofireImage.swift */; };
 		2EA0415A1A8A4FFC7403E201F915F9A4 /* AFIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEA105D2FD0DFEC4CF69CCD12131121 /* AFIError.swift */; };
 		302CD58DCAF02D5DEFEE851B65F1E8B7 /* YouTubePlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C83599C815AB5D01C32C77AACB2AC8 /* YouTubePlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		304C5736AC5D49B526C709397D0CF048 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A44D3C68DAE6B4F006372608F5FE50 /* UIImageView+AlamofireImage.swift */; };
+		324D3D09812A7CE0217F3FB24A850019 /* ConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E6E689AD320FD46663CA3224AE677 /* ConfirmViewController.xib */; };
 		32EDA9ED83F4442303A46839027E152E /* AlamofireImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17AC3FF7813DF4442ACD8FE120248330 /* AlamofireImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4AF83BB0FAB3294CDB5A39C9943B5 /* TaskDelegate.swift */; };
 		37F951F2BDB75BD682C2999EB7B51A35 /* AlamofireImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E1455713AD121D7982797503D32CE4 /* AlamofireImage-dummy.m */; };
 		39157D8897D816F5870E6C5FE37019B0 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = BFDAB72508FB39355E37A5B3BEE62729 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BAB301194F36E943154F50EDA422E22 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F330B84454B7F27AD19B64C5FDB6484 /* QuartzCore.framework */; };
 		3BD24FAC0C1C25415AC53CDBAC1F57DA /* PhotoLibraryAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FFE45962B716F84160D30C6E8D9516 /* PhotoLibraryAuthorizer.swift */; };
+		3BE490C1EDA78E55174BADDDFFC37F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		45AD103A7308F4575C81A34F31B4AD4C /* ALCameraViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A86890DEEE01879A673BBD567B4EF2 /* ALCameraViewController-dummy.m */; };
 		4ECA380056303BA1AC6B94B5E6CF24A6 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 043922A6494FDD0508AB6A7EC990780A /* SVProgressHUD-dummy.m */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A98B72EA173B01DC08D58BBD365791 /* Request.swift */; };
@@ -43,46 +45,44 @@
 		613167D898FF421A6F75D1FE5D145B9B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F06CA2E46281C39ABF8AC532C03A69 /* Alamofire.framework */; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45630CEF6396E8C7517DE2CA1D495770 /* ServerTrustPolicy.swift */; };
 		67BFD91AEE97E523E7CD95D783DD2C02 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1792C357198FE0E3A7732D9D1FBE7E2 /* ConfirmViewController.swift */; };
+		6AA3C0E1E872DCFBAC06CF25C74E8664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		6D4FFBDD1446E07634AC24A82B729C44 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8342F51FEFF15657214BCC3781AC525B /* UIButtonExtensions.swift */; };
 		6FD0304952C3B88EFBD6E7CA37D6F291 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B89A045F42A0B7CCD1A9D8DFE7E787 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
-		776BC005849D0896DD668DA2FB5F7D99 /* CameraView.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A2F9500EF94D4552E480B025743DE2D /* CameraView.strings */; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB0A684467AEA774B96C8562BC877 /* SessionDelegate.swift */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38879D171BA8AF40C54C5CBBE19B9BAF /* Result.swift */; };
 		80E8A568FE3066177CA92B25F1FC8135 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3AD31DE8D3835FAAC713581586F0DC /* YouTubePlayer.swift */; };
-		8663D7FC911618F9E246EC23755C034B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D139800668A9273F6E2AAD3CC6C5128A /* QuartzCore.framework */; };
-		8D2DD0DEE4F98F6CBF26DECBBE73A092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
+		8B2D98E5E5D7EAFA2D2E4E80A5ECF5B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA2F139FE069B5582C5F91B911B4B57 /* SystemConfiguration.framework */; };
 		91BF56F2EE96EC97E18675351C4C9B30 /* CameraGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A4F7A76598AE911A7373861E75C7C /* CameraGlobals.swift */; };
+		9C7ED9EA48ECC552C945A03C8582304E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		9D7656CD20155CD527B70D8B008A2846 /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC2460D16FEF0A1CB4F493A429F1A6D8 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C0DF7AA7CADBB6AA4C1E2E71C79FB /* AFError.swift */; };
 		9FF4CA80C9575459B6E376DAD8B557AC /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03966F0CDB9F8E3E8AC1A57B510637C0 /* SVProgressAnimatedView.m */; };
+		A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		A2025C97A3BCE68FCF05882E5A4D620C /* Pods-Abkao-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FE4D42F1223D2F250253306881AE20 /* Pods-Abkao-dummy.m */; };
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA356604E14B9756596501ECC915F0FD /* NetworkReachabilityManager.swift */; };
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2F08775953361FA7335270D72ECE76 /* Alamofire-dummy.m */; };
-		AC3086EDEF6988F96FD13206C40097A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FFFBD38EE530F03BFE5FE70F6C8819 /* SystemConfiguration.framework */; };
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1124271D155DC1B13B94841259DD10E /* SessionManager.swift */; };
-		B05B56C2E90D78B5B395532DEE64FC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1437114DE7D2A05F53334724D64E3 /* MultipartFormData.swift */; };
+		B8730BF9D2821C90029DE9508C8D2857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		B8D93073BC7B63600BB2052C397F9BAF /* CameraShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD334D6F9FD22236E97C0C103F82AB74 /* CameraShot.swift */; };
+		BAC6BE3D236EE941CC400A0CDDE0E1BB /* CameraView.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A295DCA36AD69B51565AEC2C0EA227 /* CameraView.strings */; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302005DE147544C480990553C36AB6D9 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F405C2175B44210AA8C3A755C2AB2 /* ParameterEncoding.swift */; };
 		BE959C6533CBCB04A3E3D1032A48BA57 /* Pods-Abkao-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB4C5519D02BC523D2EEB8295E93C4F /* Pods-Abkao-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C46EE5087CB03E40443F1C4BBEB863A7 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714C6953315EE830DEC995F039B6747 /* SVRadialGradientLayer.m */; };
-		C51AED9C6898FA0F24873F39F8ACBD03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
 		C73BF39A4CCC3E450E102C23027F8FF8 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9A23D6328F2DC52C53EEBA6952A5A3 /* UIButton+AlamofireImage.swift */; };
-		C801A2357B4E3BC048E222A65D197612 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */; };
 		C82D76C04578BCDA05C5A6265391B649 /* CameraViewControllerConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C733272A80DB4D7466D2484C8EB970 /* CameraViewControllerConstraint.swift */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653C5A236B8FB88880D56DCC107DA3C /* Response.swift */; };
 		CC4F616136F385FA9CDEA939FA766815 /* SingleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426E91835906E9A37252A2C92580DC /* SingleImageFetcher.swift */; };
 		CFCE8F653B04D09A3EDA4F55D2772E49 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FDAD7DF4B4C922ABCE001E00D1FC89E8 /* SVProgressHUD.bundle */; };
 		D1ADD9FA19AFF58FD32941D28BE1D1DA /* CropOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AB823A57BD2279642280D1516C4C0 /* CropOverlay.swift */; };
+		D98556A3A1A7D49AD7B413381FD25F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */; };
 		D9E544B8CB42DA8DD44838F83610D8E0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26815C4C36E763C474AE42A5FE9F5B9E /* ImageCache.swift */; };
 		DDB2C3213DE715981D3E3183A8B5FB1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F022256A8EE13C34261E5FB07602C6C /* Reachability.swift */; };
 		DE1A8D219A174437C79F956E941F2907 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06911C9B76457640683776F9000F8A5 /* ImageFetcher.swift */; };
 		E1FF4985892E23B75A3381EFF830DFD5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B7C83524F20719AB0AA711E37588E /* Image.swift */; };
-		EC0C9AF7C16D80B37803F5C04703F0E5 /* ConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4BA4848CC5D03DCE44B63FC50E6FCE /* ConfirmViewController.xib */; };
+		E24F342E883FD48A9C0AE77DA41032BC /* CameraViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4A64725CCBCB0BAEC27EF5DB8C0109 /* CameraViewAssets.xcassets */; };
 		EEF987BCFB48224604D3FC617582648B /* VolumeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860A03A6B97E75B269B0FDA710BDD4C /* VolumeControl.swift */; };
-		EF8C344CE47D0DB5EFFE54EFC76F417E /* CameraViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4EF1E9C29193E5625A6A2EFC92269 /* CameraViewAssets.xcassets */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B727B4DC32A5F8628A426666622C9 /* Notifications.swift */; };
 		F2B32C3D5DDB7C59A06F094526AF7088 /* SingleImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EA0DA8DD527EDDF0D1001A2871986 /* SingleImageSaver.swift */; };
 		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A380DE61252F33F1405249DFBB0D394 /* ResponseSerialization.swift */; };
@@ -152,6 +152,7 @@
 		07B1BCCAD3E68591C31967D4EFDF3A76 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08C83599C815AB5D01C32C77AACB2AC8 /* YouTubePlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubePlayer-umbrella.h"; sourceTree = "<group>"; };
 		09C733272A80DB4D7466D2484C8EB970 /* CameraViewControllerConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraViewControllerConstraint.swift; path = ALCameraViewController/ViewController/CameraViewControllerConstraint.swift; sourceTree = "<group>"; };
+		0B4A64725CCBCB0BAEC27EF5DB8C0109 /* CameraViewAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = CameraViewAssets.xcassets; path = ALCameraViewController/CameraViewAssets.xcassets; sourceTree = "<group>"; };
 		0C7EA1ACC7B12F85DD8539194A004CAB /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
 		162B7C83524F20719AB0AA711E37588E /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Source/Image.swift; sourceTree = "<group>"; };
 		1653C5A236B8FB88880D56DCC107DA3C /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		3AC875B31D127A7F6B2F36AEBAD96966 /* ImageFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFilter.swift; path = Source/ImageFilter.swift; sourceTree = "<group>"; };
 		3BE2CE2E8D5A0AF940E67063FE797C91 /* UIViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = ALCameraViewController/Utilities/UIViewExtensions.swift; sourceTree = "<group>"; };
 		3E9FAD70B7577B85225A6A3EEF231A41 /* YouTubePlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = YouTubePlayer.modulemap; sourceTree = "<group>"; };
+		3F330B84454B7F27AD19B64C5FDB6484 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		40B89A045F42A0B7CCD1A9D8DFE7E787 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		427C8E7D945009F1E8DB9CDCC515E4D5 /* Pods_Abkao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Abkao.framework; path = "Pods-Abkao.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C79DBC5F20D14C0C1CC7FC9BACD750 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,12 +213,12 @@
 		865B543D3A297A6853277C34C9CD7C3B /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
 		882F865CFCB970679C0847AE8133A604 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		88C15DC7EC0930CC11D796FDF66B7F80 /* Pods-Abkao-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Abkao-acknowledgements.plist"; sourceTree = "<group>"; };
-		8A2F9500EF94D4552E480B025743DE2D /* CameraView.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = CameraView.strings; path = ALCameraViewController/CameraView.strings; sourceTree = "<group>"; };
 		8F6EA0DA8DD527EDDF0D1001A2871986 /* SingleImageSaver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleImageSaver.swift; path = ALCameraViewController/Utilities/SingleImageSaver.swift; sourceTree = "<group>"; };
 		91C1BE4E15D47E0EB32AD9F265FB0D6B /* ALCameraViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALCameraViewController-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9732C79DC3210C3B214D50F03159703E /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		9963C387B0D35A024FDCF24C55E19AB2 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		9C6E6E689AD320FD46663CA3224AE677 /* ConfirmViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ConfirmViewController.xib; path = ALCameraViewController/ViewController/ConfirmViewController.xib; sourceTree = "<group>"; };
 		9D38F40CF832FF91BA3AA0D04C6CA532 /* ImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = ALCameraViewController/Views/ImageCell.swift; sourceTree = "<group>"; };
 		9EE1437114DE7D2A05F53334724D64E3 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		A4E1455713AD121D7982797503D32CE4 /* AlamofireImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireImage-dummy.m"; sourceTree = "<group>"; };
@@ -230,31 +232,29 @@
 		BFDAB72508FB39355E37A5B3BEE62729 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		C21AB823A57BD2279642280D1516C4C0 /* CropOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropOverlay.swift; path = ALCameraViewController/Views/CropOverlay.swift; sourceTree = "<group>"; };
 		C2C5746F914C06E9B45D334FD10FC5B7 /* ALCameraViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ALCameraViewController.modulemap; sourceTree = "<group>"; };
-		CB4BA4848CC5D03DCE44B63FC50E6FCE /* ConfirmViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ConfirmViewController.xib; path = ALCameraViewController/ViewController/ConfirmViewController.xib; sourceTree = "<group>"; };
 		CB88C8B8553893B84AF32D885A02A0C2 /* Pods-Abkao-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Abkao-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CD334D6F9FD22236E97C0C103F82AB74 /* CameraShot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraShot.swift; path = ALCameraViewController/Utilities/CameraShot.swift; sourceTree = "<group>"; };
-		D139800668A9273F6E2AAD3CC6C5128A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		D2DA34DDE576D8129F342C376C138BCA /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		D3603AFFD43EFB4ED4B580BA93C8C925 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EA250CBFD29FF768D229CD2911B36F /* CameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ALCameraViewController/ViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		D860A03A6B97E75B269B0FDA710BDD4C /* VolumeControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VolumeControl.swift; path = ALCameraViewController/Utilities/VolumeControl.swift; sourceTree = "<group>"; };
 		DA1C068B4B4D3F1776E8313D3C420896 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DFF4EF1E9C29193E5625A6A2EFC92269 /* CameraViewAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = CameraViewAssets.xcassets; path = ALCameraViewController/CameraViewAssets.xcassets; sourceTree = "<group>"; };
+		DFA2F139FE069B5582C5F91B911B4B57 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		E06911C9B76457640683776F9000F8A5 /* ImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = ALCameraViewController/Utilities/ImageFetcher.swift; sourceTree = "<group>"; };
 		E1792C357198FE0E3A7732D9D1FBE7E2 /* ConfirmViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConfirmViewController.swift; path = ALCameraViewController/ViewController/ConfirmViewController.swift; sourceTree = "<group>"; };
 		E23F04E48CC385460DA4249213777371 /* Request+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Request+AlamofireImage.swift"; path = "Source/Request+AlamofireImage.swift"; sourceTree = "<group>"; };
 		E68B09904BA96091FAFD014EAEB83EE1 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
 		E6FE4D42F1223D2F250253306881AE20 /* Pods-Abkao-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Abkao-dummy.m"; sourceTree = "<group>"; };
-		E7FFFBD38EE530F03BFE5FE70F6C8819 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		E8047EF54468996A7760AEA367CD4DAE /* AlamofireImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireImage-prefix.pch"; sourceTree = "<group>"; };
 		E9A98B72EA173B01DC08D58BBD365791 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		EBB4C5519D02BC523D2EEB8295E93C4F /* Pods-Abkao-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Abkao-umbrella.h"; sourceTree = "<group>"; };
+		EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC2F08775953361FA7335270D72ECE76 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		EF426E91835906E9A37252A2C92580DC /* SingleImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleImageFetcher.swift; path = ALCameraViewController/Utilities/SingleImageFetcher.swift; sourceTree = "<group>"; };
 		F1E6F1951CD3951AA0E292B71A152AC1 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ALCameraViewController/Utilities/Utilities.swift; sourceTree = "<group>"; };
 		F251BEF8B1BB4C0744195782DD656707 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		F5AE03D99F243A8A94C8272B4ADA015D /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		F8A295DCA36AD69B51565AEC2C0EA227 /* CameraView.strings */ = {isa = PBXFileReference; includeInIndex = 1; name = CameraView.strings; path = ALCameraViewController/CameraView.strings; sourceTree = "<group>"; };
 		FA356604E14B9756596501ECC915F0FD /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		FA8B727B4DC32A5F8628A426666622C9 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		FB9A23D6328F2DC52C53EEBA6952A5A3 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F70AFABCC0D9B5E02B9BA27D81938D /* Foundation.framework in Frameworks */,
+				3BE490C1EDA78E55174BADDDFFC37F5A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C801A2357B4E3BC048E222A65D197612 /* Foundation.framework in Frameworks */,
+				D98556A3A1A7D49AD7B413381FD25F23 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05B56C2E90D78B5B395532DEE64FC5F /* Foundation.framework in Frameworks */,
+				6AA3C0E1E872DCFBAC06CF25C74E8664 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +293,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D2DD0DEE4F98F6CBF26DECBBE73A092 /* Foundation.framework in Frameworks */,
-				8663D7FC911618F9E246EC23755C034B /* QuartzCore.framework in Frameworks */,
+				9C7ED9EA48ECC552C945A03C8582304E /* Foundation.framework in Frameworks */,
+				3BAB301194F36E943154F50EDA422E22 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */,
+				A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				613167D898FF421A6F75D1FE5D145B9B /* Alamofire.framework in Frameworks */,
-				26479B07464784F3BF8C0853CA049976 /* Foundation.framework in Frameworks */,
+				245DAEE5793271CA5BECA7A816092142 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,8 +319,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51AED9C6898FA0F24873F39F8ACBD03 /* Foundation.framework in Frameworks */,
-				AC3086EDEF6988F96FD13206C40097A6 /* SystemConfiguration.framework in Frameworks */,
+				B8730BF9D2821C90029DE9508C8D2857 /* Foundation.framework in Frameworks */,
+				8B2D98E5E5D7EAFA2D2E4E80A5ECF5B0 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +339,16 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ReachabilitySwift";
+			sourceTree = "<group>";
+		};
+		530B85A45665C2952FCEF95EF2C81D11 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58CC610A2F10176DC47E7FFE27686 /* Foundation.framework */,
+				3F330B84454B7F27AD19B64C5FDB6484 /* QuartzCore.framework */,
+				DFA2F139FE069B5582C5F91B911B4B57 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		535310D9BADBD46C9F644EF3ED9ED6DB /* ALCameraViewController */ = {
@@ -362,7 +372,7 @@
 				3BE2CE2E8D5A0AF940E67063FE797C91 /* UIViewExtensions.swift */,
 				F1E6F1951CD3951AA0E292B71A152AC1 /* Utilities.swift */,
 				D860A03A6B97E75B269B0FDA710BDD4C /* VolumeControl.swift */,
-				EE65ADA76A9DA51AAF4D6E060B90B3A0 /* Resources */,
+				6E443A17057B2DDC0B25A3DBBB1031A3 /* Resources */,
 				B7E2CAE5BB4114C764C3EF379B35C841 /* Support Files */,
 			);
 			name = ALCameraViewController;
@@ -401,14 +411,14 @@
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
-		6AC14164D1BDC15440BBFC5B366E2BFE /* iOS */ = {
+		6E443A17057B2DDC0B25A3DBBB1031A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DEFFE5D14E8B6CEC9F694CF86B8A325E /* Foundation.framework */,
-				D139800668A9273F6E2AAD3CC6C5128A /* QuartzCore.framework */,
-				E7FFFBD38EE530F03BFE5FE70F6C8819 /* SystemConfiguration.framework */,
+				F8A295DCA36AD69B51565AEC2C0EA227 /* CameraView.strings */,
+				0B4A64725CCBCB0BAEC27EF5DB8C0109 /* CameraViewAssets.xcassets */,
+				9C6E6E689AD320FD46663CA3224AE677 /* ConfirmViewController.xib */,
 			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		77E4BE19F4D489D3F379533B9E6DF844 /* Resources */ = {
@@ -506,7 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				26F06CA2E46281C39ABF8AC532C03A69 /* Alamofire.framework */,
-				6AC14164D1BDC15440BBFC5B366E2BFE /* iOS */,
+				530B85A45665C2952FCEF95EF2C81D11 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -579,16 +589,6 @@
 				54E0573B7DEB0B11A3C5873CA8B5909A /* YouTubePlayer.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EE65ADA76A9DA51AAF4D6E060B90B3A0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8A2F9500EF94D4552E480B025743DE2D /* CameraView.strings */,
-				DFF4EF1E9C29193E5625A6A2EFC92269 /* CameraViewAssets.xcassets */,
-				CB4BA4848CC5D03DCE44B63FC50E6FCE /* ConfirmViewController.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		F6606D73C0FE7DB9D896EFAAD4FE4CF5 /* Support Files */ = {
@@ -814,7 +814,7 @@
 			buildPhases = (
 				BAB486A2A6E2C0A5A03FD3435FD75320 /* Sources */,
 				2C64B1D7F92FF76BD0D1CDA8F9EC103B /* Frameworks */,
-				4E1A17333FAB145991373207913351ED /* Resources */,
+				FEBA30AD313107745D4D6F657F125E5D /* Resources */,
 				E27F76F016316C2D92C5B45E3F9B660D /* Headers */,
 			);
 			buildRules = (
@@ -832,7 +832,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -867,21 +867,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E1A17333FAB145991373207913351ED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				776BC005849D0896DD668DA2FB5F7D99 /* CameraView.strings in Resources */,
-				EF8C344CE47D0DB5EFFE54EFC76F417E /* CameraViewAssets.xcassets in Resources */,
-				EC0C9AF7C16D80B37803F5C04703F0E5 /* ConfirmViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		942E3F3C00D547F57F40115FA01B3E35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFCE8F653B04D09A3EDA4F55D2772E49 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBA30AD313107745D4D6F657F125E5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC6BE3D236EE941CC400A0CDDE0E1BB /* CameraView.strings in Resources */,
+				E24F342E883FD48A9C0AE77DA41032BC /* CameraViewAssets.xcassets in Resources */,
+				324D3D09812A7CE0217F3FB24A850019 /* ConfirmViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,16 +1042,47 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		076EFA6009042EE9DC6C3E5FE5FBA213 /* Debug */ = {
+		0A29B6F510198AF64EFD762EF6FA97A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A73C511F23F8A6A0ED1066A9C1F8C178 /* AlamofireImage.xcconfig */;
+			baseConfigurationReference = 79B6144E1B589433590D9C3B06B14AEC /* Alamofire.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		168AC353350A012966FF45AF002B7312 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A73C511F23F8A6A0ED1066A9C1F8C178 /* AlamofireImage.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1064,46 +1095,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = AlamofireImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		31B29D72BB1CF5AFE634907C010E6224 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 865B543D3A297A6853277C34C9CD7C3B /* ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1111,11 +1106,10 @@
 			};
 			name = Release;
 		};
-		4ACA63D69F97FDF70CF87508AB56CB85 /* Debug */ = {
+		1915CB331620E4A1CDF6B383E59A38D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 058BF17B256E07B86686FF9183FB8F54 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1144,12 +1138,44 @@
 			};
 			name = Debug;
 		};
-		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+		23A9FF901AC8D9528DE399D7246F51A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C3614EF0B1DC6435D24899D22A76447 /* YouTubePlayer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YouTubePlayer/YouTubePlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YouTubePlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YouTubePlayer/YouTubePlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = YouTubePlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1157,13 +1183,10 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -1192,16 +1215,15 @@
 			};
 			name = Debug;
 		};
-		5406F469878A33833E1E37167B463927 /* Release */ = {
+		708A3EB40A9780E5EFBACFC2C752A79A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A73C511F23F8A6A0ED1066A9C1F8C178 /* AlamofireImage.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1214,45 +1236,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = AlamofireImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5438FEEB45375680487D33E0D69A3ECE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 865B543D3A297A6853277C34C9CD7C3B /* ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1261,119 +1248,10 @@
 			};
 			name = Debug;
 		};
-		7D072D0D174F12EAACC1862DA756E67A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79B6144E1B589433590D9C3B06B14AEC /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8E330C83728FE6074A315916D2DA2103 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E581C71517D8EA72735F7A61B09C920 /* Pods-Abkao.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Abkao/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Abkao/Pods-Abkao.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Abkao;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		941788C19A8316C0A9CFB737B2FBA92E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C3614EF0B1DC6435D24899D22A76447 /* YouTubePlayer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/YouTubePlayer/YouTubePlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YouTubePlayer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YouTubePlayer/YouTubePlayer.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = YouTubePlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		980844EBC6C62E0B45E38CCA761C4411 /* Release */ = {
+		785A721F6305264AC3B713DA4E64C4A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C5B5C74C3771D2EAAC05A69F2AAF46B /* ALCameraViewController.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1395,7 +1273,6 @@
 				PRODUCT_NAME = ALCameraViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1403,11 +1280,42 @@
 			};
 			name = Release;
 		};
-		A48A5A2091C1F4C139D05B310EDBAD07 /* Release */ = {
+		7B4C83AD4DFE718188023DED878A283D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865B543D3A297A6853277C34C9CD7C3B /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ReachabilitySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		832CCC58D32A6D7C7DDA12EE736E03E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 058BF17B256E07B86686FF9183FB8F54 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1436,11 +1344,10 @@
 			};
 			name = Release;
 		};
-		AB54C56135B636C12D3711B678B5C2BD /* Release */ = {
+		852D27B439BFEEE0A880AFF59883E800 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C3614EF0B1DC6435D24899D22A76447 /* YouTubePlayer.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1462,7 +1369,6 @@
 				PRODUCT_NAME = YouTubePlayer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1470,11 +1376,43 @@
 			};
 			name = Release;
 		};
-		B15F01EBE71D9D2C1F7B5810DFD71597 /* Release */ = {
+		98764EFF7C509CB5EAB0FC79571C624C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C5B5C74C3771D2EAAC05A69F2AAF46B /* ALCameraViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ALCameraViewController/ALCameraViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ALCameraViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ALCameraViewController/ALCameraViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ALCameraViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9FEE29494CC57F92014D731C79D2F4A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C7EA1ACC7B12F85DD8539194A004CAB /* Pods-Abkao.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1500,20 +1438,17 @@
 				PRODUCT_NAME = Pods_Abkao;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1521,13 +1456,10 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -1552,11 +1484,79 @@
 			};
 			name = Release;
 		};
-		C9660A42FEDD040185578ADA021EC8E0 /* Debug */ = {
+		D8C44EEA752E56E80FB8AA1B59382A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E581C71517D8EA72735F7A61B09C920 /* Pods-Abkao.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abkao/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abkao/Pods-Abkao.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abkao;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DF0B8848774747E5CF140EE8BBA82639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865B543D3A297A6853277C34C9CD7C3B /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ReachabilitySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F383079BFBF927813EA3613CFB679FDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79B6144E1B589433590D9C3B06B14AEC /* Alamofire.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1578,42 +1578,6 @@
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D7421BAA7A7EDA758D2ABECD1512DEB7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C5B5C74C3771D2EAAC05A69F2AAF46B /* ALCameraViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ALCameraViewController/ALCameraViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ALCameraViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ALCameraViewController/ALCameraViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ALCameraViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1628,8 +1592,8 @@
 		01F2198AF9DCCF3700AE9DD21E64D480 /* Build configuration list for PBXNativeTarget "AlamofireImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				076EFA6009042EE9DC6C3E5FE5FBA213 /* Debug */,
-				5406F469878A33833E1E37167B463927 /* Release */,
+				708A3EB40A9780E5EFBACFC2C752A79A /* Debug */,
+				168AC353350A012966FF45AF002B7312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1637,8 +1601,8 @@
 		1EBDC596767304666B9D438FB43AE776 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5438FEEB45375680487D33E0D69A3ECE /* Debug */,
-				31B29D72BB1CF5AFE634907C010E6224 /* Release */,
+				DF0B8848774747E5CF140EE8BBA82639 /* Debug */,
+				7B4C83AD4DFE718188023DED878A283D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1646,8 +1610,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
-				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1655,8 +1619,8 @@
 		419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9660A42FEDD040185578ADA021EC8E0 /* Debug */,
-				7D072D0D174F12EAACC1862DA756E67A /* Release */,
+				F383079BFBF927813EA3613CFB679FDE /* Debug */,
+				0A29B6F510198AF64EFD762EF6FA97A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1664,8 +1628,8 @@
 		422E7C87B2632A84EF30A44BB3DFFB0B /* Build configuration list for PBXNativeTarget "Pods-Abkao" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8E330C83728FE6074A315916D2DA2103 /* Debug */,
-				B15F01EBE71D9D2C1F7B5810DFD71597 /* Release */,
+				D8C44EEA752E56E80FB8AA1B59382A54 /* Debug */,
+				9FEE29494CC57F92014D731C79D2F4A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1673,8 +1637,8 @@
 		4A98E261EBFA7C96E27083EA92342E1C /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4ACA63D69F97FDF70CF87508AB56CB85 /* Debug */,
-				A48A5A2091C1F4C139D05B310EDBAD07 /* Release */,
+				1915CB331620E4A1CDF6B383E59A38D0 /* Debug */,
+				832CCC58D32A6D7C7DDA12EE736E03E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1682,8 +1646,8 @@
 		990365DB049AEAE20125A3D9250B809C /* Build configuration list for PBXNativeTarget "YouTubePlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				941788C19A8316C0A9CFB737B2FBA92E /* Debug */,
-				AB54C56135B636C12D3711B678B5C2BD /* Release */,
+				23A9FF901AC8D9528DE399D7246F51A4 /* Debug */,
+				852D27B439BFEEE0A880AFF59883E800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1691,8 +1655,8 @@
 		FD90E44CDD34EB5E733256DD755BB941 /* Build configuration list for PBXNativeTarget "ALCameraViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D7421BAA7A7EDA758D2ABECD1512DEB7 /* Debug */,
-				980844EBC6C62E0B45E38CCA761C4411 /* Release */,
+				98764EFF7C509CB5EAB0FC79571C624C /* Debug */,
+				785A721F6305264AC3B713DA4E64C4A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
