@@ -17,10 +17,11 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     var sendFinalImage = ""
     
     @IBOutlet weak var setViewShadow: UIView!
-    @IBOutlet weak var txt_ImageURL: UITextField!
+    @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var txt_ProductName: UITextField!
     @IBOutlet weak var txt_ProductPrice: UITextField!    
     @IBOutlet weak var txt_VideoURL: UITextField!
+    @IBOutlet weak var setupImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,12 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         
         imagePicker.delegate = self
         setViewShadow.viewdraw(setViewShadow.bounds)
-        txt_ImageURL.addShadowToTextfield()
+        imageView.setViewBoarder()
         txt_ProductName.addShadowToTextfield()
         txt_ProductPrice.addShadowToTextfield()
         txt_VideoURL.addShadowToTextfield()
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapBlurButton(_:)))
+        setViewShadow.addGestureRecognizer(tapGesture)
     }
     
     
@@ -56,12 +58,9 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
 //        dismiss(animated: true, completion: nil)
 //    }
 
-    
-    
-    @IBAction func btn_AddImageAction(_ sender: UIButton) {
+    func tapBlurButton(_ sender: UITapGestureRecognizer) {
         
         setImageFromGaleryOrCamera()
-        
     }
     
     @IBAction func btn_SaveAction(_ sender: UIButton) {
@@ -69,8 +68,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_name"] = "Guru 12"
         dictData["product_price"] = "20"
-        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
-        
+        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"        
         var  imageDictData : [String : Any] =  [String : Any]()
         imageDictData["mimetype"] = "image/jpeg"
         imageDictData["filecontent"] = sendFinalImage
@@ -137,6 +135,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 // If cropping is enabled this image will be the cropped version
                 
                 let getImage = self?.resizeImage(image: image!, newWidth: 300)
+                self?.setupImage.image = getImage
                 let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
                 self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!                
                 self?.dismiss(animated: true, completion: nil)

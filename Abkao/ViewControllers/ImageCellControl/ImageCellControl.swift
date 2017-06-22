@@ -47,6 +47,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             print(productObj)
+            
             self.arrProductImages.removeAllObjects()
             self.productObj = productObj
             self.arrProductImages = (productObj.arrProductImage as! NSMutableArray).mutableCopy() as! NSMutableArray
