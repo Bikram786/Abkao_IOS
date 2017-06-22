@@ -36,7 +36,7 @@ extension NSDate{
     }
     
     
-   class func getDateComponentForDate(stringDateTime : String,timeZone : String)-> String
+   class func getDateComponentForDate(stringDateTime : String, timeZone : String)-> String
     {
        
         let dateFormatter = NSDate.getDateFormatter(timeZone: timeZone,dateFormat: dateTimeFormat)
@@ -61,6 +61,38 @@ extension NSDate{
         
         return dateFormatterTime.string(from: date!)
 
+    }
+    
+    class func getDateObj(formaterType : String, dateString : String) -> Date
+    {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.timeZone = NSTimeZone.system
+        let strDt = dateFormatter.string(from: NSDate() as Date)
+//        print(strDt)
+//        print(strDt+" "+dateString)
+        
+        dateFormatter.dateFormat = formaterType
+       
+        return dateFormatter.date(from: strDt+" "+dateString)!
+    }
+    
+    /*
+    func getDayName(dateObj : Date) -> (String?,String?,String?){
+        
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: dateObj)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components
+        
+        return (year,month,day)
+    }
+    */
+  func isBetweeen(date date1: NSDate, andDate date2: NSDate) -> Bool {
+        return date1.compare(self as Date) == self.compare(date2 as Date)
     }
    
     

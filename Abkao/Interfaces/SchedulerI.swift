@@ -40,7 +40,7 @@ class SchedulerI: NSObject {
     public func setSchedules(scheduleObj : [String : AnyObject])
     {
         self.productVedUrl =  (scheduleObj["video_link"] as? String ?? "")
-        self.scheduleID = Int((scheduleObj["scheduler_id"] as? String)!)
+        self.scheduleID = Int((scheduleObj["scheduler_id"] as? Int)!)
         self.startTime = (scheduleObj["start_time"] as? String)!
         self.endTime = (scheduleObj["end_time"] as? String)!
         self.arrDays = scheduleObj["days"] as? NSArray as? [String]        

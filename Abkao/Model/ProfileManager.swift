@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileManager: NSObject {
 
-    let userObj : UserI?
+    var userObj : UserI?
     
     override init()
     {
