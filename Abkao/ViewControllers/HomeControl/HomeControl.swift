@@ -53,6 +53,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
         youTubeView.loadVideoURL(myVideoURL! as URL)
 
+    
         
     }
     
@@ -96,6 +97,19 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.tableFooterView = UIView()
         
        callProductAPI()
+    }
+    
+    func getProductsByDay() {
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "5"
+        dictData["day"] = "Mon"
+        
+        ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(dictData: dictData) { (arrSchduleObj, isSuccess, responseMessage) in
+            
+            print("Scheduled videos recieved")
+        }
+        
     }
     
     
