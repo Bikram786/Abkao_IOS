@@ -17,6 +17,8 @@ public struct Constants {
     
     static let baseUrlBarCode = "http://nexportretail.azurewebsites.net/API/PriceBookQuery/GetProduct/?parameters="
     
+    static let kDateFormatter = "MM-dd-yyyy hh:mma"
+    
     enum AvenirNextCondensed : String {
         case Regular    = "AvenirNextCondensed-Regular"
         case Bold       = "AvenirNextCondensed-Bold"

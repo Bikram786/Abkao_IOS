@@ -23,7 +23,9 @@ class LoginControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStartingFields()       
+        setStartingFields()
+        
+        
     }
         
     func setStartingFields() {
@@ -58,6 +60,10 @@ class LoginControl: AbstractControl {
             if(isSuccess)
             {
                  print(userObj.userID!)
+                
+                //Save Custom Object in UserDefault
+                let encodedData = NSKeyedArchiver.archivedData(withRootObject: userObj)
+                UserDefaults.standard.set(encodedData, forKey: "userinfo")
                 
                 self.performSegue(withIdentifier: "goto_homeview", sender: nil)
             }

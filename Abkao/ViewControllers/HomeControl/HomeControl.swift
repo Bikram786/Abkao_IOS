@@ -36,6 +36,16 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewDidLoad()
         
+        if let data = UserDefaults.standard.data(forKey: "userinfo"),
+            
+            let myUserObj = NSKeyedUnarchiver.unarchiveObject(with: data) as? UserI {
+            
+            ModelManager.sharedInstance.profileManager.userObj = myUserObj
+            
+        } else {
+            print("User")
+        }
+        
         setIntialMethods()
         
         simpleVideoView.isHidden = true
@@ -52,8 +62,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
         youTubeView.loadVideoURL(myVideoURL! as URL)
-
-    
         
     }
     
@@ -97,24 +105,62 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.tableFooterView = UIView()
         
        callProductAPI()
+       
+       getProductsByDay(strDay: "Mon")
     }
     
-    func getProductsByDay() {
-        
-        var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
-        dictData["day"] = "Mon"
-        
-        ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(dictData: dictData) { (arrSchduleObj, isSuccess, responseMessage) in
+    func getProductsByDay(strDay : String) {
+
+        ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDay) { (arrSchduleObj, isSuccess, responseMessage) in
             
+            print(arrSchduleObj!)
             print("Scheduled videos recieved")
+            
+            for sheObj in arrSchduleObj!
+            {
+                let tempSchObj = sheObj as SchedulerI
+                
+                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:40PM")
+                let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "07:30PM")
+                
+                
+                print("\(stDate)")
+                 let fallsBetween = (stDate...endDate).contains(Date())
+                
+                if(fallsBetween)
+                {
+                    self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
+                    print("time lies in ved Playing time")
+                }
+                else
+                {
+                    print("time does not lies in ved Playing time")
+                }
+            
+                
+            }
+            
         }
         
     }
     
     
-    func callProductAPI(){
+    func playVideoInPlayer(strUrl : String)
+    {
+        youTubeView.clear()
+
+        let myVideoURL = NSURL(string: strUrl)
+        youTubeView.loadVideoURL(myVideoURL! as URL)
         
+        self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 10)
+    }
+    
+    func playVed() {
+        youTubeView.play()
+    }
+    
+    
+    func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = "5"

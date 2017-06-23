@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserI: NSObject {
+class UserI: NSObject,NSCoding {
     
     //setter and getters
     public var email: String?
@@ -25,7 +25,6 @@ class UserI: NSObject {
     public var telephone: String?
     public var username: String?
     public var userID: Int?
-    
     public var imageGridSize: Int?
     public var priceGridSize: Int?
     public var defaultUrl : String?
@@ -51,6 +50,7 @@ class UserI: NSObject {
         self.userID = 0
     }
     
+    
     func resetData(){
         self.email = ""
         self.firstName = ""
@@ -71,6 +71,50 @@ class UserI: NSObject {
         self.priceGridSize = 0
     }
     
+    
+    required init(coder decoder: NSCoder) {
+        self.email = decoder.decodeObject(forKey: "email") as? String ?? ""
+        self.firstName = decoder.decodeObject(forKey: "firstName") as? String ?? ""
+        self.lastName = decoder.decodeObject(forKey: "lastName") as? String ?? ""
+        self.password = decoder.decodeObject(forKey: "password") as? String ?? ""
+        self.accountName = decoder.decodeObject(forKey: "accountName") as? String ?? ""
+        self.address = decoder.decodeObject(forKey: "address") as? String ?? ""
+        self.city = decoder.decodeObject(forKey: "city") as? String ?? ""
+        self.state = decoder.decodeObject(forKey: "state") as? String ?? ""
+        self.zip = decoder.decodeObject(forKey: "zip") as? String ?? ""
+        self.country = decoder.decodeObject(forKey: "country") as? String ?? ""
+        self.telephone = decoder.decodeObject(forKey: "telephone") as? String ?? ""
+        self.username = decoder.decodeObject(forKey: "username") as? String ?? ""
+        self.defaultUrl = decoder.decodeObject(forKey: "defaultUrl") as? String ?? ""
+        self.userID = decoder.decodeObject(forKey: "userID") as? Int ?? decoder.decodeInteger(forKey: "userID")
+        self.priceGridSize = decoder.decodeObject(forKey: "priceGridSize") as? Int ?? decoder.decodeInteger(forKey: "priceGridSize")
+        self.imageGridSize = decoder.decodeObject(forKey: "imageGridSize") as? Int ?? decoder.decodeInteger(forKey: "imageGridSize")
+    }
+    
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(email, forKey: "email")
+        coder.encode(firstName, forKey: "firstName")
+        coder.encode(lastName, forKey: "lastName")
+        coder.encode(password, forKey: "password")
+        coder.encode(accountName, forKey: "accountName")
+        coder.encode(address, forKey: "address")
+        coder.encode(city, forKey: "city")
+        coder.encode(state, forKey: "state")
+        coder.encode(zip, forKey: "zip")
+        coder.encode(country, forKey: "country")
+        coder.encode(telephone, forKey: "telephone")
+        coder.encode(username, forKey: "username")
+        coder.encode(defaultUrl, forKey: "defaultUrl")
+        coder.encode(userID, forKey: "userID")
+        coder.encode(priceGridSize, forKey: "priceGridSize")
+        coder.encode(imageGridSize, forKey: "imageGridSize")
+    }
+    
+    
+    
+
+    
     public func setUserInfo(userObj : [String : AnyObject])
     {
         
@@ -79,33 +123,19 @@ class UserI: NSObject {
         //let arrData : NSArray = userObj["userdetails"] as! NSArray
         let dictData : [String : AnyObject]  = userObj["userdetails"] as! [String : AnyObject]
         
-        /*
-                self.email =  (userObj["email"] as? String ?? "")
-                self.firstName =  (userObj["first_name"] as? String ?? "")
-                self.lastName = (userObj["last_name"] as? String ?? "")
-                self.password = (userObj["password"] as? String ?? "")
-                self.accountName = (userObj["account_name"] as? String ?? "")
-                self.accountNo = (userObj["account_number"] as? String ?? "")
-                self.address = (userObj["address"] as? String ?? "")
-                self.city = (userObj["city"] as? String ?? "")
-                self.state = (userObj["state"] as? String ?? "")
-                self.zip = (userObj["zip"] as? String ?? "")
-                self.country = (userObj["country"] as? String ?? "")
-                self.telephone = (userObj["telephone"] as? String ?? "")
-                self.username = (userObj["username"] as? String ?? "")
-        */
+        self.userID = dictData["userid"] as? Int
+        self.accountName = dictData["account_name"] as? String ?? ""
+        self.accountNo =   dictData["account_number"] as? String ?? ""
         
-                self.userID = dictData["userid"] as? Int
-                self.defaultUrl = (userObj["video_url"] as? String ?? "")
-                self.imageGridSize = userObj["image_grid_row"] as? Int
-                self.priceGridSize = userObj["price_grid_dimension"] as? Int
-                self.accountName = userObj["account_name"] as? String
-                self.accountNo = userObj["account_number"] as? String
+        self.defaultUrl    = userObj["video_url"] as? String ?? ""
+        self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
+        self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
         
-                UserDefaults.standard.set(dictData["userid"] as? Int, forKey: "userID")
-                UserDefaults.standard.synchronize()
         
-                print("user id : \(String(describing: self.userID!))")
+        UserDefaults.standard.set(dictData["userid"] as? Int, forKey: "userID")
+        UserDefaults.standard.synchronize()
+        
+        print("user id : \(String(describing: self.userID!))")
         
     }
     

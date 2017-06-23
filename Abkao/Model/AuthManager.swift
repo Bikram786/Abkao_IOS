@@ -56,6 +56,8 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
+                ModelManager.sharedInstance.profileManager.userObj?.resetData()
+                
                 handler(true,"User logout successfully")
                 
         })
