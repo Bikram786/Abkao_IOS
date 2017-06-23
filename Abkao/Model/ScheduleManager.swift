@@ -72,7 +72,7 @@ class ScheduleManager: NSObject {
         
     }
     
-    func deleteSchedule(userID: [String : Any], handler : @escaping (SchedulerI, Bool , String) -> Void)
+    func deleteSchedule(userID: [String : Any], handler : @escaping (Bool , String) -> Void)
     {
     
     }

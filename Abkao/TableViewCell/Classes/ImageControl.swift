@@ -10,7 +10,8 @@ import UIKit
 
 class ImageControl: UITableViewCell {
 
-    @IBOutlet weak var lbl_ImageURL: UILabel!
+    @IBOutlet weak var setImageView: UIView!
+    @IBOutlet weak var setImage: UIImageView!
     @IBOutlet weak var lbl_ProductName: UILabel!
     @IBOutlet weak var lbl_ProductPrice: UILabel!
     @IBOutlet weak var lbl_VideoURL: UILabel!

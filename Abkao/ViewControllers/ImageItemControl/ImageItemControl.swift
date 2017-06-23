@@ -10,18 +10,21 @@ import UIKit
 import ALCameraViewController
 
 class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
     
     
+    var getPreviousProducts = ProductDescI()
+    var status:String?
     let imagePicker = UIImagePickerController()
     var sendFinalImage = ""
     
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var txt_ProductName: UITextField!
-    @IBOutlet weak var txt_ProductPrice: UITextField!    
+    @IBOutlet weak var txt_ProductPrice: UITextField!
     @IBOutlet weak var txt_VideoURL: UITextField!
     @IBOutlet weak var setupImage: UIImageView!
+    
+    @IBOutlet weak var btn_Save: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,18 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     
     func setStartingFields() {
         
+        if status == "edit"{
+            txt_ProductName.text = getPreviousProducts.productName!
+            txt_ProductPrice.text = getPreviousProducts.productPrice!
+            txt_VideoURL.text = ""
+            let url = URL(string: getPreviousProducts.productImgUrl!)
+            setupImage.af_setImage(withURL: url!)
+            btn_Save.setTitle("Update", for: .normal)
+            
+        }else{
+            btn_Save.setTitle("Save", for: .normal)
+        }
+        
         imagePicker.delegate = self
         setViewShadow.viewdraw(setViewShadow.bounds)
         imageView.setViewBoarder()
@@ -47,17 +62,6 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         setViewShadow.addGestureRecognizer(tapGesture)
     }
     
-    
-//    private func imagePickerController(_ picker: UIImagePickerController,
-//                               didFinishPickingMediaWithInfo info: [String : AnyObject])
-//    {
-//        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
-//        dismiss(animated:true, completion: nil) //5
-//    }
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-
     func tapBlurButton(_ sender: UITapGestureRecognizer) {
         
         setImageFromGaleryOrCamera()
@@ -66,30 +70,46 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     @IBAction func btn_SaveAction(_ sender: UIButton) {
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["product_name"] = "Guru 12"
-        dictData["product_price"] = "20"
-        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"        
+        dictData["product_name"] = "Guru 122345"
+        dictData["product_price"] = "2012"
+        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
         var  imageDictData : [String : Any] =  [String : Any]()
         imageDictData["mimetype"] = "image/jpeg"
         imageDictData["filecontent"] = sendFinalImage
         dictData["fileUpload"] = imageDictData
         dictData["userid"] = "5"
         
-        print(dictData)
-        
-        ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+        if status == "edit"{
             
-            if(isSuccess)
-            {
+            dictData["product_id"] = getPreviousProducts.productID!
+            
+            ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
-                _ = self.navigationController?.popViewController(animated: true)
+                if(isSuccess)
+                {
+                    
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+                
             }
+        }else{
             
+            ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+                
+                if(isSuccess)
+                {
+                    
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+                
+            }
         }
-
+        
+        
+        
     }
     
-
+    
     func setImageFromGaleryOrCamera() {
         
         let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Choose An Option!", preferredStyle: .actionSheet)
@@ -137,12 +157,12 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 let getImage = self?.resizeImage(image: image!, newWidth: 300)
                 self?.setupImage.image = getImage
                 let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
-                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!                
+                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!
                 self?.dismiss(animated: true, completion: nil)
             }
-
             
-         
+            
+            
             self.present(cameraViewController, animated: true)
             //self.present(self.imagePicker, animated: true, completion: nil)
             
@@ -168,22 +188,22 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         UIGraphicsEndImageContext()
         return newImage!
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 

@@ -105,7 +105,53 @@ class BaseWebAccessLayer: NSObject {
         
     }
     
+    class func getRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (String , Int) -> Void) {
+        
+        
+        if (reachability?.isReachable)!
+        {
+            // proceed
+            
+            SVProgressHUD.setStatus("Loging.....")
+            
+            var finalStrUrl = String()
+            
+            finalStrUrl = Constants.baseUrlBarCode + strURL
+            
+            print("API Url : \(finalStrUrl)")
+            
+            let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            
+            let alamofiremManager = Alamofire.SessionManager.default
+            
+            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+            
+            alamofiremManager.request(escapedUrl!).responseData { response in
+                debugPrint("All Response Info: \(response)")
+                
+                if let data = response.data {
+                    
+                    let json = String(data: data, encoding: String.Encoding.utf8)
+                    
+                    let statusCode : Int = (response.response?.statusCode)!
+                    result(json! , statusCode)
+                }
+            }
+            
+            
+            
+            
+        }
+        else
+        {
+            // show message
+            
+            // unreachable
+        }
+        
+    }
     
+
     
     
     //

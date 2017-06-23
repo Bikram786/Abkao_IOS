@@ -1376,7 +1376,7 @@
         <!--Product Details Control-->
         <scene sceneID="4nJ-Qo-51p">
             <objects>
-                <viewController id="hdH-Ck-JY9" customClass="ProductDetailsControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsControl" id="hdH-Ck-JY9" customClass="ProductDetailsControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yaC-Jc-XLA"/>
                         <viewControllerLayoutGuide type="bottom" id="MfL-l1-pHu"/>
@@ -1713,7 +1713,7 @@
         <!--Price Item Control-->
         <scene sceneID="Vpc-vg-UoI">
             <objects>
-                <viewController id="qT6-DY-U2I" customClass="PriceItemControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PriceItemControl" id="qT6-DY-U2I" customClass="PriceItemControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S6T-6e-JIX"/>
                         <viewControllerLayoutGuide type="bottom" id="6ar-GN-wWq"/>
@@ -1831,6 +1831,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_Save" destination="sxK-HM-sFv" id="AeS-M7-DMX"/>
                         <outlet property="setViewShadow" destination="WhK-Ox-U0U" id="dl5-qy-2du"/>
                         <outlet property="txt_ProductName" destination="pCn-wd-gi5" id="CXY-0w-OLE"/>
                         <outlet property="txt_ProductPrice" destination="knr-KM-D8l" id="TNb-Z4-ogf"/>
@@ -2284,6 +2285,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_Save" destination="HTL-hz-WTg" id="vE6-PW-zD6"/>
                         <outlet property="imageView" destination="d4y-PM-qUb" id="Vco-k5-6KR"/>
                         <outlet property="setViewShadow" destination="OIG-BB-2qu" id="6DF-FD-uD9"/>
                         <outlet property="setupImage" destination="Keq-Ea-edq" id="voY-bs-ajV"/>

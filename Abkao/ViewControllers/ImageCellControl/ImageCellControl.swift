@@ -96,18 +96,43 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageControl", for: indexPath) as! ImageControl
+        cell.selectionStyle = .none
         let proDescObj = arrProductImages[indexPath.row] as! ProductDescI
-        
-        print(proDescObj.productPrice!)
-        print(proDescObj.productID!)
-        print(proDescObj.productName!)
-        
-        //cell.lbl_ProductName.text = proDescObj.productName!
-        //cell.lbl_ProductPrice.text = proDescObj.productPrice!
+        cell.setImageView.setViewBoarder()
+        let url = URL(string: proDescObj.productImgUrl!)
+        cell.setImage.af_setImage(withURL: url!)
+        cell.lbl_ProductName.text = proDescObj.productName!
+        cell.lbl_ProductPrice.text = proDescObj.productPrice!
+        cell.lbl_VideoURL.text = proDescObj.productPrice!
         return cell
         
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     
+        let proDescObj = arrProductImages[indexPath.row] as! ProductDescI
+    
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+    
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ImageItemControl") as! ImageItemControl
+            myVC.getPreviousProducts = proDescObj
+            myVC.status = "edit"
+            self.navigationController?.pushViewController(myVC, animated: true)
+    
+    
+        }
+        editAction.backgroundColor = .blue
+    
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
+    
+    //self.callProductDeleteAPI(productID: proDescObj.productID!)
+    
+    }
+    deleteAction.backgroundColor = .red
+    
+    return [editAction,deleteAction]
+    }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -51,6 +51,9 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         dictData["userid"] = "5"
         
         ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
+            
+            print(productObj)
+            
             self.arrProductPrice.removeAllObjects()
             self.productObj = productObj
             self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
@@ -72,23 +75,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         }
         
     }
-
-    func callProductupdateAPI(){
-        
-        var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
-        
-        ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
-            self.arrProductPrice.removeAllObjects()
-            self.productObj = productObj
-            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-            self.priceTable.reloadData()
-            
-        }
-        
-    }
-
-
+    
     //MARK: - UITableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,6 +86,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceGrid", for: indexPath) as! PriceGrid
+        cell.selectionStyle = .none
         let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
         cell.lbl_ProductName.text = proDescObj.productName
         cell.productNameView.setViewBoarder()
@@ -114,21 +102,25 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
             //TODO: edit the row at indexPath here
-           
+            
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "PriceItemControl") as! PriceItemControl
+            myVC.getPreviousProducts = proDescObj
+            myVC.status = "edit"
+            self.navigationController?.pushViewController(myVC, animated: true)
             
         }
         editAction.backgroundColor = .blue
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             
-          self.callProductDeleteAPI(productID: proDescObj.productID!)
+            self.callProductDeleteAPI(productID: proDescObj.productID!)
             
         }
         deleteAction.backgroundColor = .red
         
         return [editAction,deleteAction]
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
