@@ -11,6 +11,7 @@ import YouTubePlayer
 import AVKit
 import AVFoundation
 import AlamofireImage
+import UserNotifications
 
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -116,27 +117,71 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             print(arrSchduleObj!)
             print("Scheduled videos recieved")
             
+        
+            var nearestScheduleObj : SchedulerI?
+            var miniTime : Double?
+            var isVedReceived : Bool = false
+            
             for sheObj in arrSchduleObj!
             {
                 let tempSchObj = sheObj as SchedulerI
                 
+                
                 let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:40PM")
                 let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "07:30PM")
                 
+ 
+                
+                //-------This check Provides us nearest upcoming Ved Refrence
+                let startDT = stDate.timeIntervalSince1970
+                let currentDT = NSDate().timeIntervalSince1970
+                
+                let differenceTime = (startDT - currentDT)
+                
+                if(differenceTime > 0.0)
+                {
+                    if(miniTime == nil)
+                    {
+                        miniTime =  differenceTime
+                        nearestScheduleObj = tempSchObj
+                    }
+                    else
+                    {
+                        if(differenceTime < miniTime!)
+                        {
+                            miniTime = differenceTime
+                            nearestScheduleObj = tempSchObj
+                        }
+                    }
+                }
+                //-------
                 
                 print("\(stDate)")
                  let fallsBetween = (stDate...endDate).contains(Date())
                 
                 if(fallsBetween)
                 {
+                    isVedReceived = true
+                    
                     self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
+                    
+                    //Schdule local notification, W.R.T its End Time
+                    
+                    self.setLocalNotification(notificationDate: endDate)
                     print("time lies in ved Playing time")
                 }
-                else
-                {
-                    print("time does not lies in ved Playing time")
-                }
+            }
             
+            if(!isVedReceived)
+            {
+                let defaultUrl = "www.gmail.com"
+                self.playVideoInPlayer(strUrl: defaultUrl)
+                
+                //Schdule local notification, W.R.T its Start Time
+                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
+                
+                self.setLocalNotification(notificationDate: stDate)
+                
                 
             }
             
@@ -304,12 +349,24 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
                     cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
                 }
-                
             }
         
-        
         return cell!
-        
+    }
+    
+     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+     {
+        if tableView == leftTbl
+        {
+            let proDescObj = leftData[indexPath.row] as! ProductDescI
+            self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
+            
+        }
+        else if tableView == rightTbl {
+            
+            let proDescObj = rightData[indexPath.row] as! ProductDescI
+            self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
+        }
     }
     
     // MARK: - UICollectionViewDataSource protocol
@@ -359,6 +416,23 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Local Notification
+    func setLocalNotification(notificationDate : Date)
+    {
+        let notification = UILocalNotification()
+        notification.fireDate = notificationDate
+        notification.userInfo = ["UUID": "reminderID" ]
+        UIApplication.shared.scheduleLocalNotification(notification)
+    }
+    
+    func removeNotification(arrNotificationID : [String])
+    {
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: arrNotificationID)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     
     /*
      // MARK: - Navigation
