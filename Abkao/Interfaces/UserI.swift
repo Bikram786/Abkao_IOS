@@ -132,16 +132,8 @@ class UserI: NSObject,NSCoding {
         self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
         
         
-        UserDefaults.standard.set(dictData["userid"] as? Int, forKey: "userID")
-        UserDefaults.standard.synchronize()
-        
-        print("user id : \(String(describing: self.userID!))")
-        
+    
     }
     
-    public func getUserSavedID(){
-        
-        self.userID = UserDefaults.standard.value(forKey: "userID") as? Int
-        
-    }
+
 }

@@ -10,11 +10,15 @@ import UIKit
 
 class ScheduleManager: NSObject {
     
+    var dayName : String?
+    
     let arrAllSchedules : NSMutableArray?
+    let arrDaySchedules : NSMutableArray?
     
     override init()
     {
         arrAllSchedules  = NSMutableArray()
+        arrDaySchedules = NSMutableArray()
     }
     
     
@@ -62,7 +66,6 @@ class ScheduleManager: NSObject {
         //temp block
 
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        //dictData["userid"] = 5
         dictData["day"] = strDay
         
         
@@ -77,16 +80,16 @@ class ScheduleManager: NSObject {
                 {
                     let arrSchedule = jsonDict["video_list"] as? NSArray
                     
-                    var arrScheduleObj = [SchedulerI]()
+                    self.arrDaySchedules?.removeAllObjects()
                     for i in arrSchedule!
                     {
                         let dictObj  = i as! [String : AnyObject]
                         let scheduleObj = SchedulerI()
                         scheduleObj.setSchedules(scheduleObj: dictObj )
-                        arrScheduleObj.append(scheduleObj)
+                        self.arrDaySchedules?.add(scheduleObj)
                     }
                     
-                    handler(arrScheduleObj,true,(jsonDict["message"] as? String)!)
+                    handler(self.arrDaySchedules as? [SchedulerI],true,(jsonDict["message"] as? String)!)
                 }
                 else
                 {

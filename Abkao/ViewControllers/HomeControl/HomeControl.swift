@@ -14,7 +14,40 @@ import AlamofireImage
 import SVProgressHUD
 import UserNotifications
 
+//MARK: - Local Notification Methods
+
+extension HomeControl:UNUserNotificationCenterDelegate{
+    
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        print("Tapped in notification")
+    }
+    
+    //This is key callback to present notification while the app is in foreground
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("Notification being triggered")
+        //You can either present alert ,sound or increase badge while the app is in foreground too with ios 10
+        //to distinguish between notifications
+        if notification.request.identifier == requestIdentifier{
+            
+            
+            print("Notification received in foreground")
+            completionHandler( [])
+            
+        }
+    }
+}
+
+
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: - Local Variables
+
+    let requestIdentifier = "SampleRequest"
     
     @IBOutlet weak var setClv: UICollectionView!
     @IBOutlet weak var leftTbl: UITableView!
@@ -34,19 +67,16 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4"]
     
+    
+    //MARK: - Default Methods
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        if let data = UserDefaults.standard.data(forKey: "userinfo"),
-            
-            let myUserObj = NSKeyedUnarchiver.unarchiveObject(with: data) as? UserI {
-            
-            ModelManager.sharedInstance.profileManager.userObj = myUserObj
-            
-        } else {
-            print("User")
-        }
+        
+        
+   
         
         setIntialMethods()
         
@@ -111,94 +141,126 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
        getProductsByDay(strDay: "Mon")
     }
     
+    
+    //MARK: - Ved Play Methods
     func getProductsByDay(strDay : String) {
+        
+        
+        
+        
+        ModelManager.sharedInstance.scheduleManager.dayName = strDay
 
         ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDay) { (arrSchduleObj, isSuccess, responseMessage) in
             
             print(arrSchduleObj!)
             print("Scheduled videos recieved")
             
+            
+            self.getDayVideos()
+            
         
-            var nearestScheduleObj : SchedulerI?
-            var miniTime : Double?
-            var isVedReceived : Bool = false
-            
-            for sheObj in arrSchduleObj!
-            {
-                let tempSchObj = sheObj as SchedulerI
-                
-                
-                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:40PM")
-                let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "07:30PM")
-                
- 
-                
-                //-------This check Provides us nearest upcoming Ved Refrence
-                let startDT = stDate.timeIntervalSince1970
-                let currentDT = NSDate().timeIntervalSince1970
-                
-                let differenceTime = (startDT - currentDT)
-                
-                if(differenceTime > 0.0)
-                {
-                    if(miniTime == nil)
-                    {
-                        miniTime =  differenceTime
-                        nearestScheduleObj = tempSchObj
-                    }
-                    else
-                    {
-                        if(differenceTime < miniTime!)
-                        {
-                            miniTime = differenceTime
-                            nearestScheduleObj = tempSchObj
-                        }
-                    }
-                }
-                //-------
-                
-                print("\(stDate)")
-                 let fallsBetween = (stDate...endDate).contains(Date())
-                
-                if(fallsBetween)
-                {
-                    isVedReceived = true
-                    
-                    self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
-                    
-                    //Schdule local notification, W.R.T its End Time
-                    
-                    self.setLocalNotification(notificationDate: endDate)
-                    print("time lies in ved Playing time")
-                }
-            }
-            
-            if(!isVedReceived)
-            {
-                let defaultUrl = "www.gmail.com"
-                self.playVideoInPlayer(strUrl: defaultUrl)
-                
-                //Schdule local notification, W.R.T its Start Time
-                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
-                
-                self.setLocalNotification(notificationDate: stDate)
-                
-                
-            }
+        }
             
         }
         
+    
+    
+    func getDayVideos()
+    {
+        var nearestScheduleObj : SchedulerI?
+        var miniTime : Double?
+        var isVedReceived : Bool = false
+        
+        for sheObj in ModelManager.sharedInstance.scheduleManager.arrDaySchedules!
+        {
+            let tempSchObj = sheObj as! SchedulerI
+            
+            
+            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
+            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "05:03PM")
+            
+            
+            
+            //-------This check Provides us nearest upcoming Ved Refrence
+            let startDT = stDate.timeIntervalSince1970
+            let currentDT = NSDate().timeIntervalSince1970
+            
+            let differenceTime = (startDT - currentDT)
+            
+            if(differenceTime > 0.0)
+            {
+                if(miniTime == nil)
+                {
+                    miniTime =  differenceTime
+                    nearestScheduleObj = tempSchObj
+                }
+                else
+                {
+                    if(differenceTime < miniTime!)
+                    {
+                        miniTime = differenceTime
+                        nearestScheduleObj = tempSchObj
+                    }
+                }
+            }
+            //-------
+            
+            print("\(stDate)")
+            
+            //check if end date is greater than current date
+            if(NSDate().compare(endDate) == .orderedAscending)
+            {
+                print("Date accending")
+            }
+            
+            let fallsBetween = (stDate...endDate).contains(Date())
+            
+            if(fallsBetween)
+            {
+                isVedReceived = true
+                
+                self.setLocalNotification(notificationDate: endDate)
+                
+                self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
+                
+                //Schdule local notification, W.R.T its End Time
+                
+                print("time lies in ved Playing time")
+            }
+        }
+        
+        if(!isVedReceived)
+        {
+            let defaultUrl = "www.gmail.com"
+            self.playVideoInPlayer(strUrl: defaultUrl)
+            
+            
+            if(nearestScheduleObj != nil)
+            {
+                //Schdule local notification, W.R.T its Start Time
+                
+                let dateObj = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
+                
+                self.setLocalNotification(notificationDate: dateObj)
+                
+            }
+        }
+
     }
     
     
     func playVideoInPlayer(strUrl : String)
     {
+        //temp comment
+
+        /*
         youTubeView.clear()
 
         let myVideoURL = NSURL(string: strUrl)
         youTubeView.loadVideoURL(myVideoURL! as URL)
         
         self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 10)
+       */
     }
     
     func playVed() {
@@ -423,10 +485,46 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     // MARK: - Local Notification
     func setLocalNotification(notificationDate : Date)
     {
-        let notification = UILocalNotification()
-        notification.fireDate = notificationDate
-        notification.userInfo = ["UUID": "reminderID" ]
-        UIApplication.shared.scheduleLocalNotification(notification)
+        
+        print("notification will be triggered in 10 seconds..Hold on tight")
+        
+        // Deliver the notification in five seconds.
+        if #available(iOS 10.0, *) {
+            
+            let content = UNMutableNotificationContent()
+            content.title = "notification fire time"
+            content.subtitle = "Get Ready"
+            content.sound = UNNotificationSound.default()
+            content.setValue("YES", forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
+            content.body = "needs to go to workshop"
+            
+            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
+                                                           // repeats: false)
+            
+            //let date = Date(timeIntervalSinceNow: 10)
+            let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: notificationDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+                                                        repeats: false)
+            
+            
+            
+            let request = UNNotificationRequest(identifier:requestIdentifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().delegate = self
+            
+            UNUserNotificationCenter.current().add(request){(error) in
+                
+                if (error != nil){
+                    
+                    //print(error?.localizedDescription)
+                    print("Something went wrong: ")
+
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     func removeNotification(arrNotificationID : [String])

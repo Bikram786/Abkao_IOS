@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     break
                 case .authorized:
                     // Schedule Local Notification
+                    print("Local notification has been authorized")
+
                     
                     break;
                 case .denied:
@@ -48,10 +50,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         
         
-        let userObj = UserI()
-        userObj.getUserSavedID()
+        if let data = UserDefaults.standard.data(forKey: "userinfo"),
+            
+            let myUserObj = NSKeyedUnarchiver.unarchiveObject(with: data) as? UserI {
+            
+            ModelManager.sharedInstance.profileManager.userObj = myUserObj
+            
+        }
         
-        if  userObj.userID != nil  {
+        
+        if  ModelManager.sharedInstance.profileManager.userObj?.userID != 0  {
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "HomeControl") as! HomeControl
@@ -65,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+
     // MARK: - Custom Functions
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
         // Request Authorization
