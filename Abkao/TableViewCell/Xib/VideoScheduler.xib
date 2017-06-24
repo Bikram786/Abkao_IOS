@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="797" height="238"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="phk-pn-mO9" id="awx-PU-O17">
-                <rect key="frame" x="0.0" y="0.0" width="797" height="238"/>
+                <rect key="frame" x="0.0" y="0.0" width="797" height="237.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-Qr-p0W">
@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start At:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzd-ub-b50">
-                                        <rect key="frame" x="278.5" y="22" width="63.5" height="21"/>
+                                        <rect key="frame" x="262.5" y="22" width="63.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pj-tV-a7m">
-                                        <rect key="frame" x="32" y="50" width="90" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="95.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="C9t-B3-DHX"/>
                                         </constraints>
@@ -56,14 +56,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="QBT-Tv-Jls">
-                                        <rect key="frame" x="64" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="34.5" y="110" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="5In-To-gsO"/>
                                             <constraint firstAttribute="width" constant="25" id="Bd8-50-T2n"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-ru-day">
-                                        <rect key="frame" x="122" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="95.5" y="0.0" width="20" height="205"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="oAV-aJ-M0R"/>
                                         </constraints>
@@ -72,73 +72,73 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YD4-im-w9J">
-                                        <rect key="frame" x="142" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="115.5" y="65" width="95" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="anM-hi-bhz">
-                                        <rect key="frame" x="175" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="151" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-Ge-CW0">
-                                        <rect key="frame" x="232" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="210.5" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryP-xU-eym">
-                                        <rect key="frame" x="252" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="230.5" y="65" width="95.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="BNM-Xa-Ev1">
-                                        <rect key="frame" x="284" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="265.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-CC-A9L">
-                                        <rect key="frame" x="342" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="326" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-rK-Qyt">
-                                        <rect key="frame" x="362" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="346" y="65" width="95.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="a3k-Pz-AaH">
-                                        <rect key="frame" x="395" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="381.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-XW-YTS">
-                                        <rect key="frame" x="452" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="441.5" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-l2-YwN">
-                                        <rect key="frame" x="472" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="461.5" y="65" width="95" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="rxB-UR-qo5">
-                                        <rect key="frame" x="505" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="497" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsz-8j-vNh">
-                                        <rect key="frame" x="562" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="556.5" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-54-SVF">
-                                        <rect key="frame" x="582" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="576.5" y="65" width="95.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="PAB-RS-QtL">
-                                        <rect key="frame" x="615" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="612.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeb-Mf-SpT">
                                         <rect key="frame" x="672" y="0.0" width="20" height="205"/>
@@ -147,13 +147,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34y-vc-vgv">
-                                        <rect key="frame" x="692" y="65" width="90" height="21"/>
+                                        <rect key="frame" x="692" y="65" width="95.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-d3-p1i">
-                                        <rect key="frame" x="724" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="726.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-83-qAx">
                                         <rect key="frame" x="20" y="145" width="748" height="50"/>
@@ -224,6 +224,7 @@
                                     <constraint firstItem="TaF-p4-5km" firstAttribute="centerX" secondItem="3WB-IR-ncQ" secondAttribute="centerX" id="dBg-gg-ru3"/>
                                     <constraint firstItem="Aeb-Mf-SpT" firstAttribute="baseline" secondItem="JH3-XW-YTS" secondAttribute="baseline" id="dCE-V4-OQX"/>
                                     <constraint firstItem="BNM-Xa-Ev1" firstAttribute="width" secondItem="QBT-Tv-Jls" secondAttribute="width" id="dDh-9t-aNa"/>
+                                    <constraint firstItem="6pj-tV-a7m" firstAttribute="leading" secondItem="3WB-IR-ncQ" secondAttribute="leading" id="dhj-Hm-wan"/>
                                     <constraint firstItem="jzd-ub-b50" firstAttribute="centerY" secondItem="TaF-p4-5km" secondAttribute="centerY" id="dnY-Sb-ian"/>
                                     <constraint firstItem="Aeb-Mf-SpT" firstAttribute="baseline" secondItem="mzl-Ge-CW0" secondAttribute="baseline" id="e5b-Ag-F6o"/>
                                     <constraint firstItem="6pj-tV-a7m" firstAttribute="top" secondItem="3WB-IR-ncQ" secondAttribute="top" constant="50" id="ePb-dD-ps1"/>
@@ -277,6 +278,11 @@
                     <constraint firstItem="Ydv-Qr-p0W" firstAttribute="top" secondItem="awx-PU-O17" secondAttribute="top" constant="5" id="tt3-Dm-Rc0"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lbl_EndTime" destination="kmc-CE-roe" id="9Sz-iL-SwO"/>
+                <outlet property="lbl_StartTime" destination="jzd-ub-b50" id="lcp-4D-3If"/>
+                <outlet property="lbl_VideoURL" destination="Cdm-83-qAx" id="Nk9-rP-hEu"/>
+            </connections>
             <point key="canvasLocation" x="222.5" y="210"/>
         </tableViewCell>
     </objects>
