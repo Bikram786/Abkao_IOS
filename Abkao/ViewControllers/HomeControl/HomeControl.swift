@@ -75,9 +75,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         super.viewDidLoad()
         
         
-        
-   
-        
         setIntialMethods()
         
         simpleVideoView.isHidden = true
@@ -180,12 +177,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         {
             let tempSchObj = sheObj as! SchedulerI
             
-//            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.startTime!)
-//            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.endTime!)
+            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.startTime!)
+            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.endTime!)
             
             //testing code
-            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
-            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "06:40PM")
+//            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
+//            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "06:44PM")
             
             //-------This check Provides us nearest upcoming Ved Refrence
             let startDT = stDate.timeIntervalSince1970
