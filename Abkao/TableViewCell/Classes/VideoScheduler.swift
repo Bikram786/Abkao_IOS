@@ -10,6 +10,11 @@ import UIKit
 
 class VideoScheduler: UITableViewCell {
 
+    
+    @IBOutlet weak var lbl_StartTime: UILabel!
+    @IBOutlet weak var lbl_EndTime: UILabel!    
+    @IBOutlet weak var lbl_VideoURL: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

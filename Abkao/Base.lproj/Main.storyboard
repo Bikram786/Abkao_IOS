@@ -1873,7 +1873,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBA-b4-Pge" customClass="DropShadow" customModule="Abkao" customModuleProvider="target">
                                 <rect key="frame" x="83" y="159" width="859" height="589"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZV-8e-0PL">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZV-8e-0PL">
                                         <rect key="frame" x="0.0" y="0.0" width="859" height="508.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
@@ -1881,8 +1881,11 @@
                                         <rect key="frame" x="0.0" y="528.5" width="859" height="60.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M53-ww-Pt2">
-                                                <rect key="frame" x="359.5" y="15" width="140" height="30"/>
-                                                <state key="normal" title="Set Video Scheduler"/>
+                                                <rect key="frame" x="352" y="10" width="155" height="40"/>
+                                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Set Video Scheduler">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="btn_SetSchedulerAction:" destination="mhQ-Nx-uYz" eventType="touchUpInside" id="CZ6-mi-h8X"/>
                                                 </connections>
@@ -1911,8 +1914,10 @@
                         <constraints>
                             <constraint firstItem="plS-E5-rqq" firstAttribute="height" secondItem="Hir-3m-Ohe" secondAttribute="height" multiplier="0.1106" id="3A3-l8-5yJ"/>
                             <constraint firstItem="PBA-b4-Pge" firstAttribute="width" secondItem="Hir-3m-Ohe" secondAttribute="width" multiplier="0.839" id="Bfm-St-T21"/>
+                            <constraint firstItem="M53-ww-Pt2" firstAttribute="width" secondItem="Hir-3m-Ohe" secondAttribute="width" multiplier="0.1513" id="DJN-nF-ckX"/>
                             <constraint firstItem="F4x-WT-JrJ" firstAttribute="height" secondItem="Hir-3m-Ohe" secondAttribute="height" multiplier="0.0785" id="Irj-4e-fsd"/>
                             <constraint firstItem="plS-E5-rqq" firstAttribute="leading" secondItem="Hir-3m-Ohe" secondAttribute="leading" id="NIs-kA-w2Y"/>
+                            <constraint firstItem="M53-ww-Pt2" firstAttribute="height" secondItem="Hir-3m-Ohe" secondAttribute="height" multiplier="0.052" id="TjG-mC-bT8"/>
                             <constraint firstAttribute="trailing" secondItem="plS-E5-rqq" secondAttribute="trailing" id="Uc2-gC-p0v"/>
                             <constraint firstItem="PBA-b4-Pge" firstAttribute="centerX" secondItem="plS-E5-rqq" secondAttribute="centerX" id="ng4-0C-kKI"/>
                             <constraint firstItem="PBA-b4-Pge" firstAttribute="top" secondItem="plS-E5-rqq" secondAttribute="bottom" constant="10" id="o1M-A7-6aJ"/>
@@ -2276,7 +2281,7 @@
         <!--Set Video Scheduler Control-->
         <scene sceneID="nQh-Iw-DvN">
             <objects>
-                <viewController id="7TY-1b-wIi" customClass="SetVideoSchedulerControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetVideoSchedulerControl" id="7TY-1b-wIi" customClass="SetVideoSchedulerControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ym5-Nk-juf"/>
                         <viewControllerLayoutGuide type="bottom" id="y7t-7C-Ym5"/>
@@ -2285,8 +2290,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmI-Hl-xXR">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET VIDEO SCHEDULER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-kb-IYf">
+                                        <rect key="frame" x="296" y="18.5" width="432.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NI6-kb-IYf" firstAttribute="centerX" secondItem="KmI-Hl-xXR" secondAttribute="centerX" id="ojl-4w-DRe"/>
+                                    <constraint firstItem="NI6-kb-IYf" firstAttribute="centerY" secondItem="KmI-Hl-xXR" secondAttribute="centerY" id="pjq-Vz-btS"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqt-IP-eCx">
-                                <rect key="frame" x="50" y="84" width="924" height="228"/>
+                                <rect key="frame" x="50" y="159" width="924" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCl-VJ-Kp7">
                                         <rect key="frame" x="437" y="0.0" width="50" height="92"/>
@@ -2297,29 +2318,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-XL-9b5">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-XL-9b5">
                                         <rect key="frame" x="312" y="29" width="125" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Start At " image="dropdown"/>
                                         <connections>
-                                            <action selector="btn_StartTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="NCh-sZ-p1H"/>
+                                            <action selector="btn_StartEndTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="2b4-8B-tYm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av8-Ib-Onr">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av8-Ib-Onr">
                                         <rect key="frame" x="487" y="29" width="125" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="End At " image="dropdown"/>
                                         <connections>
-                                            <action selector="btn_EndTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="Y86-nL-DZm"/>
+                                            <action selector="btn_StartEndTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="ddX-6s-TFu"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy5-3v-hWw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy5-3v-hWw">
                                         <rect key="frame" x="0.0" y="92" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnf-bq-Xgu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnf-bq-Xgu">
                                         <rect key="frame" x="42" y="133" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="W2K-1A-4C6"/>
@@ -2339,13 +2360,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-FX-AYh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-FX-AYh">
                                         <rect key="frame" x="135" y="92" width="114.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="how-zQ-RhK">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="how-zQ-RhK">
                                         <rect key="frame" x="177" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2358,13 +2379,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pap-yD-trD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pap-yD-trD">
                                         <rect key="frame" x="269.5" y="92" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nll-Sb-raE">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nll-Sb-raE">
                                         <rect key="frame" x="312" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2377,13 +2398,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-gz-AIA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-gz-AIA">
                                         <rect key="frame" x="404.5" y="92" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP4-ho-UiJ">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP4-ho-UiJ">
                                         <rect key="frame" x="447" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2396,13 +2417,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRe-EI-w1H">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRe-EI-w1H">
                                         <rect key="frame" x="539.5" y="92" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kw-BZ-Wk2">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kw-BZ-Wk2">
                                         <rect key="frame" x="582" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2415,13 +2436,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1I-te-FJE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1I-te-FJE">
                                         <rect key="frame" x="674.5" y="92" width="114.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-mF-jwT">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-mF-jwT">
                                         <rect key="frame" x="716" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2434,13 +2455,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5q-ho-5xM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5q-ho-5xM">
                                         <rect key="frame" x="809" y="92" width="115" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24L-u1-aTr">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24L-u1-aTr">
                                         <rect key="frame" x="851" y="133" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
@@ -2542,12 +2563,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-r3-CXw">
-                                <rect key="frame" x="50" y="312" width="924" height="100"/>
+                                <rect key="frame" x="50" y="387" width="924" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inX-cV-2x4">
-                                        <rect key="frame" x="434.5" y="29" width="55" height="42"/>
+                                        <rect key="frame" x="384.5" y="30" width="155" height="40"/>
+                                        <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Save"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="btn_SaveSchedulerVideoAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="JjT-aP-6b8"/>
                                         </connections>
@@ -2561,7 +2585,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEo-vs-E2M">
-                                <rect key="frame" x="50" y="412" width="924" height="356"/>
+                                <rect key="frame" x="50" y="487" width="924" height="281"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBT-rx-zbK">
                                         <rect key="frame" x="0.0" y="0.0" width="924" height="50"/>
@@ -2571,7 +2595,7 @@
                                         </constraints>
                                     </view>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-kM-mOd">
-                                        <rect key="frame" x="0.0" y="50" width="924" height="296"/>
+                                        <rect key="frame" x="0.0" y="50" width="924" height="221"/>
                                         <date key="date" timeIntervalSinceReferenceDate="520049873.58145398">
                                             <!--2017-06-25 02:17:53 +0000-->
                                         </date>
@@ -2580,7 +2604,7 @@
                                         </connections>
                                     </datePicker>
                                 </subviews>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.61176470589999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="TnH-kM-mOd" secondAttribute="bottom" constant="10" id="2zF-S1-7Wl"/>
                                     <constraint firstItem="wBT-rx-zbK" firstAttribute="top" secondItem="EEo-vs-E2M" secondAttribute="top" id="JMg-DB-yBw"/>
@@ -2595,16 +2619,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Wqt-IP-eCx" secondAttribute="trailing" constant="50" id="0KP-WJ-42C"/>
+                            <constraint firstItem="Wqt-IP-eCx" firstAttribute="top" secondItem="KmI-Hl-xXR" secondAttribute="bottom" constant="10" id="0XL-Uj-sBP"/>
                             <constraint firstItem="jo3-fI-KM7" firstAttribute="height" secondItem="gzo-I7-NSm" secondAttribute="height" multiplier="0.0585" id="7bp-e6-yof"/>
                             <constraint firstItem="EEo-vs-E2M" firstAttribute="top" secondItem="JWe-r3-CXw" secondAttribute="bottom" id="8sx-lP-W5U"/>
+                            <constraint firstItem="KmI-Hl-xXR" firstAttribute="leading" secondItem="gzo-I7-NSm" secondAttribute="leading" id="Kgl-KP-rBr"/>
                             <constraint firstItem="y7t-7C-Ym5" firstAttribute="top" secondItem="EEo-vs-E2M" secondAttribute="bottom" id="Mma-t5-6kg"/>
                             <constraint firstItem="Wqt-IP-eCx" firstAttribute="leading" secondItem="gzo-I7-NSm" secondAttribute="leading" constant="50" id="NGh-PC-6rE"/>
+                            <constraint firstItem="KmI-Hl-xXR" firstAttribute="height" secondItem="gzo-I7-NSm" secondAttribute="height" multiplier="0.1106" id="UOj-4T-hEU"/>
+                            <constraint firstItem="KmI-Hl-xXR" firstAttribute="top" secondItem="Ym5-Nk-juf" secondAttribute="bottom" id="W0n-ve-hQR"/>
                             <constraint firstItem="EEo-vs-E2M" firstAttribute="width" secondItem="Wqt-IP-eCx" secondAttribute="width" id="bVr-cC-9NL"/>
                             <constraint firstItem="JWe-r3-CXw" firstAttribute="leading" secondItem="Wqt-IP-eCx" secondAttribute="leading" id="ckL-kU-fWH"/>
                             <constraint firstItem="JWe-r3-CXw" firstAttribute="top" secondItem="Wqt-IP-eCx" secondAttribute="bottom" id="dvn-86-tNH"/>
                             <constraint firstItem="EEo-vs-E2M" firstAttribute="leading" secondItem="Wqt-IP-eCx" secondAttribute="leading" id="eMx-cA-PDF"/>
+                            <constraint firstItem="inX-cV-2x4" firstAttribute="height" secondItem="gzo-I7-NSm" secondAttribute="height" multiplier="0.052" id="ixf-z4-swr"/>
                             <constraint firstItem="JWe-r3-CXw" firstAttribute="width" secondItem="Wqt-IP-eCx" secondAttribute="width" id="j83-Tn-gtO"/>
-                            <constraint firstItem="Wqt-IP-eCx" firstAttribute="top" secondItem="Ym5-Nk-juf" secondAttribute="bottom" constant="20" id="sTf-ON-KXl"/>
+                            <constraint firstAttribute="trailing" secondItem="KmI-Hl-xXR" secondAttribute="trailing" id="qMx-s4-JLu"/>
+                            <constraint firstItem="inX-cV-2x4" firstAttribute="width" secondItem="gzo-I7-NSm" secondAttribute="width" multiplier="0.1513" id="sQ5-T1-MQ2"/>
                         </constraints>
                     </view>
                     <connections>

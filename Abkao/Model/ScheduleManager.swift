@@ -21,7 +21,7 @@ class ScheduleManager: NSObject {
     func getAllSchedules(handler : @escaping ([SchedulerI]?, Bool , String) -> Void)
     {
         var dictData: [String : Any] = [:]
-        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        dictData["userid"] = "8"
         
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getScheduleVideoByUserId", headers: true, params: dictData, result:
             {
@@ -104,7 +104,7 @@ class ScheduleManager: NSObject {
 
     {
         var dictData: [String : Any] = [:]
-        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        dictData["userid"] = "8"
         dictData["scheduler_id"] = scheduleObj.scheduleID
 
 
@@ -131,13 +131,14 @@ class ScheduleManager: NSObject {
     func addSchedule(scheduleObj : SchedulerI, handler : @escaping (SchedulerI?, Bool , String) -> Void)
     {
         var dictData: [String : Any] = [:]
-        
-        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        dictData["scheduler_id"] = scheduleObj.scheduleID
+       // dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        dictData["userid"] = "8"
         dictData["start_time"] = scheduleObj.startTime
         dictData["end_time"] = scheduleObj.endTime
         dictData["days"] = scheduleObj.arrDays
         dictData["video_link"] = scheduleObj.productVedUrl
+        
+        print(dictData)
         
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "scheduleVideo", headers: true, params: dictData, result:
             {

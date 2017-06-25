@@ -18,7 +18,6 @@ class ProductDetailsControl: AbstractControl {
     @IBOutlet weak var itemNameView: UIView!
     @IBOutlet weak var priceView: UIView!
     @IBOutlet weak var promotionView: UIView!
-    
     @IBOutlet weak var lbl_LocationName: UILabel!
     @IBOutlet weak var lbl_ItemName: UILabel!
     @IBOutlet weak var lbl_Price: UILabel!

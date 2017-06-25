@@ -62,8 +62,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         //        simpleView.layoutIfNeeded()
         //        player.play()
         
-        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
-        youTubeView.loadVideoURL(myVideoURL! as URL)
+//        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
+//        youTubeView.loadVideoURL(myVideoURL! as URL)
         
     }
     
@@ -179,9 +179,9 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 self.playVideoInPlayer(strUrl: defaultUrl)
                 
                 //Schdule local notification, W.R.T its Start Time
-                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
-                
-                self.setLocalNotification(notificationDate: stDate)
+//                let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
+//                
+//                self.setLocalNotification(notificationDate: stDate)
                 
                 
             }

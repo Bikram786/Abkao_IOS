@@ -11,7 +11,7 @@ import UIKit
 class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var VideoSchedulerTable: UITableView!
-    
+    var arrProductImages = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         VideoSchedulerTable.rowHeight = UITableViewAutomaticDimension
         VideoSchedulerTable.separatorStyle = .none
         VideoSchedulerTable.tableFooterView = UIView()
+        getAllScheduledVideos()
 
     }
 
@@ -32,6 +33,30 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
     }
     
     override func gotoLoginView() {
+        
+    }
+    
+    func getAllScheduledVideos(){
+        
+        ModelManager.sharedInstance.scheduleManager.getAllSchedules() { (productObj, isSuccess, responseMessage) in
+            
+            self.arrProductImages.removeAllObjects()
+            self.arrProductImages.addObjects(from: productObj!)
+            self.VideoSchedulerTable.reloadData()
+            
+        }
+        
+    }
+
+    func callProductDeleteAPI(productID: Int){
+        
+        let obj = SchedulerI()
+        obj.scheduleID = productID
+        
+        ModelManager.sharedInstance.scheduleManager.deleteSchedule(scheduleObj: obj) { (isSuccess, responseMessage) in
+            
+            self.getAllScheduledVideos()
+        }
         
     }
     
@@ -49,15 +74,48 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return arrProductImages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoScheduler", for: indexPath) as! VideoScheduler
+        
+        let sehedulerObj = arrProductImages[indexPath.row] as! SchedulerI
+        cell.lbl_StartTime.text = "Video Start time " + sehedulerObj.startTime!
+        cell.lbl_EndTime.text = "Video End time " + sehedulerObj.endTime!
+        cell.lbl_VideoURL.text = sehedulerObj.productVedUrl!
+        
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let sehedulerObj = arrProductImages[indexPath.row] as! SchedulerI
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+            //TODO: edit the row at indexPath here
+            
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "SetVideoSchedulerControl") as! SetVideoSchedulerControl
+            myVC.getPreviousProducts = sehedulerObj
+            myVC.status = "edit"
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        }
+        editAction.backgroundColor = .blue
+        
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
+            
+            self.callProductDeleteAPI(productID: sehedulerObj.scheduleID!)
+            
+        }
+        deleteAction.backgroundColor = .red
+        
+        return [editAction,deleteAction]
+    }
+    
+
 
     @IBAction func btn_SetSchedulerAction(_ sender: UIButton) {
         
