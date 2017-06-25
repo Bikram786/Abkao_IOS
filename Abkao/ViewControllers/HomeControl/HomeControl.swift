@@ -239,8 +239,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         if(!isVedReceived)
         {
-            let defaultUrl = "www.gmail.com"
-            self.playVideoInPlayer(strUrl: defaultUrl)
+            let defaultUrl = ModelManager.sharedInstance.profileManager.userObj?.defaultUrl
+            self.playVideoInPlayer(strUrl: defaultUrl!)
             
             
             if(nearestScheduleObj != nil)
