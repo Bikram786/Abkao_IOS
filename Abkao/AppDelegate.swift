@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Local Notification
+        
+        // Request Notification Settings
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
+                switch notificationSettings.authorizationStatus
+                {
+                case .notDetermined:
+                    self.requestAuthorization(completionHandler: { (success) in
+                        guard success else { return }
+                        
+                        // Schedule Local Notification
+                    })
+                    break
+                case .authorized:
+                    // Schedule Local Notification
+                    
+                    break;
+                case .denied:
+                    print("Application Not Allowed to Display Notifications")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+
+        //
         
         
         let userObj = UserI()
@@ -34,6 +63,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         return true
+    }
+    
+    // MARK: - Custom Functions
+    private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
+        // Request Authorization
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
+                if let error = error {
+                    print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+                }
+                
+                completionHandler(success)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

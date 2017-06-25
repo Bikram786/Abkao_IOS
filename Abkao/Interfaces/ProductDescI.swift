@@ -15,10 +15,12 @@ class ProductDescI: NSObject {
     public var productName: String?
     public var productImgUrl: String?
     public var productPrice: String?
+    public var productVedUrl: String?
     public var productID: Int?
     
     override init()
     {
+        self.productVedUrl = ""
         self.productName = ""
         self.productImgUrl = ""
         self.productPrice = ""
@@ -27,6 +29,7 @@ class ProductDescI: NSObject {
     
     func resetData()
     {
+        self.productVedUrl = ""
         self.productName = ""
         self.productImgUrl = ""
         self.productPrice = ""
@@ -43,7 +46,7 @@ class ProductDescI: NSObject {
 
         self.productName =  (productInfoObj["product_name"] as? String ?? "")
         self.productImgUrl =  (productInfoObj["product_url"] as? String ?? "")
-        //print("Image url : \(String(describing: (self.productImgUrl)!))")
+        self.productVedUrl = (productInfoObj["product_video_url"] as? String ?? "")
         self.productPrice =  (productInfoObj["product_price"] as? String ?? "")
         self.productID =  (productInfoObj["product_id"] as? Int)
     }
