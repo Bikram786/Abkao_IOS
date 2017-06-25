@@ -8,6 +8,7 @@
 
 import UIKit
 import ALCameraViewController
+import SVProgressHUD
 
 class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
@@ -19,6 +20,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var imageView: UIView!
+    
     @IBOutlet weak var txt_ProductName: UITextField!
     @IBOutlet weak var txt_ProductPrice: UITextField!
     @IBOutlet weak var txt_VideoURL: UITextField!
@@ -41,6 +43,9 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     func setStartingFields() {
         
         if status == "edit"{
+            
+            print(getPreviousProducts.productID!)
+            
             txt_ProductName.text = getPreviousProducts.productName!
             txt_ProductPrice.text = getPreviousProducts.productPrice!
             txt_VideoURL.text = ""
@@ -69,36 +74,62 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func btn_SaveAction(_ sender: UIButton) {
         
+        
+        guard let productName = txt_ProductName.text, productName != "" else {
+            
+            SVProgressHUD.showError(withStatus: "Please fill product name")
+            
+            return
+        }
+        
+        guard let productPrice = txt_ProductPrice.text, productPrice != "" else {
+            
+            SVProgressHUD.showError(withStatus: "Please fill product price")
+            
+            return
+        }
+        
+        
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["product_name"] = "Guru 122345"
-        dictData["product_price"] = "2012"
+        dictData["product_name"] = txt_ProductName.text!
+        dictData["product_price"] = txt_ProductPrice.text!
         dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
         var  imageDictData : [String : Any] =  [String : Any]()
-        imageDictData["mimetype"] = "image/jpeg"
-        imageDictData["filecontent"] = sendFinalImage
-        dictData["fileUpload"] = imageDictData
         dictData["userid"] = "5"
         
         if status == "edit"{
             
             dictData["product_id"] = getPreviousProducts.productID!
+            imageDictData["mimetype"] = ""
+            imageDictData["filecontent"] = sendFinalImage
+            dictData["fileUpload"] = imageDictData
+            
+            print(dictData)
+            
+            SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
                 if(isSuccess)
                 {
-                    
+                    SVProgressHUD.dismiss()
                     _ = self.navigationController?.popViewController(animated: true)
                 }
                 
             }
         }else{
             
+            imageDictData["mimetype"] = "image/jpeg"
+            imageDictData["filecontent"] = sendFinalImage
+            dictData["fileUpload"] = imageDictData
+            
+            SVProgressHUD.show(withStatus: "Loding.....")
+            
             ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
                 if(isSuccess)
                 {
-                    
+                    SVProgressHUD.dismiss()
                     _ = self.navigationController?.popViewController(animated: true)
                 }
                 

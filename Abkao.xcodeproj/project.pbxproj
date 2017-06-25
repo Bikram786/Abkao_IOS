@@ -23,6 +23,7 @@
 		B6131FC81EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBA1EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png */; };
 		B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */; };
 		B6131FCA1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */; };
+		B61E4A171EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E4A161EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift */; };
 		B659DD721EF0568000409825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD711EF0568000409825 /* AppDelegate.swift */; };
 		B659DD771EF0568000409825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B659DD751EF0568000409825 /* Main.storyboard */; };
 		B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B659DD781EF0568000409825 /* Abkao.xcdatamodeld */; };
@@ -112,6 +113,7 @@
 		B6131FBA1EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
 		B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
 		B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
+		B61E4A161EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetVideoSchedulerControl.swift; sourceTree = "<group>"; };
 		B659DD6E1EF0568000409825 /* Abkao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abkao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659DD711EF0568000409825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659DD761EF0568000409825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,14 @@
 			path = GKImages;
 			sourceTree = "<group>";
 		};
+		B61E4A151EFF4E5E00A573F3 /* SetVideoSchedulerControl */ = {
+			isa = PBXGroup;
+			children = (
+				B61E4A161EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift */,
+			);
+			path = SetVideoSchedulerControl;
+			sourceTree = "<group>";
+		};
 		B659DD651EF0568000409825 = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +359,7 @@
 		B659DDBC1EF05BA400409825 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B61E4A151EFF4E5E00A573F3 /* SetVideoSchedulerControl */,
 				B659DDBD1EF05BA400409825 /* Abstract */,
 				B659DDBF1EF05BA400409825 /* BarCodeScannerControl */,
 				B659DDC11EF05BA400409825 /* HomeControl */,
@@ -735,6 +746,7 @@
 				B659DDFF1EF05BA400409825 /* ImageCellControl.swift in Sources */,
 				B6131FC11EF7CA8300173984 /* GKImagePicker.m in Sources */,
 				B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */,
+				B61E4A171EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift in Sources */,
 				B659DD721EF0568000409825 /* AppDelegate.swift in Sources */,
 				B659DDE21EF05BA400409825 /* ProductDescManager.swift in Sources */,
 				B659DE011EF05BA400409825 /* ForgotPasswordControl.swift in Sources */,

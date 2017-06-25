@@ -48,7 +48,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
         
         ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
@@ -67,7 +67,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = String(productID)
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
         
         ModelManager.sharedInstance.priceCellManager.deleteRecord(userInfo: dictData) { (isSuccess, responseMessage) in
             

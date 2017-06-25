@@ -42,7 +42,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
         
         ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
@@ -62,7 +62,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = "2"
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
         
         ModelManager.sharedInstance.imageCellManager.deleteRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
             
@@ -73,7 +73,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     func callProductupdateAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
         
         ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
 //            self.arrProductPrice.removeAllObjects()

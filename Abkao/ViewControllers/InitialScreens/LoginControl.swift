@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginControl: AbstractControl {
-
+    
     // IBOutlets
     
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var setViewShadow: UIView!
-    @IBOutlet weak var txt_UserID: UITextField!
+    @IBOutlet weak var txt_UserName: UITextField!
     @IBOutlet weak var txt_Password: UITextField!
     
     @IBOutlet weak var setUpper: UIView!
@@ -24,15 +25,13 @@ class LoginControl: AbstractControl {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartingFields()
-        
-        
     }
-        
+    
     func setStartingFields() {
         
-      
+        
         setViewShadow.viewdraw(setViewShadow.bounds)
-        txt_UserID.addShadowToTextfield()
+        txt_UserName.addShadowToTextfield()
         txt_Password.addShadowToTextfield()
         
     }
@@ -51,19 +50,30 @@ class LoginControl: AbstractControl {
     
     @IBAction func btn_LoginAction(_ sender: UIButton) {
         
+        
+        guard let userName = txt_UserName.text, userName != "" else {
+            SVProgressHUD.showError(withStatus: "Please fill user name")
+            return
+        }
+        guard let userPassword = txt_Password.text, userPassword != "" else {
+            SVProgressHUD.showError(withStatus: "Please fill user passowrd")
+            return
+        }
+        
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["username"] = "npurwar"
-        dictData["password"] = "123456"
-                
+        dictData["username"] = userName
+        dictData["password"] = userPassword
+//        dictData["username"] = "npurwar"
+//        dictData["password"] = "123456"
+        
+        SVProgressHUD.show(withStatus: "Loding.....")
+        
         ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             
             if(isSuccess)
             {
-                 print(userObj.userID!)
-                
-                //Save Custom Object in UserDefault
-                let encodedData = NSKeyedArchiver.archivedData(withRootObject: userObj)
-                UserDefaults.standard.set(encodedData, forKey: "userinfo")
+                SVProgressHUD.dismiss()
+                print(userObj.userID!)
                 
                 self.performSegue(withIdentifier: "goto_homeview", sender: nil)
             }
@@ -79,15 +89,15 @@ class LoginControl: AbstractControl {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

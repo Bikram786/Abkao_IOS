@@ -61,7 +61,7 @@ class ScheduleManager: NSObject {
         var dictData: [String : Any] = [:]
         //temp block
         //dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        dictData["userid"] = 5
+        dictData["userid"] = 8
         dictData["day"] = strDay
         
         

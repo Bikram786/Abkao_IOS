@@ -11,6 +11,7 @@ import YouTubePlayer
 import AVKit
 import AVFoundation
 import AlamofireImage
+import SVProgressHUD
 
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -163,9 +164,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
+        dictData["userid"] = "8"
+        SVProgressHUD.show(withStatus: "Loding.....")
         
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
+            
+            SVProgressHUD.dismiss()
             
             self.productObj = productObj
             

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PriceItemControl: AbstractControl {
     
@@ -50,44 +51,58 @@ class PriceItemControl: AbstractControl {
     
     @IBAction func btn_SaveAction(_ sender: UIButton) {
         
-        if (txt_ProductName.text?.isEmpty)! || (txt_ProductPrice.text?.isEmpty)! {
+        
+        guard let productName = txt_ProductName.text, productName != "" else {
             
+            SVProgressHUD.showError(withStatus: "Please fill product name")
+            
+            return
+        }
+        
+        guard let productPrice = txt_ProductPrice.text, productPrice != "" else {
+            
+            SVProgressHUD.showError(withStatus: "Please fill product price")
+            
+            return
+        }
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["product_name"] = txt_ProductName.text!
+        dictData["product_price"] = txt_ProductPrice.text!
+        dictData["userid"] = "5"
+        if status == "edit"{
+            
+            dictData["product_id"] = getPreviousProducts.productID!
+            
+            
+            SVProgressHUD.show(withStatus: "Loding.....")
+            
+            ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+                
+                if(isSuccess)
+                {
+                    SVProgressHUD.dismiss()
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+                
+            }
             
         }else{
             
-            var  dictData : [String : Any] =  [String : Any]()
-            dictData["product_name"] = txt_ProductName.text!
-            dictData["product_price"] = txt_ProductPrice.text!
-            dictData["userid"] = "5"
-            if status == "edit"{
+            SVProgressHUD.show(withStatus: "Loding.....")
+            
+            ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
-                dictData["product_id"] = getPreviousProducts.productID!
-                
-                ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                    
-                    if(isSuccess)
-                    {
-                        
-                        _ = self.navigationController?.popViewController(animated: true)
-                    }
-                    
+                if(isSuccess)
+                {
+                    SVProgressHUD.dismiss()
+                    _ = self.navigationController?.popViewController(animated: true)
                 }
                 
-            }else{
-                
-                ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                    
-                    if(isSuccess)
-                    {
-                        
-                        _ = self.navigationController?.popViewController(animated: true)
-                    }
-                    
-                }
             }
-            
-            
         }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

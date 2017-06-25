@@ -37,19 +37,19 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
     
     //MARK: - UITableView Methods
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        // This is where you would change section header content
-        return tableView.dequeueReusableCell(withIdentifier: "VideoSchedulerHeader")
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
-        return 100
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+//    {
+//        // This is where you would change section header content
+//        return tableView.dequeueReusableCell(withIdentifier: "VideoSchedulerHeader")
+//    }
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+//    {
+//        return 100
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +59,10 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         
     }
 
+    @IBAction func btn_SetSchedulerAction(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goto_schedulerview", sender: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
