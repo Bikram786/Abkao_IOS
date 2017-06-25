@@ -71,7 +71,7 @@ extension NSDate{
         dateFormatter.timeZone = NSTimeZone.system
         let strDt = dateFormatter.string(from: NSDate() as Date)
 //        print(strDt)
-//        print(strDt+" "+dateString)
+        print(strDt+" "+dateString)
         
         dateFormatter.dateFormat = formaterType
        
@@ -95,5 +95,11 @@ extension NSDate{
         return date1.compare(self as Date) == self.compare(date2 as Date)
     }
    
+    func dayOfWeek() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EE"
+        return dateFormatter.string(from: self as Date).capitalized
+        // or capitalized(with: locale)
+    }
     
 }
