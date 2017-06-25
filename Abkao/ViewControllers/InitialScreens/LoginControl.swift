@@ -70,16 +70,15 @@ class LoginControl: AbstractControl {
         
         ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             
+            SVProgressHUD.dismiss()
+            
             if(isSuccess)
             {
-                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "goto_homeview", sender: nil)
             }
             else
             {
-                let alert = UIAlertController(title: "Invalid Credentials", message: strMessage, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                SVProgressHUD.showError(withStatus: strMessage)
             }
             
         }

@@ -1,28 +1,30 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - ALCameraViewController (1.3.1)
+  - IQKeyboardManagerSwift (4.0.10)
   - ReachabilitySwift (3)
   - SVProgressHUD (2.1.2)
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
-  - Alamofire
   - AlamofireImage
   - ALCameraViewController
+  - IQKeyboardManagerSwift
   - ReachabilitySwift (~> 3)
   - SVProgressHUD
   - YouTubePlayer
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   ALCameraViewController: 29a34772007b98e23150bfe1772475a4a80a33ff
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 883bcc8604b9385482eafe6ad889cb3541b18a6d
+PODFILE CHECKSUM: 23d393a8236e67558fd14d860e5938986624ffc4
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

@@ -48,22 +48,25 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
-            self.arrProductPrice.removeAllObjects()
-            self.productObj = productObj
-            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-            let setItemCount = self.getPriceGridValue! - self.arrProductPrice.count
-            if setItemCount > 0{
-                self.btn_AddMore.isHidden = false
-                let setCount = "Add " + String(setItemCount) + " More"
-                self.btn_AddMore.setTitle(setCount, for: .normal)
+            if(isSuccess){
+                self.arrProductPrice.removeAllObjects()
+                self.productObj = productObj
+                self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                let setItemCount = self.getPriceGridValue! * self.getPriceGridValue! - self.arrProductPrice.count
+                if setItemCount > 0{
+                    self.btn_AddMore.isHidden = false
+                    let setCount = "Add " + String(setItemCount) + " More"
+                    self.btn_AddMore.setTitle(setCount, for: .normal)
+                }
+                self.priceTable.reloadData()
+
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
             }
-            
-            self.priceTable.reloadData()
-            
         }
         
     }
@@ -72,11 +75,16 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = String(productID)
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.priceCellManager.deleteRecord(userInfo: dictData) { (isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
-            self.callProductAPI()
+            if(isSuccess){
+                self.callProductAPI()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
+            
         }
         
     }

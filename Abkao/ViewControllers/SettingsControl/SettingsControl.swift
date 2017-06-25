@@ -34,36 +34,22 @@ class SettingsControl: AbstractControl {
         return "Logout"
     }
     
-    func getCurrentSetting(){
-        
-            var  dictData : [String : Any] =  [String : Any]()
-            dictData["userid"] = "8"
-            
-            ModelManager.sharedInstance.settingsManager.getCurrentSetting(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
-                
-            }
-         
-    }
-    
     func saveSetting(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["price_grid_dimension"] = String(describing: setPriceRows!)
         dictData["image_grid_row"] = String(describing: setGridRows!)
         dictData["video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
         
-        print(dictData)
-        
         SVProgressHUD.show(withStatus: "Loding.....")
-        
         ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-            
-            if(isSuccess)
-            {
-                SVProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
+            if(isSuccess){
+                SVProgressHUD.showError(withStatus: strMessage)
                 self.callProductAPI()
-               
+            }else{
+                SVProgressHUD.showError(withStatus: strMessage)
             }
             
         }
@@ -72,35 +58,41 @@ class SettingsControl: AbstractControl {
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.show(withStatus: "Loding.....")
         
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
             
-            print(Int(productObj.imageGridRowValue!))
-            print(Int(productObj.priceGridRowValue!))
-            
-            self.setGridRows = Int(productObj.imageGridRowValue!)
-            
-            if Int(productObj.imageGridRowValue!) == 4{
-                self.setImageGrid.selectedSegmentIndex=1
-            }else if (Int(productObj.imageGridRowValue!) == 3){
-                self.setImageGrid.selectedSegmentIndex=2
-            }else{
-                self.setImageGrid.selectedSegmentIndex=0
-            }
-            
-            if Int(productObj.priceGridRowValue!) == 2{
-                self.setPriceGrid.selectedSegmentIndex=1
-            }else if (Int(productObj.priceGridRowValue!) == 3){
-                self.setPriceGrid.selectedSegmentIndex=2
-            }else{
-                self.setPriceGrid.selectedSegmentIndex=0
-            }
+            if(isSuccess){
+                self.setGridRows = Int((productObj?.imageGridRowValue!)!)
+                if Int((productObj?.imageGridRowValue!)!) == 4{
+                    self.setImageGrid.selectedSegmentIndex=1
+                    self.setGridRows = 4
+                }else if (Int((productObj?.imageGridRowValue!)!) == 3){
+                    self.setImageGrid.selectedSegmentIndex=2
+                    self.setGridRows = 3
+                }else{
+                    self.setImageGrid.selectedSegmentIndex=0
+                    self.setGridRows = 2
+                }
+                
+                if Int((productObj?.priceGridRowValue!)!) == 2{
+                    self.setPriceGrid.selectedSegmentIndex=1
+                    self.setPriceRows = 2
+                }else if (Int((productObj?.priceGridRowValue!)!) == 3){
+                    self.setPriceGrid.selectedSegmentIndex=2
+                    self.setPriceRows = 3
+                }else{
+                    self.setPriceGrid.selectedSegmentIndex=0
+                    self.setPriceRows = 0
+                }
+                self.txt_DefaultURL.text = productObj?.productVedUrl!
 
-                self.txt_DefaultURL.text = productObj.productVedUrl!
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
             
         }
         

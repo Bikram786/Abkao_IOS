@@ -67,94 +67,84 @@ class RegisterControl: AbstractControl {
         guard let firstName = txt_FirstName.text, firstName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill first name")
-            
             return
         }
         guard let accountNo = txt_AccountNo.text, accountNo != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill account number")
-            
             return
         }
         guard let userCity = txt_City.text, userCity != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill city name")
-            
             return
         }
         guard let userCountry = txt_Country.text, userCountry != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill country name")
-            
             return
         }
         guard let userName = txt_UserName.text, userName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill user ID")
-            
             return
         }
         guard let lastName = txt_LastName.text, lastName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill user lastname")
-            
             return
         }
         guard let accountName = txt_AccountName.text, accountName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill account name")
-            
             return
         }
         guard let userTelephone = txt_Telephone.text, userTelephone != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill telephone")
-            
             return
         }
         guard let userPassword = txt_Password.text, userPassword != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill user password")
-            
             return
         }
         guard let companyName = txt_Company.text, companyName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill company name")
-            
             return
         }
         
         guard let address = txt_Address.text, address != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill address")
-            
             return
         }
         guard let zipCode = txt_ZipCode.text, zipCode != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill zip code")
-            
             return
         }
         guard let email = txt_Email.text, email != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill Email")
-            
             return
         }
         guard let confirmPassword = txt_ConfirmPassword.text, confirmPassword != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill confirm password")
-            
             return
         }
         
         guard let state = txt_State.text, state != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill state name")
-            
             return
+        }
+        
+        if userPassword != confirmPassword {
+            
+            SVProgressHUD.showError(withStatus: "Password or confirm password not matched")
         }
         
         let checkEmail = isValidEmail(testStr: email)
@@ -180,16 +170,20 @@ class RegisterControl: AbstractControl {
             dictData["country"] = userCountry
             dictData["telephone"] = userTelephone
             
+            print(dictData)
+            
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
-                    
+                SVProgressHUD.dismiss()
+                if(isSuccess){
+                    SVProgressHUD.showError(withStatus: strMessage)
                    _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
+
                 
             }
             

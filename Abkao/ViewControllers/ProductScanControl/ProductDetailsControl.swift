@@ -25,17 +25,10 @@ class ProductDetailsControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setIntialView()
-       
     }
 
     func setIntialView() {
-        
-        print(getPreviousProducts.productLocation!)
-        print(getPreviousProducts.productName!)
-        print(getPreviousProducts.productRate!)
-        print(getPreviousProducts.productPromotionText!)
         
         lbl_LocationName.text = getPreviousProducts.productLocation!
         lbl_ItemName.text = getPreviousProducts.productName!

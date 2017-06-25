@@ -10,74 +10,102 @@ import UIKit
 
 class ImageCellManager: NSObject {
 
-    func addNewRecord(userInfo: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
+    func addNewRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addProductImageGrid", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
-                
-                let userObj = ImageCelll()
-                
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        let userObj = ImageCelll()
+                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }else{
+                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                     handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
         })
     }
 
-    func updateRecord(userInfo: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
+    func updateRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateProductImageGrid", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
-                
-                let userObj = ImageCelll()
-                
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        let userObj = ImageCelll()
+                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }else{
+                        handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                }
+               
                 
         })
     }
     
-    func deleteRecord(userInfo: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
+    func deleteRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "deleteProduct", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
                 
-                let userObj = ImageCelll()
-                
-                //  print(userObj.userID!)
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        let userObj = ImageCelll()
+                         handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }else{
+                        
+                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                     handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
         })
     }
     
-    func getAllRecords(userID: [String : Any], handler : @escaping (ImageCelll, Bool , String) -> Void)
+    func getAllRecords(userID: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductInImageGrid", headers: true, params: userID, result:
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
+                if(statusCode == 200){
+                    print(jsonDict)
+                    let data = jsonDict.value(forKey: "data") as! NSDictionary
+                    let isSuccess = data["success"] as! Bool
+                    if(isSuccess){
+                        let productObj = ImageCelll()
+                        productObj.setProductImageData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
+                        handler(productObj,true,"Products Received")
+                        
+                    }else{
+                        
+                       handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                    handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
-                let productObj = ImageCelll()
-                productObj.setProductImageData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                handler(productObj,true,"Products Received")
-                
-                //userObj.userID = jsonDict.value(forKey: "userid") as? Int
-                
-                //  print(userObj.userID!)
-                
-                //handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+               
                 
         })
     }

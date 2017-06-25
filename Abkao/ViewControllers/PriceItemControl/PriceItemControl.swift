@@ -69,20 +69,24 @@ class PriceItemControl: AbstractControl {
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_name"] = txt_ProductName.text!
         dictData["product_price"] = txt_ProductPrice.text!
-        dictData["userid"] = "5"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        
+        print(dictData)
+        
         if status == "edit"{
             
             dictData["product_id"] = getPreviousProducts.productID!
-            
-            
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
+                
+                if(isSuccess){
+                    SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }
@@ -93,10 +97,13 @@ class PriceItemControl: AbstractControl {
             
             ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                 
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
+                
+                if(isSuccess){
+                    SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }

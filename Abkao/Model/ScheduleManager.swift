@@ -25,34 +25,36 @@ class ScheduleManager: NSObject {
     func getAllSchedules(handler : @escaping ([SchedulerI]?, Bool , String) -> Void)
     {
         var dictData: [String : Any] = [:]
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getScheduleVideoByUserId", headers: true, params: dictData, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 
-                print(jsonDict)
-                if(statusCode == 200)
-                {
-                    let arrSchedule = jsonDict["video_list"] as? NSArray
-                    self.arrAllSchedules?.removeAllObjects()
-                    
-                    for i in arrSchedule!
-                    {
-                        let dictObj  = i as! [String : AnyObject]
-                        let scheduleObj = SchedulerI()
-                        scheduleObj.setSchedules(scheduleObj: dictObj)
-                        self.arrAllSchedules?.add(scheduleObj)
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        let arrSchedule = jsonDict["video_list"] as? NSArray
+                        self.arrAllSchedules?.removeAllObjects()
+                        
+                        for i in arrSchedule!
+                        {
+                            let dictObj  = i as! [String : AnyObject]
+                            let scheduleObj = SchedulerI()
+                            scheduleObj.setSchedules(scheduleObj: dictObj)
+                            self.arrAllSchedules?.add(scheduleObj)
+                        }
+                        
+                        handler(self.arrAllSchedules as? [SchedulerI], true,(jsonDict["message"] as? String)!)
+                        
+                    }else{
+                       handler(nil, false,(jsonDict["message"] as? String)!)
                     }
-                    
-                    handler(self.arrAllSchedules as? [SchedulerI], true,(jsonDict["message"] as? String)!)
+                }else{
+                   handler(nil, false,(jsonDict["message"] as? String)!)
                 }
-                else
-                {
-                    handler(nil, false,(jsonDict["message"] as? String)!)
-                }
-                
+             
                 
         })
 
@@ -74,29 +76,29 @@ class ScheduleManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 
-                print(jsonDict)
-                
-                if(statusCode == 200)
-                {
-                    let arrSchedule = jsonDict["video_list"] as? NSArray
-                    
-                    self.arrDaySchedules?.removeAllObjects()
-                    for i in arrSchedule!
-                    {
-                        let dictObj  = i as! [String : AnyObject]
-                        let scheduleObj = SchedulerI()
-                        scheduleObj.setSchedules(scheduleObj: dictObj )
-                        self.arrDaySchedules?.add(scheduleObj)
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        let arrSchedule = jsonDict["video_list"] as? NSArray
+                        self.arrDaySchedules?.removeAllObjects()
+                        for i in arrSchedule!
+                        {
+                            let dictObj  = i as! [String : AnyObject]
+                            let scheduleObj = SchedulerI()
+                            scheduleObj.setSchedules(scheduleObj: dictObj )
+                            self.arrDaySchedules?.add(scheduleObj)
+                        }
+                        handler(self.arrDaySchedules as? [SchedulerI],true,(jsonDict["message"] as? String)!)
+                        
+                    }else{
+                        
+                        handler(nil, true,(jsonDict["message"] as? String)!)
                     }
+                }else{
                     
-                    handler(self.arrDaySchedules as? [SchedulerI],true,(jsonDict["message"] as? String)!)
+                   handler(nil, true,(jsonDict["message"] as? String)!)
                 }
-                else
-                {
-                    handler(nil, true,(jsonDict["message"] as? String)!)
-                }
-
-                
+              
         })
 
         
@@ -107,25 +109,27 @@ class ScheduleManager: NSObject {
 
     {
         var dictData: [String : Any] = [:]
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["scheduler_id"] = scheduleObj.scheduleID
-
 
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "deleteScheduleVideo", headers: true, params: dictData, result:
             {
                 (jsonDict,statusCode) in
                 // success code
-                
-                print(jsonDict)
-                if(statusCode == 200)
-                {
-                    handler(true,(jsonDict["message"] as? String)!)
-                }
-                else
-                {
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        
+                       handler(true,(jsonDict["message"] as? String)!)
+                        
+                    }else{
+                        
+                        handler(false,(jsonDict["message"] as? String)!)
+                    }
+                }else{
+                    
                     handler(false,(jsonDict["message"] as? String)!)
                 }
-                
                 
         })
     
@@ -134,32 +138,30 @@ class ScheduleManager: NSObject {
     func addSchedule(scheduleObj : SchedulerI, handler : @escaping (SchedulerI?, Bool , String) -> Void)
     {
         var dictData: [String : Any] = [:]
-       // dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["start_time"] = scheduleObj.startTime
         dictData["end_time"] = scheduleObj.endTime
         dictData["days"] = scheduleObj.arrDays
         dictData["video_link"] = scheduleObj.productVedUrl
-        
-        print(dictData)
         
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "scheduleVideo", headers: true, params: dictData, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 
-                print(jsonDict)
-                if(statusCode == 200)
-                {
-                    scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
-                    handler(scheduleObj, true, (jsonDict["message"] as? String)!)
-                    
-                }
-               else
-                {
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
+                        handler(scheduleObj, true, (jsonDict["message"] as? String)!)
+                        
+                    }else{
+                        handler(nil, false, (jsonDict["message"] as? String)!)
+                    }
+                }else{
                     handler(nil, false, (jsonDict["message"] as? String)!)
                 }
-                
+               
         })
     }
     
@@ -167,8 +169,7 @@ class ScheduleManager: NSObject {
     {
         var dictData: [String : Any] = [:]
         dictData["scheduler_id"] = scheduleObj.scheduleID
-        // dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["start_time"] = scheduleObj.startTime
         dictData["end_time"] = scheduleObj.endTime
         dictData["days"] = scheduleObj.arrDays
@@ -178,20 +179,19 @@ class ScheduleManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
-                
-                if(statusCode == 200)
-                {
-                    scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
-                    handler(scheduleObj,true,(jsonDict["message"] as? String)!)
-                }
-                else{
-                    
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
+                        handler(scheduleObj,true,(jsonDict["message"] as? String)!)
+                        
+                    }else{
+                        handler(nil, false, (jsonDict["message"] as? String)!)
+                    }
+                }else{
                     handler(nil, false, (jsonDict["message"] as? String)!)
                 }
-                
-                
-                
+          
         })
     }
 }

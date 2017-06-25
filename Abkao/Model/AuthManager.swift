@@ -13,7 +13,7 @@ class AuthManager: NSObject {
     
     
     
-    func userSignUp(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
+    func userSignUp(userInfo: [String : Any], handler : @escaping (UserI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "register", headers: true, params: userInfo, result:
             {
@@ -21,14 +21,27 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                if(statusCode == 200){
+                    
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    
+                    if(isSuccess){
+                        
+                        ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                        //set User Object
+                        self.setUserDefaultValues()
+                        handler(ModelManager.sharedInstance.profileManager.userObj! , true ,"User registered successfully")
+                        
+                    }else{
+                        
+                        handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                    handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
-                //set User Object
-                self.setUserDefaultValues()
-
                 
-                
-                handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })
     }
@@ -48,7 +61,6 @@ class AuthManager: NSObject {
                     if(isSuccess)
                     {
                         ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
-                        
                         //set User Object
                         self.setUserDefaultValues()
                         
@@ -65,12 +77,8 @@ class AuthManager: NSObject {
                     handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
                 }
                 
-                
-                
                 print("user id : \(String(describing: (ModelManager.sharedInstance.profileManager.userObj?.userID)!))")
-                //print(jsonDict)
-                
-                //handler(userObj, true,"User login successfully")
+              
                 
         })
     }
@@ -81,24 +89,53 @@ class AuthManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
                 
-                ModelManager.sharedInstance.profileManager.userObj?.resetData()
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        
+                        ModelManager.sharedInstance.profileManager.userObj?.resetData()
+                        handler(true,"User logout successfully")
+                        
+                    }else{
+                        
+                        handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                    handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
-                handler(true,"User logout successfully")
+                
                 
         })
     }
     
     func forgotPassword(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
     {
-        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "forgot", headers: true, params: userInfo, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "forgetpassword", headers: true, params: userInfo, result:
             {
+                
                 (jsonDict,statusCode) in
-                // success code
+                
                 print(jsonDict)
                 
-                handler(true,"User logout successfully")
+                if(statusCode == 200){
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    if(isSuccess){
+                        
+                        handler(true,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }else{
+                        
+                        handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                    handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                }
+                
+                
                 
         })
     }

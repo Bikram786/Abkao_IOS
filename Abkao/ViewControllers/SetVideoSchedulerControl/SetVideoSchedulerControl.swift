@@ -175,11 +175,11 @@ class SetVideoSchedulerControl: AbstractControl {
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
-                
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
+                if(isSuccess){
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }
@@ -188,10 +188,10 @@ class SetVideoSchedulerControl: AbstractControl {
             
             ModelManager.sharedInstance.scheduleManager.addSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
                 
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                if(isSuccess){
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }
