@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		467E2F9C1EFFEB1B008A92F2 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 467E2F9B1EFFEB1A008A92F2 /* empty.wav */; };
 		B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA21EF7C41300173984 /* ShowAlerts.swift */; };
 		B6131FA51EF7C73400173984 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA41EF7C73400173984 /* ProfileManager.swift */; };
 		B6131FBD1EF7CA8300173984 /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA91EF7CA8300173984 /* GKCropBorderView.m */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		34C2F26954D0D6F84280EBB7 /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
+		467E2F9B1EFFEB1A008A92F2 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
 		49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abkao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3BC0CB0CF2AAECFEF04FAC /* Pods-Abkao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.debug.xcconfig"; sourceTree = "<group>"; };
 		B6131FA21EF7C41300173984 /* ShowAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlerts.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 		B659DD961EF05BA400409825 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				467E2F9B1EFFEB1A008A92F2 /* empty.wav */,
 				B6131FA61EF7CA8300173984 /* GKImagePicker */,
 				B6131FA11EF7C41300173984 /* UIAlertView */,
 				B65ABF541EF4457D0040D260 /* CustomFonts */,
@@ -625,6 +628,7 @@
 				B6131FC41EF7CA8300173984 /* PLCameraSheetButton@2x.png in Resources */,
 				B6FF57111EF67F3C0010301E /* VideoScheduler.xib in Resources */,
 				B659DD7F1EF0568100409825 /* LaunchScreen.storyboard in Resources */,
+				467E2F9C1EFFEB1B008A92F2 /* empty.wav in Resources */,
 				B6131FCA1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
 				B6131FC61EF7CA8300173984 /* PLCameraSheetButtonPressed@2x.png in Resources */,
 				B65ABF4A1EF429800040D260 /* ItemDetails.xib in Resources */,
