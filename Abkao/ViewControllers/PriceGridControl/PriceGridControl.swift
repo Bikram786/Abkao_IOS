@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
     
@@ -16,7 +17,8 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var priceTable: UITableView!
     @IBOutlet weak var setBoarderView: UIView!
-    @IBOutlet weak var btn_ShowItems: UIButton!
+    @IBOutlet weak var btn_ShowItems: UIButton!    
+    @IBOutlet weak var btn_AddMore: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +31,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.separatorStyle = .none
         priceTable.tableFooterView = UIView()
         setBoarderView.viewdraw(setBoarderView.bounds)
-        let setValue = "Add " + String(getPriceGridValue!*getPriceGridValue!) + " Items"
-        btn_ShowItems.setTitle(setValue, for: .normal)
-        
+        self.btn_AddMore.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,14 +49,19 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = "8"
-        
+        SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
-            
-            print(productObj)
-            
+            SVProgressHUD.dismiss()
             self.arrProductPrice.removeAllObjects()
             self.productObj = productObj
             self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+            let setItemCount = self.getPriceGridValue! - self.arrProductPrice.count
+            if setItemCount > 0{
+                self.btn_AddMore.isHidden = false
+                let setCount = "Add " + String(setItemCount) + " More"
+                self.btn_AddMore.setTitle(setCount, for: .normal)
+            }
+            
             self.priceTable.reloadData()
             
         }
@@ -68,9 +73,9 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = String(productID)
         dictData["userid"] = "8"
-        
+        SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.priceCellManager.deleteRecord(userInfo: dictData) { (isSuccess, responseMessage) in
-            
+            SVProgressHUD.dismiss()
             self.callProductAPI()
         }
         

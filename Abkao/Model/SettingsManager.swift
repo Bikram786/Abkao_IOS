@@ -33,10 +33,9 @@ class SettingsManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 print(jsonDict)
-                
-                let userObj = Settingsl()
-                
-                handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                let settingObj = Settingsl()
+                settingObj.setSettingInfo(userObj: userInfo as [String : AnyObject])
+                handler(settingObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })
     }

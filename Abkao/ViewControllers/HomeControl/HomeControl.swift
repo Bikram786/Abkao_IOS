@@ -34,7 +34,7 @@ extension HomeControl:UNUserNotificationCenterDelegate{
         //to distinguish between notifications
         if notification.request.identifier == requestIdentifier{
             
-            
+            getDayVideos()
             print("Notification received in foreground")
             completionHandler( [])
             
@@ -101,10 +101,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewWillAppear(true)
         
+        callProductAPI()
         self.getDayVideos()
         
     }
-    
     
     override var navTitle: String {
         
@@ -144,19 +144,16 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-        
-       callProductAPI()
        
 
         let strDayName = NSDate().dayOfWeek()
 
-       getProductsByDay(strDay: "Mon")
+       getProductsByDay(strDay: strDayName!)
     }
     
     
     //MARK: - Ved Play Methods
     func getProductsByDay(strDay : String) {
-        
         
         ModelManager.sharedInstance.scheduleManager.dayName = strDay
         
@@ -171,7 +168,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         }
         
     }
-        
     
     
     func getDayVideos()
@@ -184,9 +180,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         {
             let tempSchObj = sheObj as! SchedulerI
             
+            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.startTime!)
+            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.endTime!)
             
-            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
-            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:36PM")
+            //testing code
+//            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
+//            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:36PM")
             
             //-------This check Provides us nearest upcoming Ved Refrence
             let startDT = stDate.timeIntervalSince1970
@@ -264,14 +263,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     {
         //temp comment
 
-        /*
         youTubeView.clear()
 
         let myVideoURL = NSURL(string: strUrl)
         youTubeView.loadVideoURL(myVideoURL! as URL)
         
         self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 10)
-       */
+       
     }
     
     func playVed() {
@@ -288,7 +286,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
-            
+            self.leftData.removeAllObjects()
+            self.rightData.removeAllObjects()
+            self.arrProductPrice.removeAllObjects()
+            self.arrProductPrice.removeAllObjects()
             self.productObj = productObj
             
             if productObj.arrProductDesc?.count != 0 {

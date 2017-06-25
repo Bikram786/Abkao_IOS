@@ -167,7 +167,12 @@ class ScheduleManager: NSObject {
     {
         var dictData: [String : Any] = [:]
         dictData["scheduler_id"] = scheduleObj.scheduleID
-        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        // dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        dictData["userid"] = "8"
+        dictData["start_time"] = scheduleObj.startTime
+        dictData["end_time"] = scheduleObj.endTime
+        dictData["days"] = scheduleObj.arrDays
+        dictData["video_link"] = scheduleObj.productVedUrl
         
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateScheduleVideo", headers: true, params: dictData, result:
             {
