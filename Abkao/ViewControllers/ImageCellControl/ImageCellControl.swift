@@ -47,36 +47,45 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.setStatus("Loding.....")
         ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
-            self.arrProductImages.removeAllObjects()
-            self.productObj = productObj
-            self.arrProductImages = (productObj.arrProductImage as! NSMutableArray).mutableCopy() as! NSMutableArray
-            let setItemCount = self.getImageGridValue! - self.arrProductImages.count
-            if setItemCount > 0{
-                self.btn_AddMore.isHidden = false
-                let setCount = "Add " + String(setItemCount) + " More"
-                self.btn_AddMore.setTitle(setCount, for: .normal)
+            if(isSuccess){
+                self.arrProductImages.removeAllObjects()
+                self.productObj = productObj
+                self.arrProductImages = (productObj?.arrProductImage as! NSMutableArray).mutableCopy() as! NSMutableArray
+                let setItemCount = self.getImageGridValue! - self.arrProductImages.count
+                if setItemCount > 0{
+                    self.btn_AddMore.isHidden = false
+                    let setCount = "Add " + String(setItemCount) + " More"
+                    self.btn_AddMore.setTitle(setCount, for: .normal)
+                }
+                
+                self.imageControlTbl.reloadData()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
             }
-            
-            self.imageControlTbl.reloadData()
             
         }
         
     }
     
-    func callProductDeleteAPI(){
+    func callProductDeleteAPI(productID: String){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["product_id"] = "2"
-        dictData["userid"] = "8"
+        dictData["product_id"] = productID
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.setStatus("Loding.....")
         ModelManager.sharedInstance.imageCellManager.deleteRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
-            self.callProductAPI()
+            if(isSuccess){
+                self.callProductAPI()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
+            
         }
         
     }
@@ -98,7 +107,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.setImage.af_setImage(withURL: url!)
         cell.lbl_ProductName.text = proDescObj.productName!
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
-        cell.lbl_VideoURL.text = proDescObj.productPrice!
+        cell.lbl_VideoURL.text = proDescObj.productVedUrl!
         cell.productNameView.setViewBoarder()
         cell.productPriceView.setViewBoarder()
         cell.productURLView.setViewBoarder()
@@ -123,7 +132,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
     
-    //self.callProductDeleteAPI(productID: proDescObj.productID!)
+        self.callProductDeleteAPI(productID: String(proDescObj.productID!))
     
     }
     deleteAction.backgroundColor = .red

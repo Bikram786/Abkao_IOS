@@ -47,9 +47,14 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.scheduleManager.getAllSchedules() { (productObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
-            self.arrProductImages.removeAllObjects()
-            self.arrProductImages.addObjects(from: productObj!)
-            self.VideoSchedulerTable.reloadData()
+            if(isSuccess){
+                self.arrProductImages.removeAllObjects()
+                self.arrProductImages.addObjects(from: productObj!)
+                self.VideoSchedulerTable.reloadData()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
+            
             
         }
         
@@ -62,7 +67,12 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.scheduleManager.deleteSchedule(scheduleObj: obj) { (isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
-            self.getAllScheduledVideos()
+            if(isSuccess){
+                 self.getAllScheduledVideos()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
+           
         }
         
     }

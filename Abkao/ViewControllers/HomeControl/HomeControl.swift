@@ -140,32 +140,26 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-       
-       getProductsByDay(strDay: "Mon")
+        getProductsByDay(strDay: "Mon")
     }
     
     
     //MARK: - Ved Play Methods
     func getProductsByDay(strDay : String) {
         
-        
-        
-        
         ModelManager.sharedInstance.scheduleManager.dayName = strDay
-
+        SVProgressHUD.show(withStatus: "Loding.......")
         ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDay) { (arrSchduleObj, isSuccess, responseMessage) in
-            
-            print(arrSchduleObj!)
-            print("Scheduled videos recieved")
-            
-            
-            self.getDayVideos()
-            
+            SVProgressHUD.dismiss()
+            if(isSuccess){
+                self.getDayVideos()
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
+            }
         
         }
             
-        }
-        
+    }
     
     
     func getDayVideos()
@@ -178,11 +172,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         {
             let tempSchObj = sheObj as! SchedulerI
             
-            
-            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
+            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "4:23PM")
             let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "05:03PM")
-            
-            
             
             //-------This check Provides us nearest upcoming Ved Refrence
             let startDT = stDate.timeIntervalSince1970
@@ -190,8 +181,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             let differenceTime = (startDT - currentDT)
             
-            if(differenceTime > 0.0)
-            {
+            if(differenceTime > 0.0){
                 if(miniTime == nil)
                 {
                     miniTime =  differenceTime
@@ -275,48 +265,40 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func callProductAPI(){
         
         var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.show(withStatus: "Loding.....")
-        
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
-            self.leftData.removeAllObjects()
-            self.rightData.removeAllObjects()
-            self.arrProductPrice.removeAllObjects()
-            self.arrProductPrice.removeAllObjects()
-            self.productObj = productObj
-            
-            if productObj.arrProductDesc?.count != 0 {
-                
-                self.arrProductDes = (productObj.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
-               
-                
-                for i in (0..<self.arrProductDes.count){
-                    
-                    if i % 2 == 0 {
-                        
-                        self.leftData.add(self.arrProductDes[i])
-                        
-                    }else{
-                        
-                        self.rightData.add(self.arrProductDes[i])
+            if(isSuccess){
+                self.leftData.removeAllObjects()
+                self.rightData.removeAllObjects()
+                self.arrProductPrice.removeAllObjects()
+                self.arrProductPrice.removeAllObjects()
+                self.productObj = productObj
+                if productObj?.arrProductDesc?.count != 0 {
+                    self.arrProductDes = (productObj?.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
+                    for i in (0..<self.arrProductDes.count){
+                        if i % 2 == 0 {
+                            self.leftData.add(self.arrProductDes[i])
+                        }else{
+                            self.rightData.add(self.arrProductDes[i])
+                        }
                     }
                     
+                    self.setImageGrid = Int((productObj?.imageGridRowValue!)!)
+                    self.setPriceGrid = Int((productObj?.priceGridRowValue!)!)
+                    self.leftTbl.reloadData()
+                    self.rightTbl.reloadData()
+                    
                 }
-                
-                self.setImageGrid = Int(productObj.imageGridRowValue!)
-                self.setPriceGrid = Int(productObj.priceGridRowValue!)
-                
-                self.leftTbl.reloadData()
-                self.rightTbl.reloadData()
-                
-                
-            }
-            if productObj.arrProductPrice?.count != 0 {
-                
-                self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-                self.setPriceGridView(priceItems: self.setPriceGrid!)
+                if productObj?.arrProductPrice?.count != 0 {
+                    self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                    self.setPriceGridView(priceItems: self.setPriceGrid!)
+                }
+
+            }else{
+                SVProgressHUD.showError(withStatus: responseMessage)
             }
         }
 

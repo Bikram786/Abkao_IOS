@@ -425,7 +425,7 @@
                                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRr-5r-ApF">
                                                                 <rect key="frame" x="0.0" y="273" width="279" height="24.5"/>
@@ -533,7 +533,7 @@
                                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYd-Xg-AuT">
                                                                 <rect key="frame" x="0.0" y="272.5" width="279" height="24.5"/>
@@ -2521,7 +2521,9 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-XL-9b5">
                                         <rect key="frame" x="312" y="29" width="125" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Start At " image="dropdown"/>
+                                        <state key="normal" title="Start At " image="dropdown">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="btn_StartEndTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="2b4-8B-tYm"/>
                                         </connections>
@@ -2529,7 +2531,9 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av8-Ib-Onr">
                                         <rect key="frame" x="487" y="29" width="125" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="End At " image="dropdown"/>
+                                        <state key="normal" title="End At " image="dropdown">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="btn_StartEndTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="ddX-6s-TFu"/>
                                         </connections>

@@ -118,11 +118,9 @@ class UserI: NSObject,NSCoding {
         
         //let arrData : NSArray = userObj["userdetails"] as! NSArray
         let dictData : [String : AnyObject]  = userObj["userdetails"] as! [String : AnyObject]
-        
         self.userID = dictData["userid"] as? Int
         self.accountName = dictData["account_name"] as? String ?? ""
         self.accountNo =   dictData["account_number"] as? String ?? ""
-        
         self.defaultUrl    = userObj["video_url"] as? String ?? ""
         self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
         self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)

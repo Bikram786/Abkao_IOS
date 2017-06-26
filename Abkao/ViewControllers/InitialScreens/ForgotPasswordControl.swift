@@ -67,16 +67,22 @@ class ForgotPasswordControl: AbstractControl {
             
             var  dictData : [String : Any] =  [String : Any]()
             dictData["email"] = userEmail
-                                    
+            print(dictData)
+            
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.authManager.forgotPassword(userInfo: dictData) { (isSuccess, strMessage) in
                 
+                SVProgressHUD.dismiss()
+                
                 if(isSuccess)
                 {
-                    SVProgressHUD.dismiss()
-                    
+                    SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
+                    
+                }else{
+                    
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }

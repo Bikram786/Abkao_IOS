@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AbstractControl: UIViewController {
 
@@ -182,16 +183,19 @@ func goback() {
 func gotoLoginView() {
     
     var  dictData : [String : Any] =  [String : Any]()
-    let obj = UserI()
-    dictData["userid"] = String(describing: obj.userID)
-    
+    dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+    SVProgressHUD.show(withStatus: "Loding.....")
     ModelManager.sharedInstance.authManager.logout(userInfo: dictData) { (isSuccess, strMessage) in
-        
+        SVProgressHUD.dismiss()
         if(isSuccess)
         {
-            print(strMessage)
-            
+            UserDefaults.standard.removeObject(forKey: "userinfo")
+            UserDefaults.standard.synchronize()
+            SVProgressHUD.showError(withStatus: strMessage)
             _ = self.navigationController?.popToRootViewController(animated: true)
+        }else{
+            
+            SVProgressHUD.showError(withStatus: strMessage)
         }
         
     }

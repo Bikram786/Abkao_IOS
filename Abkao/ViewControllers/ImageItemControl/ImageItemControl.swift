@@ -43,9 +43,6 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     func setStartingFields() {
         
         if status == "edit"{
-            
-            print(getPreviousProducts.productID!)
-            
             txt_ProductName.text = getPreviousProducts.productName!
             txt_ProductPrice.text = getPreviousProducts.productPrice!
             txt_VideoURL.text = ""
@@ -95,42 +92,51 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         dictData["product_price"] = txt_ProductPrice.text!
         dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
         var  imageDictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "5"
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         
         if status == "edit"{
             
             dictData["product_id"] = getPreviousProducts.productID!
-            imageDictData["mimetype"] = ""
+            
+            if sendFinalImage != "" {
+                imageDictData["mimetype"] = "image/jpeg"
+            }else{
+                imageDictData["mimetype"] = ""
+            }
             imageDictData["filecontent"] = sendFinalImage
             dictData["fileUpload"] = imageDictData
-            
-            print(dictData)
             
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
+                if(isSuccess){
+                    SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }
         }else{
             
-            imageDictData["mimetype"] = "image/jpeg"
+            if sendFinalImage != "" {
+                imageDictData["mimetype"] = "image/jpeg"
+            }else{
+                imageDictData["mimetype"] = ""
+            }
             imageDictData["filecontent"] = sendFinalImage
             dictData["fileUpload"] = imageDictData
             
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                
-                if(isSuccess)
-                {
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
+                if(isSuccess){
+                    SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
             }
@@ -185,10 +191,14 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 // Do something with your image here.
                 // If cropping is enabled this image will be the cropped version
                 
-                let getImage = self?.resizeImage(image: image!, newWidth: 300)
-                self?.setupImage.image = getImage
-                let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
-                self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!
+                if image != nil {
+                    let getImage = self?.resizeImage(image: image!, newWidth: 300)
+                    self?.setupImage.image = getImage
+                    let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
+                    self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!
+                }
+                
+               
                 self?.dismiss(animated: true, completion: nil)
             }
             
