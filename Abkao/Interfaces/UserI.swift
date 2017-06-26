@@ -124,9 +124,6 @@ class UserI: NSObject,NSCoding {
         self.defaultUrl    = userObj["video_url"] as? String ?? ""
         self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
         self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
-        
-        
-    
     }
     
 
