@@ -28,6 +28,8 @@ class PriceCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
+                        
+                        self.updateHomeControlModalData()
                         let productPriceObj = ProductPriceI()
                         productPriceObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
                         handler(productPriceObj , true ,(jsonDict.value(forKey: "message") as? String)!)
@@ -56,6 +58,7 @@ class PriceCellManager: NSObject {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess)
                     {
+                        self.updateHomeControlModalData()
                         let productPriceObj = ProductPriceI()
                         handler(productPriceObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
@@ -79,6 +82,7 @@ class PriceCellManager: NSObject {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
                         
+                        self.updateHomeControlModalData()
                         handler(true,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
@@ -139,4 +143,14 @@ class PriceCellManager: NSObject {
                 
         })
     }
+    
+    func updateHomeControlModalData()
+    {
+        let userinfo : [String : Any] = ["userID":ModelManager.sharedInstance.profileManager.userObj?.userID as Any]
+        
+        ModelManager.sharedInstance.productManager.getAllProducts(userID: userinfo, handler: { (proObj, isSuccess, strMessage) in
+            
+        })
+    }
+
 }

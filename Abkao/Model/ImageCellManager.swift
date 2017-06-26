@@ -27,6 +27,10 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
+                        
+                        self.updateHomeControlModalData()
+
+
                         let productDescObj = ProductDescI()
                         handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
@@ -50,6 +54,9 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
+                        
+                        self.updateHomeControlModalData()
+
                         let productDescObj = ProductDescI()
                         handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
@@ -74,6 +81,9 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
+                        
+                        self.updateHomeControlModalData()
+                        
                         let productDescObj = ProductDescI()
                          handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
@@ -134,6 +144,15 @@ class ImageCellManager: NSObject {
                 
                
                 
+        })
+    }
+    
+    func updateHomeControlModalData()
+    {
+        let userinfo : [String : Any] = ["userID":ModelManager.sharedInstance.profileManager.userObj?.userID as Any]
+        
+        ModelManager.sharedInstance.productManager.getAllProducts(userID: userinfo, handler: { (proObj, isSuccess, strMessage) in
+            
         })
     }
     
