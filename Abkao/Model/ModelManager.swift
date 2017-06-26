@@ -13,8 +13,6 @@ class ModelManager: NSObject {
     var authManager:AuthManager
     var productManager : ProductManager
     var settingsManager : SettingsManager
-    var productDescManager : ProductDescManager
-    var productPriceManager : ProductPriceManager
     var barcodeManager : BarcodeManager
     var scheduleManager : ScheduleManager
     var imageCellManager : ImageCellManager
@@ -28,8 +26,6 @@ class ModelManager: NSObject {
         authManager = AuthManager()
         productManager = ProductManager()
         settingsManager = SettingsManager()
-        productDescManager = ProductDescManager()
-        productPriceManager = ProductPriceManager()
         barcodeManager = BarcodeManager()
         scheduleManager = ScheduleManager()
         imageCellManager = ImageCellManager()

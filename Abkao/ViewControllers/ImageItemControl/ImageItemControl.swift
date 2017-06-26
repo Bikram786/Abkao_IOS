@@ -108,9 +108,16 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             
             SVProgressHUD.show(withStatus: "Loding.....")
             
-            ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, strMessage) in
                 SVProgressHUD.dismiss()
                 if(isSuccess){
+                    
+                    self.getPreviousProducts.productID = productObj?.productID
+                    self.getPreviousProducts.productName = productObj?.productName
+                    self.getPreviousProducts.productImgUrl = productObj?.productImgUrl
+                    self.getPreviousProducts.productPrice = productObj?.productPrice
+                    self.getPreviousProducts.productVedUrl = productObj?.productVedUrl
+                    
                     SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
                 }else{
@@ -130,7 +137,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             
             SVProgressHUD.show(withStatus: "Loding.....")
             
-            ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (productPriceObj, isSuccess, strMessage) in
                 SVProgressHUD.dismiss()
                 if(isSuccess){
                     SVProgressHUD.showError(withStatus: strMessage)

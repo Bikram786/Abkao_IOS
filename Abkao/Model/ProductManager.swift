@@ -9,6 +9,13 @@
 import UIKit
 
 class ProductManager: NSObject {
+    
+    var productObj : ProductI?
+    
+    override init()
+    {
+        productObj  = ProductI()
+    }
 
     func getAllProducts(userID: [String : Any], handler : @escaping (ProductI?, Bool , String) -> Void)
     {
@@ -17,16 +24,19 @@ class ProductManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 
+                print(jsonDict)
+                
                 if(statusCode == 200){
                     
                     let data = jsonDict.value(forKey: "data") as! NSDictionary
                     let isSuccess = data["success"] as! Bool
                     
-                    if((isSuccess)){
+                    if(isSuccess){
                         
-                        let productObj = ProductI()
-                        productObj.setProductsData(productObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                        handler(productObj,true,"Products Received")
+                        //let productObj = ProductI()
+                        self.productObj?.setProductsData(productObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
+
+                        handler(self.productObj,true,"Products Received")
                         
                     }else{
                         
@@ -37,8 +47,6 @@ class ProductManager: NSObject {
                     handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
                 }
                
-                
-                
         })
     }
     

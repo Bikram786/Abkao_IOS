@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class PriceItemControl: AbstractControl {
     
-    var getPreviousProducts = ProductPriceI()
+    var getPreviousProducts : ProductPriceI?
     var status:String?
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txt_ProductName: UITextField!
@@ -32,8 +32,8 @@ class PriceItemControl: AbstractControl {
         
         if status == "edit"{
             
-            txt_ProductName.text = getPreviousProducts.productName
-            txt_ProductPrice.text = getPreviousProducts.productRate
+            txt_ProductName.text = getPreviousProducts?.productName
+            txt_ProductPrice.text = getPreviousProducts?.productRate
             btn_Save.setTitle("Update", for: .normal)
             
         }else{
@@ -75,17 +75,27 @@ class PriceItemControl: AbstractControl {
         
         if status == "edit"{
             
-            dictData["product_id"] = getPreviousProducts.productID!
+            dictData["product_id"] = getPreviousProducts?.productID!
+            
             SVProgressHUD.show(withStatus: "Loding.....")
             
-            ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (priceProductObj, isSuccess, strMessage) in
+                
+                
                 
                 SVProgressHUD.dismiss()
                 
                 if(isSuccess){
+                    
+                    self.getPreviousProducts?.productName = priceProductObj?.productName
+                    self.getPreviousProducts?.productRate = priceProductObj?.productRate
+                    self.getPreviousProducts?.productID = priceProductObj?.productID
+                    
+                    
                     SVProgressHUD.showError(withStatus: strMessage)
                     _ = self.navigationController?.popViewController(animated: true)
-                }else{
+                }else
+                {
                     SVProgressHUD.showError(withStatus: strMessage)
                 }
                 
@@ -95,7 +105,7 @@ class PriceItemControl: AbstractControl {
             
             SVProgressHUD.show(withStatus: "Loding.....")
             
-            ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (productPriceObj, isSuccess, strMessage) in
                 
                 SVProgressHUD.dismiss()
                 

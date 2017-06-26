@@ -58,6 +58,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     var productObj : ProductI?
     var setImageGrid : Int?
     var setPriceGrid : Int?
+    var defaultUrl : String?
     
     var arrProductDes = NSMutableArray()
     var arrProductPrice = NSMutableArray()
@@ -98,10 +99,27 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewWillAppear(true)
         
-        callProductAPI()
+        setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+        setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+        defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+        
+        setClv.reloadData()
+        leftTbl.reloadData()
+        rightTbl.reloadData()
+        
         self.getDayVideos()
+
         
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        youTubeView.stop()
+        youTubeView.clear()
+        
+    }
+
     
     override var navTitle: String {
         
@@ -124,6 +142,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         setImageGrid = 0
         setPriceGrid = 0
+        defaultUrl = ""
         
         leftTbl.delegate = self
         leftTbl.dataSource = self
@@ -141,11 +160,14 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-
-
-       let strDayName = NSDate().dayOfWeek()
-
-       getProductsByDay(strDay: strDayName!)
+        
+        
+        
+        //API Calls
+        let strDayName = NSDate().dayOfWeek()
+        
+        self.callProductAPI()
+        self.getProductsByDay(strDay: strDayName!)
     }
     
     
@@ -292,6 +314,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 self.arrProductPrice.removeAllObjects()
                 self.arrProductPrice.removeAllObjects()
                 self.productObj = productObj
+                
+                
+                self.setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+                self.setPriceGrid =  ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+                self.defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+                
+                
                 if productObj?.arrProductDesc?.count != 0 {
                     self.arrProductDes = (productObj?.arrProductDesc as! NSMutableArray).mutableCopy() as! NSMutableArray
                     for i in (0..<self.arrProductDes.count){
@@ -302,8 +331,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                         }
                     }
                     
-                    self.setImageGrid = Int((productObj?.imageGridRowValue!)!)
-                    self.setPriceGrid = Int((productObj?.priceGridRowValue!)!)
+                    
                     self.leftTbl.reloadData()
                     self.rightTbl.reloadData()
                     
@@ -371,6 +399,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        print(setImageGrid!)
            return setImageGrid!
             
     }
@@ -447,7 +476,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         print(setPriceGrid!)
         
-        return setPriceGrid!
+        return setPriceGrid!*setPriceGrid!
     }
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

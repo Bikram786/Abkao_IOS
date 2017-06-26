@@ -10,8 +10,14 @@ import UIKit
 
 class PriceCellManager: NSObject {
 
+    var arrProductPrice : [ProductPriceI]?
     
-    func addNewRecord(userInfo: [String : Any], handler : @escaping (PriceCelll?, Bool , String) -> Void)
+    override init()
+    {
+        arrProductPrice = [ProductPriceI]()
+    }
+    
+    func addNewRecord(userInfo: [String : Any], handler : @escaping (ProductPriceI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addProductPriceGrid", headers: true, params: userInfo, result:
             {
@@ -22,9 +28,9 @@ class PriceCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
-                        let userObj = PriceCelll()
-                        userObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
-                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        let productPriceObj = ProductPriceI()
+                        productPriceObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
+                        handler(productPriceObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
@@ -38,18 +44,20 @@ class PriceCellManager: NSObject {
         })
     }
     
-    func updateRecord(userInfo: [String : Any], handler : @escaping (PriceCelll?, Bool , String) -> Void)
+    func updateRecord(userInfo: [String : Any], handler : @escaping (ProductPriceI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateProductPriceGrid", headers: true, params: userInfo, result:
             {
                 (jsonDict,statusCode) in
                 // success code
                 
-                if(statusCode == 200){
+                if(statusCode == 200)
+                {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
-                    if(isSuccess){
-                        let userObj = PriceCelll()
-                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                    if(isSuccess)
+                    {
+                        let productPriceObj = ProductPriceI()
+                        handler(productPriceObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
@@ -86,19 +94,41 @@ class PriceCellManager: NSObject {
         })
     }
     
-    func getAllRecords(userID: [String : Any], handler : @escaping (PriceCelll?, Bool , String) -> Void)
+    func getAllRecords(userID: [String : Any], handler : @escaping ([ProductPriceI]?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductInPriceGrid", headers: true, params: userID, result:
             {
                 (jsonDict,statusCode) in
                 // success code
-                if(statusCode == 200){
+                
+                print(jsonDict)
+                if(statusCode == 200)
+                {
                     let data = jsonDict.value(forKey: "data") as! NSDictionary
                     let isSuccess = data["success"] as! Bool
-                    if(isSuccess){
-                        let productObj = PriceCelll()
-                        productObj.setProductPriceData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                        handler(productObj,true,"Products Received")
+                    if(isSuccess)
+                    {
+                        
+                       var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
+                        
+                        let arrData = productInfoObj["price_grid"] as! NSArray
+                        if(arrData.count > 0)
+                        {
+                            self.arrProductPrice?.removeAll()
+                            
+                            for dictObj in arrData
+                            {
+                                let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                                
+                                let productObj = ProductPriceI()
+                                productObj.setProductPriceData(productInfoObj: tempProductInfoObj)
+                                
+                                self.arrProductPrice?.append(productObj)
+                                
+                            }
+                        }
+                        
+                        handler(self.arrProductPrice,true,"Products Received")
                         
                     }else{
                         handler(nil,false,"Products Received")

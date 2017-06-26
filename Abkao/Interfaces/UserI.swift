@@ -121,9 +121,9 @@ class UserI: NSObject,NSCoding {
         self.userID = dictData["userid"] as? Int
         self.accountName = dictData["account_name"] as? String ?? ""
         self.accountNo =   dictData["account_number"] as? String ?? ""
-        self.defaultUrl    = userObj["video_url"] as? String ?? ""
-        self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
-        self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
+//        self.defaultUrl    = userObj["video_url"] as? String ?? ""
+//        self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
+//        self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
     }
     
 

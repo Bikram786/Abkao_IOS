@@ -39,9 +39,7 @@
 		B659DDDF1EF05BA400409825 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD8E1EF05BA400409825 /* AuthManager.swift */; };
 		B659DDE01EF05BA400409825 /* BarcodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD8F1EF05BA400409825 /* BarcodeManager.swift */; };
 		B659DDE11EF05BA400409825 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD901EF05BA400409825 /* ModelManager.swift */; };
-		B659DDE21EF05BA400409825 /* ProductDescManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD911EF05BA400409825 /* ProductDescManager.swift */; };
 		B659DDE31EF05BA400409825 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD921EF05BA400409825 /* ProductManager.swift */; };
-		B659DDE41EF05BA400409825 /* ProductPriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD931EF05BA400409825 /* ProductPriceManager.swift */; };
 		B659DDE51EF05BA400409825 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD941EF05BA400409825 /* ScheduleManager.swift */; };
 		B659DDE61EF05BA400409825 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD951EF05BA400409825 /* SettingsManager.swift */; };
 		B659DDE71EF05BA400409825 /* Date+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD991EF05BA400409825 /* Date+Customization.swift */; };
@@ -77,8 +75,6 @@
 		B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */; };
 		B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */; };
 		B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */; };
-		B6F57C121EF6F5AB00E0B808 /* ImageCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */; };
-		B6F57C141EF6F61900E0B808 /* PriceCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F57C131EF6F61900E0B808 /* PriceCelll.swift */; };
 		B6FF57111EF67F3C0010301E /* VideoScheduler.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FF57101EF67F3C0010301E /* VideoScheduler.xib */; };
 		B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FF57121EF681FA0010301E /* VideoScheduler.swift */; };
 		B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FF57141EF6888E0010301E /* VideoSchedulerHeader.xib */; };
@@ -132,9 +128,7 @@
 		B659DD8E1EF05BA400409825 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B659DD8F1EF05BA400409825 /* BarcodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeManager.swift; sourceTree = "<group>"; };
 		B659DD901EF05BA400409825 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
-		B659DD911EF05BA400409825 /* ProductDescManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDescManager.swift; sourceTree = "<group>"; };
 		B659DD921EF05BA400409825 /* ProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
-		B659DD931EF05BA400409825 /* ProductPriceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPriceManager.swift; sourceTree = "<group>"; };
 		B659DD941EF05BA400409825 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		B659DD951EF05BA400409825 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		B659DD971EF05BA400409825 /* Abkao-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Abkao-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -171,8 +165,6 @@
 		B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settingsl.swift; sourceTree = "<group>"; };
 		B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCellManager.swift; sourceTree = "<group>"; };
 		B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCellManager.swift; sourceTree = "<group>"; };
-		B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCelll.swift; sourceTree = "<group>"; };
-		B6F57C131EF6F61900E0B808 /* PriceCelll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCelll.swift; sourceTree = "<group>"; };
 		B6FF57101EF67F3C0010301E /* VideoScheduler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoScheduler.xib; sourceTree = "<group>"; };
 		B6FF57121EF681FA0010301E /* VideoScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScheduler.swift; sourceTree = "<group>"; };
 		B6FF57141EF6888E0010301E /* VideoSchedulerHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoSchedulerHeader.xib; sourceTree = "<group>"; };
@@ -300,8 +292,6 @@
 				B659DD8B1EF05BA400409825 /* SchedulerI.swift */,
 				B659DD8C1EF05BA400409825 /* UserI.swift */,
 				B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */,
-				B6F57C111EF6F5AB00E0B808 /* ImageCelll.swift */,
-				B6F57C131EF6F61900E0B808 /* PriceCelll.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -314,8 +304,6 @@
 				B659DD8F1EF05BA400409825 /* BarcodeManager.swift */,
 				B659DD921EF05BA400409825 /* ProductManager.swift */,
 				B659DD901EF05BA400409825 /* ModelManager.swift */,
-				B659DD911EF05BA400409825 /* ProductDescManager.swift */,
-				B659DD931EF05BA400409825 /* ProductPriceManager.swift */,
 				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
 				B659DD951EF05BA400409825 /* SettingsManager.swift */,
 				B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */,
@@ -718,7 +706,6 @@
 				B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */,
 				B659DDDD1EF05BA400409825 /* SchedulerI.swift in Sources */,
 				B659DDE01EF05BA400409825 /* BarcodeManager.swift in Sources */,
-				B6F57C141EF6F61900E0B808 /* PriceCelll.swift in Sources */,
 				B6131FBE1EF7CA8300173984 /* GKImageCropOverlayView.m in Sources */,
 				B659DE061EF05BA400409825 /* ProductDetailsControl.swift in Sources */,
 				B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */,
@@ -734,7 +721,6 @@
 				B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */,
 				B6FF57191EF6C22F0010301E /* ItemDetails2.swift in Sources */,
 				B659DDDB1EF05BA400409825 /* ProductI.swift in Sources */,
-				B6F57C121EF6F5AB00E0B808 /* ImageCelll.swift in Sources */,
 				B659DDFD1EF05BA400409825 /* BarCodeScannerControl.swift in Sources */,
 				B659DE071EF05BA400409825 /* SettingsControl.swift in Sources */,
 				B659DDE51EF05BA400409825 /* ScheduleManager.swift in Sources */,
@@ -752,10 +738,8 @@
 				B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */,
 				B61E4A171EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift in Sources */,
 				B659DD721EF0568000409825 /* AppDelegate.swift in Sources */,
-				B659DDE21EF05BA400409825 /* ProductDescManager.swift in Sources */,
 				B659DE011EF05BA400409825 /* ForgotPasswordControl.swift in Sources */,
 				B659DDDE1EF05BA400409825 /* UserI.swift in Sources */,
-				B659DDE41EF05BA400409825 /* ProductPriceManager.swift in Sources */,
 				B659DDDF1EF05BA400409825 /* AuthManager.swift in Sources */,
 				B659DDE81EF05BA400409825 /* UILabel+Customization.swift in Sources */,
 				B659DE081EF05BA400409825 /* UINavigationControl.swift in Sources */,

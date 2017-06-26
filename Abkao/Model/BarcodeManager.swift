@@ -10,7 +10,14 @@ import UIKit
 
 class BarcodeManager: NSObject {
 
-    func scanBarcode(handler : @escaping (BarcodeI, Bool , String) -> Void)
+    var barcodeObj : BarcodeI?
+        
+    override init()
+    {
+        barcodeObj  = BarcodeI()
+    }
+    
+    func scanBarcode(handler : @escaping (BarcodeI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.getRequestURLWithDictionaryResponse(requestType: .post, strURL: "93027,000002820000384", headers: true, params: nil, result:
             {
@@ -18,10 +25,19 @@ class BarcodeManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                let data = self.convertToDictionary(text: jsonDict )
-                let userObj = BarcodeI()
-                userObj.setProductPriceData(productInfoObj: data! as [String : AnyObject])
-                handler(userObj , true ,"Response sucessfully")
+                if(statusCode == 200)
+                {
+                    let data = self.convertToDictionary(text: jsonDict )
+                    self.barcodeObj?.setProductPriceData(productInfoObj: data! as [String : AnyObject])
+                    handler(self.barcodeObj , true ,"Response sucessfully")
+                    
+                }
+                else
+                {
+                    handler(nil , false ,"Response fail")
+
+                }
+                
                 
                 
         })
