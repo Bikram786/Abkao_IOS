@@ -59,9 +59,11 @@ class PriceCellManager: NSObject {
                     if(isSuccess)
                     {
                         self.updateHomeControlModalData()
+
                         let productPriceObj = ProductPriceI()
                         handler(productPriceObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
+
                     }else{
                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
                     }

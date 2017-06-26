@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class PriceItemControl: AbstractControl {
     
+
     var getPreviousProducts : ProductPriceI?
     var status:String?
     @IBOutlet weak var setViewShadow: UIView!
@@ -48,10 +49,8 @@ class PriceItemControl: AbstractControl {
         return "Logout"
     }
     
-    
     @IBAction func btn_SaveAction(_ sender: UIButton) {
-        
-        
+                
         guard let productName = txt_ProductName.text, productName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill product name")
@@ -76,7 +75,6 @@ class PriceItemControl: AbstractControl {
         if status == "edit"{
             
             dictData["product_id"] = getPreviousProducts?.productID!
-            
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (priceProductObj, isSuccess, strMessage) in
