@@ -73,9 +73,13 @@ class LoginControl: AbstractControl {
             if(isSuccess)
             {
                 SVProgressHUD.dismiss()
-                print(userObj.userID!)
-                
                 self.performSegue(withIdentifier: "goto_homeview", sender: nil)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Invalid Credentials", message: strMessage, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             
         }

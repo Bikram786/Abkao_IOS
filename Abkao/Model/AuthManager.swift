@@ -23,12 +23,17 @@ class AuthManager: NSObject {
                 
                 ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
                 
+                //set User Object
+                self.setUserDefaultValues()
+
+                
+                
                 handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
                 
         })
     }
     
-    func userLogin(userInfo: [String : Any], handler : @escaping (UserI, Bool , String) -> Void)
+    func userLogin(userInfo: [String : Any], handler : @escaping (UserI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "login", headers: true, params: userInfo, result:
             {
@@ -36,9 +41,31 @@ class AuthManager: NSObject {
                 // success code
                 print(jsonDict)
                 
-                ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                if(statusCode == 200)
+                {
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    
+                    if(isSuccess)
+                    {
+                        ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                        
+                        //set User Object
+                        self.setUserDefaultValues()
+                        
+                        
+                        handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                    else
+                    {
+                         handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }
+                else
+                {
+                    handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
+                }
                 
-                handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
+                
                 
                 print("user id : \(String(describing: (ModelManager.sharedInstance.profileManager.userObj?.userID)!))")
                 //print(jsonDict)
@@ -74,5 +101,15 @@ class AuthManager: NSObject {
                 handler(true,"User logout successfully")
                 
         })
+    }
+    
+    func setUserDefaultValues()
+    {
+        let encodedUser = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.profileManager.userObj!)
+        let userDefaults: UserDefaults = UserDefaults.standard
+        userDefaults.set(encodedUser, forKey: "userinfo")
+        userDefaults.synchronize()
+
+
     }
 }
