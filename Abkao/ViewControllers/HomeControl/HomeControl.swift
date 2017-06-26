@@ -47,7 +47,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     //MARK: - Local Variables
 
-    let requestIdentifier = "SampleRequest"
+    var requestIdentifier = ""
     
     @IBOutlet weak var setClv: UICollectionView!
     @IBOutlet weak var leftTbl: UITableView!
@@ -74,9 +74,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewDidLoad()
         
-        
-        
-   
         
         setIntialMethods()
         
@@ -156,12 +153,14 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func getProductsByDay(strDay : String) {
         
         ModelManager.sharedInstance.scheduleManager.dayName = strDay
+
         SVProgressHUD.show(withStatus: "Loding.......")
         ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDay) { (arrSchduleObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
                 self.getDayVideos()
-            }else{
+            }else
+            {
                 SVProgressHUD.showError(withStatus: responseMessage)
             }
         
@@ -186,7 +185,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             //testing code
 //            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")
-//            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "04:36PM")
+//            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "06:44PM")
             
             //-------This check Provides us nearest upcoming Ved Refrence
             let startDT = stDate.timeIntervalSince1970
@@ -214,26 +213,27 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             print("\(stDate)")
             
             //check if end date is greater than current date
-            if(NSDate().compare(endDate) == .orderedDescending)
+            if(endDate.compare(stDate) == .orderedDescending)
             {
                 print("Date decending")
-            }
-            
-            let fallsBetween = (stDate...endDate).contains(Date())
-            
-            if(fallsBetween)
-            {
-                isVedReceived = true
                 
-                self.removeNotification(arrNotificationID: [(tempSchObj.scheduleID?.description)!])
+                let fallsBetween = (stDate...endDate).contains(Date())
                 
-                self.setLocalNotification(shcduleObj: tempSchObj, notificationDate: endDate)
-                
-                self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
-                
-                //Schdule local notification, W.R.T its End Time
-                
-                print("time lies in ved Playing time")
+                if(fallsBetween)
+                {
+                    isVedReceived = true
+                    
+                    requestIdentifier = (tempSchObj.scheduleID?.description)!
+                    self.removeNotification(arrNotificationID: [requestIdentifier])
+                    
+                    self.setLocalNotification(shcduleObj: tempSchObj, notificationDate: endDate)
+                    
+                    self.playVideoInPlayer(strUrl: tempSchObj.productVedUrl!)
+                    
+                    //Schdule local notification, W.R.T its End Time
+                    
+                    print("time lies in ved Playing time")
+                }
             }
         }
         
@@ -249,7 +249,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 
                 let dateObj = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
 
-                self.removeNotification(arrNotificationID: [(nearestScheduleObj?.scheduleID?.description)!])
+                requestIdentifier = (nearestScheduleObj?.scheduleID?.description)!
+                self.removeNotification(arrNotificationID: [requestIdentifier])
                 
                 self.setLocalNotification(shcduleObj: nearestScheduleObj!, notificationDate: dateObj)
                 
@@ -498,7 +499,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             let content = UNMutableNotificationContent()
 //            content.title = "notification fire time"
 //            content.subtitle = "Get Ready"
-            content.sound = UNNotificationSound.init(named: "carsound.wav")
+            content.sound = UNNotificationSound.init(named: "empty.wav")
 
             content.setValue("YES", forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
             //content.body = ""
@@ -512,8 +513,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                                                         repeats: false)
             
             
-            
-            let request = UNNotificationRequest(identifier: (shcduleObj.scheduleID?.description)!,  content: content, trigger: trigger)
+            requestIdentifier = (shcduleObj.scheduleID?.description)!
+            let request = UNNotificationRequest(identifier: requestIdentifier,  content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().delegate = self
             
