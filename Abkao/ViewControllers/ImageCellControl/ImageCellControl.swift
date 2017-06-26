@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSource{
     
     
     var getImageGridValue:Int?
     var productObj : ImageCelll?
-    var arrProductImages = NSMutableArray()
-    
-    @IBOutlet weak var imageControlTbl: UITableView!
+    var arrProductImages = NSMutableArray()    
+    @IBOutlet weak var imageControlTbl: UITableView!    
+    @IBOutlet weak var btn_AddMore: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         imageControlTbl.register(UINib(nibName: "ImageControl", bundle: nil), forCellReuseIdentifier: "ImageControl")
         imageControlTbl.estimatedRowHeight = 50.0
         imageControlTbl.rowHeight = UITableViewAutomaticDimension
+        imageControlTbl.separatorStyle = .none
+        imageControlTbl.tableFooterView = UIView()
+        self.btn_AddMore.isHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,15 +48,19 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = "8"
-        
+        SVProgressHUD.setStatus("Loding.....")
         ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
-            
-            print(productObj)
-            
+            SVProgressHUD.dismiss()
             self.arrProductImages.removeAllObjects()
             self.productObj = productObj
             self.arrProductImages = (productObj.arrProductImage as! NSMutableArray).mutableCopy() as! NSMutableArray
-            print(self.arrProductImages)
+            let setItemCount = self.getImageGridValue! - self.arrProductImages.count
+            if setItemCount > 0{
+                self.btn_AddMore.isHidden = false
+                let setCount = "Add " + String(setItemCount) + " More"
+                self.btn_AddMore.setTitle(setCount, for: .normal)
+            }
+            
             self.imageControlTbl.reloadData()
             
         }
@@ -63,29 +72,15 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = "2"
         dictData["userid"] = "8"
-        
+        SVProgressHUD.setStatus("Loding.....")
         ModelManager.sharedInstance.imageCellManager.deleteRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
             
+            SVProgressHUD.dismiss()
+            self.callProductAPI()
         }
         
     }
     
-    func callProductupdateAPI(){
-        
-        var  dictData : [String : Any] =  [String : Any]()
-        dictData["userid"] = "8"
-        
-        ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
-//            self.arrProductPrice.removeAllObjects()
-//            self.productObj = productObj
-//            self.arrProductPrice = (productObj.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-//            self.priceTable.reloadData()
-            
-        }
-        
-    }
-    
-
     
     //MARK: - UITableView Methods
     
@@ -104,6 +99,10 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.lbl_ProductName.text = proDescObj.productName!
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productPrice!
+        cell.productNameView.setViewBoarder()
+        cell.productPriceView.setViewBoarder()
+        cell.productURLView.setViewBoarder()
+        
         return cell
         
     }

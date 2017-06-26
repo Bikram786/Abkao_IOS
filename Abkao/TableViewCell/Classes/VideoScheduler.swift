@@ -15,6 +15,14 @@ class VideoScheduler: UITableViewCell {
     @IBOutlet weak var lbl_EndTime: UILabel!    
     @IBOutlet weak var lbl_VideoURL: UILabel!
     
+    @IBOutlet weak var img_Mon: UIImageView!
+    @IBOutlet weak var img_Tues: UIImageView!
+    @IBOutlet weak var img_Wed: UIImageView!
+    @IBOutlet weak var img_Thur: UIImageView!
+    @IBOutlet weak var img_Fri: UIImageView!
+    @IBOutlet weak var img_Sat: UIImageView!
+    @IBOutlet weak var img_Sun: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

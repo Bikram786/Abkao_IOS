@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class SetVideoSchedulerControl: UIViewController {
+class SetVideoSchedulerControl: AbstractControl {
 
     var getPreviousProducts = SchedulerI()
     var status:String?
@@ -24,13 +24,53 @@ class SetVideoSchedulerControl: UIViewController {
     @IBOutlet weak var btn_EndTime: UIButton!
     @IBOutlet weak var txt_VideoURL: UITextField!
     
+    // Set Days Outlets
+    
+    @IBOutlet weak var btn_Mon: UIButton!
+    @IBOutlet weak var btn_Tues: UIButton!
+    @IBOutlet weak var btn_Wed: UIButton!
+    @IBOutlet weak var btn_Thur: UIButton!
+    @IBOutlet weak var btn_Fri: UIButton!
+    @IBOutlet weak var btn_Sat: UIButton!
+    @IBOutlet weak var btn_Sun: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dateTimeView.isHidden=true
         txt_VideoURL.addShadowToTextfield()
-        //var view = new UIView(new CGRect(View.Frame.Left, View.Frame.Height - 200, View.Frame.Right, 0));
-        //view.BackgroundColor = UIColor.Clear;
+        if status == "edit"{
+            btn_StartTime.setTitle(getPreviousProducts.startTime!, for: .normal)
+            btn_EndTime.setTitle(getPreviousProducts.endTime!, for: .normal)
+            txt_VideoURL.text = getPreviousProducts.productVedUrl!
+            arrDays.addObjects(from: getPreviousProducts.arrDays!)
+            
+            for var day in getPreviousProducts.arrDays! {
+                
+               if day == "Mon"{
+                setSelectedItems(button: btn_Mon)
+               }else if (day == "Tues"){
+                setSelectedItems(button: btn_Tues)
+               }else if (day == "Wed"){
+                setSelectedItems(button: btn_Wed)
+               }else if (day == "Thur"){
+                setSelectedItems(button: btn_Thur)
+               }else if (day == "Fri"){
+                setSelectedItems(button: btn_Fri)
+               }else if (day == "Sat"){
+                setSelectedItems(button: btn_Sat)
+               }else{
+                setSelectedItems(button: btn_Sun)
+               }
+
+            }
+            
+            
+        }
+    }
+    
+    override var showRight: Bool{
+        return false
     }
 
     @IBAction func btn_SetVideoTimeAction(_ sender: UIButton) {
@@ -71,8 +111,11 @@ class SetVideoSchedulerControl: UIViewController {
         
     }
     
-    func showAmination(){
-       
+    
+    func setSelectedItems(button: UIButton){
+        
+        button.setImage(#imageLiteral(resourceName: "tick"), for: .normal)
+        button.isSelected=true
     }
     
     
@@ -122,13 +165,12 @@ class SetVideoSchedulerControl: UIViewController {
         let obj = SchedulerI()
         obj.startTime = btn_StartTime.titleLabel?.text!
         obj.endTime = btn_EndTime.titleLabel?.text!
-        obj.productVedUrl = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
+        obj.productVedUrl = txt_VideoURL.text!
         obj.arrDays = arrDays as? [String]
-        
+                
         if status == "edit"{
-            
-            //dictData["product_id"] = getPreviousProducts.productID!
-            
+           
+            obj.scheduleID = getPreviousProducts.scheduleID
             
             SVProgressHUD.show(withStatus: "Loding.....")
             

@@ -67,6 +67,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        callProductAPI()
+    }
+    
     override var navTitle: String {
         
         return "Setting"
@@ -105,8 +110,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-        
-       callProductAPI()
        
        getProductsByDay(strDay: "Mon")
     }
@@ -215,7 +218,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
-            
+            self.leftData.removeAllObjects()
+            self.rightData.removeAllObjects()
+            self.arrProductPrice.removeAllObjects()
+            self.arrProductPrice.removeAllObjects()
             self.productObj = productObj
             
             if productObj.arrProductDesc?.count != 0 {

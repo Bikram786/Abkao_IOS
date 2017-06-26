@@ -11,18 +11,28 @@ import AVFoundation
 
 class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDelegate {
 
-    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-    var device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-    var output = AVCaptureMetadataOutput()
-    var previewLayer: AVCaptureVideoPreviewLayer?
     
-    var captureSession = AVCaptureSession()
-    var code: String?
+    var captureSession:AVCaptureSession?
+    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
+    var qrCodeFrameView:UIView?
+    
+    let supportedCodeTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
+    
+//    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+//    var device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+//    var output = AVCaptureMetadataOutput()
+//    var previewLayer: AVCaptureVideoPreviewLayer?
+//    
+//    var captureSession = AVCaptureSession()
+//    var code: String?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor.clear
-        self.setupCamera()
+        setCamera()
+        setOrintation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,86 +45,207 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     override var showRight: Bool{
         return false
     }
-
     
-    private func setupCamera() {
+    func setCamera(){
         
-        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
+        // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
+        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
-        if self.captureSession.canAddInput(input) {
-            self.captureSession.addInput(input)
-        }
-        
-        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        
-        if let videoPreviewLayer = self.previewLayer {
-            videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-            videoPreviewLayer.frame = self.view.bounds
-            view.layer.addSublayer(videoPreviewLayer)
-        }
-        
-        let metadataOutput = AVCaptureMetadataOutput()
-        if self.captureSession.canAddOutput(metadataOutput) {
-            self.captureSession.addOutput(metadataOutput)
+        do {
+            // Get an instance of the AVCaptureDeviceInput class using the previous device object.
+            let input = try AVCaptureDeviceInput(device: captureDevice)
             
-            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
-        } else {
-            print("Could not add metadata output")
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if (captureSession.isRunning == false) {
-            captureSession.startRunning();
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if (captureSession.isRunning == true) {
-            captureSession.stopRunning();
-        }
-    }
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        // This is the delegate'smethod that is called when a code is readed
-        for metadata in metadataObjects {
-            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-            let code = readableObject.stringValue
+            // Initialize the captureSession object.
+            captureSession = AVCaptureSession()
             
+            // Set the input device on the capture session.
+            captureSession?.addInput(input)
             
-            self.dismiss(animated: true, completion: nil)
-            //self.delegate?.barcodeReaded(barcode: code!)
-            print(code!)
+            // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
+            let captureMetadataOutput = AVCaptureMetadataOutput()
+            captureSession?.addOutput(captureMetadataOutput)
             
-            callBarcodeAPI()
-        }
-    }
-    
-    func callBarcodeAPI() {
-        
-        //        if (captureSession.isRunning == true) {
-        //
-        //            captureSession.stopRunning();
-        //        }
-        
-        ModelManager.sharedInstance.barcodeManager.scanBarcode() { (userObj, isSuccess, strMessage) in
+            // Set delegate and use the default dispatch queue to execute the call back
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
-            if(isSuccess)
-            {
-                print(userObj)
-                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
-                myVC.getPreviousProducts = userObj
-                self.navigationController?.pushViewController(myVC, animated: true)
+            // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            videoPreviewLayer?.frame = view.layer.bounds
+            view.layer.addSublayer(videoPreviewLayer!)
+            
+            // Start video capture.
+            captureSession?.startRunning()
+            
+            // Move the message label and top bar to the front
+//            view.bringSubview(toFront: messageLabel)
+//            view.bringSubview(toFront: topbar)
+            
+            // Initialize QR Code Frame to highlight the QR code
+            qrCodeFrameView = UIView()
+            
+            if let qrCodeFrameView = qrCodeFrameView {
+                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.layer.borderWidth = 2
+                view.addSubview(qrCodeFrameView)
+                view.bringSubview(toFront: qrCodeFrameView)
             }
             
+        } catch {
+            // If any error occurs, simply print it out and don't continue any more.
+            print(error)
+            return
         }
+    }
+    private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
+        
+        layer.videoOrientation = orientation
+        videoPreviewLayer?.frame = self.view.bounds
         
     }
+    
+    func setOrintation(){
+        
+        if let connection =  self.videoPreviewLayer?.connection  {
+            
+            let currentDevice: UIDevice = UIDevice.current
+            
+            let orientation: UIDeviceOrientation = currentDevice.orientation
+            
+            let previewLayerConnection : AVCaptureConnection = connection
+            
+            if previewLayerConnection.isVideoOrientationSupported {
+                
+                switch (orientation) {
+                case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                
+                    break
+                    
+                case .landscapeRight: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
+                
+                    break
+                    
+                case .landscapeLeft: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
+                
+                    break
+                    
+                case .portraitUpsideDown: updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
+                
+                    break
+                    
+                default: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                
+                    break
+                }
+            }
+        }
+    }
+    
+    // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        
+        // Check if the metadataObjects array is not nil and it contains at least one object.
+        if metadataObjects == nil || metadataObjects.count == 0 {
+            qrCodeFrameView?.frame = CGRect.zero
+            //messageLabel.text = "No QR/barcode is detected"
+            return
+        }
+        
+        // Get the metadata object.
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        if supportedCodeTypes.contains(metadataObj.type) {
+            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            qrCodeFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+               // messageLabel.text = metadataObj.stringValue
+            }
+        }
+    }
+
+    
+//    private func setupCamera() {
+//        
+//        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
+//        
+//        if self.captureSession.canAddInput(input) {
+//            self.captureSession.addInput(input)
+//        }
+//        
+//        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+//        
+//        if let videoPreviewLayer = self.previewLayer {
+//            videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+//            videoPreviewLayer.frame = self.view.bounds
+//            view.layer.addSublayer(videoPreviewLayer)
+//        }
+//        
+//        let metadataOutput = AVCaptureMetadataOutput()
+//        if self.captureSession.canAddOutput(metadataOutput) {
+//            self.captureSession.addOutput(metadataOutput)
+//            
+//            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+//            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
+//        } else {
+//            print("Could not add metadata output")
+//        }
+//    }
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        if (captureSession.isRunning == false) {
+//            captureSession.startRunning();
+//        }
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        if (captureSession.isRunning == true) {
+//            captureSession.stopRunning();
+//        }
+//    }
+//    
+//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+//        // This is the delegate'smethod that is called when a code is readed
+//        for metadata in metadataObjects {
+//            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
+//            let code = readableObject.stringValue
+//            
+//            
+//            self.dismiss(animated: true, completion: nil)
+//            //self.delegate?.barcodeReaded(barcode: code!)
+//            print(code!)
+//            
+//            callBarcodeAPI()
+//        }
+//    }
+//    
+//    func callBarcodeAPI() {
+//        
+//        //        if (captureSession.isRunning == true) {
+//        //
+//        //            captureSession.stopRunning();
+//        //        }
+//        
+//        ModelManager.sharedInstance.barcodeManager.scanBarcode() { (userObj, isSuccess, strMessage) in
+//            
+//            if(isSuccess)
+//            {
+//                print(userObj)
+//                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
+//                myVC.getPreviousProducts = userObj
+//                self.navigationController?.pushViewController(myVC, animated: true)
+//            }
+//            
+//        }
+//        
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

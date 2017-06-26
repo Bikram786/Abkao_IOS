@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
 
@@ -24,10 +25,15 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         VideoSchedulerTable.rowHeight = UITableViewAutomaticDimension
         VideoSchedulerTable.separatorStyle = .none
         VideoSchedulerTable.tableFooterView = UIView()
-        getAllScheduledVideos()
+        
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getAllScheduledVideos()
+    }
+    
     override var navTitle: String{
         return "Logout"
     }
@@ -38,8 +44,9 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
     
     func getAllScheduledVideos(){
         
+        SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.scheduleManager.getAllSchedules() { (productObj, isSuccess, responseMessage) in
-            
+            SVProgressHUD.dismiss()
             self.arrProductImages.removeAllObjects()
             self.arrProductImages.addObjects(from: productObj!)
             self.VideoSchedulerTable.reloadData()
@@ -52,13 +59,18 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         
         let obj = SchedulerI()
         obj.scheduleID = productID
-        
+        SVProgressHUD.show(withStatus: "Loding.....")
         ModelManager.sharedInstance.scheduleManager.deleteSchedule(scheduleObj: obj) { (isSuccess, responseMessage) in
-            
+            SVProgressHUD.dismiss()
             self.getAllScheduledVideos()
         }
         
     }
+    
+    func setSelectedItems(image: UIImageView){
+        image.image = #imageLiteral(resourceName: "tick")
+    }
+    
     
     //MARK: - UITableView Methods
     
@@ -85,6 +97,27 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         cell.lbl_StartTime.text = "Video Start time " + sehedulerObj.startTime!
         cell.lbl_EndTime.text = "Video End time " + sehedulerObj.endTime!
         cell.lbl_VideoURL.text = sehedulerObj.productVedUrl!
+        
+        for var day in sehedulerObj.arrDays! {
+            
+            if day == "Mon"{
+                setSelectedItems(image: cell.img_Mon)
+            }else if (day == "Tues"){
+                setSelectedItems(image: cell.img_Tues)
+            }else if (day == "Wed"){
+                setSelectedItems(image: cell.img_Wed)
+            }else if (day == "Thur"){
+                setSelectedItems(image: cell.img_Thur)
+            }else if (day == "Fri"){
+                setSelectedItems(image: cell.img_Fri)
+            }else if (day == "Sat"){
+                setSelectedItems(image: cell.img_Sat)
+            }else{
+                setSelectedItems(image: cell.img_Sun)
+            }
+            
+        }
+
         
         return cell
         

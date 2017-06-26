@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SettingsControl: AbstractControl {
 
@@ -14,6 +15,9 @@ class SettingsControl: AbstractControl {
     var setPriceRows:Int?
     
      @IBOutlet weak var setViewShadow: UIView!
+     @IBOutlet weak var txt_DefaultURL: UITextField!
+    @IBOutlet weak var setImageGrid: UISegmentedControl!
+    @IBOutlet weak var setPriceGrid: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +25,85 @@ class SettingsControl: AbstractControl {
         setViewShadow.viewdraw(setViewShadow.bounds)
         setGridRows=2
         setPriceRows=0
-        
+        callProductAPI()
     }
 
     // MARK: - Super Class Method
     
     override var navTitle: String{
         return "Logout"
+    }
+    
+    func getCurrentSetting(){
+        
+            var  dictData : [String : Any] =  [String : Any]()
+            dictData["userid"] = "8"
+            
+            ModelManager.sharedInstance.settingsManager.getCurrentSetting(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
+                
+            }
+         
+    }
+    
+    func saveSetting(){
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "8"
+        dictData["price_grid_dimension"] = String(describing: setPriceRows!)
+        dictData["image_grid_row"] = String(describing: setGridRows!)
+        dictData["video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
+        
+        print(dictData)
+        
+        SVProgressHUD.show(withStatus: "Loding.....")
+        
+        ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            
+            if(isSuccess)
+            {
+                SVProgressHUD.dismiss()
+                self.callProductAPI()
+               
+            }
+            
+        }
+    }
+    
+    func callProductAPI(){
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = "8"
+        SVProgressHUD.show(withStatus: "Loding.....")
+        
+        ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
+            
+            SVProgressHUD.dismiss()
+            
+            print(Int(productObj.imageGridRowValue!))
+            print(Int(productObj.priceGridRowValue!))
+            
+            self.setGridRows = Int(productObj.imageGridRowValue!)
+            
+            if Int(productObj.imageGridRowValue!) == 4{
+                self.setImageGrid.selectedSegmentIndex=1
+            }else if (Int(productObj.imageGridRowValue!) == 3){
+                self.setImageGrid.selectedSegmentIndex=2
+            }else{
+                self.setImageGrid.selectedSegmentIndex=0
+            }
+            
+            if Int(productObj.priceGridRowValue!) == 2{
+                self.setPriceGrid.selectedSegmentIndex=1
+            }else if (Int(productObj.priceGridRowValue!) == 3){
+                self.setPriceGrid.selectedSegmentIndex=2
+            }else{
+                self.setPriceGrid.selectedSegmentIndex=0
+            }
+
+                self.txt_DefaultURL.text = productObj.productVedUrl!
+            
+        }
+        
     }
     
     
@@ -68,6 +144,11 @@ class SettingsControl: AbstractControl {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "PriceGridControl") as! PriceGridControl
         myVC.getPriceGridValue = setPriceRows
         navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    @IBAction func btn_SaveSettings(_ sender: UIButton) {
+        
+        saveSetting()
     }
     
     

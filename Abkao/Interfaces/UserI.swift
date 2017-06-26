@@ -111,10 +111,6 @@ class UserI: NSObject,NSCoding {
         coder.encode(imageGridSize, forKey: "imageGridSize")
     }
     
-    
-    
-
-    
     public func setUserInfo(userObj : [String : AnyObject])
     {
         

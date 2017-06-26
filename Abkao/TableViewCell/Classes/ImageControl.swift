@@ -14,7 +14,11 @@ class ImageControl: UITableViewCell {
     @IBOutlet weak var setImage: UIImageView!
     @IBOutlet weak var lbl_ProductName: UILabel!
     @IBOutlet weak var lbl_ProductPrice: UILabel!
-    @IBOutlet weak var lbl_VideoURL: UILabel!
+    @IBOutlet weak var lbl_VideoURL: UILabel!    
+    @IBOutlet weak var productNameView: UIView!
+    @IBOutlet weak var productPriceView: UIView!
+    @IBOutlet weak var productURLView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
