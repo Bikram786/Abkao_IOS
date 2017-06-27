@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSource {
     
-    var productObj : PriceCelll?
+//    var productObj : PriceCelll?
     var getPriceGridValue:Int?
     var arrProductPrice = NSMutableArray()
     
@@ -31,11 +31,15 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         priceTable.tableFooterView = UIView()
         setBoarderView.viewdraw(setBoarderView.bounds)
         self.btn_AddMore.isHidden = true
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         callProductAPI()
+
     }
     
     // MARK: - Super Class Method
@@ -49,12 +53,11 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.show(withStatus: "Loding.....")
-        ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
+        ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (arrProductPriceObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
                 self.arrProductPrice.removeAllObjects()
-                self.productObj = productObj
-                self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                self.arrProductPrice = (arrProductPriceObj as! NSMutableArray).mutableCopy() as! NSMutableArray
                 let setItemCount = self.getPriceGridValue! * self.getPriceGridValue! - self.arrProductPrice.count
                 if setItemCount > 0{
                     self.btn_AddMore.isHidden = false

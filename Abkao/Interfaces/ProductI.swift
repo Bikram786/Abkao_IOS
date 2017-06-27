@@ -51,9 +51,7 @@ class ProductI: NSObject {
                 productDesc.setProductDescData(productInfoObj: product)
 
                 self.arrProductDesc?.append(productDesc)
-                
             }
-            
         }
         
         
@@ -69,13 +67,14 @@ class ProductI: NSObject {
                 
                 self.arrProductPrice?.append(priceDesc)
             }
-            
         }
         
-        self.productVedUrl =  (productObj["video_url"] as? String ?? "")
-        self.imageGridRowValue = Int((productObj["image_grid_row"] as? String)!)
-        self.priceGridRowValue = Int((productObj["price_grid_dimension"] as? String)!)
         
+        ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow = Int((productObj["image_grid_row"] as? String)!)
+        ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention = Int((productObj["price_grid_dimension"] as? String)!)
+        ModelManager.sharedInstance.settingsManager.settingObj?.videoURL = (productObj["video_url"] as? String ?? "")
+        
+               
     }
     
 }

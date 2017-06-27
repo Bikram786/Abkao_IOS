@@ -28,8 +28,10 @@ class AuthManager: NSObject {
                     if(isSuccess){
                         
                         ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                        
                         //set User Object
-                        self.setUserDefaultValues()
+                        self.setUserDefaultValues(dictData: jsonDict as! [String : AnyObject])
+                        
                         handler(ModelManager.sharedInstance.profileManager.userObj! , true ,"User registered successfully")
                         
                     }else{
@@ -61,8 +63,9 @@ class AuthManager: NSObject {
                     if(isSuccess)
                     {
                         ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                        
                         //set User Object
-                        self.setUserDefaultValues()
+                        self.setUserDefaultValues(dictData: jsonDict as! [String : AnyObject])
                         
                         
                         handler(ModelManager.sharedInstance.profileManager.userObj! , true ,(jsonDict.value(forKey: "message") as? String)!)
@@ -140,8 +143,15 @@ class AuthManager: NSObject {
         })
     }
     
-    func setUserDefaultValues()
+    func setUserDefaultValues(dictData : [String : AnyObject])
     {
+        
+        ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow = Int((dictData["image_grid_row"] as? String)!)
+        ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention = Int((dictData["price_grid_dimension"] as? String)!)
+        ModelManager.sharedInstance.settingsManager.settingObj?.videoURL = (dictData["video_url"] as? String ?? "")
+
+        
+        
         let encodedUser = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.profileManager.userObj!)
         let userDefaults: UserDefaults = UserDefaults.standard
         userDefaults.set(encodedUser, forKey: "userinfo")

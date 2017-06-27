@@ -21,11 +21,16 @@ class SettingsControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setViewShadow.viewdraw(setViewShadow.bounds)
-        setGridRows=2
-        setPriceRows=0
+        
+        setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+        setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+        self.txt_DefaultURL.text = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+        
+        
         callProductAPI()
+        
     }
 
     // MARK: - Super Class Method
@@ -66,29 +71,45 @@ class SettingsControl: AbstractControl {
             SVProgressHUD.dismiss()
             
             if(isSuccess){
-                self.setGridRows = Int((productObj?.imageGridRowValue!)!)
-                if Int((productObj?.imageGridRowValue!)!) == 4{
+                
+                self.setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+                self.setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+
+                //image grid
+                
+                
+//                self.setGridRows = Int((productObj?.imageGridRowValue!)!)
+                if (self.setGridRows == 4)
+                {
                     self.setImageGrid.selectedSegmentIndex=1
                     self.setGridRows = 4
-                }else if (Int((productObj?.imageGridRowValue!)!) == 3){
+                }
+                else if (self.setGridRows == 3)
+                {
                     self.setImageGrid.selectedSegmentIndex=2
                     self.setGridRows = 3
-                }else{
+                }else
+                {
                     self.setImageGrid.selectedSegmentIndex=0
                     self.setGridRows = 2
                 }
                 
-                if Int((productObj?.priceGridRowValue!)!) == 2{
+                
+                //price grid
+                if (self.setPriceRows) == 2{
                     self.setPriceGrid.selectedSegmentIndex=1
                     self.setPriceRows = 2
-                }else if (Int((productObj?.priceGridRowValue!)!) == 3){
+                }else if (self.setPriceRows == 3)
+                {
                     self.setPriceGrid.selectedSegmentIndex=2
                     self.setPriceRows = 3
                 }else{
                     self.setPriceGrid.selectedSegmentIndex=0
                     self.setPriceRows = 0
                 }
-                self.txt_DefaultURL.text = productObj?.productVedUrl!
+                
+                
+                self.txt_DefaultURL.text = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
 
             }else{
                 SVProgressHUD.showError(withStatus: responseMessage)

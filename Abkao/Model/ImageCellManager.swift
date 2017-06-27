@@ -10,7 +10,15 @@ import UIKit
 
 class ImageCellManager: NSObject {
 
-    func addNewRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
+    var arrProductImageGrid : [ProductDescI]?
+    
+    override init()
+    {
+        arrProductImageGrid = [ProductDescI]()
+    }
+    
+    
+    func addNewRecord(userInfo: [String : Any], handler : @escaping (ProductDescI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addProductImageGrid", headers: true, params: userInfo, result:
             {
@@ -19,8 +27,8 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
-                        let userObj = ImageCelll()
-                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        let productDescObj = ProductDescI()
+                        handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
                          handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
@@ -32,7 +40,7 @@ class ImageCellManager: NSObject {
         })
     }
 
-    func updateRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
+    func updateRecord(userInfo: [String : Any], handler : @escaping (ProductDescI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "updateProductImageGrid", headers: true, params: userInfo, result:
             {
@@ -42,8 +50,8 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
-                        let userObj = ImageCelll()
-                        handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        let productDescObj = ProductDescI()
+                        handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
@@ -56,7 +64,7 @@ class ImageCellManager: NSObject {
         })
     }
     
-    func deleteRecord(userInfo: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
+    func deleteRecord(userInfo: [String : Any], handler : @escaping (ProductDescI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "deleteProduct", headers: true, params: userInfo, result:
             {
@@ -66,8 +74,8 @@ class ImageCellManager: NSObject {
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
-                        let userObj = ImageCelll()
-                         handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
+                        let productDescObj = ProductDescI()
+                         handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
                         
@@ -81,7 +89,7 @@ class ImageCellManager: NSObject {
         })
     }
     
-    func getAllRecords(userID: [String : Any], handler : @escaping (ImageCelll?, Bool , String) -> Void)
+    func getAllRecords(userID: [String : Any], handler : @escaping ([ProductDescI]?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "getProductInImageGrid", headers: true, params: userID, result:
             {
@@ -92,9 +100,28 @@ class ImageCellManager: NSObject {
                     let data = jsonDict.value(forKey: "data") as! NSDictionary
                     let isSuccess = data["success"] as! Bool
                     if(isSuccess){
-                        let productObj = ImageCelll()
-                        productObj.setProductImageData(productInfoObj: jsonDict.value(forKey: "data") as! [String : AnyObject])
-                        handler(productObj,true,"Products Received")
+                        
+                        
+                        var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
+                        
+                        let arrData = productInfoObj["image_grid"] as! NSArray
+                        if(arrData.count > 0)
+                        {
+                            self.arrProductImageGrid?.removeAll()
+                            
+                            for dictObj in arrData
+                            {
+                                let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                                
+                                let productObj = ProductDescI()
+                                productObj.setProductDescData(productInfoObj: tempProductInfoObj)
+                                
+                                self.arrProductImageGrid?.append(productObj)
+                                
+                            }
+                        }
+
+                        handler(self.arrProductImageGrid,true,"Products Received")
                         
                     }else{
                         

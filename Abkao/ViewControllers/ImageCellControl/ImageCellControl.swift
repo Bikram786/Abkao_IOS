@@ -13,8 +13,8 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     
     
     var getImageGridValue:Int?
-    var productObj : ImageCelll?
-    var arrProductImages = NSMutableArray()    
+//    var productObj : ImageCelll?
+    var arrProductImages = NSMutableArray()
     @IBOutlet weak var imageControlTbl: UITableView!    
     @IBOutlet weak var btn_AddMore: UIButton!
     
@@ -49,12 +49,12 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         SVProgressHUD.setStatus("Loding.....")
-        ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (productObj, isSuccess, responseMessage) in
+        ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (arrProductObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
                 self.arrProductImages.removeAllObjects()
-                self.productObj = productObj
-                self.arrProductImages = (productObj?.arrProductImage as! NSMutableArray).mutableCopy() as! NSMutableArray
+//                self.productObj = productObj
+                self.arrProductImages = (arrProductObj as! NSMutableArray).mutableCopy() as! NSMutableArray
                 let setItemCount = self.getImageGridValue! - self.arrProductImages.count
                 if setItemCount > 0{
                     self.btn_AddMore.isHidden = false
