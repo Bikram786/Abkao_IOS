@@ -518,7 +518,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         cell.lbl_Price.font = UIFont(name: "Cormorant-Regular", size: 15)
 
         
-        
+        cell.backgroundColor = UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
         return cell
     }
     

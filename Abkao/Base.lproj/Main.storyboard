@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRJ-ol-ChH">
-                                        <rect key="frame" x="458.5" y="22" width="108" height="42.5"/>
+                                        <rect key="frame" x="458.5" y="21.5" width="108" height="42.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -451,7 +451,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.93725490196078431" green="0.92156862745098034" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="DIl-Yu-HYE" secondAttribute="trailing" id="3go-rW-0Gl"/>
                                                                 <constraint firstItem="HYc-hA-RKT" firstAttribute="leading" secondItem="8zn-MO-wjb" secondAttribute="leading" constant="5" id="464-VD-7Xo"/>
@@ -592,7 +592,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-LK-Y7O">
-                                        <rect key="frame" x="434.5" y="4" width="155.5" height="81"/>
+                                        <rect key="frame" x="435" y="4" width="155.5" height="81"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -689,6 +689,7 @@
                                             </button>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OM6-ga-ziX">
                                                 <rect key="frame" x="321" y="10" width="164" height="26"/>
+                                                <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <segments>
                                                     <segment title="2"/>
                                                     <segment title="4"/>
@@ -743,6 +744,7 @@
                                             </button>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aNK-X1-AOc">
                                                 <rect key="frame" x="321" y="10" width="164" height="26"/>
+                                                <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <segments>
                                                     <segment title="NONE"/>
                                                     <segment title="2X2"/>
@@ -841,6 +843,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.18431372549019609" green="0.20784313725490194" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ip4-7z-YZB" firstAttribute="top" secondItem="drf-jI-uLY" secondAttribute="bottom" id="1G8-SV-LBJ"/>
                                     <constraint firstItem="tPa-VX-dqh" firstAttribute="height" secondItem="xXn-dE-FEs" secondAttribute="height" id="1dI-Ge-FMN"/>
@@ -942,7 +945,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCT SCAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-Og-ImY">
-                                        <rect key="frame" x="381.5" y="4" width="261" height="81"/>
+                                        <rect key="frame" x="382" y="4" width="261" height="81"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1210,7 +1213,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE GRID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-U2-RZL">
-                                        <rect key="frame" x="418" y="4" width="189" height="81"/>
+                                        <rect key="frame" x="417.5" y="4" width="189" height="81"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1577,7 +1580,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE CELL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-b4-hf2">
-                                        <rect key="frame" x="413.5" y="4" width="197" height="81"/>
+                                        <rect key="frame" x="414" y="4" width="197" height="81"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1931,7 +1934,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET VIDEO SCHEDULER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-kb-IYf">
-                                        <rect key="frame" x="325" y="21.5" width="375" height="42.5"/>
+                                        <rect key="frame" x="324.5" y="22" width="375" height="42.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
