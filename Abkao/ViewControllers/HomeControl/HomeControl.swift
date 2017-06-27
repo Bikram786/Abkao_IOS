@@ -124,15 +124,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         setImageGrid = 0
         setPriceGrid = 0
-        
         leftTbl.delegate = self
         leftTbl.dataSource = self
         rightTbl.delegate = self
         rightTbl.dataSource = self
-        
         leftTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
         rightTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
-        
         leftTbl.estimatedRowHeight = 200.0
         leftTbl.rowHeight = UITableViewAutomaticDimension
         rightTbl.estimatedRowHeight = 200.0
@@ -141,10 +138,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-
-
        let strDayName = NSDate().dayOfWeek()
-
        getProductsByDay(strDay: strDayName!)
     }
     
@@ -265,10 +259,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         //temp comment
 
         youTubeView.clear()
-
         let myVideoURL = NSURL(string: strUrl)
         youTubeView.loadVideoURL(myVideoURL! as URL)
-        
         self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 10)
        
     }
@@ -287,6 +279,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             SVProgressHUD.dismiss()
             if(isSuccess){
+                
+                print(productObj!)
                 self.leftData.removeAllObjects()
                 self.rightData.removeAllObjects()
                 self.arrProductPrice.removeAllObjects()

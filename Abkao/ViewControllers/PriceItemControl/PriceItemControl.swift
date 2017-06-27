@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class PriceItemControl: AbstractControl {
     
-    var getPreviousProducts = ProductPriceI()
+    var getPreviousProducts:ProductPriceI?
     var status:String?
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txt_ProductName: UITextField!
@@ -32,8 +32,8 @@ class PriceItemControl: AbstractControl {
         
         if status == "edit"{
             
-            txt_ProductName.text = getPreviousProducts.productName
-            txt_ProductPrice.text = getPreviousProducts.productRate
+            txt_ProductName.text = getPreviousProducts?.productName
+            txt_ProductPrice.text = getPreviousProducts?.productRate
             btn_Save.setTitle("Update", for: .normal)
             
         }else{
@@ -48,10 +48,8 @@ class PriceItemControl: AbstractControl {
         return "Logout"
     }
     
-    
     @IBAction func btn_SaveAction(_ sender: UIButton) {
-        
-        
+                
         guard let productName = txt_ProductName.text, productName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill product name")
@@ -75,7 +73,7 @@ class PriceItemControl: AbstractControl {
         
         if status == "edit"{
             
-            dictData["product_id"] = getPreviousProducts.productID!
+            dictData["product_id"] = getPreviousProducts?.productID!
             SVProgressHUD.show(withStatus: "Loding.....")
             
             ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (userObj, isSuccess, strMessage) in

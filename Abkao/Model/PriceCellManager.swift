@@ -50,7 +50,6 @@ class PriceCellManager: NSObject {
                     if(isSuccess){
                         let userObj = PriceCelll()
                         handler(userObj , true ,(jsonDict.value(forKey: "message") as? String)!)
-                        
                     }else{
                         handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
                     }

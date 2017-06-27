@@ -22,7 +22,6 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         priceTable.delegate = self
         priceTable.dataSource = self
         priceTable.register(UINib(nibName: "PriceGrid", bundle: nil), forCellReuseIdentifier: "PriceGrid")
@@ -115,7 +114,6 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
             //TODO: edit the row at indexPath here
-            
             let myVC = self.storyboard?.instantiateViewController(withIdentifier: "PriceItemControl") as! PriceItemControl
             myVC.getPreviousProducts = proDescObj
             myVC.status = "edit"
