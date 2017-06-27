@@ -50,4 +50,26 @@ class ProductManager: NSObject {
         })
     }
     
+    func productIntrestedIn(dictData : [String : Any])
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "addLogs", headers: true, params: dictData, result:
+            {
+                (jsonDict,statusCode) in
+                // success code
+                
+                print(jsonDict)
+                
+                if(statusCode == 200){
+                    
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+//                    let isSuccess = data["success"] as! Bool
+                    
+                    if(isSuccess){
+                        
+                    }
+                }
+        })
+    }
+    
+    
 }

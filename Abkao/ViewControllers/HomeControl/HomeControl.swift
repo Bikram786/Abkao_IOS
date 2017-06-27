@@ -161,6 +161,22 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 
     }
     
+    //MARK: - Custom Methods
+    
+    func saveUserIntrestedIn(productId : Int, gridType : String) {
+        
+        let timestamp = NSDate().timeIntervalSince1970
+        let userId = ModelManager.sharedInstance.profileManager.userObj?.userID
+        
+        var dictData = [String : Any]()
+        dictData["timestamp"] = timestamp
+        dictData["userid"] = userId
+        dictData["grid_type"] = gridType
+        dictData["product_id"] = productId
+        
+        print(dictData)
+        ModelManager.sharedInstance.productManager.productIntrestedIn(dictData: dictData)
+    }
     
     //MARK: - Ved Play Methods
     func getProductsByDay(strDay : String) {
@@ -280,7 +296,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         youTubeView.clear()
         let myVideoURL = NSURL(string: strUrl)
         youTubeView.loadVideoURL(myVideoURL! as URL)
-        self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 10)
+        self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 3)
        
     }
     
@@ -302,7 +318,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 print(productObj!)
                 self.leftData.removeAllObjects()
                 self.rightData.removeAllObjects()
-                self.arrProductPrice.removeAllObjects()
                 self.arrProductPrice.removeAllObjects()
                 self.productObj = productObj
                 
@@ -406,6 +421,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 
                 if indexPath.row >= leftData.count {
                     
+                    
                     cell?.lbl_ItemTitle.text = "N/A"
                     cell?.lbl_ItemPrice.text = "N/A"
                     
@@ -419,6 +435,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
                 }
                 
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
+                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
               
             }
             
@@ -440,6 +458,9 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
                     cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
                 }
+                
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
+                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
             }
         
         return cell!
@@ -450,12 +471,17 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         if tableView == leftTbl
         {
             let proDescObj = leftData[indexPath.row] as! ProductDescI
+            //Save users intrest
+            self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
+
             self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
             
         }
         else if tableView == rightTbl {
             
             let proDescObj = rightData[indexPath.row] as! ProductDescI
+            self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
+
             self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
         }
     }
@@ -488,6 +514,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             cell.setShadow.viewdraw(cell.setShadow.bounds)
         }
         
+        cell.lbl_Name.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_Price.font = UIFont(name: "Cormorant-Regular", size: 15)
+
+        
         
         return cell
     }
@@ -496,6 +526,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
+        
+        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+        self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "pricegrid")
+
         print("You selected cell #\(indexPath.item)!")
     }
     

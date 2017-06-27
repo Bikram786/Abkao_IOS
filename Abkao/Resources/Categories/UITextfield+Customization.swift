@@ -19,7 +19,10 @@ extension UITextField {
 //        view.layer.shadowOpacity = 1.0
 //        view.layer.shadowRadius = 5.0
 //        return view
-        
+
+        self.autocapitalizationType = UITextAutocapitalizationType.none
+        self.autocorrectionType = UITextAutocorrectionType.no
+        self.font = UIFont(name: "Cormorant-Regular", size: 17)
         self.layer.cornerRadius = 3.0
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.lightGray.cgColor
