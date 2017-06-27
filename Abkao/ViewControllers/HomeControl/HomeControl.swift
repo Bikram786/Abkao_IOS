@@ -61,7 +61,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     var defaultUrl : String?
     
     var arrProductDes = NSMutableArray()
-    var arrProductPrice = NSMutableArray()
+    var arrGetProductPrice = NSMutableArray()
     var leftData = NSMutableArray()
     var rightData = NSMutableArray()
     
@@ -108,6 +108,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.reloadData()
         
         self.getDayVideos()
+        self.callProductAPI()
 
         
     }
@@ -139,7 +140,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func setIntialMethods(){
         
-        
         setImageGrid = 0
         setPriceGrid = 0
         leftTbl.delegate = self
@@ -159,8 +159,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         //API Calls
         let strDayName = NSDate().dayOfWeek()
-        
-        self.callProductAPI()
         self.getProductsByDay(strDay: strDayName!)
 
     }
@@ -306,11 +304,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 print(productObj!)
                 self.leftData.removeAllObjects()
                 self.rightData.removeAllObjects()
-                self.arrProductPrice.removeAllObjects()
-                self.arrProductPrice.removeAllObjects()
+                self.arrGetProductPrice.removeAllObjects()
+                
+                print(self.arrGetProductPrice)
+                
                 self.productObj = productObj
-                
-                
                 self.setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
                 self.setPriceGrid =  ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
                 self.defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
@@ -332,7 +330,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     
                 }
                 if productObj?.arrProductPrice?.count != 0 {
-                    self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                    
+                    self.arrGetProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                    
+                    print(self.arrGetProductPrice)
+                    
                     self.setPriceGridView(priceItems: self.setPriceGrid!)
                 }
 
@@ -469,7 +471,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(setPriceGrid!)
+        print(setPriceGrid!*setPriceGrid!)
         
         return setPriceGrid!*setPriceGrid!
     }
@@ -479,19 +481,16 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PriceCell
         
-        if indexPath.row >= arrProductPrice.count {
-            
-            cell.lbl_Name.text = ""
-            cell.lbl_Price.text = ""
-            
-        }else{
-            
-            let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+        print(arrGetProductPrice)
+        
+        if indexPath.row <= arrGetProductPrice.count-1 {
+            let proDescObj = arrGetProductPrice[indexPath.row] as! ProductPriceI
             cell.lbl_Name.text = proDescObj.productName
             cell.lbl_Price.text = proDescObj.productRate
-            cell.setShadow.viewdraw(cell.setShadow.bounds)
+            
         }
         
+        cell.setShadow.viewdraw(cell.setShadow.bounds)
         
         return cell
     }

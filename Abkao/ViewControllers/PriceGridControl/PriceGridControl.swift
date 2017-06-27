@@ -104,9 +104,8 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         cell.selectionStyle = .none
         let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
         cell.lbl_ProductName.text = proDescObj.productName
-        cell.productNameView.setViewBoarder()
+        cell.setView.setViewBoarder()
         cell.lbl_ProductPrice.text = proDescObj.productRate
-        cell.productPriceView.setViewBoarder()
         return cell
         
     }

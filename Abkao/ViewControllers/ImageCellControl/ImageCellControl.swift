@@ -108,9 +108,9 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.lbl_ProductName.text = proDescObj.productName!
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
-        cell.productNameView.setViewBoarder()
-        cell.productPriceView.setViewBoarder()
-        cell.productURLView.setViewBoarder()
+        //cell.productNameView.setViewBoarder()
+        //cell.productPriceView.setViewBoarder()
+        //cell.productURLView.setViewBoarder()
         
         return cell
         
