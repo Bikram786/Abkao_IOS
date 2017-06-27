@@ -9,45 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Abkao/ViewControllers/PriceItemControl/PriceItemControl.swift"
-            timestampString = "520269475.91315"
+            filePath = "Abkao/Model/PriceCellManager.swift"
+            timestampString = "520281580.488367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "btn_SaveAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Abkao/ViewControllers/HomeControl/HomeControl.swift"
-            timestampString = "520277534.12904"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "getDayVideos()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Abkao/ViewControllers/HomeControl/HomeControl.swift"
-            timestampString = "520277766.592277"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
-            landmarkName = "callProductAPI()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "updateRecord(userInfo:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

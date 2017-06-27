@@ -39,6 +39,7 @@ class ProductI: NSObject {
     
     public func setProductsData(productObj : [String : AnyObject])
     {
+        self.arrProductDesc?.removeAll()
         
         if let tempObj = productObj["image_grid"] as? NSArray
         {
@@ -54,6 +55,7 @@ class ProductI: NSObject {
             }
         }
         
+        self.arrProductPrice?.removeAll()
         
         if let tempObj = productObj["price_grid"] as? NSArray
         {

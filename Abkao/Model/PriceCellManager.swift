@@ -53,6 +53,8 @@ class PriceCellManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 
+                print(jsonDict)
+                
                 if(statusCode == 200)
                 {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool

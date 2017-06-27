@@ -45,7 +45,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         if status == "edit"{
             txt_ProductName.text = getPreviousProducts.productName!
             txt_ProductPrice.text = getPreviousProducts.productPrice!
-            txt_VideoURL.text = ""
+            txt_VideoURL.text = getPreviousProducts.productVedUrl!
             let url = URL(string: getPreviousProducts.productImgUrl!)
             setupImage.af_setImage(withURL: url!)
             btn_Save.setTitle("Update", for: .normal)

@@ -61,7 +61,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     var defaultUrl : String?
     
     var arrProductDes = NSMutableArray()
-    var arrGetProductPrice = NSMutableArray()
+    var arrProductPrice = NSMutableArray()
     var leftData = NSMutableArray()
     var rightData = NSMutableArray()
     
@@ -102,10 +102,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
         setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
-        
-        setClv.reloadData()
-        leftTbl.reloadData()
-        rightTbl.reloadData()
         
         self.getDayVideos()
         self.callProductAPI()
@@ -159,6 +155,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         //API Calls
         let strDayName = NSDate().dayOfWeek()
+        
+        
         self.getProductsByDay(strDay: strDayName!)
 
     }
@@ -304,11 +302,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 print(productObj!)
                 self.leftData.removeAllObjects()
                 self.rightData.removeAllObjects()
-                self.arrGetProductPrice.removeAllObjects()
-                
-                print(self.arrGetProductPrice)
-                
+                self.arrProductPrice.removeAllObjects()
+                self.arrProductPrice.removeAllObjects()
                 self.productObj = productObj
+                
+                
                 self.setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
                 self.setPriceGrid =  ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
                 self.defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
@@ -330,11 +328,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     
                 }
                 if productObj?.arrProductPrice?.count != 0 {
-                    
-                    self.arrGetProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-                    
-                    print(self.arrGetProductPrice)
-                    
+                    self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
                     self.setPriceGridView(priceItems: self.setPriceGrid!)
                 }
 
@@ -412,8 +406,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 
                 if indexPath.row >= leftData.count {
                     
-                    cell?.lbl_ItemTitle.text = ""
-                    cell?.lbl_ItemPrice.text = ""
+                    cell?.lbl_ItemTitle.text = "N/A"
+                    cell?.lbl_ItemPrice.text = "N/A"
                     
                 }else{
                     
@@ -434,8 +428,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 cell?.selectionStyle = .none
                 
                 if indexPath.row >= rightData.count {
-                    cell?.lbl_ItemTitle.text = ""
-                    cell?.lbl_ItemPrice.text = ""
+                    cell?.lbl_ItemTitle.text = "N/A"
+                    cell?.lbl_ItemPrice.text = "N/A"
                     
                 }else{
                     
@@ -471,7 +465,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(setPriceGrid!*setPriceGrid!)
+        print(setPriceGrid!)
         
         return setPriceGrid!*setPriceGrid!
     }
@@ -481,16 +475,19 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PriceCell
         
-        print(arrGetProductPrice)
-        
-        if indexPath.row <= arrGetProductPrice.count-1 {
-            let proDescObj = arrGetProductPrice[indexPath.row] as! ProductPriceI
+        if indexPath.row >= arrProductPrice.count {
+            
+            cell.lbl_Name.text = "N/A"
+            cell.lbl_Price.text = "N/A"
+            
+        }else{
+            
+            let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
             cell.lbl_Name.text = proDescObj.productName
             cell.lbl_Price.text = proDescObj.productRate
-            
+            cell.setShadow.viewdraw(cell.setShadow.bounds)
         }
         
-        cell.setShadow.viewdraw(cell.setShadow.bounds)
         
         return cell
     }

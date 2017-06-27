@@ -75,10 +75,6 @@ class SettingsControl: AbstractControl {
                 self.setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
                 self.setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
 
-                //image grid
-                
-                
-//                self.setGridRows = Int((productObj?.imageGridRowValue!)!)
                 if (self.setGridRows == 4)
                 {
                     self.setImageGrid.selectedSegmentIndex=1
