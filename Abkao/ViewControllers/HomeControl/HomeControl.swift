@@ -142,11 +142,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         setImageGrid = 0
         setPriceGrid = 0
-<<<<<<< HEAD
-=======
-        defaultUrl = ""
-        
->>>>>>> 98ad17c09610a5c409e132bddddd8ca09f0d54f4
         leftTbl.delegate = self
         leftTbl.dataSource = self
         rightTbl.delegate = self
@@ -161,19 +156,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
         rightTbl.tableFooterView = UIView()
-<<<<<<< HEAD
-       let strDayName = NSDate().dayOfWeek()
-       getProductsByDay(strDay: strDayName!)
-=======
-        
-        
         
         //API Calls
         let strDayName = NSDate().dayOfWeek()
         
         self.callProductAPI()
         self.getProductsByDay(strDay: strDayName!)
->>>>>>> 98ad17c09610a5c409e132bddddd8ca09f0d54f4
+
     }
     
     
