@@ -61,6 +61,11 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
                     let setCount = "Add " + String(setItemCount) + " More"
                     self.btn_AddMore.setTitle(setCount, for: .normal)
                 }
+                else
+                {
+                    self.btn_AddMore.isHidden = true
+                    
+                }
                 
                 self.imageControlTbl.reloadData()
             }else{

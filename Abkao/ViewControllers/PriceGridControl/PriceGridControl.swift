@@ -64,6 +64,11 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
                     let setCount = "Add " + String(setItemCount) + " More"
                     self.btn_AddMore.setTitle(setCount, for: .normal)
                 }
+                else
+                {
+                    self.btn_AddMore.isHidden = true
+                    
+                }
                 self.priceTable.reloadData()
 
             }else{
