@@ -1106,20 +1106,7 @@
                     <view key="view" contentMode="scaleToFill" id="8Y1-1x-Vjv">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1K-Bb-fIk">
-                                <rect key="frame" x="453" y="369" width="118" height="30"/>
-                                <state key="normal" title="CHECK NEXT VC"/>
-                                <connections>
-                                    <segue destination="hdH-Ck-JY9" kind="show" id="3lX-KN-0Kj"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="A1K-Bb-fIk" firstAttribute="centerY" secondItem="8Y1-1x-Vjv" secondAttribute="centerY" id="BrJ-iS-9cL"/>
-                            <constraint firstItem="A1K-Bb-fIk" firstAttribute="centerX" secondItem="8Y1-1x-Vjv" secondAttribute="centerX" id="tgb-HS-Uvn"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="hdH-Ck-JY9" kind="show" identifier="goto_productdetailsvc" id="C4B-4k-TB6"/>
@@ -1735,6 +1722,10 @@
                     </view>
                     <connections>
                         <outlet property="itemNameView" destination="qPL-a2-giz" id="jTh-pB-1fn"/>
+                        <outlet property="lbl_ItemName" destination="8m8-fd-DEp" id="MZz-yi-YLa"/>
+                        <outlet property="lbl_LocationName" destination="GfJ-Zp-haG" id="tGG-fo-scJ"/>
+                        <outlet property="lbl_Price" destination="bdc-Xg-7m4" id="UL4-4U-sAt"/>
+                        <outlet property="lbl_PromotionText" destination="cd8-hP-wx1" id="mjh-tY-dfF"/>
                         <outlet property="locationNameView" destination="FhA-7B-VB0" id="A0e-JJ-Uoq"/>
                         <outlet property="priceView" destination="8QU-fr-ad4" id="PYs-0V-S0r"/>
                         <outlet property="promotionView" destination="nb4-en-Mj2" id="dMe-hx-WmV"/>
@@ -2098,7 +2089,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2867,7 +2858,4 @@
         <image name="dropdown" width="35" height="35"/>
         <image name="untick" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="C4B-4k-TB6"/>
-    </inferredMetricsTieBreakers>
 </document>

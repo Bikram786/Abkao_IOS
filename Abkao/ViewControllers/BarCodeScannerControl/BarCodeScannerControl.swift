@@ -8,25 +8,16 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 
 class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDelegate {
-
+    
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     
     let supportedCodeTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
-    
-//    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-//    var device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-//    var output = AVCaptureMetadataOutput()
-//    var previewLayer: AVCaptureVideoPreviewLayer?
-//    
-//    var captureSession = AVCaptureSession()
-//    var code: String?
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +26,22 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         setOrintation()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        //self.performSegue(withIdentifier: "goto_productdetailsvc", sender: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession?.startRunning();
+        }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession?.stopRunning();
+        }
+    }
+    
     
     // MARK: - Super Class Method
     
@@ -77,10 +80,6 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             
             // Start video capture.
             captureSession?.startRunning()
-            
-            // Move the message label and top bar to the front
-//            view.bringSubview(toFront: messageLabel)
-//            view.bringSubview(toFront: topbar)
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
@@ -162,94 +161,49 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-               // messageLabel.text = metadataObj.stringValue
+                // messageLabel.text = metadataObj.stringValue
+                
+                print(metadataObj.stringValue)
+                
+                if (captureSession?.isRunning == true) {
+                    captureSession?.stopRunning();
+                }
+                
+                callBarcodeAPI(barcodeValue: metadataObj.stringValue)
+                
+                
+                
             }
         }
     }
-
     
-//    private func setupCamera() {
-//        
-//        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
-//        
-//        if self.captureSession.canAddInput(input) {
-//            self.captureSession.addInput(input)
-//        }
-//        
-//        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        
-//        if let videoPreviewLayer = self.previewLayer {
-//            videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-//            videoPreviewLayer.frame = self.view.bounds
-//            view.layer.addSublayer(videoPreviewLayer)
-//        }
-//        
-//        let metadataOutput = AVCaptureMetadataOutput()
-//        if self.captureSession.canAddOutput(metadataOutput) {
-//            self.captureSession.addOutput(metadataOutput)
-//            
-//            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-//            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
-//        } else {
-//            print("Could not add metadata output")
-//        }
-//    }
-//    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        if (captureSession.isRunning == false) {
-//            captureSession.startRunning();
-//        }
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        
-//        if (captureSession.isRunning == true) {
-//            captureSession.stopRunning();
-//        }
-//    }
-//    
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-//        // This is the delegate'smethod that is called when a code is readed
-//        for metadata in metadataObjects {
-//            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-//            let code = readableObject.stringValue
-//            
-//            
-//            self.dismiss(animated: true, completion: nil)
-//            //self.delegate?.barcodeReaded(barcode: code!)
-//            print(code!)
-//            
-//            callBarcodeAPI()
-//        }
-//    }
-//    
-//    func callBarcodeAPI() {
-//        
-//        //        if (captureSession.isRunning == true) {
-//        //
-//        //            captureSession.stopRunning();
-//        //        }
-//        
-//        ModelManager.sharedInstance.barcodeManager.scanBarcode() { (userObj, isSuccess, strMessage) in
-//            
-//            if(isSuccess)
-//            {
-//                print(userObj)
-//                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
-//                myVC.getPreviousProducts = userObj
-//                self.navigationController?.pushViewController(myVC, animated: true)
-//            }
-//            
-//        }
-//        
-//    }
+    func callBarcodeAPI(barcodeValue: String) {
+        
+        let strURL = "93027" + "," + barcodeValue
+        
+        print(strURL)
+        
+        SVProgressHUD.show(withStatus: "Loding.......")
+        
+        ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeURL: strURL) { (userObj, isSuccess, strMessage) in
+            
+            SVProgressHUD.dismiss()
+            
+            if(isSuccess)
+            {
+                print(userObj)
+                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
+                myVC.getPreviousProducts = userObj
+                self.navigationController?.pushViewController(myVC, animated: true)
+            }
+            
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
     }
 }
 

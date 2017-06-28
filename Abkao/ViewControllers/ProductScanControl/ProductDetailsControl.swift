@@ -9,7 +9,7 @@
 import UIKit
 
 class ProductDetailsControl: AbstractControl {
-
+    
     
     var getPreviousProducts = BarcodeI()
     
@@ -27,13 +27,13 @@ class ProductDetailsControl: AbstractControl {
         super.viewDidLoad()
         setIntialView()
     }
-
+    
     func setIntialView() {
         
-        lbl_LocationName.text = getPreviousProducts.productLocation!
-        lbl_ItemName.text = getPreviousProducts.productName!
-        lbl_Price.text = getPreviousProducts.productRate!
-        lbl_PromotionText.text = getPreviousProducts.productPromotionText!
+        lbl_LocationName?.text = getPreviousProducts.productLocation!
+        lbl_ItemName?.text = getPreviousProducts.productName!
+        lbl_Price?.text = getPreviousProducts.productRate!
+        lbl_PromotionText?.text = getPreviousProducts.productPromotionText!
         
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()
@@ -42,26 +42,26 @@ class ProductDetailsControl: AbstractControl {
         promotionView.setViewBoarder()
     }
     
-
+    
     
     override var navTitle: String{
         return "Logout"
     }
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
