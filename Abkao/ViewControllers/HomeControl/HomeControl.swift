@@ -267,7 +267,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         if(!isVedReceived)
         {
-            let defaultUrl = ModelManager.sharedInstance.profileManager.userObj?.defaultUrl
+            let defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+            
             self.playVideoInPlayer(strUrl: defaultUrl!)
             
             

@@ -27,10 +27,12 @@ class AuthManager: NSObject {
                     
                     if(isSuccess){
                         
-                        ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
-                        
                         //set User Object
                         self.setUserDefaultValues(dictData: jsonDict as! [String : AnyObject])
+                        
+                        ModelManager.sharedInstance.profileManager.userObj?.setUserInfo(userObj: jsonDict as! [String : AnyObject])
+                        
+                     
                         
                         handler(ModelManager.sharedInstance.profileManager.userObj! , true ,"User registered successfully")
                         
