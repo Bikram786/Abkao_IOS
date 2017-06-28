@@ -73,8 +73,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 
     override func viewDidLoad() {
         
-        super.viewDidLoad()
-        
+        super.viewDidLoad() 
         
         setIntialMethods()
         
@@ -421,9 +420,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 
                 if indexPath.row >= leftData.count {
                     
-                    
+                    let url = URL(string: "http://6.abkao-webservices.appspot.com/getProductImage?product_url=Test%2Fdefault-product-image.jpg&mimetype=image/jpeg")
+                    cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = "N/A"
                     cell?.lbl_ItemPrice.text = "N/A"
+                    
                     
                 }else{
                     
@@ -432,9 +433,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
-                    cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
+                    
                 }
                 
+                cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
                 cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
                 cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
               
@@ -446,6 +448,9 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 cell?.selectionStyle = .none
                 
                 if indexPath.row >= rightData.count {
+                    
+                    let url = URL(string: "http://6.abkao-webservices.appspot.com/getProductImage?product_url=Test%2Fdefault-product-image.jpg&mimetype=image/jpeg")
+                    cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = "N/A"
                     cell?.lbl_ItemPrice.text = "N/A"
                     
@@ -456,9 +461,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
                     cell?.lbl_ItemPrice.text = proDescObj.productPrice
-                    cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
+                    
                 }
                 
+                cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
                 cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
                 cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
             }

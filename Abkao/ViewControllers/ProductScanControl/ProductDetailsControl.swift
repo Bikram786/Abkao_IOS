@@ -33,8 +33,11 @@ class ProductDetailsControl: AbstractControl {
         lbl_LocationName?.text = getPreviousProducts.productLocation!
         lbl_ItemName?.text = getPreviousProducts.productName!
         lbl_Price?.text = getPreviousProducts.productRate!
-        lbl_PromotionText?.text = getPreviousProducts.productPromotionText!
-        
+        if getPreviousProducts.productPromotionPrice! != 0 && getPreviousProducts.productPromotionQTY! != 0{
+            let twoDecimalPlaces = String(format: "%.2f", getPreviousProducts.productPromotionPrice!)
+            let finalText = String(getPreviousProducts.productPromotionQTY!) + " for $" + String(twoDecimalPlaces)
+            lbl_PromotionText?.text = finalText
+        }
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()
         itemNameView.setViewBoarder()

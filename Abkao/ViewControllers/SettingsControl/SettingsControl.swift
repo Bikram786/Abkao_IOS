@@ -18,6 +18,9 @@ class SettingsControl: AbstractControl {
      @IBOutlet weak var txt_DefaultURL: UITextField!
     @IBOutlet weak var setImageGrid: UISegmentedControl!
     @IBOutlet weak var setPriceGrid: UISegmentedControl!
+    @IBOutlet weak var lbl_AccountNo: UILabel!
+    
+    @IBOutlet weak var lbl_AccountName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,9 +83,13 @@ class SettingsControl: AbstractControl {
             
             if(isSuccess){
                 
+                self.lbl_AccountName.text = ModelManager.sharedInstance.profileManager.userObj?.accountName
+                self.lbl_AccountNo.text = ModelManager.sharedInstance.profileManager.userObj?.accountNo
                 self.setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
                 self.setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
 
+                
+                
                 if (self.setGridRows == 4)
                 {
                     self.setImageGrid.selectedSegmentIndex=1

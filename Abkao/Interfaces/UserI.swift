@@ -78,6 +78,7 @@ class UserI: NSObject,NSCoding {
         self.lastName = decoder.decodeObject(forKey: "lastName") as? String ?? ""
         self.password = decoder.decodeObject(forKey: "password") as? String ?? ""
         self.accountName = decoder.decodeObject(forKey: "accountName") as? String ?? ""
+        self.accountNo = decoder.decodeObject(forKey: "accountNo") as? String ?? ""
         self.address = decoder.decodeObject(forKey: "address") as? String ?? ""
         self.city = decoder.decodeObject(forKey: "city") as? String ?? ""
         self.state = decoder.decodeObject(forKey: "state") as? String ?? ""
@@ -98,6 +99,7 @@ class UserI: NSObject,NSCoding {
         coder.encode(lastName, forKey: "lastName")
         coder.encode(password, forKey: "password")
         coder.encode(accountName, forKey: "accountName")
+        coder.encode(accountNo, forKey: "accountNo")
         coder.encode(address, forKey: "address")
         coder.encode(city, forKey: "city")
         coder.encode(state, forKey: "state")
@@ -121,6 +123,7 @@ class UserI: NSObject,NSCoding {
         self.userID = dictData["userid"] as? Int
         self.accountName = dictData["account_name"] as? String ?? ""
         self.accountNo =   dictData["account_number"] as? String ?? ""
+        
 //        self.defaultUrl    = userObj["video_url"] as? String ?? ""
 //        self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
 //        self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)

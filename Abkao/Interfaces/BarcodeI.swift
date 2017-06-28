@@ -17,7 +17,8 @@ class BarcodeI: NSObject {
     public var productLocation: String?
     public var productPromotionText: String?
     public var productID: Int?
-    
+    public var productPromotionQTY: Int?
+    public var productPromotionPrice: Float?
     
     
     override init(){
@@ -27,6 +28,8 @@ class BarcodeI: NSObject {
         self.productLocation = ""
         self.productPromotionText = ""
         self.productID = 0
+        self.productPromotionQTY = 0
+        self.productPromotionPrice = 0.0
     }
     
     func resetData(){
@@ -36,6 +39,8 @@ class BarcodeI: NSObject {
         self.productLocation = ""
         self.productPromotionText = ""
         self.productID = 0
+        self.productPromotionQTY = 0
+        self.productPromotionPrice = 0.0
     }
     
     public func setProductPriceData(productInfoObj : [String : AnyObject])
@@ -46,6 +51,8 @@ class BarcodeI: NSObject {
         self.productRate = (productInfoObj["Price"] as? String ?? "")
         self.productLocation = (productInfoObj["LocationName"] as? String ?? "")
         self.productPromotionText = (productInfoObj["LocationName"] as? String ?? "")
+        self.productPromotionQTY = productInfoObj["PromotionQty"] as? Int
+        self.productPromotionPrice = productInfoObj["PromotionPrice"] as? Float
         
     }
 

@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="797" height="238"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="phk-pn-mO9" id="awx-PU-O17">
-                <rect key="frame" x="0.0" y="0.0" width="797" height="238"/>
+                <rect key="frame" x="0.0" y="0.0" width="797" height="237.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-Qr-p0W">
@@ -155,7 +155,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-d3-p1i">
                                         <rect key="frame" x="726.5" y="110" width="25" height="25"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-83-qAx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-83-qAx">
                                         <rect key="frame" x="20" y="145" width="748" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Hrr-2B-9Xp"/>
