@@ -61,6 +61,11 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
                     let setCount = "Add " + String(setItemCount) + " More"
                     self.btn_AddMore.setTitle(setCount, for: .normal)
                 }
+                else
+                {
+                    self.btn_AddMore.isHidden = true
+                    
+                }
                 
                 self.imageControlTbl.reloadData()
             }else{
@@ -105,9 +110,14 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.setImageView.setViewBoarder()
         let url = URL(string: proDescObj.productImgUrl!)
         cell.setImage.af_setImage(withURL: url!)
-        cell.lbl_ProductName.text = proDescObj.productName!
+        cell.lbl_ProductName.text = proDescObj.productName!.capitalized
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
+        
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: 17)
+        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: 15)
+
         //cell.productNameView.setViewBoarder()
         //cell.productPriceView.setViewBoarder()
         //cell.productURLView.setViewBoarder()

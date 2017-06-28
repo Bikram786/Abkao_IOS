@@ -28,6 +28,14 @@ class SettingsControl: AbstractControl {
         setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         self.txt_DefaultURL.text = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
         
+        //Text color for segments
+        let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        setImageGrid.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        setPriceGrid.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        setImageGrid.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        setPriceGrid.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        
         
         callProductAPI()
         

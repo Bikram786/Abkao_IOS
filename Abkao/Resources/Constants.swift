@@ -19,6 +19,8 @@ public struct Constants {
     
     static let kDateFormatter = "MM-dd-yyyy hh:mma"
     
+    
+    
     enum AvenirNextCondensed : String {
         case Regular    = "AvenirNextCondensed-Regular"
         case Bold       = "AvenirNextCondensed-Bold"

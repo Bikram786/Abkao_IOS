@@ -64,6 +64,11 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
                     let setCount = "Add " + String(setItemCount) + " More"
                     self.btn_AddMore.setTitle(setCount, for: .normal)
                 }
+                else
+                {
+                    self.btn_AddMore.isHidden = true
+                    
+                }
                 self.priceTable.reloadData()
 
             }else{
@@ -103,9 +108,13 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "PriceGrid", for: indexPath) as! PriceGrid
         cell.selectionStyle = .none
         let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
-        cell.lbl_ProductName.text = proDescObj.productName
+        cell.lbl_ProductName.text = proDescObj.productName?.capitalized
         cell.setView.setViewBoarder()
         cell.lbl_ProductPrice.text = proDescObj.productRate
+        
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: 17)
+        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
+
         return cell
         
     }
