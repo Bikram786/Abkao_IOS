@@ -138,14 +138,14 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     
     
         }
-        editAction.backgroundColor = .blue
+        editAction.backgroundColor = Constants.appColor.appEditColor
     
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
     
         self.callProductDeleteAPI(productID: String(proDescObj.productID!))
     
     }
-    deleteAction.backgroundColor = .red
+    deleteAction.backgroundColor = Constants.appColor.appDeleteColor
     
     return [editAction,deleteAction]
     }

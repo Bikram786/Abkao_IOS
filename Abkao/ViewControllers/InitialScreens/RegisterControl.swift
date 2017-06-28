@@ -32,11 +32,19 @@ class RegisterControl: AbstractControl {
     @IBOutlet weak var txt_Email: UITextField!
     @IBOutlet weak var txt_ConfirmPassword: UITextField!
     
+    var arrCountries : NSMutableArray = NSMutableArray()
+    
     // MARK: - View Lifecycle Method
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartingFields()
+        
+        //get Countries list
+        ModelManager.sharedInstance.authManager.getCountriesList { (arrCountryI, isSuucess) in
+            
+            self.arrCountries = arrCountryI!
+        }
     }
     
     func setStartingFields() {

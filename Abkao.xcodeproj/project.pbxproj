@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797A1F038E5200C0C837 /* CountryI.swift */; };
+		18B8797D1F038E7600C0C837 /* StateI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797C1F038E7600C0C837 /* StateI.swift */; };
 		467E2F9C1EFFEB1B008A92F2 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 467E2F9B1EFFEB1A008A92F2 /* empty.wav */; };
 		B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA21EF7C41300173984 /* ShowAlerts.swift */; };
 		B6131FA51EF7C73400173984 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA41EF7C73400173984 /* ProfileManager.swift */; };
@@ -85,6 +87,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B8797A1F038E5200C0C837 /* CountryI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryI.swift; sourceTree = "<group>"; };
+		18B8797C1F038E7600C0C837 /* StateI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateI.swift; sourceTree = "<group>"; };
 		34C2F26954D0D6F84280EBB7 /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
 		467E2F9B1EFFEB1A008A92F2 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
 		49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abkao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +296,8 @@
 				B659DD8B1EF05BA400409825 /* SchedulerI.swift */,
 				B659DD8C1EF05BA400409825 /* UserI.swift */,
 				B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */,
+				18B8797A1F038E5200C0C837 /* CountryI.swift */,
+				18B8797C1F038E7600C0C837 /* StateI.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -695,8 +701,10 @@
 				B659DDFE1EF05BA400409825 /* HomeControl.swift in Sources */,
 				B6FF57171EF688AF0010301E /* VideoSchedulerHeader.swift in Sources */,
 				B659DE001EF05BA400409825 /* ImageItemControl.swift in Sources */,
+				18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */,
 				B6131FC01EF7CA8300173984 /* GKImageCropViewController.m in Sources */,
 				B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */,
+				18B8797D1F038E7600C0C837 /* StateI.swift in Sources */,
 				B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */,
 				B6131FBD1EF7CA8300173984 /* GKCropBorderView.m in Sources */,
 				B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */,

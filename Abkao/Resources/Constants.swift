@@ -19,6 +19,7 @@ public struct Constants {
     
     static let kDateFormatter = "MM-dd-yyyy hh:mma"
     
+    static let baseUrlCountries = "http://api.geonames.org/countryInfoJSON?"
     
     
     enum AvenirNextCondensed : String {
@@ -31,6 +32,10 @@ public struct Constants {
     }
 
     struct appColor {
+        
+        static let appDeleteColor = UIColor.init(colorLiteralRed: 69.0/255.0, green: 109.0/255.0, blue: 173.0/255.0, alpha: 1)
+        static let appEditColor = UIColor.init(colorLiteralRed: 219.0/255.0, green: 142.0/255.0, blue: 142.0/255.0, alpha: 1)
+        
         
         static let appBlueColor = UIColor.init(colorLiteralRed: 87.0/255.0, green: 91.0/255.0, blue: 99.0/255.0, alpha: 1)
         static let skyBlueColor = UIColor.init(colorLiteralRed: 67/255, green: 175/255, blue: 205/255, alpha: 1)

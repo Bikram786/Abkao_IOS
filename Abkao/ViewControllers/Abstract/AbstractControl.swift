@@ -128,13 +128,13 @@ class AbstractControl: UIViewController {
         get{
             
             if _logoutBtn == nil{
-                
+
                 _logoutBtn = UIButton(type: .custom)
                 _logoutBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
                 _logoutBtn.setTitle("LOGOUT", for: .normal)
                 _logoutBtn.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
                 _logoutBtn.tintColor = .white
-                _logoutBtn.backgroundColor = .blue
+                _logoutBtn.backgroundColor = UIColor.init(red: 42.0/255.0, green: 21.0/255.0, blue: 119.0/255.0, alpha: 1)
                 _logoutBtn.addTarget(self, action: #selector(gotoLoginView), for: .touchUpInside)
                 _logoutBtn.isHidden = !showLogout
             }

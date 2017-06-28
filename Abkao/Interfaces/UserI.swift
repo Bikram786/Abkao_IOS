@@ -25,9 +25,9 @@ class UserI: NSObject,NSCoding {
     public var telephone: String?
     public var username: String?
     public var userID: Int?
-    public var imageGridSize: Int?
-    public var priceGridSize: Int?
-    public var defaultUrl : String?
+//    public var imageGridSize: Int?
+//    public var priceGridSize: Int?
+//    public var defaultUrl : String?
     
     
     override init(){
@@ -44,9 +44,9 @@ class UserI: NSObject,NSCoding {
         self.country = ""
         self.telephone = ""
         self.username = ""
-        self.defaultUrl = ""
-        self.imageGridSize = 0
-        self.priceGridSize = 0
+//        self.defaultUrl = ""
+//        self.imageGridSize = 0
+//        self.priceGridSize = 0
         self.userID = 0
     }
     
@@ -66,9 +66,9 @@ class UserI: NSObject,NSCoding {
         self.telephone = ""
         self.username = ""
         self.userID = 0
-        self.defaultUrl = ""
-        self.imageGridSize = 0
-        self.priceGridSize = 0
+//        self.defaultUrl = ""
+//        self.imageGridSize = 0
+//        self.priceGridSize = 0
     }
     
     
@@ -86,10 +86,10 @@ class UserI: NSObject,NSCoding {
         self.country = decoder.decodeObject(forKey: "country") as? String ?? ""
         self.telephone = decoder.decodeObject(forKey: "telephone") as? String ?? ""
         self.username = decoder.decodeObject(forKey: "username") as? String ?? ""
-        self.defaultUrl = decoder.decodeObject(forKey: "defaultUrl") as? String ?? ""
+        //self.defaultUrl = decoder.decodeObject(forKey: "defaultUrl") as? String ?? ""
         self.userID = decoder.decodeObject(forKey: "userID") as? Int ?? decoder.decodeInteger(forKey: "userID")
-        self.priceGridSize = decoder.decodeObject(forKey: "priceGridSize") as? Int ?? decoder.decodeInteger(forKey: "priceGridSize")
-        self.imageGridSize = decoder.decodeObject(forKey: "imageGridSize") as? Int ?? decoder.decodeInteger(forKey: "imageGridSize")
+        //self.priceGridSize = decoder.decodeObject(forKey: "priceGridSize") as? Int ?? decoder.decodeInteger(forKey: "priceGridSize")
+        //self.imageGridSize = decoder.decodeObject(forKey: "imageGridSize") as? Int ?? decoder.decodeInteger(forKey: "imageGridSize")
     }
     
     
@@ -107,10 +107,10 @@ class UserI: NSObject,NSCoding {
         coder.encode(country, forKey: "country")
         coder.encode(telephone, forKey: "telephone")
         coder.encode(username, forKey: "username")
-        coder.encode(defaultUrl, forKey: "defaultUrl")
+        //coder.encode(defaultUrl, forKey: "defaultUrl")
         coder.encode(userID, forKey: "userID")
-        coder.encode(priceGridSize, forKey: "priceGridSize")
-        coder.encode(imageGridSize, forKey: "imageGridSize")
+        //coder.encode(priceGridSize, forKey: "priceGridSize")
+        //coder.encode(imageGridSize, forKey: "imageGridSize")
     }
     
     public func setUserInfo(userObj : [String : AnyObject])
@@ -125,9 +125,7 @@ class UserI: NSObject,NSCoding {
         self.accountName = dictData["account_name"] as? String ?? ""
         self.accountNo =   dictData["account_number"] as? String ?? ""
         
-        self.defaultUrl    = userObj["video_url"] as? String ?? ""
-//        self.imageGridSize = Int((userObj["image_grid_row"] as? String)!)
-//        self.priceGridSize = Int((userObj["price_grid_dimension"] as? String)!)
+
     }
     
 

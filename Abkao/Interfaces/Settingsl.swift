@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Settingsl: NSObject {
+class Settingsl: NSObject,NSCoding {
 
     //setter and getters
     public var imageGridRow: Int?
@@ -28,5 +28,20 @@ class Settingsl: NSObject {
         self.priceGridDimention = 0
         self.videoURL = ""
         }
-        
+    
+    required init(coder decoder: NSCoder)
+    {
+        self.videoURL = decoder.decodeObject(forKey: "videoURL") as? String ?? ""
+        self.priceGridDimention = decoder.decodeObject(forKey: "priceGridDimention") as? Int ?? decoder.decodeInteger(forKey: "priceGridDimention")
+        self.imageGridRow = decoder.decodeObject(forKey: "imageGridRow") as? Int ?? decoder.decodeInteger(forKey: "imageGridRow")
+    }
+    
+    
+    func encode(with coder: NSCoder)
+    {
+        coder.encode(videoURL, forKey: "videoURL")
+        coder.encode(priceGridDimention, forKey: "priceGridDimention")
+        coder.encode(imageGridRow, forKey: "imageGridRow")
+    }
+    
 }

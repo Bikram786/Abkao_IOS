@@ -67,7 +67,6 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
                 else
                 {
                     self.btn_AddMore.isHidden = true
-                    
                 }
                 self.priceTable.reloadData()
 
@@ -131,14 +130,14 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
             self.navigationController?.pushViewController(myVC, animated: true)
             
         }
-        editAction.backgroundColor = .blue
+        editAction.backgroundColor = Constants.appColor.appEditColor
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             
             self.callProductDeleteAPI(productID: proDescObj.productID!)
             
         }
-        deleteAction.backgroundColor = .red
+        deleteAction.backgroundColor = Constants.appColor.appDeleteColor
         
         return [editAction,deleteAction]
     }

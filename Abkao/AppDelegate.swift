@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        self.printFonts()
+        //self.printFonts()
         
         IQKeyboardManager.sharedManager().enable = true
         
@@ -71,6 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ModelManager.sharedInstance.profileManager.userObj = myUserObj
             
         }
+        
+        
+        if let dataSettings = UserDefaults.standard.data(forKey: "currentsetting"),
+            
+            let mySettingsObj = NSKeyedUnarchiver.unarchiveObject(with: dataSettings) as? Settingsl {
+            
+            ModelManager.sharedInstance.settingsManager.settingObj = mySettingsObj
+            
+        }
+        
         
         
         if  ModelManager.sharedInstance.profileManager.userObj?.userID != 0  {

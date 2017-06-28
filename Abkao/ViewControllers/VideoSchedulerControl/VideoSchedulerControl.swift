@@ -146,14 +146,14 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
             self.navigationController?.pushViewController(myVC, animated: true)
             
         }
-        editAction.backgroundColor = .blue
+        editAction.backgroundColor = Constants.appColor.appEditColor
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             
             self.callProductDeleteAPI(productID: sehedulerObj.scheduleID!)
             
         }
-        deleteAction.backgroundColor = .red
+        deleteAction.backgroundColor = Constants.appColor.appDeleteColor
         
         return [editAction,deleteAction]
     }
