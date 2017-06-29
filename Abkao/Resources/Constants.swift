@@ -19,7 +19,7 @@ public struct Constants {
     
     static let kDateFormatter = "MM-dd-yyyy hh:mma"
     
-    static let baseUrlCountries = "http://api.geonames.org/countryInfoJSON?"
+    static let baseUrlCountries = "http://api.geonames.org/"
     
     
     enum AvenirNextCondensed : String {

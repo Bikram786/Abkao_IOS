@@ -143,10 +143,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.dataSource = self
         leftTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
         rightTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
-        leftTbl.estimatedRowHeight = 200.0
-        leftTbl.rowHeight = UITableViewAutomaticDimension
-        rightTbl.estimatedRowHeight = 200.0
-        rightTbl.rowHeight = UITableViewAutomaticDimension
+        self.leftTbl.rowHeight = 165
+        self.leftTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: 165*4)
+        self.rightTbl.rowHeight = 165
+        self.rightTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: 165*4)
         leftTbl.separatorStyle = .none
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()

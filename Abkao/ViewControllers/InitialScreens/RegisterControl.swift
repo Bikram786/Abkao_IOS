@@ -9,9 +9,11 @@
 import UIKit
 import SVProgressHUD
 
-class RegisterControl: AbstractControl {
+class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // IBOutlets
+    
+    var data = ["One", "Two", "Three"]
     
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txt_FirstName: UITextField!
@@ -30,7 +32,9 @@ class RegisterControl: AbstractControl {
     @IBOutlet weak var txt_Address: UITextField!
     @IBOutlet weak var txt_ZipCode: UITextField!
     @IBOutlet weak var txt_Email: UITextField!
-    @IBOutlet weak var txt_ConfirmPassword: UITextField!
+    @IBOutlet weak var txt_ConfirmPassword: UITextField!    
+    @IBOutlet weak var selectCityAndStatePickerView: UIPickerView!
+    
     
     var arrCountries : NSMutableArray = NSMutableArray()
     
@@ -44,6 +48,7 @@ class RegisterControl: AbstractControl {
         ModelManager.sharedInstance.authManager.getCountriesList { (arrCountryI, isSuucess) in
             
             self.arrCountries = arrCountryI!
+            self.selectCityAndStatePickerView.reloadAllComponents()
         }
     }
     
@@ -66,6 +71,47 @@ class RegisterControl: AbstractControl {
         txt_ZipCode.addShadowToTextfield()
         txt_Email.addShadowToTextfield()
         txt_ConfirmPassword.addShadowToTextfield()
+    }
+    
+    //MARK: - UIPickerView Delegate & Data Source Methods
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ModelManager.sharedInstance.authManager.arrCountry!.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let countryObj = ModelManager.sharedInstance.authManager.arrCountry?.object(at: row) as! CountryI
+        return countryObj.countryName
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let countryObj = ModelManager.sharedInstance.authManager.arrCountry?.object(at: row) as! CountryI
+        
+        print(countryObj.countryName!)
+        
+        getStateList(getContury: countryObj)
+    }
+   
+    func getStateList(getContury: CountryI){
+        
+        ModelManager.sharedInstance.authManager.getStatesList(countryObj: getContury) { (arrCountryI, isSuucess) in
+            
+            self.arrCountries = arrCountryI!
+            self.selectCityAndStatePickerView.reloadAllComponents()
+            
+        }
+        
     }
     
     // MARK: - Validation Method

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,11 +40,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRJ-ol-ChH">
-                                        <rect key="frame" x="457" y="18" width="111.5" height="51"/>
+                                        <rect key="frame" x="456.5" y="18" width="111" height="49"/>
                                         <attributedString key="attributedText">
                                             <fragment content="L">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -89,7 +89,7 @@
                                             </fragment>
                                             <fragment content="OGIN">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -329,11 +329,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-1Y-iiv">
-                                        <rect key="frame" x="333" y="4" width="358.5" height="81"/>
+                                        <rect key="frame" x="321.5" y="4" width="381.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="R">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -378,7 +378,7 @@
                                             </fragment>
                                             <fragment content="ECOVER ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -423,7 +423,7 @@
                                             </fragment>
                                             <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -468,7 +468,7 @@
                                             </fragment>
                                             <fragment content="ASSWORD">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -650,11 +650,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf7-4I-dCh">
                                 <rect key="frame" x="20" y="84" width="984" height="664"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G1r-Z8-ody">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G1r-Z8-ody">
                                         <rect key="frame" x="20" y="0.0" width="190" height="664"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AGZ-zf-kGC">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AGZ-zf-kGC">
                                         <rect key="frame" x="774" y="0.0" width="190" height="664"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
@@ -682,8 +682,8 @@
                                             <constraint firstAttribute="trailing" secondItem="C3z-kG-qJb" secondAttribute="trailing" id="Yfc-o4-fgd"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-wP-0ak">
-                                        <rect key="frame" x="242" y="299.5" width="500" height="279.5"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-wP-0ak">
+                                        <rect key="frame" x="242" y="299.5" width="500" height="354.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hIe-qI-zaX">
                                             <size key="itemSize" width="100" height="70"/>
@@ -767,9 +767,9 @@
                                     <constraint firstItem="eEW-Bb-kp3" firstAttribute="width" secondItem="uf7-4I-dCh" secondAttribute="width" multiplier="0.508" id="3HY-j2-6Ly"/>
                                     <constraint firstItem="G1r-Z8-ody" firstAttribute="leading" secondItem="uf7-4I-dCh" secondAttribute="leading" constant="20" id="91o-4q-oYU"/>
                                     <constraint firstItem="vaA-wP-0ak" firstAttribute="centerX" secondItem="eEW-Bb-kp3" secondAttribute="centerX" id="AHi-kd-qLq"/>
-                                    <constraint firstItem="vaA-wP-0ak" firstAttribute="height" secondItem="eEW-Bb-kp3" secondAttribute="height" id="Ix5-qv-tSZ"/>
                                     <constraint firstItem="vaA-wP-0ak" firstAttribute="width" secondItem="eEW-Bb-kp3" secondAttribute="width" id="Jwg-yW-TWs"/>
                                     <constraint firstAttribute="bottom" secondItem="G1r-Z8-ody" secondAttribute="bottom" id="LYO-ka-UL5"/>
+                                    <constraint firstAttribute="bottom" secondItem="vaA-wP-0ak" secondAttribute="bottom" constant="10" id="OEj-UR-gAA"/>
                                     <constraint firstItem="vaA-wP-0ak" firstAttribute="top" secondItem="eEW-Bb-kp3" secondAttribute="bottom" constant="20" id="SSk-oY-UWf"/>
                                     <constraint firstAttribute="bottom" secondItem="AGZ-zf-kGC" secondAttribute="bottom" id="TKv-vd-EFJ"/>
                                     <constraint firstAttribute="trailing" secondItem="AGZ-zf-kGC" secondAttribute="trailing" constant="20" id="TVt-wL-fak"/>
@@ -852,11 +852,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-LK-Y7O">
-                                        <rect key="frame" x="433" y="4" width="159" height="81"/>
+                                        <rect key="frame" x="426.5" y="4" width="172.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -901,7 +901,7 @@
                                             </fragment>
                                             <fragment content="ETTINGS">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1297,11 +1297,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-Og-ImY">
-                                        <rect key="frame" x="378" y="4" width="268" height="81"/>
+                                        <rect key="frame" x="370.5" y="4" width="283.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1346,7 +1346,7 @@
                                             </fragment>
                                             <fragment content="RODUCT ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1391,7 +1391,7 @@
                                             </fragment>
                                             <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1436,7 +1436,7 @@
                                             </fragment>
                                             <fragment content="CAN">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1749,11 +1749,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-U2-RZL">
-                                        <rect key="frame" x="413.5" y="4" width="198" height="81"/>
+                                        <rect key="frame" x="409.5" y="4" width="206.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1798,7 +1798,7 @@
                                             </fragment>
                                             <fragment content="RICE ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1843,7 +1843,7 @@
                                             </fragment>
                                             <fragment content="G">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -1888,7 +1888,7 @@
                                             </fragment>
                                             <fragment content="RID">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2030,7 +2030,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2075,7 +2075,7 @@
                                             </fragment>
                                             <fragment content="RICE ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2120,7 +2120,7 @@
                                             </fragment>
                                             <fragment content="I">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2165,7 +2165,7 @@
                                             </fragment>
                                             <fragment content="TEM ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2210,7 +2210,7 @@
                                             </fragment>
                                             <fragment content="D">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2255,7 +2255,7 @@
                                             </fragment>
                                             <fragment content="ETAIL">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2440,11 +2440,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-To-e7b">
-                                        <rect key="frame" x="354" y="4" width="317" height="81"/>
+                                        <rect key="frame" x="347" y="4" width="331" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="V">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2489,7 +2489,7 @@
                                             </fragment>
                                             <fragment content="IDEO ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2534,7 +2534,7 @@
                                             </fragment>
                                             <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2579,7 +2579,7 @@
                                             </fragment>
                                             <fragment content="CHEDULER">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2746,11 +2746,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-b4-hf2">
-                                        <rect key="frame" x="410" y="4" width="204" height="81"/>
+                                        <rect key="frame" x="406" y="4" width="212.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="I">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2795,7 +2795,7 @@
                                             </fragment>
                                             <fragment content="MAGE ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2840,7 +2840,7 @@
                                             </fragment>
                                             <fragment content="C">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -2885,7 +2885,7 @@
                                             </fragment>
                                             <fragment content="ELL">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3009,11 +3009,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-id-qRG">
-                                        <rect key="frame" x="345.5" y="4" width="334.5" height="81"/>
+                                        <rect key="frame" x="346" y="4" width="333.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="I">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3058,7 +3058,7 @@
                                             </fragment>
                                             <fragment content="MAGE ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3103,7 +3103,7 @@
                                             </fragment>
                                             <fragment content="I">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3148,7 +3148,7 @@
                                             </fragment>
                                             <fragment content="TEM ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3193,7 +3193,7 @@
                                             </fragment>
                                             <fragment content="D">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3238,7 +3238,7 @@
                                             </fragment>
                                             <fragment content="ETAIL">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3550,11 +3550,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-kb-IYf">
-                                        <rect key="frame" x="319.5" y="17.5" width="386.5" height="51"/>
+                                        <rect key="frame" x="308" y="18.5" width="409.5" height="49"/>
                                         <attributedString key="attributedText">
                                             <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3599,7 +3599,7 @@
                                             </fragment>
                                             <fragment content="ET ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3644,7 +3644,7 @@
                                             </fragment>
                                             <fragment content="V">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3689,7 +3689,7 @@
                                             </fragment>
                                             <fragment content="IDEO ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3734,7 +3734,7 @@
                                             </fragment>
                                             <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -3779,7 +3779,7 @@
                                             </fragment>
                                             <fragment content="CHEDULER">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -4216,11 +4216,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1t-9Y-1kb">
-                                        <rect key="frame" x="430" y="17" width="165.5" height="51"/>
+                                        <rect key="frame" x="425" y="18" width="174" height="49"/>
                                         <attributedString key="attributedText">
                                             <fragment content="R">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="42"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -4265,7 +4265,7 @@
                                             </fragment>
                                             <fragment content="EGISTER">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="Cormorant-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="35"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -4758,6 +4758,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-de-H83">
+                                        <rect key="frame" x="0.0" y="324" width="973" height="250"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-vG-VFE">
+                                                <rect key="frame" x="0.0" y="0.0" width="973" height="250"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="FLx-oW-J59" id="92L-yj-4yO"/>
+                                                    <outlet property="delegate" destination="FLx-oW-J59" id="uAF-S3-RZd"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="IWE-fW-cKN"/>
+                                            <constraint firstAttribute="trailing" secondItem="PJE-vG-VFE" secondAttribute="trailing" id="RBA-Mn-8P9"/>
+                                            <constraint firstAttribute="bottom" secondItem="PJE-vG-VFE" secondAttribute="bottom" id="Ty6-wH-TNV"/>
+                                            <constraint firstItem="PJE-vG-VFE" firstAttribute="top" secondItem="Rkx-de-H83" secondAttribute="top" id="YyQ-xC-acr"/>
+                                            <constraint firstItem="PJE-vG-VFE" firstAttribute="leading" secondItem="Rkx-de-H83" secondAttribute="leading" id="iEA-40-sg9"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4765,14 +4785,17 @@
                                     <constraint firstItem="MFG-Ei-zgB" firstAttribute="height" secondItem="zi9-ds-s1n" secondAttribute="height" id="1Ux-Lv-lbd"/>
                                     <constraint firstItem="MhS-ob-wHL" firstAttribute="top" secondItem="zi9-ds-s1n" secondAttribute="bottom" id="3gh-AI-hic"/>
                                     <constraint firstItem="0Cd-9w-Wcm" firstAttribute="top" secondItem="zi9-ds-s1n" secondAttribute="bottom" id="7bA-W9-YOf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rkx-de-H83" secondAttribute="trailing" id="DAB-1x-Axa"/>
                                     <constraint firstItem="MhS-ob-wHL" firstAttribute="width" secondItem="jDe-uW-dnf" secondAttribute="width" multiplier="0.039" id="JQE-lA-ujY"/>
                                     <constraint firstItem="MFG-Ei-zgB" firstAttribute="top" secondItem="0Cd-9w-Wcm" secondAttribute="bottom" id="LcU-sP-jtQ"/>
                                     <constraint firstAttribute="trailing" secondItem="zi9-ds-s1n" secondAttribute="trailing" id="SYk-g8-IgM"/>
                                     <constraint firstItem="Nke-jq-xVy" firstAttribute="leading" secondItem="MhS-ob-wHL" secondAttribute="trailing" id="VkW-06-8DG"/>
                                     <constraint firstItem="zi9-ds-s1n" firstAttribute="top" secondItem="jDe-uW-dnf" secondAttribute="top" id="Y38-QK-9tv"/>
+                                    <constraint firstItem="Rkx-de-H83" firstAttribute="leading" secondItem="jDe-uW-dnf" secondAttribute="leading" id="Zs6-3i-hdi"/>
                                     <constraint firstAttribute="trailing" secondItem="MFG-Ei-zgB" secondAttribute="trailing" id="aEg-2F-wH5"/>
                                     <constraint firstItem="zi9-ds-s1n" firstAttribute="leading" secondItem="jDe-uW-dnf" secondAttribute="leading" id="ahl-M6-cQR"/>
                                     <constraint firstAttribute="bottom" secondItem="MFG-Ei-zgB" secondAttribute="bottom" id="fSe-wW-1zm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rkx-de-H83" secondAttribute="bottom" id="fec-y1-SgG"/>
                                     <constraint firstItem="MhS-ob-wHL" firstAttribute="leading" secondItem="jDe-uW-dnf" secondAttribute="leading" id="mvR-l6-AcG"/>
                                     <constraint firstItem="0Cd-9w-Wcm" firstAttribute="width" secondItem="MhS-ob-wHL" secondAttribute="width" id="tNl-vN-kmY"/>
                                     <constraint firstItem="MFG-Ei-zgB" firstAttribute="top" secondItem="MhS-ob-wHL" secondAttribute="bottom" id="tZf-ar-MwI"/>
@@ -4806,6 +4829,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="selectCityAndStatePickerView" destination="PJE-vG-VFE" id="0ni-yI-7hU"/>
                         <outlet property="setViewShadow" destination="jDe-uW-dnf" id="YtV-Ag-d4L"/>
                         <outlet property="txt_AccountName" destination="UEq-5c-0dr" id="YUZ-cl-59w"/>
                         <outlet property="txt_AccountNo" destination="ERg-L9-Jl4" id="r8r-ES-B2W"/>

@@ -193,7 +193,7 @@ class AuthManager: NSObject {
     
     func getCountriesList(handler : @escaping (NSMutableArray?, Bool) -> Void)
     {
-        BaseWebAccessLayer.getRequestURLforContriesResponse(requestType: .get, strURL: "username=chitran", headers: true, result:
+        BaseWebAccessLayer.getRequestURLforContriesResponse(requestType: .get, strURL: "countryInfoJSON?username=chitram", headers: true, result:
             {                
                 (jsonDict,statusCode) in
                 
@@ -222,7 +222,9 @@ class AuthManager: NSObject {
     func getStatesList(countryObj : CountryI, handler : @escaping (NSMutableArray?, Bool)-> Void)
     {
         
-        let strUrl = "geonameId=\((countryObj.geonameId?.description)!)&username=chitran"
+        let strUrl = "children?geonameId=\((countryObj.geonameId?.description)!)&username=singlabhi"
+        
+        //http://api.geonames.org/children?geonameId=1269750&username=singlabhi
         
         BaseWebAccessLayer.getRequestURLforContriesResponse(requestType: .get, strURL: strUrl, headers: true, result:
             {

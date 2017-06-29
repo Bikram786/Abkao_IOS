@@ -69,11 +69,24 @@ class AbstractControl: UIViewController {
             if _leftBackBtn == nil{
                 
                 _leftBackBtn = UIButton(type: .custom)
-                _leftBackBtn.backgroundColor = .black
-                _leftBackBtn.setImage(#imageLiteral(resourceName: "Back_Icon"), for: .normal)
-                _leftBackBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+                _leftBackBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+                _leftBackBtn.setTitle("BACK", for: .normal)
+                _leftBackBtn.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
+                _leftBackBtn.tintColor = .black
+                _leftBackBtn.backgroundColor = UIColor.init(red: 42.0/255.0, green: 21.0/255.0, blue: 119.0/255.0, alpha: 1)
                 _leftBackBtn.addTarget(self, action: #selector(goback), for: .touchUpInside)
                 _leftBackBtn.isHidden = !showLeft
+
+//                _leftBackBtn = UIButton(type: .custom)
+//                _leftBackBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+//                _leftBackBtn.setTitle("BACK", for: .normal)
+//                _leftBackBtn.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
+//                _leftBackBtn.tintColor = .black
+//                _leftBackBtn.layer.borderWidth = 2
+//                _leftBackBtn.backgroundColor = .white
+//                _leftBackBtn.addTarget(self, action: #selector(goback), for: .touchUpInside)
+//                _leftBackBtn.isHidden = !showLeft
+                
             }
             return _leftBackBtn
             
