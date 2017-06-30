@@ -55,6 +55,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var youTubeView: YouTubePlayerView!
     @IBOutlet weak var simpleVideoView: UIView!
     
+    var player:AVPlayer?
     var productObj : ProductI?
     var setImageGrid : Int?
     var setPriceGrid : Int?
@@ -79,19 +80,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         simpleVideoView.isHidden = true
         
-        //        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        //        let player = AVPlayer(url: videoURL!)
-        //        let playerController = AVPlayerViewController()
-        //        playerController.player = player
-        //        self.addChildViewController(playerController)
-        //        simpleView.addSubview(playerController.view)
-        //        playerController.view.frame = simpleView.frame
-        //        simpleView.layoutIfNeeded()
-        //        player.play()
-        
-//        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=0wrIcPOwycw")
-//        youTubeView.loadVideoURL(myVideoURL! as URL)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +89,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
         setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
-        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
         self.callProductAPI()
 
@@ -113,6 +101,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         youTubeView.stop()
         youTubeView.clear()
+        player?.pause()
+        player = nil
         
     }
 
@@ -292,18 +282,46 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func playVideoInPlayer(strUrl : String)
     {
         //temp comment
-
-        youTubeView.clear()
-        let myVideoURL = NSURL(string: strUrl)
-        youTubeView.loadVideoURL(myVideoURL! as URL)
-        self.perform(#selector(HomeControl.playVed), with: nil, afterDelay: 3)
-       
+        
+        print(strUrl)
+        
+        let string = strUrl
+        
+        if string.range(of:"youtube") != nil{
+            
+            youTubeView.isHidden=false
+            simpleVideoView.isHidden=true
+            youTubeView.clear()
+            let myVideoURL = NSURL(string: strUrl)
+            youTubeView.loadVideoURL(myVideoURL! as URL)
+            self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 0.5)
+            
+        }else{
+            
+            youTubeView.isHidden=true
+            simpleVideoView.isHidden=false
+            let videoURL = URL(string: strUrl)
+            player = AVPlayer(url: videoURL!)
+            let playerController = AVPlayerViewController()
+            playerController.player = player
+            self.addChildViewController(playerController)
+            simpleVideoView.addSubview(playerController.view)
+            playerController.view.frame = simpleVideoView.frame
+            simpleVideoView.layoutIfNeeded()
+            self.perform(#selector(HomeControl.playSimpleVed), with: nil, afterDelay: 0.5)
+            
+        }
+        
+        
     }
     
-    func playVed() {
+    func playYoutubeVed() {
         youTubeView.play()
     }
     
+    func playSimpleVed() {
+        player?.play()
+    }
     
     func callProductAPI(){
         

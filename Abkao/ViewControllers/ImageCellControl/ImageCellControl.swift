@@ -34,6 +34,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         callProductAPI()
     }
 

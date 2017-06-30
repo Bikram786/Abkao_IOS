@@ -21,6 +21,7 @@ class PriceItemControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         setStartingFields()
     }
     
@@ -50,7 +51,7 @@ class PriceItemControl: AbstractControl {
     }
     
     @IBAction func btn_SaveAction(_ sender: UIButton) {
-                
+        
         guard let productName = txt_ProductName.text, productName != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill product name")

@@ -19,8 +19,9 @@ class ForgotPasswordControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         setStartingFields()
+        
     }
     
     func setStartingFields() {

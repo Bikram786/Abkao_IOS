@@ -31,6 +31,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartingFields()
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
     }
     
     // MARK: - Super Class Method
@@ -70,7 +71,6 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func btn_SaveAction(_ sender: UIButton) {
-        
         
         guard let productName = txt_ProductName.text, productName != "" else {
             

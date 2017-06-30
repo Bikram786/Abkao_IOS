@@ -208,6 +208,7 @@ class AuthManager: NSObject {
                         let countryObj = CountryI()
                         countryObj.setCountryInfo(dictData: objAtindexI as! [String : AnyObject])
                         self.arrCountry?.add(countryObj)
+                        
                     }
                     handler(self.arrCountry!, true)
                     

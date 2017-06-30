@@ -37,7 +37,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         callProductAPI()
 
     }

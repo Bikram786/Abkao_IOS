@@ -29,7 +29,7 @@ class LoginControl: AbstractControl {
     
     func setStartingFields() {
         
-        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         setViewShadow.viewdraw(setViewShadow.bounds)
         txt_UserName.addShadowToTextfield()
         txt_Password.addShadowToTextfield()
@@ -50,13 +50,15 @@ class LoginControl: AbstractControl {
     
     @IBAction func btn_LoginAction(_ sender: UIButton) {
         
-        
         guard let userName = txt_UserName.text, userName != "" else {
+            
             SVProgressHUD.showError(withStatus: "Please fill user name")
             return
         }
         guard let userPassword = txt_Password.text, userPassword != "" else {
+            
             SVProgressHUD.showError(withStatus: "Please fill user passowrd")
+            
             return
         }
         

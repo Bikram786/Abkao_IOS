@@ -31,6 +31,7 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         getAllScheduledVideos()
     }
     

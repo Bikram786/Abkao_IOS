@@ -10,20 +10,21 @@ import UIKit
 import SVProgressHUD
 
 class AbstractControl: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         setNavigationBar()
         
         //---------
     }
-
+    
     
     // MARK : - Set Custom Navigation Bar
     
@@ -31,10 +32,10 @@ class AbstractControl: UIViewController {
         var leftItem: UIBarButtonItem!
         self.navigationItem.title = navTitle
         if navTitle == "Setting" {
-           leftItem = UIBarButtonItem(customView: leftSettingBtn)
-           self.navigationItem.setLeftBarButton(leftItem, animated: true)
+            leftItem = UIBarButtonItem(customView: leftSettingBtn)
+            self.navigationItem.setLeftBarButton(leftItem, animated: true)
         }else{
-            leftItem = UIBarButtonItem(customView: leftBackBtn)
+            leftItem = UIBarButtonItem(customView: leftBackView)
             self.navigationItem.setLeftBarButton(leftItem, animated: true)
         }
         var rightItem: UIBarButtonItem!
@@ -53,9 +54,9 @@ class AbstractControl: UIViewController {
     var centerImage: UIImageView {
         get{
             if _centerImage == nil {
-               _centerImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-               _centerImage.image = #imageLiteral(resourceName: "logo")
-               _centerImage.contentMode  = .scaleAspectFit
+                _centerImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                _centerImage.image = #imageLiteral(resourceName: "logo")
+                _centerImage.contentMode  = .scaleAspectFit
             }
             return _centerImage
         }set{
@@ -63,36 +64,32 @@ class AbstractControl: UIViewController {
         }
     }
     
-    var _leftBackBtn: UIButton!
-    var leftBackBtn: UIButton {
+    var _leftBackView: UIView!
+    var leftBackView: UIView {
         get {
-            if _leftBackBtn == nil{
+            if _leftBackView == nil{
                 
-                _leftBackBtn = UIButton(type: .custom)
-                _leftBackBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
-                _leftBackBtn.setTitle("BACK", for: .normal)
-                _leftBackBtn.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
-                _leftBackBtn.tintColor = .black
-                _leftBackBtn.backgroundColor = UIColor.init(red: 42.0/255.0, green: 21.0/255.0, blue: 119.0/255.0, alpha: 1)
-                _leftBackBtn.addTarget(self, action: #selector(goback), for: .touchUpInside)
-                _leftBackBtn.isHidden = !showLeft
-
-//                _leftBackBtn = UIButton(type: .custom)
-//                _leftBackBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
-//                _leftBackBtn.setTitle("BACK", for: .normal)
-//                _leftBackBtn.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
-//                _leftBackBtn.tintColor = .black
-//                _leftBackBtn.layer.borderWidth = 2
-//                _leftBackBtn.backgroundColor = .white
-//                _leftBackBtn.addTarget(self, action: #selector(goback), for: .touchUpInside)
-//                _leftBackBtn.isHidden = !showLeft
+                
+                _leftBackView = UIView()
+                _leftBackView.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+                _leftBackView.backgroundColor = .white
+                _leftBackView.isHidden = !showLeft
+                let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+                titleLabel.text = "BACK"
+                titleLabel.textColor = .black
+                titleLabel.textAlignment = .center
+                _leftBackView.viewdraw(_leftBackView.bounds)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+                _leftBackView.addGestureRecognizer(tap)
+                _leftBackView.isUserInteractionEnabled = true
+                _leftBackView.addSubview(titleLabel)
                 
             }
-            return _leftBackBtn
+            return _leftBackView
             
         }set{
             
-            _leftBackBtn = newValue
+            _leftBackView = newValue
         }
     }
     
@@ -134,14 +131,14 @@ class AbstractControl: UIViewController {
             _rightBtn = newValue
         }
     }
-   
+    
     var _logoutBtn: UIButton!
     var logoutBtn: UIButton {
         
         get{
             
             if _logoutBtn == nil{
-
+                
                 _logoutBtn = UIButton(type: .custom)
                 _logoutBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
                 _logoutBtn.setTitle("LOGOUT", for: .normal)
@@ -178,62 +175,63 @@ class AbstractControl: UIViewController {
         return true
     }
     
-// MARK : - Navigation Bar Action Methods
-
-func gotoScanView() {
+    // function which is triggered when handleTap is called
     
-}
-    
-func gotoSettingView() {
+    func handleTap(_ sender: UITapGestureRecognizer) {
         
-}
-
-func goback() {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
-    _ = self.navigationController?.popViewController(animated: true)
+    // MARK : - Navigation Bar Action Methods
     
-}
-
-func gotoLoginView() {
-    
-    var  dictData : [String : Any] =  [String : Any]()
-    dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-    SVProgressHUD.show(withStatus: "Loding.....")
-    ModelManager.sharedInstance.authManager.logout(userInfo: dictData) { (isSuccess, strMessage) in
-        SVProgressHUD.dismiss()
-        if(isSuccess)
-        {
-            UserDefaults.standard.removeObject(forKey: "userinfo")
-            UserDefaults.standard.synchronize()
-            SVProgressHUD.showError(withStatus: strMessage)
-            _ = self.navigationController?.popToRootViewController(animated: true)
-        }else{
-            
-            SVProgressHUD.showError(withStatus: strMessage)
-        }
+    func gotoScanView() {
         
     }
-
+    
+    func gotoSettingView() {
+        
+    }
+    
+    func gotoLoginView() {
+        
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        SVProgressHUD.show(withStatus: "Loding.....")
+        ModelManager.sharedInstance.authManager.logout(userInfo: dictData) { (isSuccess, strMessage) in
+            SVProgressHUD.dismiss()
+            if(isSuccess)
+            {
+                UserDefaults.standard.removeObject(forKey: "userinfo")
+                UserDefaults.standard.synchronize()
+                SVProgressHUD.showError(withStatus: strMessage)
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }else{
+                
+                SVProgressHUD.showError(withStatus: strMessage)
+            }
+            
+        }
+        
+        
+        
+    }
     
     
-}
-
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Abkao/Model/AuthManager.swift"
-            timestampString = "520452053.296806"
+            timestampString = "520537594.597654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "getStatesList(countryObj:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Abkao/ViewControllers/InitialScreens/RegisterControl.swift"
-            timestampString = "520452609.722759"
+            timestampString = "520538010.282204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "getStateList(getContury:)"
             landmarkType = "7">
          </BreakpointContent>

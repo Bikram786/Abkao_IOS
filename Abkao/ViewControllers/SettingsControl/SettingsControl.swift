@@ -37,9 +37,8 @@ class SettingsControl: AbstractControl {
         setImageGrid.setTitleTextAttributes(titleTextAttributes, for: .normal)
         setPriceGrid.setTitleTextAttributes(titleTextAttributes, for: .normal)
         setImageGrid.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        setPriceGrid.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        
-        
+        setPriceGrid.setTitleTextAttributes(titleTextAttributes, for: .selected)        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         callProductAPI()
         
     }

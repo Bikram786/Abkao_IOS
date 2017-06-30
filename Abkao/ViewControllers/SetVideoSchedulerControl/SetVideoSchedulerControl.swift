@@ -36,7 +36,8 @@ class SetVideoSchedulerControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         dateTimeView.isHidden=true
         txt_VideoURL.addShadowToTextfield()
         if status == "edit"{
@@ -64,9 +65,11 @@ class SetVideoSchedulerControl: AbstractControl {
                }
 
             }
+        }else{
             
-            
+            txt_VideoURL.text = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
         }
+        
     }
     
     override var showRight: Bool{

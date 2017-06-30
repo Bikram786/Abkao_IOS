@@ -19,10 +19,7 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var txt_FirstName: UITextField!
     @IBOutlet weak var txt_AccountNo: UITextField!
     @IBOutlet weak var txt_City: UITextField!
-    @IBOutlet weak var txt_Country: UITextField!
-    
     @IBOutlet weak var txt_UserName: UITextField!
-    
     @IBOutlet weak var txt_LastName: UITextField!
     @IBOutlet weak var txt_AccountName: UITextField!
     @IBOutlet weak var txt_State: UITextField!
@@ -34,7 +31,11 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var txt_Email: UITextField!
     @IBOutlet weak var txt_ConfirmPassword: UITextField!    
     @IBOutlet weak var selectCityAndStatePickerView: UIPickerView!
+    @IBOutlet weak var countryPickerView: UIView!
     
+    @IBOutlet weak var btn_Country: UIButton!
+    
+    @IBOutlet weak var countryView: UIView!
     
     var arrCountries : NSMutableArray = NSMutableArray()
     
@@ -46,22 +47,23 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
         
         //get Countries list
         ModelManager.sharedInstance.authManager.getCountriesList { (arrCountryI, isSuucess) in
-            
-            self.arrCountries = arrCountryI!
-            self.selectCityAndStatePickerView.reloadAllComponents()
+        self.arrCountries = arrCountryI!
+        self.selectCityAndStatePickerView.reloadAllComponents()
         }
     }
     
     func setStartingFields() {
         
-        // upperView.upperdraw(upperView.bounds)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+        countryPickerView.isHidden=true
+        selectCityAndStatePickerView.isHidden = true
         setViewShadow.viewdraw(setViewShadow.bounds)
+        countryView.viewdraw(countryView.bounds)
         txt_FirstName.addShadowToTextfield()
         txt_LastName.addShadowToTextfield()
         txt_AccountNo.addShadowToTextfield()
         txt_City.addShadowToTextfield()
-        txt_Country.addShadowToTextfield()
-        txt_UserName.addShadowToTextfield()
+         txt_UserName.addShadowToTextfield()
         txt_AccountName.addShadowToTextfield()
         txt_State.addShadowToTextfield()
         txt_Telephone.addShadowToTextfield()
@@ -97,10 +99,11 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let countryObj = ModelManager.sharedInstance.authManager.arrCountry?.object(at: row) as! CountryI
+        btn_Country.tintColor = .black
+        btn_Country.setTitle(countryObj.countryName, for: .normal)
         
-        print(countryObj.countryName!)
-        
-        getStateList(getContury: countryObj)
+        countryPickerView.isHidden=true
+        selectCityAndStatePickerView.isHidden = true
     }
    
     func getStateList(getContury: CountryI){
@@ -131,11 +134,6 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
         guard let userCity = txt_City.text, userCity != "" else {
             
             SVProgressHUD.showError(withStatus: "Please fill city name")
-            return
-        }
-        guard let userCountry = txt_Country.text, userCountry != "" else {
-            
-            SVProgressHUD.showError(withStatus: "Please fill country name")
             return
         }
         guard let userName = txt_UserName.text, userName != "" else {
@@ -209,39 +207,45 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
             
         }else{
             
-            var  dictData : [String : Any] =  [String : Any]()
-            dictData["first_name"] = firstName
-            dictData["last_name"] = lastName
-            dictData["username"] = userName
-            dictData["email"] = email
-            dictData["password"] = userPassword
-            dictData["account_name"] = accountName
-            dictData["account_number"] = accountNo
-            dictData["address"] = address
-            dictData["city"] = userCity
-            dictData["state"] = state
-            dictData["zip"] = zipCode
-            dictData["country"] = userCountry
-            dictData["telephone"] = userTelephone
-            
-            print(dictData)
-            
-            SVProgressHUD.show(withStatus: "Loding.....")
-            
-            ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                SVProgressHUD.dismiss()
-                if(isSuccess){
-                    SVProgressHUD.showError(withStatus: strMessage)
-                   _ = self.navigationController?.popViewController(animated: true)
-                }else{
-                    
-                    SVProgressHUD.showError(withStatus: strMessage)
-                }
-
+            if btn_Country.titleLabel?.text == "Country"{
+                SVProgressHUD.showError(withStatus: "Please fill country name")
+            }else{
                 
+                var  dictData : [String : Any] =  [String : Any]()
+                dictData["first_name"] = firstName
+                dictData["last_name"] = lastName
+                dictData["username"] = userName
+                dictData["email"] = email
+                dictData["password"] = userPassword
+                dictData["account_name"] = accountName
+                dictData["account_number"] = accountNo
+                dictData["address"] = address
+                dictData["city"] = userCity
+                dictData["state"] = state
+                dictData["zip"] = zipCode
+                dictData["country"] = btn_Country.titleLabel?.text
+                dictData["telephone"] = userTelephone
+                
+                print(dictData)
+                
+                SVProgressHUD.show(withStatus: "Loding.....")
+                
+                ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+                    SVProgressHUD.dismiss()
+                    if(isSuccess){
+                        SVProgressHUD.showError(withStatus: strMessage)
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }else{
+                        
+                        SVProgressHUD.showError(withStatus: strMessage)
+                    }
+                    
+                    
+                }
+                
+
             }
             
-
         }
         
     }
@@ -267,6 +271,14 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
         
         checkValues()
     }
+    
+    
+    @IBAction func btn_CountryAction(_ sender: UIButton) {
+        
+        countryPickerView.isHidden=false
+        selectCityAndStatePickerView.isHidden = false
+    }
+    
     
     // MARK: - Memory Management Method
     
