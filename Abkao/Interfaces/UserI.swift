@@ -115,9 +115,7 @@ class UserI: NSObject,NSCoding {
     
     public func setUserInfo(userObj : [String : AnyObject])
     {
-        
-        print("Login response : \(userObj)")
-        
+                
         //let arrData : NSArray = userObj["userdetails"] as! NSArray
         let dictData : [String : AnyObject]  = userObj["userdetails"] as! [String : AnyObject]
         

@@ -163,8 +163,6 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             if metadataObj.stringValue != nil {
                 // messageLabel.text = metadataObj.stringValue
                 
-                print(metadataObj.stringValue)
-                
                 if (captureSession?.isRunning == true) {
                     captureSession?.stopRunning();
                 }
@@ -179,11 +177,9 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     
     func callBarcodeAPI(barcodeValue: String) {
         
-        let strURL = "93027" + "," + barcodeValue
+        let strURL = (ModelManager.sharedInstance.profileManager.userObj?.accountNo)! + "," + barcodeValue
         
-        print(strURL)
-        
-        SVProgressHUD.show(withStatus: "Loding.......")
+        SVProgressHUD.show(withStatus: "Loading.......")
         
         ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeURL: strURL) { (userObj, isSuccess, strMessage) in
             
@@ -191,7 +187,7 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             
             if(isSuccess)
             {
-                print(userObj)
+                
                 let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
                 myVC.getPreviousProducts = userObj
                 self.navigationController?.pushViewController(myVC, animated: true)

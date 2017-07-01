@@ -15,9 +15,7 @@ class BarcodeManager: NSObject {
         BaseWebAccessLayer.getRequestURLWithDictionaryResponse(requestType: .post, strURL: barcodeURL, headers: true, params: nil, result:
             {
                 (jsonDict,statusCode) in
-                // success code
-                print(jsonDict)
-                
+                // success code                
                 let data = self.convertToDictionary(text: jsonDict )
                 let userObj = BarcodeI()
                 userObj.setProductPriceData(productInfoObj: data! as [String : AnyObject])

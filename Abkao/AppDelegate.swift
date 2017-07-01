@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func printFonts() {
         let fontFamilyNames = UIFont.familyNames
         for familyName in fontFamilyNames {
-            print("------------------------------")
-            print("Font Family Name = [\(familyName)]")
-            let names = UIFont.fontNames(forFamilyName: familyName )
-            print("Font Names = [\(names)]")
+            let names = UIFont.fontNames(forFamilyName: familyName)
         }
     }
     
@@ -126,15 +123,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        
-        
-        
+                
         let strDayName = NSDate().dayOfWeek()
 
         let strModalDayName = ModelManager.sharedInstance.scheduleManager.dayName
-        
-        print("day name is : \(String(describing: strDayName))")
-        
         
         if(strModalDayName != nil)
         {

@@ -68,9 +68,8 @@ class ForgotPasswordControl: AbstractControl {
             
             var  dictData : [String : Any] =  [String : Any]()
             dictData["email"] = userEmail
-            print(dictData)
-            
-            SVProgressHUD.show(withStatus: "Loding.....")
+                       
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.authManager.forgotPassword(userInfo: dictData) { (isSuccess, strMessage) in
                 

@@ -106,7 +106,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             imageDictData["filecontent"] = sendFinalImage
             dictData["fileUpload"] = imageDictData
             
-            SVProgressHUD.show(withStatus: "Loding.....")
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, strMessage) in
                 SVProgressHUD.dismiss()
@@ -135,7 +135,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             imageDictData["filecontent"] = sendFinalImage
             dictData["fileUpload"] = imageDictData
             
-            SVProgressHUD.show(withStatus: "Loding.....")
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.imageCellManager.addNewRecord(userInfo: dictData) { (productPriceObj, isSuccess, strMessage) in
                 SVProgressHUD.dismiss()

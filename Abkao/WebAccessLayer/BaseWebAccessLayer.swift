@@ -69,8 +69,6 @@ class BaseWebAccessLayer: NSObject {
             
             finalStrUrl = Constants.baseUrl + strURL
             
-            print("API Url : \(finalStrUrl)")
-            
             let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             
             let headersHttp = [
@@ -98,9 +96,8 @@ class BaseWebAccessLayer: NSObject {
         }
         else
         {
-            // show message
-            
-            // unreachable
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
         }
         
     }
@@ -117,8 +114,6 @@ class BaseWebAccessLayer: NSObject {
             var finalStrUrl = String()
             
             finalStrUrl = Constants.baseUrlBarCode + strURL
-            
-            print("API Url : \(finalStrUrl)")
             
             let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             
@@ -144,9 +139,8 @@ class BaseWebAccessLayer: NSObject {
         }
         else
         {
-            // show message
-            
-            // unreachable
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
         }
         
     }
@@ -165,9 +159,7 @@ class BaseWebAccessLayer: NSObject {
             var finalStrUrl = String()
             
             finalStrUrl = Constants.baseUrlCountries + strURL
-            
-            print("API Url : \(finalStrUrl)")
-            
+                        
             let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             
             let headersHttp = [
@@ -195,9 +187,8 @@ class BaseWebAccessLayer: NSObject {
         }
         else
         {
-            // show message
-            
-            // unreachable
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
         }
     }
 

@@ -70,11 +70,7 @@ extension NSDate{
         dateFormatter.dateFormat = "MM-dd-yyyy"
         dateFormatter.timeZone = NSTimeZone.system
         let strDt = dateFormatter.string(from: NSDate() as Date)
-//        print(strDt)
-        print(strDt+" "+dateString)
-        
-        dateFormatter.dateFormat = formaterType
-       
+        dateFormatter.dateFormat = formaterType       
         return dateFormatter.date(from: strDt+" "+dateString)!
     }
     

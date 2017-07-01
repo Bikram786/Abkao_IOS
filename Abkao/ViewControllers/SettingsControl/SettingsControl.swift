@@ -57,7 +57,7 @@ class SettingsControl: AbstractControl {
         dictData["image_grid_row"] = String(describing: setGridRows!)
         dictData["video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
         
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
@@ -74,7 +74,7 @@ class SettingsControl: AbstractControl {
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             

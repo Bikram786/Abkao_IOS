@@ -13,13 +13,6 @@ import UIKit
 extension UITextField {
     
      func addShadowToTextfield() {
-//        view.layer.cornerRadius = 5
-//        view.layer.shadowColor = UIColor.black.cgColor
-//        view.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-//        view.layer.shadowOpacity = 1.0
-//        view.layer.shadowRadius = 5.0
-//        return view
-
         self.autocapitalizationType = UITextAutocapitalizationType.none
         self.autocorrectionType = UITextAutocorrectionType.no
         self.font = UIFont(name: "Cormorant-Regular", size: 17)

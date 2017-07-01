@@ -45,7 +45,7 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
     
     func getAllScheduledVideos(){
         
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.scheduleManager.getAllSchedules() { (productObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
@@ -65,7 +65,7 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         
         let obj = SchedulerI()
         obj.scheduleID = productID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.scheduleManager.deleteSchedule(scheduleObj: obj) { (isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){

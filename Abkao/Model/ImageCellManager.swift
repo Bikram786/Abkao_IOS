@@ -50,7 +50,7 @@ class ImageCellManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
+               
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
@@ -106,7 +106,7 @@ class ImageCellManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 if(statusCode == 200){
-                    print(jsonDict)
+                   
                     let data = jsonDict.value(forKey: "data") as! NSDictionary
                     let isSuccess = data["success"] as! Bool
                     if(isSuccess){

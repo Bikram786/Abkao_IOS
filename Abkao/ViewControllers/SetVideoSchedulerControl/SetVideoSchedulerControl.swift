@@ -139,8 +139,6 @@ class SetVideoSchedulerControl: AbstractControl {
     
     @IBAction func setTimeAction(_ sender: UIDatePicker) {
         
-        print(sender.date)
-       
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mma"
         formatter.amSymbol = "AM"
@@ -156,10 +154,7 @@ class SetVideoSchedulerControl: AbstractControl {
             
             btn_EndTime.setTitle(dateString ,for: .normal)
         }
-
-        
-        print(dateString)   // "4:44 PM on June 23, 2016\n"
-        
+                
         dateTimeView.isHidden=true
     }
     
@@ -175,7 +170,7 @@ class SetVideoSchedulerControl: AbstractControl {
            
             obj.scheduleID = getPreviousProducts.scheduleID
             
-            SVProgressHUD.show(withStatus: "Loding.....")
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
                 SVProgressHUD.dismiss()

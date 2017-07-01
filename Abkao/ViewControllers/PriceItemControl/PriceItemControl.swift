@@ -70,13 +70,11 @@ class PriceItemControl: AbstractControl {
         dictData["product_name"] = txt_ProductName.text!
         dictData["product_price"] = txt_ProductPrice.text!
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        
-        print(dictData)
-        
+                
         if status == "edit"{
             
             dictData["product_id"] = getPreviousProducts?.productID!
-            SVProgressHUD.show(withStatus: "Loding.....")
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.priceCellManager.updateRecord(userInfo: dictData) { (priceProductObj, isSuccess, strMessage) in
                 
@@ -102,7 +100,7 @@ class PriceItemControl: AbstractControl {
             
         }else{
             
-            SVProgressHUD.show(withStatus: "Loding.....")
+            SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.priceCellManager.addNewRecord(userInfo: dictData) { (productPriceObj, isSuccess, strMessage) in
                 

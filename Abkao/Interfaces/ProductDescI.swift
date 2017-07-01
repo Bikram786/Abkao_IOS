@@ -38,9 +38,7 @@ class ProductDescI: NSObject {
     
     public func setProductDescData(productInfoObj : [String : AnyObject])
     {
-        print(productInfoObj)
-        
-        
+       
 //        let escapedString = (productInfoObj["product_url"] as? String ?? "")
 //        let strUrl = escapedString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
 

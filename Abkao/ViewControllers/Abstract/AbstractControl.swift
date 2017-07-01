@@ -196,7 +196,7 @@ class AbstractControl: UIViewController {
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.authManager.logout(userInfo: dictData) { (isSuccess, strMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess)

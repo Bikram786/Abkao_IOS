@@ -52,7 +52,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.priceCellManager.getAllRecords(userID: dictData) { (arrProductPriceObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
@@ -82,7 +82,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = String(productID)
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.priceCellManager.deleteRecord(userInfo: dictData) { (isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){

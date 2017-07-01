@@ -24,9 +24,7 @@ class CountryI: NSObject
 
     public func setCountryInfo(dictData : [String : AnyObject])
     {
-        
-        print("Login response : \(dictData)")
-        
+                
         self.geonameId = dictData["geonameId"] as? Int64
         self.countryCode = dictData["countryCode"] as? String ?? ""
         self.countryName =   dictData["countryName"] as? String ?? ""

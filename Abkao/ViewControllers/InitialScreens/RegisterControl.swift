@@ -55,15 +55,16 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
     func setStartingFields() {
         
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+        btn_Country.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
         countryPickerView.isHidden=true
         selectCityAndStatePickerView.isHidden = true
         setViewShadow.viewdraw(setViewShadow.bounds)
-        countryView.viewdraw(countryView.bounds)
+        countryView.setViewBoarder()
         txt_FirstName.addShadowToTextfield()
         txt_LastName.addShadowToTextfield()
         txt_AccountNo.addShadowToTextfield()
         txt_City.addShadowToTextfield()
-         txt_UserName.addShadowToTextfield()
+        txt_UserName.addShadowToTextfield()
         txt_AccountName.addShadowToTextfield()
         txt_State.addShadowToTextfield()
         txt_Telephone.addShadowToTextfield()
@@ -99,9 +100,8 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let countryObj = ModelManager.sharedInstance.authManager.arrCountry?.object(at: row) as! CountryI
-        btn_Country.tintColor = .black
         btn_Country.setTitle(countryObj.countryName, for: .normal)
-        
+        btn_Country.setTitleColor(.black, for: .normal)
         countryPickerView.isHidden=true
         selectCityAndStatePickerView.isHidden = true
     }
@@ -225,16 +225,14 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
                 dictData["zip"] = zipCode
                 dictData["country"] = btn_Country.titleLabel?.text
                 dictData["telephone"] = userTelephone
-                
-                print(dictData)
-                
-                SVProgressHUD.show(withStatus: "Loding.....")
+                                
+                SVProgressHUD.show(withStatus: "Loading.....")
                 
                 ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                     SVProgressHUD.dismiss()
                     if(isSuccess){
                         SVProgressHUD.showError(withStatus: strMessage)
-                        _ = self.navigationController?.popViewController(animated: true)
+                        self.performSegue(withIdentifier: "goto_homeview", sender: nil)
                     }else{
                         
                         SVProgressHUD.showError(withStatus: strMessage)

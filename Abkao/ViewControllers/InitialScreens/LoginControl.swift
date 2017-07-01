@@ -68,7 +68,7 @@ class LoginControl: AbstractControl {
 //        dictData["username"] = "npurwar"
 //        dictData["password"] = "123456"
         
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         
         ModelManager.sharedInstance.authManager.userLogin(userInfo: dictData) { (userObj, isSuccess, strMessage) in
             

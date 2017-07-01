@@ -2706,7 +2706,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4404,10 +4404,10 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J9-cO-785">
                                                                 <rect key="frame" x="0.0" y="223.5" width="279" height="50"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-7O-eSy">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-7O-eSy">
                                                                         <rect key="frame" x="5" y="-0.5" width="273.5" height="50"/>
                                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Country">
+                                                                        <state key="normal" title="COUNTRY">
                                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </state>
                                                                         <connections>
@@ -4865,6 +4865,7 @@
                         <outlet property="txt_Telephone" destination="nj8-Hs-WaN" id="WCv-OG-qXk"/>
                         <outlet property="txt_UserName" destination="fjE-lr-f5D" id="c2y-pd-5Oh"/>
                         <outlet property="txt_ZipCode" destination="ZOc-AH-dbC" id="fRz-3v-ZFq"/>
+                        <segue destination="1X7-M9-cwu" kind="show" identifier="goto_homeview" id="tbM-vY-lbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ7-ZS-ZWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4876,4 +4877,7 @@
         <image name="dropdown" width="35" height="35"/>
         <image name="untick" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tbM-vY-lbk"/>
+    </inferredMetricsTieBreakers>
 </document>

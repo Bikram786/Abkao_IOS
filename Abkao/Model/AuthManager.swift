@@ -28,8 +28,6 @@ class AuthManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
-                
                 if(statusCode == 200){
                     
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
@@ -65,7 +63,6 @@ class AuthManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                print(jsonDict)
                 
                 if(statusCode == 200)
                 {
@@ -91,7 +88,6 @@ class AuthManager: NSObject {
                     handler(nil, false,(jsonDict.value(forKey: "message") as? String)!)
                 }
                 
-                print("user id : \(String(describing: (ModelManager.sharedInstance.profileManager.userObj?.userID)!))")
               
                 
         })
@@ -147,8 +143,6 @@ class AuthManager: NSObject {
                 
                 (jsonDict,statusCode) in
                 
-                print(jsonDict)
-                
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
@@ -197,7 +191,6 @@ class AuthManager: NSObject {
             {                
                 (jsonDict,statusCode) in
                 
-                print(jsonDict)
                 if(statusCode == 200)
                 {
                     let arrOfDict : NSArray = jsonDict.value(forKey: "geonames") as!  NSArray
@@ -230,9 +223,7 @@ class AuthManager: NSObject {
         BaseWebAccessLayer.getRequestURLforContriesResponse(requestType: .get, strURL: strUrl, headers: true, result:
             {
                 (jsonDict,statusCode) in
-                
-                print(jsonDict)
-                
+                                
                 if(statusCode == 200)
                 {
                     let arrOfDict : NSArray = jsonDict.value(forKey: "geonames") as!  NSArray

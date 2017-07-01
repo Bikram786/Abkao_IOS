@@ -162,8 +162,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         dictData["userid"] = userId
         dictData["grid_type"] = gridType
         dictData["product_id"] = productId
-        
-        print(dictData)
         ModelManager.sharedInstance.productManager.productIntrestedIn(dictData: dictData)
     }
     
@@ -172,7 +170,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         ModelManager.sharedInstance.scheduleManager.dayName = strDay
 
-        SVProgressHUD.show(withStatus: "Loding.......")
+        SVProgressHUD.show(withStatus: "Loading.......")
         ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDay) { (arrSchduleObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
@@ -228,8 +226,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             }
             //-------
             
-            print("\(stDate)")
-            
             //check if end date is greater than current date
             if(endDate.compare(stDate) == .orderedDescending)
             {
@@ -283,8 +279,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     {
         //temp comment
         
-        print(strUrl)
-        
         let string = strUrl
         
         if string.range(of:"youtube") != nil{
@@ -327,13 +321,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.show(withStatus: "Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.productManager.getAllProducts(userID: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
             if(isSuccess){
-                
-                print(productObj!)
+           
                 self.leftData.removeAllObjects()
                 self.rightData.removeAllObjects()
                 self.arrProductPrice.removeAllObjects()
@@ -380,16 +373,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         let setItemsCount:Int = priceItems
         
-        print(setItemsCount)
-        
         //Get device width
         let width = Int(setClv.frame.width) - setItemsCount*setItemsCount
         
-        print((Int(width)/setItemsCount)*setItemsCount)
-        
         let setInset = Int(width) - Int(Int(width)/setItemsCount)*setItemsCount
-        
-        print(setInset)
         
         //set section inset as per your requirement.
         
@@ -423,7 +410,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(setImageGrid!)
            return setImageGrid!
             
     }
@@ -516,8 +502,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(setPriceGrid!)
-        
         return setPriceGrid!*setPriceGrid!
     }
     // make a cell for each cell index path
@@ -554,7 +538,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
         self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "pricegrid")
 
-        print("You selected cell #\(indexPath.item)!")
     }
     
     

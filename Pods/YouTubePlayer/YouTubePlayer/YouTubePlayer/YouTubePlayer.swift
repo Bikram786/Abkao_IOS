@@ -286,7 +286,7 @@ open class YouTubePlayerView: UIView, UIWebViewDelegate {
         } catch let jsonError {
             
             // JSON serialization failed
-            print(jsonError)
+           
             printLog("Error parsing JSON")
             
             return nil
