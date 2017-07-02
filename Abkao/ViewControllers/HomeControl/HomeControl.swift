@@ -134,10 +134,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         rightTbl.dataSource = self
         leftTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
         rightTbl.register(UINib(nibName: "ItemDetails", bundle: nil), forCellReuseIdentifier: "Cell")
-        self.leftTbl.rowHeight = 165
-        self.leftTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: 165*4)
-        self.rightTbl.rowHeight = 165
-        self.rightTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: 165*4)
+        self.leftTbl.rowHeight = view.frame.height/4
+        self.leftTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: view.frame.height)
+        self.rightTbl.rowHeight = view.frame.height/4
+        self.rightTbl.frame = CGRect(x: 0, y: 0, width: self.leftTbl.frame.width, height: view.frame.height)
         leftTbl.separatorStyle = .none
         rightTbl.separatorStyle = .none
         leftTbl.tableFooterView = UIView()
@@ -157,7 +157,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         let timestamp = NSDate().timeIntervalSince1970
         let userId = ModelManager.sharedInstance.profileManager.userObj?.userID
-        
         var dictData = [String : Any]()
         dictData["timestamp"] = timestamp
         dictData["userid"] = userId
@@ -199,6 +198,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 
             let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.startTime!)
             let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: tempSchObj.endTime!)
+            
             
             //testing code
 //            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: "12:40PM")

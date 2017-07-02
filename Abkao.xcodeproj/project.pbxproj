@@ -308,9 +308,9 @@
 				B6131FA41EF7C73400173984 /* ProfileManager.swift */,
 				B659DD8E1EF05BA400409825 /* AuthManager.swift */,
 				B659DD8F1EF05BA400409825 /* BarcodeManager.swift */,
+				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
 				B659DD921EF05BA400409825 /* ProductManager.swift */,
 				B659DD901EF05BA400409825 /* ModelManager.swift */,
-				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
 				B659DD951EF05BA400409825 /* SettingsManager.swift */,
 				B6F57C0D1EF6F4BB00E0B808 /* ImageCellManager.swift */,
 				B6F57C0F1EF6F4CD00E0B808 /* PriceCellManager.swift */,
@@ -885,7 +885,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -903,7 +903,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

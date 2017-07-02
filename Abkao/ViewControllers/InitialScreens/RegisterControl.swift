@@ -231,7 +231,6 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
                 ModelManager.sharedInstance.authManager.userSignUp(userInfo: dictData) { (userObj, isSuccess, strMessage) in
                     SVProgressHUD.dismiss()
                     if(isSuccess){
-                        SVProgressHUD.showError(withStatus: strMessage)
                         self.performSegue(withIdentifier: "goto_homeview", sender: nil)
                     }else{
                         

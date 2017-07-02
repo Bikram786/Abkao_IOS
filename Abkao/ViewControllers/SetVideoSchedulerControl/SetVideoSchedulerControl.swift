@@ -17,6 +17,8 @@ class SetVideoSchedulerControl: AbstractControl {
     var isCheckLastTime:Bool?
     var arrDays = NSMutableArray()
     var arrAllDays = ["Mon","Thes","Wed","Thus","Fri","Sat","Sun"]
+    var checkStartDate:Date?
+    var checkEndDate:Date?
     
     @IBOutlet weak var setTime: UIDatePicker!
     @IBOutlet weak var dateTimeView: UIView!
@@ -36,15 +38,36 @@ class SetVideoSchedulerControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkStartDate = Date()
+        checkEndDate = Date()
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         dateTimeView.isHidden=true
         txt_VideoURL.addShadowToTextfield()
+        
         if status == "edit"{
+            
             btn_StartTime.setTitle(getPreviousProducts.startTime!, for: .normal)
             btn_EndTime.setTitle(getPreviousProducts.endTime!, for: .normal)
             txt_VideoURL.text = getPreviousProducts.productVedUrl!
             arrDays.addObjects(from: getPreviousProducts.arrDays!)
+            
+            let stDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: getPreviousProducts.startTime!)
+            let endDate = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: getPreviousProducts.endTime!)
+
+            checkStartDate = stDate
+            checkEndDate = endDate
+            
+            print("Start date : \(stDate), End date : \(endDate)")
+//            if(stDate.compare(endDate) == .orderedDescending)
+//            {
+//                print("ordereDescending")
+//            }
+//            else
+//            {
+//                print("ordereAescending")
+//
+//            }
+            
             
             for var day in getPreviousProducts.arrDays! {
                 
@@ -147,11 +170,13 @@ class SetVideoSchedulerControl: AbstractControl {
         
         if isCheckStartTime == true {
             
+            checkStartDate = sender.date
             btn_StartTime.setTitle(dateString ,for: .normal)
         }
         
         if isCheckLastTime == true {
             
+            checkEndDate = sender.date
             btn_EndTime.setTitle(dateString ,for: .normal)
         }
                 
@@ -160,40 +185,48 @@ class SetVideoSchedulerControl: AbstractControl {
     
     @IBAction func btn_SaveSchedulerVideoAction(_ sender: UIButton) {
         
-        let obj = SchedulerI()
-        obj.startTime = btn_StartTime.titleLabel?.text!
-        obj.endTime = btn_EndTime.titleLabel?.text!
-        obj.productVedUrl = txt_VideoURL.text!
-        obj.arrDays = arrDays as? [String]
-                
-        if status == "edit"{
-           
-            obj.scheduleID = getPreviousProducts.scheduleID
-            
-            SVProgressHUD.show(withStatus: "Loading.....")
-            
-            ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
-                SVProgressHUD.dismiss()
-                if(isSuccess){
-                    _ = self.navigationController?.popViewController(animated: true)
-                }else{
-                    SVProgressHUD.showError(withStatus: strMessage)
-                }
-                
-            }
-            
+        
+        if checkStartDate! > checkEndDate! {
+            SVProgressHUD.showError(withStatus: "Starting time not more than end time")
         }else{
             
-            ModelManager.sharedInstance.scheduleManager.addSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
+            let obj = SchedulerI()
+            obj.startTime = btn_StartTime.titleLabel?.text!
+            obj.endTime = btn_EndTime.titleLabel?.text!
+            obj.productVedUrl = txt_VideoURL.text!
+            obj.arrDays = arrDays as? [String]
+            
+            if status == "edit"{
                 
-                if(isSuccess){
-                    _ = self.navigationController?.popViewController(animated: true)
-                }else{
-                    SVProgressHUD.showError(withStatus: strMessage)
+                obj.scheduleID = getPreviousProducts.scheduleID
+                
+                SVProgressHUD.show(withStatus: "Loading.....")
+                
+                ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
+                    SVProgressHUD.dismiss()
+                    if(isSuccess){
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }else{
+                        SVProgressHUD.showError(withStatus: strMessage)
+                    }
+                    
                 }
                 
+            }else{
+                
+                ModelManager.sharedInstance.scheduleManager.addSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
+                    
+                    if(isSuccess){
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }else{
+                        SVProgressHUD.showError(withStatus: strMessage)
+                    }
+                    
+                }
             }
         }
+        
+        
 
     }
     
