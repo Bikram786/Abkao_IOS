@@ -49,7 +49,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.setStatus("Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.imageCellManager.getAllRecords(userID: dictData) { (arrProductObj, isSuccess, responseMessage) in
             SVProgressHUD.dismiss()
             if(isSuccess){
@@ -82,7 +82,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_id"] = productID
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-        SVProgressHUD.setStatus("Loding.....")
+        SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.imageCellManager.deleteRecord(userInfo: dictData) { (productObj, isSuccess, responseMessage) in
             
             SVProgressHUD.dismiss()
@@ -115,7 +115,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
         
-        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: 17)
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: 20)
         cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
         cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: 15)
 

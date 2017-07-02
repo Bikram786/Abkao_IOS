@@ -10,16 +10,29 @@ import UIKit
 
 class BarcodeManager: NSObject {
     
-    func scanBarcode(barcodeURL: String, handler : @escaping (BarcodeI, Bool , String) -> Void)
+    func scanBarcode(barcodeURL: String, handler : @escaping (BarcodeI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.getRequestURLWithDictionaryResponse(requestType: .post, strURL: barcodeURL, headers: true, params: nil, result:
             {
                 (jsonDict,statusCode) in
-                // success code                
-                let data = self.convertToDictionary(text: jsonDict )
-                let userObj = BarcodeI()
-                userObj.setProductPriceData(productInfoObj: data! as [String : AnyObject])
-                handler(userObj , true ,"Response sucessfully")
+                // success code      
+                                
+                if jsonDict != "null" {
+                    
+                    let data = self.convertToDictionary(text: jsonDict )
+                    let userObj = BarcodeI()
+                    userObj.setProductPriceData(productInfoObj: data! as [String : AnyObject])
+                    handler(userObj , true ,"Response sucessfully")
+                    
+                }else{
+                    
+                    handler(nil , false ,"Product information not available")
+                }
+                
+                
+                
+                
+             
                 
                 
         })

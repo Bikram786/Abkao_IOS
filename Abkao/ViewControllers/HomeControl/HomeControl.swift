@@ -88,6 +88,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
         setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+        print(setPriceGrid!)
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
@@ -353,11 +354,18 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     self.rightTbl.reloadData()
                     
                 }
-                if productObj?.arrProductPrice?.count != 0 {
-                    self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-                    self.setPriceGridView(priceItems: self.setPriceGrid!)
-                }
+                
+                if self.setPriceGrid != 0{
+                    if productObj?.arrProductPrice?.count != 0 {
+                        self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
+                        self.setPriceGridView(priceItems: self.setPriceGrid!)
+                    }
 
+                }else{
+                    self.setClv.reloadData()
+                }
+                
+                
             }else{
                 SVProgressHUD.showError(withStatus: responseMessage)
             }
@@ -446,7 +454,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
               
             }
-            
+        
             if tableView == rightTbl {
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
@@ -479,22 +487,33 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
      public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
      {
-        if tableView == leftTbl
-        {
-            let proDescObj = leftData[indexPath.row] as! ProductDescI
-            //Save users intrest
-            self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
-
-            self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
+        
+        
+        if indexPath.row < leftData.count{
             
-        }
-        else if tableView == rightTbl {
-            
-            let proDescObj = rightData[indexPath.row] as! ProductDescI
-            self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
+            if tableView == leftTbl {
+                let proDescObj = leftData[indexPath.row] as! ProductDescI
+                //Save users intrest
+                self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
+                
+                self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
+                
+            }
 
-            self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
         }
+        
+        if indexPath.row < rightData.count{
+        
+            if tableView == rightTbl {
+                
+                let proDescObj = rightData[indexPath.row] as! ProductDescI
+                self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "imagegrid")
+                
+                self.playVideoInPlayer(strUrl: proDescObj.productVedUrl!)
+            }
+        }
+        
+        
     }
     
     // MARK: - UICollectionViewDataSource protocol
@@ -535,8 +554,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         
-        let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
-        self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "pricegrid")
+        if indexPath.row < arrProductPrice.count{
+            let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
+            self.saveUserIntrestedIn(productId: proDescObj.productID!, gridType: "pricegrid")
+        }
+        
 
     }
     

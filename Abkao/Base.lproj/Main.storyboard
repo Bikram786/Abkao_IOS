@@ -816,9 +816,36 @@
                     <view key="view" contentMode="scaleToFill" id="8Y1-1x-Vjv">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53T-ee-ncm">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="451-XR-Z8a">
+                                <rect key="frame" x="964" y="74" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FK2-l3-9GS"/>
+                                    <constraint firstAttribute="height" constant="50" id="KfC-eu-KPc"/>
+                                </constraints>
+                                <state key="normal" image="flip"/>
+                                <connections>
+                                    <action selector="btn_FlipCameraAction:" destination="02r-Ra-XxG" eventType="touchUpInside" id="kWT-Ks-Ped"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="53T-ee-ncm" secondAttribute="trailing" id="59F-Wn-Dji"/>
+                            <constraint firstAttribute="trailing" secondItem="451-XR-Z8a" secondAttribute="trailing" constant="10" id="YS6-0o-KIH"/>
+                            <constraint firstItem="JRd-jo-vsZ" firstAttribute="top" secondItem="53T-ee-ncm" secondAttribute="bottom" id="gfN-tr-c0N"/>
+                            <constraint firstItem="53T-ee-ncm" firstAttribute="leading" secondItem="8Y1-1x-Vjv" secondAttribute="leading" id="idr-bp-ndB"/>
+                            <constraint firstItem="53T-ee-ncm" firstAttribute="top" secondItem="6cV-fU-JOK" secondAttribute="bottom" id="uhl-N9-8S2"/>
+                            <constraint firstItem="451-XR-Z8a" firstAttribute="top" secondItem="6cV-fU-JOK" secondAttribute="bottom" constant="10" id="w6A-ko-mnP"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="previewView" destination="53T-ee-ncm" id="XuF-IA-sQj"/>
                         <segue destination="hdH-Ck-JY9" kind="show" identifier="goto_productdetailsvc" id="C4B-4k-TB6"/>
                     </connections>
                 </viewController>
@@ -2340,7 +2367,7 @@
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-7x-TgT">
                                         <rect key="frame" x="61" y="156.5" width="696" height="25"/>
@@ -3376,7 +3403,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4875,6 +4902,7 @@
     </scenes>
     <resources>
         <image name="dropdown" width="35" height="35"/>
+        <image name="flip" width="32" height="32"/>
         <image name="untick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>

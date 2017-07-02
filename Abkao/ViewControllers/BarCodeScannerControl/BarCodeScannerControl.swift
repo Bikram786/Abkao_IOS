@@ -9,8 +9,12 @@
 import UIKit
 import AVFoundation
 import SVProgressHUD
+import MTBBarcodeScanner
 
 class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDelegate {
+    
+    @IBOutlet var previewView: UIView!
+    var scanner: MTBBarcodeScanner?
     
     
     var captureSession:AVCaptureSession?
@@ -21,25 +25,44 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scanner = MTBBarcodeScanner(previewView: previewView)
+        
+        
         //self.view.backgroundColor = UIColor.clear
-        setCamera()
-        setOrintation()
+        //setCamera()
+       //setOrintation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setScanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (captureSession?.isRunning == false) {
-            captureSession?.startRunning();
-        }
+        
+//        if (captureSession?.isRunning == false) {
+//            captureSession?.startRunning();
+//        }
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (captureSession?.isRunning == true) {
-            captureSession?.stopRunning();
-        }
+        self.scanner?.stopScanning()
+        
+        
+//        if (captureSession?.isRunning == true) {
+//            captureSession?.stopRunning();
+//        }
+    }
+    
+    @IBAction func btn_FlipCameraAction(_ sender: UIButton) {
+     
+        self.scanner?.flipCamera()
     }
     
     
@@ -47,6 +70,31 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     
     override var showRight: Bool{
         return false
+    }
+    
+    func setScanner(){
+        
+        MTBBarcodeScanner.requestCameraPermission(success: { success in
+            if success {
+                do {
+                    try self.scanner?.startScanning(resultBlock: { codes in
+                        if let codes = codes {
+                            for code in codes {
+                                
+                                self.scanner?.stopScanning()
+                                let stringValue = code.stringValue!
+                                print("Found code: \(stringValue)")
+                                self.callBarcodeAPI(barcodeValue: stringValue)
+                            }
+                        }
+                    })
+                } catch {
+                    NSLog("Unable to start scanning")
+                }
+            } else {
+                UIAlertView(title: "Scanning Unavailable", message: "This app does not have permission to access the camera", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
+            }
+        })
     }
     
     func setCamera(){
@@ -179,6 +227,8 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         
         let strURL = (ModelManager.sharedInstance.profileManager.userObj?.accountNo)! + "," + barcodeValue
         
+        print(strURL)
+        
         SVProgressHUD.show(withStatus: "Loading.......")
         
         ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeURL: strURL) { (userObj, isSuccess, strMessage) in
@@ -187,10 +237,13 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             
             if(isSuccess)
             {
-                
                 let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
-                myVC.getPreviousProducts = userObj
+                myVC.getPreviousProducts = userObj!
                 self.navigationController?.pushViewController(myVC, animated: true)
+            }else{
+                
+                self.setScanner()
+                SVProgressHUD.showError(withStatus: strMessage)
             }
             
         }
