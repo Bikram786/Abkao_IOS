@@ -448,7 +448,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }
                 
                 cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
-                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: 15)
                 cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
               
             }
@@ -476,7 +476,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }
                 
                 cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
-                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Regular", size: 15)
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: 15)
                 cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
             }
         
