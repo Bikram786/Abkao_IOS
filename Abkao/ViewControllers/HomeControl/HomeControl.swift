@@ -86,8 +86,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewWillAppear(true)
         
-        setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
-        setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+        //setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+        //setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         print(setPriceGrid!)
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
@@ -278,18 +278,15 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func playVideoInPlayer(strUrl : String)
     {
-        //temp comment
         
-        let string = strUrl
-        
-        if string.range(of:"youtube") != nil{
+        if strUrl.range(of:"youtube") != nil{
             
             youTubeView.isHidden=false
             simpleVideoView.isHidden=true
             youTubeView.clear()
             let myVideoURL = NSURL(string: strUrl)
             youTubeView.loadVideoURL(myVideoURL! as URL)
-            self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 0.5)
+            self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 10)
             
         }else{
             
@@ -311,6 +308,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     }
     
     func playYoutubeVed() {
+        
         youTubeView.play()
     }
     
