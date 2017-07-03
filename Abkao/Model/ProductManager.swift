@@ -23,7 +23,8 @@ class ProductManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-                
+                print(jsonDict)
+
                 if(statusCode == 200){
                     
                     let data = jsonDict.value(forKey: "data") as! NSDictionary

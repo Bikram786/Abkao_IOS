@@ -1,3 +1,4 @@
+
 //
 //  ScheduleManager.swift
 //  Abkao
@@ -76,6 +77,8 @@ class ScheduleManager: NSObject {
                 (jsonDict,statusCode) in
                 // success code
                 
+                print(jsonDict)
+                
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
@@ -120,6 +123,8 @@ class ScheduleManager: NSObject {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
                         
+                       self.getDayVeds()
+                        
                        handler(true,(jsonDict["message"] as? String)!)
                         
                     }else{
@@ -153,6 +158,9 @@ class ScheduleManager: NSObject {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
                         scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
+                        
+                        self.getDayVeds()
+                        
                         handler(scheduleObj, true, (jsonDict["message"] as? String)!)
                         
                     }else{
@@ -183,6 +191,9 @@ class ScheduleManager: NSObject {
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
                         scheduleObj.setSchedules(scheduleObj: jsonDict as! [String : AnyObject])
+                        
+                        self.getDayVeds()
+                        
                         handler(scheduleObj,true,(jsonDict["message"] as? String)!)
                         
                     }else{
@@ -190,8 +201,19 @@ class ScheduleManager: NSObject {
                     }
                 }else{
                     handler(nil, false, (jsonDict["message"] as? String)!)
-                }
-          
+                }          
         })
+    }
+    
+    
+    func getDayVeds()
+    {
+        //API Calls
+        let strDayName = NSDate().dayOfWeek()
+        ModelManager.sharedInstance.scheduleManager.getSchdulesByDay(strDay: strDayName!) { (arrSchduleObj, isSuccess, responseMessage) in
+            if(isSuccess){
+                print("today ved has been received")
+            }
+        }
     }
 }
