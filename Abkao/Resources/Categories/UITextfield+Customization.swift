@@ -27,4 +27,13 @@ extension UITextField {
 
     }
     
+    func setRightImage(){
+        
+        self.rightViewMode = UITextFieldViewMode.always
+        let star = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        star.font = UIFont(name: "Cormorant-Bold", size: 17)
+        star.text = "*"
+        star.textColor = .red
+        self.rightView = star
+    }
 }

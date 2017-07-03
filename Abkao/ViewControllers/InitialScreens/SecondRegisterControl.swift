@@ -49,6 +49,7 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
         countryPickerView.isHidden = true
         selectCityAndStatePickerView.isHidden = true
         btn_Country?.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
+        txt_AccountName?.setRightImage()
         //get Countries list
         ModelManager.sharedInstance.authManager.getCountriesList { (arrCountryI, isSuucess) in
             self.arrCountries = arrCountryI!

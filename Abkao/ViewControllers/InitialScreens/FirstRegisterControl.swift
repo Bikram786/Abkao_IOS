@@ -30,7 +30,8 @@ class FirstRegisterControl: AbstractControl {
         txt_ConfirmPassword?.addShadowToTextfield()
         txt_Company?.addShadowToTextfield()
         txt_Email?.addShadowToTextfield()
-     
+        txt_FirstName?.setRightImage()
+        txt_LastName?.setRightImage()
     }
     
     override var showRight: Bool{
