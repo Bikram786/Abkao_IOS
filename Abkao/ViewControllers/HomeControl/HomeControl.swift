@@ -155,7 +155,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func saveUserIntrestedIn(productId : Int, gridType : String) {
         
-        let timestamp = NSDate().timeIntervalSince1970
+        let timestamp = NSDate.getCurrentDateString(formatterType: Constants.kDateFormatter)
+        
         let userId = ModelManager.sharedInstance.profileManager.userObj?.userID
         var dictData = [String : Any]()
         dictData["timestamp"] = timestamp

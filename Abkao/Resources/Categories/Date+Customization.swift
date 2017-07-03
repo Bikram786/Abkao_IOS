@@ -74,6 +74,15 @@ extension NSDate{
         return dateFormatter.date(from: strDt+" "+dateString)!
     }
     
+    
+    class func getCurrentDateString(formatterType : String) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = formatterType
+        let strDt = dateFormatter.string(from: NSDate() as Date)
+        return strDt
+    }
+    
     /*
     func getDayName(dateObj : Date) -> (String?,String?,String?){
         
