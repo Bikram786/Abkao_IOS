@@ -27,6 +27,8 @@
 		B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */; };
 		B6131FCA1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */; };
 		B61E4A171EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E4A161EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift */; };
+		B6525E4A1F09FCED00F2B274 /* FirstRegisterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6525E491F09FCED00F2B274 /* FirstRegisterControl.swift */; };
+		B6525E4C1F0A02D200F2B274 /* SecondRegisterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6525E4B1F0A02D200F2B274 /* SecondRegisterControl.swift */; };
 		B659DD721EF0568000409825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B659DD711EF0568000409825 /* AppDelegate.swift */; };
 		B659DD771EF0568000409825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B659DD751EF0568000409825 /* Main.storyboard */; };
 		B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B659DD781EF0568000409825 /* Abkao.xcdatamodeld */; };
@@ -116,6 +118,8 @@
 		B6131FBB1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
 		B6131FBC1EF7CA8300173984 /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
 		B61E4A161EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetVideoSchedulerControl.swift; sourceTree = "<group>"; };
+		B6525E491F09FCED00F2B274 /* FirstRegisterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRegisterControl.swift; sourceTree = "<group>"; };
+		B6525E4B1F0A02D200F2B274 /* SecondRegisterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondRegisterControl.swift; sourceTree = "<group>"; };
 		B659DD6E1EF0568000409825 /* Abkao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abkao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B659DD711EF0568000409825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B659DD761EF0568000409825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -419,6 +423,8 @@
 				B659DDC81EF05BA400409825 /* ForgotPasswordControl.swift */,
 				B659DDC91EF05BA400409825 /* LoginControl.swift */,
 				B659DDCA1EF05BA400409825 /* RegisterControl.swift */,
+				B6525E491F09FCED00F2B274 /* FirstRegisterControl.swift */,
+				B6525E4B1F0A02D200F2B274 /* SecondRegisterControl.swift */,
 			);
 			path = InitialScreens;
 			sourceTree = "<group>";
@@ -590,7 +596,7 @@
 				TargetAttributes = {
 					B659DD6D1EF0568000409825 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = LZUUTKPP98;
+						DevelopmentTeam = U34S8JX9SK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -736,6 +742,7 @@
 				B659DDDA1EF05BA400409825 /* ProductDescI.swift in Sources */,
 				B659DDE71EF05BA400409825 /* Date+Customization.swift in Sources */,
 				B659DDE31EF05BA400409825 /* ProductManager.swift in Sources */,
+				B6525E4C1F0A02D200F2B274 /* SecondRegisterControl.swift in Sources */,
 				B659DE041EF05BA400409825 /* PriceGridControl.swift in Sources */,
 				B659DE091EF05BA400409825 /* VideoSchedulerControl.swift in Sources */,
 				B6131FC21EF7CA8300173984 /* GKResizeableCropOverlayView.m in Sources */,
@@ -752,6 +759,7 @@
 				B659DDE81EF05BA400409825 /* UILabel+Customization.swift in Sources */,
 				B659DE081EF05BA400409825 /* UINavigationControl.swift in Sources */,
 				B65ABF4F1EF429A70040D260 /* ImageControl.swift in Sources */,
+				B6525E4A1F09FCED00F2B274 /* FirstRegisterControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,7 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hiram Mac (KX5D4F498C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LZUUTKPP98;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -895,7 +903,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LZUUTKPP98;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
