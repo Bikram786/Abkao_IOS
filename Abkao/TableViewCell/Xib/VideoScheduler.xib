@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,13 +25,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-Qr-p0W">
-                        <rect key="frame" x="5" y="5" width="787" height="228"/>
+                        <rect key="frame" x="5" y="5" width="685.5" height="228"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-IR-ncQ">
-                                <rect key="frame" x="0.0" y="0.0" width="787" height="228"/>
+                                <rect key="frame" x="0.0" y="0.0" width="685.5" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-p4-5km">
-                                        <rect key="frame" x="369" y="0.0" width="50" height="64.5"/>
+                                        <rect key="frame" x="318" y="0.0" width="50" height="64.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="lxl-G8-Tfg"/>
                                         </constraints>
@@ -40,19 +40,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start At:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzd-ub-b50">
-                                        <rect key="frame" x="257.5" y="20" width="68.5" height="24.5"/>
+                                        <rect key="frame" x="209.5" y="20.5" width="68.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End At:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmc-CE-roe">
-                                        <rect key="frame" x="419" y="21" width="55" height="22"/>
+                                        <rect key="frame" x="368" y="21.5" width="55" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pj-tV-a7m">
-                                        <rect key="frame" x="0.0" y="50" width="95.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="79.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="C9t-B3-DHX"/>
                                         </constraints>
@@ -61,14 +61,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="QBT-Tv-Jls">
-                                        <rect key="frame" x="34.5" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="26.5" y="110" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="5In-To-gsO"/>
                                             <constraint firstAttribute="width" constant="25" id="Bd8-50-T2n"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-ru-day">
-                                        <rect key="frame" x="95.5" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="79.5" y="0.0" width="20" height="205"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="oAV-aJ-M0R"/>
                                         </constraints>
@@ -77,91 +77,91 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YD4-im-w9J">
-                                        <rect key="frame" x="115.5" y="64.5" width="95" height="22"/>
+                                        <rect key="frame" x="99.5" y="64.5" width="79" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="anM-hi-bhz">
-                                        <rect key="frame" x="151" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="127" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-Ge-CW0">
-                                        <rect key="frame" x="210.5" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="178.5" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryP-xU-eym">
-                                        <rect key="frame" x="230.5" y="64.5" width="95.5" height="22"/>
+                                        <rect key="frame" x="198.5" y="64.5" width="79.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="BNM-Xa-Ev1">
-                                        <rect key="frame" x="265.5" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="225.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-CC-A9L">
-                                        <rect key="frame" x="326" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="278" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-rK-Qyt">
-                                        <rect key="frame" x="346" y="64.5" width="95.5" height="22"/>
+                                        <rect key="frame" x="298" y="64.5" width="79.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="a3k-Pz-AaH">
-                                        <rect key="frame" x="381.5" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="325.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-XW-YTS">
-                                        <rect key="frame" x="441.5" y="-2.5" width="20" height="208.5"/>
+                                        <rect key="frame" x="377.5" y="-2.5" width="20" height="209"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-l2-YwN">
-                                        <rect key="frame" x="461.5" y="64.5" width="95" height="22"/>
+                                        <rect key="frame" x="397.5" y="64.5" width="79" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="rxB-UR-qo5">
-                                        <rect key="frame" x="497" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="425" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsz-8j-vNh">
-                                        <rect key="frame" x="556.5" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="476.5" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-54-SVF">
-                                        <rect key="frame" x="576.5" y="64.5" width="95.5" height="22"/>
+                                        <rect key="frame" x="496.5" y="64.5" width="79.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="PAB-RS-QtL">
-                                        <rect key="frame" x="612.5" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="524.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeb-Mf-SpT">
-                                        <rect key="frame" x="672" y="0.0" width="20" height="205"/>
+                                        <rect key="frame" x="576" y="0.0" width="20" height="205"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34y-vc-vgv">
-                                        <rect key="frame" x="692" y="64.5" width="95.5" height="22"/>
+                                        <rect key="frame" x="596" y="64.5" width="79.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-d3-p1i">
-                                        <rect key="frame" x="726.5" y="110" width="25" height="25"/>
+                                        <rect key="frame" x="622.5" y="110" width="25" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-83-qAx">
-                                        <rect key="frame" x="20" y="145" width="748" height="50"/>
+                                        <rect key="frame" x="17" y="145" width="652" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Hrr-2B-9Xp"/>
                                         </constraints>
@@ -245,6 +245,7 @@
                                     <constraint firstItem="anM-hi-bhz" firstAttribute="height" secondItem="QBT-Tv-Jls" secondAttribute="height" id="k7Q-p9-zzX"/>
                                     <constraint firstItem="RAo-CC-A9L" firstAttribute="leading" secondItem="jzd-ub-b50" secondAttribute="trailing" id="m0v-Fr-d1y"/>
                                     <constraint firstItem="2cr-d3-p1i" firstAttribute="width" secondItem="QBT-Tv-Jls" secondAttribute="width" id="m10-xj-kbe"/>
+                                    <constraint firstAttribute="trailing" secondItem="34y-vc-vgv" secondAttribute="trailing" constant="10" id="mH5-Qg-FRG"/>
                                     <constraint firstAttribute="trailing" secondItem="Aeb-Mf-SpT" secondAttribute="trailing" constant="95" id="n9x-8o-NXL"/>
                                     <constraint firstItem="Aeb-Mf-SpT" firstAttribute="firstBaseline" secondItem="jsz-8j-vNh" secondAttribute="firstBaseline" id="o4r-SD-If5"/>
                                     <constraint firstItem="mzl-Ge-CW0" firstAttribute="leading" secondItem="YD4-im-w9J" secondAttribute="trailing" id="oX4-tL-50i"/>

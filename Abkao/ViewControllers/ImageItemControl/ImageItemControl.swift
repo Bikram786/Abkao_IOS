@@ -46,8 +46,6 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     }
     
     
-
-    
     // MARK: - Super Class Method
     
     override var navTitle: String{

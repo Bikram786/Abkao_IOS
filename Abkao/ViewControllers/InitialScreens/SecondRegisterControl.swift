@@ -19,6 +19,7 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
      var password:String?
      var companyName:String?
      var email:String?
+     var countryName:String?
     
      @IBOutlet weak var setViewShadow: UIView!
      @IBOutlet weak var txt_AccountName: UITextField?
@@ -154,10 +155,7 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let countryObj = ModelManager.sharedInstance.authManager.arrCountry?.object(at: row) as! CountryI
-        btn_Country?.setTitle(countryObj.countryName, for: .normal)
-        btn_Country?.setTitleColor(.black, for: .normal)
-        countryPickerView.isHidden=true
-        selectCityAndStatePickerView.isHidden = true
+        countryName = countryObj.countryName!
     }
 
     
@@ -170,6 +168,22 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
     @IBAction func btn_RsgisterAction(_ sender: UIButton) {
         
         checkValues()
+    }
+    
+    
+    @IBAction func btn_Cancel(_ sender: UIButton) {
+        
+        countryPickerView.isHidden=true
+        selectCityAndStatePickerView.isHidden = true
+    }
+    
+    @IBAction func btn_Done(_ sender: UIButton) {
+        
+        btn_Country?.setTitle(countryName, for: .normal)
+        btn_Country?.setTitleColor(.black, for: .normal)
+        countryPickerView.isHidden=true
+        selectCityAndStatePickerView.isHidden = true
+        
     }
     
     

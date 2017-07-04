@@ -177,7 +177,7 @@ class SetVideoSchedulerControl: AbstractControl {
             btn_EndTime.setTitle(dateString ,for: .normal)
         }
                 
-        dateTimeView.isHidden=true
+        
     }
     
     @IBAction func btn_SaveSchedulerVideoAction(_ sender: UIButton) {
@@ -246,6 +246,17 @@ class SetVideoSchedulerControl: AbstractControl {
 
     }
     
+    
+    @IBAction func btn_CancelAction(_ sender: UIButton) {
+        
+        dateTimeView.isHidden=true
+    }
+    
+    
+    @IBAction func btn_DoneAction(_ sender: UIButton) {
+        
+        dateTimeView.isHidden=true
+    }
     
     
     override func didReceiveMemoryWarning() {
