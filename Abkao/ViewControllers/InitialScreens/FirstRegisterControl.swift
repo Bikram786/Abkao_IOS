@@ -32,6 +32,8 @@ class FirstRegisterControl: AbstractControl {
         txt_Email?.addShadowToTextfield()
         txt_FirstName?.setRightImage()
         txt_LastName?.setRightImage()
+        txt_Email?.setRightImage()
+        txt_Password?.setRightImage()
     }
     
     override var showRight: Bool{
@@ -67,6 +69,12 @@ class FirstRegisterControl: AbstractControl {
         }
         else{
             
+            guard let email = txt_Email?.text, email != "" else {
+                
+                SVProgressHUD.showError(withStatus: "Please fill Email-ID")
+                return
+            }
+            
             if (!(txt_Email?.text?.isEmpty)!) {
                 
                 let checkEmail = isValidEmail(testStr: (txt_Email?.text)!)
@@ -83,20 +91,20 @@ class FirstRegisterControl: AbstractControl {
                     myVC.userName = txt_UserName?.text
                     myVC.password = txt_Password?.text
                     myVC.companyName = txt_Company?.text
-                    myVC.email = txt_Email?.text
+                    myVC.email = email
                     self.navigationController?.pushViewController(myVC, animated: true)
                     
                 }
             }
 
-            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondRegisterControl") as! SecondRegisterControl
-            myVC.firstName = txt_FirstName?.text
-            myVC.lastName = txt_LastName?.text
-            myVC.userName = txt_UserName?.text
-            myVC.password = txt_Password?.text
-            myVC.companyName = txt_Company?.text
-            myVC.email = txt_Email?.text
-            self.navigationController?.pushViewController(myVC, animated: true)
+//            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondRegisterControl") as! SecondRegisterControl
+//            myVC.firstName = txt_FirstName?.text
+//            myVC.lastName = txt_LastName?.text
+//            myVC.userName = txt_UserName?.text
+//            myVC.password = txt_Password?.text
+//            myVC.companyName = txt_Company?.text
+//            myVC.email = txt_Email?.text
+//            self.navigationController?.pushViewController(myVC, animated: true)
             
         }
 

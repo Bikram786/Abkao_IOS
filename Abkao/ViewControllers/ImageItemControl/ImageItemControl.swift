@@ -163,24 +163,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             //Just dismiss the action sheet
         }
         actionSheetController.addAction(cancelAction)
-        //Create and add first option action
-        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture", style: .default) { action -> Void in
-            
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
-                
-                self.imagePicker.allowsEditing = false
-                self.imagePicker.sourceType = .camera
-                self.present(self.imagePicker, animated: true, completion: nil)
-                
-                
-            }else{
-                
-                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "You Have Not Camera Availability")
-                
-            }
-            //Code for launching the camera goes here
-        }
-        actionSheetController.addAction(takePictureAction)
+        
         //Create and add a second option action
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .default) { action -> Void in
             

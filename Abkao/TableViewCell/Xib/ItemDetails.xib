@@ -21,10 +21,10 @@
                         <rect key="frame" x="10" y="10" width="230" height="144.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rg-Vf-7vX">
-                                <rect key="frame" x="10" y="10" width="210" height="101.5"/>
+                                <rect key="frame" x="10" y="10" width="210" height="94.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67t-69-o08">
-                                        <rect key="frame" x="10" y="10" width="190" height="81.5"/>
+                                        <rect key="frame" x="10" y="10" width="190" height="74.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                 </subviews>
@@ -37,7 +37,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dg-dn-oON">
-                                <rect key="frame" x="10" y="116.5" width="210" height="20"/>
+                                <rect key="frame" x="10" y="109.5" width="210" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="ncd-9k-HjO"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZw-BV-V2b">
-                                <rect key="frame" x="10" y="141.5" width="210" height="0.0"/>
+                                <rect key="frame" x="10" y="134.5" width="210" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="iZw-BV-V2b" firstAttribute="width" secondItem="7rg-Vf-7vX" secondAttribute="width" id="KYb-aN-LdW"/>
                             <constraint firstAttribute="trailing" secondItem="7rg-Vf-7vX" secondAttribute="trailing" constant="10" id="cLF-7A-RKx"/>
                             <constraint firstItem="7rg-Vf-7vX" firstAttribute="leading" secondItem="I37-Lh-2Hz" secondAttribute="leading" constant="10" id="dVT-CK-b3r"/>
-                            <constraint firstAttribute="bottom" secondItem="iZw-BV-V2b" secondAttribute="bottom" constant="3" id="dY8-QC-hb6"/>
+                            <constraint firstAttribute="bottom" secondItem="iZw-BV-V2b" secondAttribute="bottom" constant="10" id="dY8-QC-hb6"/>
                             <constraint firstItem="4dg-dn-oON" firstAttribute="leading" secondItem="7rg-Vf-7vX" secondAttribute="leading" id="p9F-PN-jjy"/>
                             <constraint firstItem="7rg-Vf-7vX" firstAttribute="top" secondItem="I37-Lh-2Hz" secondAttribute="top" constant="10" id="tan-hx-A5r"/>
                             <constraint firstItem="4dg-dn-oON" firstAttribute="top" secondItem="7rg-Vf-7vX" secondAttribute="bottom" constant="5" id="yIP-ct-Moy"/>

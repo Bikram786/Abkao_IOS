@@ -15,10 +15,13 @@ class SetVideoSchedulerControl: AbstractControl {
     var status:String?
     var isCheckStartTime:Bool?
     var isCheckLastTime:Bool?
+    var isCheckStart:Bool?
+    var isCheckEnd:Bool?
     var arrDays = NSMutableArray()
     var arrAllDays = ["Mon","Thes","Wed","Thus","Fri","Sat","Sun"]
     var checkStartDate:Date?
     var checkEndDate:Date?
+    var checkDay:Bool?
     
     @IBOutlet weak var setTime: UIDatePicker!
     @IBOutlet weak var dateTimeView: UIView!
@@ -43,9 +46,14 @@ class SetVideoSchedulerControl: AbstractControl {
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         dateTimeView.isHidden=true
         txt_VideoURL.addShadowToTextfield()
+        isCheckStart = false
+        isCheckEnd = false
+        checkDay = false
         
         if status == "edit"{
             
+            isCheckStart = true
+            isCheckEnd = true
             btn_StartTime.setTitle(getPreviousProducts.startTime!, for: .normal)
             btn_EndTime.setTitle(getPreviousProducts.endTime!, for: .normal)
             txt_VideoURL.text = getPreviousProducts.productVedUrl!
@@ -56,19 +64,6 @@ class SetVideoSchedulerControl: AbstractControl {
 
             checkStartDate = stDate
             checkEndDate = endDate
-            
-            print("Start date : \(stDate), End date : \(endDate)")
-//            if(stDate.compare(endDate) == .orderedDescending)
-//            {
-//                print("ordereDescending")
-//            }
-//            else
-//            {
-//                print("ordereAescending")
-//
-//            }
-            
-            
             for var day in getPreviousProducts.arrDays! {
                 
                if day == "Mon"{
@@ -152,10 +147,12 @@ class SetVideoSchedulerControl: AbstractControl {
         if sender.tag == 1 {
             isCheckStartTime = true
             isCheckLastTime = false
+            isCheckStart = true
             
         }else{
             isCheckLastTime = true
             isCheckStartTime = false
+            isCheckEnd = true
         }
         
     }
@@ -186,47 +183,66 @@ class SetVideoSchedulerControl: AbstractControl {
     @IBAction func btn_SaveSchedulerVideoAction(_ sender: UIButton) {
         
         
-        if checkStartDate! > checkEndDate! {
-            SVProgressHUD.showError(withStatus: "Starting time not more than end time")
-        }else{
-            
-            let obj = SchedulerI()
-            obj.startTime = btn_StartTime.titleLabel?.text!
-            obj.endTime = btn_EndTime.titleLabel?.text!
-            obj.productVedUrl = txt_VideoURL.text!
-            obj.arrDays = arrDays as? [String]
-            
-            if status == "edit"{
-                
-                obj.scheduleID = getPreviousProducts.scheduleID
-                
-                SVProgressHUD.show(withStatus: "Loading.....")
-                
-                ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
-                    SVProgressHUD.dismiss()
-                    if(isSuccess){
-                        _ = self.navigationController?.popViewController(animated: true)
-                    }else{
-                        SVProgressHUD.showError(withStatus: strMessage)
-                    }
-                    
-                }
-                
-            }else{
-                
-                ModelManager.sharedInstance.scheduleManager.addSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
-                    
-                    if(isSuccess){
-                        _ = self.navigationController?.popViewController(animated: true)
-                    }else{
-                        SVProgressHUD.showError(withStatus: strMessage)
-                    }
-                    
-                }
-            }
+        
+        if isCheckStart! == false {
+            SVProgressHUD.showError(withStatus: "Please set video start time")
+            return
         }
         
+        if isCheckEnd! == false {
+            SVProgressHUD.showError(withStatus: "Please set video end time")
+            return
+        }
         
+        if checkStartDate! > checkEndDate! {
+            SVProgressHUD.showError(withStatus: "Starting time not more than end time")
+            return
+        }else{
+            
+            if (btn_Mon.isSelected || btn_Mon.isSelected || btn_Tues.isSelected || btn_Wed.isSelected || btn_Thur.isSelected || btn_Fri.isSelected || btn_Sat.isSelected || btn_Sun.isSelected){
+                
+                let obj = SchedulerI()
+                obj.startTime = btn_StartTime.titleLabel?.text!
+                obj.endTime = btn_EndTime.titleLabel?.text!
+                obj.productVedUrl = txt_VideoURL.text!
+                obj.arrDays = arrDays as? [String]
+                
+                if status == "edit"{
+                    
+                    obj.scheduleID = getPreviousProducts.scheduleID
+                    
+                    SVProgressHUD.show(withStatus: "Loading.....")
+                    
+                    ModelManager.sharedInstance.scheduleManager.updateSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
+                        SVProgressHUD.dismiss()
+                        if(isSuccess){
+                            _ = self.navigationController?.popViewController(animated: true)
+                        }else{
+                            SVProgressHUD.showError(withStatus: strMessage)
+                        }
+                        
+                    }
+                    
+                }else{
+                    
+                    ModelManager.sharedInstance.scheduleManager.addSchedule(scheduleObj: obj) { (userObj, isSuccess, strMessage) in
+                        
+                        if(isSuccess){
+                            _ = self.navigationController?.popViewController(animated: true)
+                        }else{
+                            SVProgressHUD.showError(withStatus: strMessage)
+                        }
+                        
+                    }
+                }
+            }else{
+                
+                SVProgressHUD.showError(withStatus: "Please select at least one day for video schedule")
+                return
+            }
+            
+            
+        }
 
     }
     
