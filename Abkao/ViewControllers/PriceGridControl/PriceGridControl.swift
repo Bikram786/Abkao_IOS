@@ -111,8 +111,8 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         cell.setView.setViewBoarder()
         cell.lbl_ProductPrice.text = proDescObj.productRate
         
-        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: 17)
-        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.regularFont))
+        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
 
         return cell
         

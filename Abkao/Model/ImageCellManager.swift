@@ -116,11 +116,12 @@ class ImageCellManager: NSObject {
                         
                         var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
                         
+                        self.arrProductImageGrid?.removeAll()
+                        
                         let arrData = productInfoObj["image_grid"] as! NSArray
+                        
                         if(arrData.count > 0)
                         {
-                            self.arrProductImageGrid?.removeAll()
-                            
                             for dictObj in arrData
                             {
                                 let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
@@ -128,8 +129,7 @@ class ImageCellManager: NSObject {
                                 let productObj = ProductDescI()
                                 productObj.setProductDescData(productInfoObj: tempProductInfoObj)
                                 
-                                self.arrProductImageGrid?.append(productObj)
-                                
+                                self.arrProductImageGrid?.append(productObj)                                
                             }
                         }
 

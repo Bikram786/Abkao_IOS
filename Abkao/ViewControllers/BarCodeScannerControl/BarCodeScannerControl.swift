@@ -27,7 +27,8 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         super.viewDidLoad()
         
         scanner = MTBBarcodeScanner(previewView: previewView)
-        
+
+        setFrontCamera()
         
         //self.view.backgroundColor = UIColor.clear
         //setCamera()
@@ -36,12 +37,14 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         setScanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setFrontCamera()
         
 //        if (captureSession?.isRunning == false) {
 //            captureSession?.startRunning();
@@ -55,6 +58,7 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         self.scanner?.stopScanning()
         
         
+        
 //        if (captureSession?.isRunning == true) {
 //            captureSession?.stopRunning();
 //        }
@@ -65,6 +69,14 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         self.scanner?.flipCamera()
     }
     
+    
+    func setFrontCamera()
+    {
+        if(self.scanner?.camera == MTBCamera.back)
+        {
+            self.scanner?.flipCamera()
+        }
+    }
     
     // MARK: - Super Class Method
     

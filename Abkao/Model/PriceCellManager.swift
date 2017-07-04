@@ -114,12 +114,12 @@ class PriceCellManager: NSObject {
                     {
                         
                        var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
+                        self.arrProductPrice?.removeAll()
                         
-                        let arrData = productInfoObj["price_grid"] as! NSArray
+                        let arrData = productInfoObj["price_grid"] as! NSArray                        
+                        
                         if(arrData.count > 0)
                         {
-                            self.arrProductPrice?.removeAll()
-                            
                             for dictObj in arrData
                             {
                                 let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]

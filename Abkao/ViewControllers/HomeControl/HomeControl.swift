@@ -85,11 +85,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
-        
-        //setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
-        //setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         print(setPriceGrid!)
+        
+        setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+        setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+        
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
         self.callProductAPI()
@@ -335,6 +336,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 self.productObj = productObj
                 
                 
+                //print(self.setImageGrid,self.setPriceGrid)
                 self.setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
                 self.setPriceGrid =  ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
                 self.defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
@@ -351,8 +353,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     }
                     
                     
-                    self.leftTbl.reloadData()
-                    self.rightTbl.reloadData()
+                   
                     
                 }
                 
@@ -362,9 +363,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                         self.setPriceGridView(priceItems: self.setPriceGrid!)
                     }
 
-                }else{
-                    self.setClv.reloadData()
                 }
+                
+                self.leftTbl.reloadData()
+                self.rightTbl.reloadData()
+                self.setClv.reloadData()
+
                 
                 
             }else{
@@ -451,8 +455,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }
                 
                 cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
-                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: 15)
-                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: CGFloat(Constants.appFontSize.regularFont))
+                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
               
             }
         
@@ -479,9 +483,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 }
                 
                 cell?.setShadow.viewdraw((cell?.setShadow.bounds)!)
-                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: 15)
-                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
-            }
+                
+                cell?.lbl_ItemTitle.font = UIFont(name: "Cormorant-Bold", size: CGFloat(Constants.appFontSize.regularFont))
+                cell?.lbl_ItemPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
+        }
         
         return cell!
     }
@@ -538,13 +543,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         }else{
             
             let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
-            cell.lbl_Name.text = proDescObj.productName
+            cell.lbl_Name.text = proDescObj.productName?.capitalized
             cell.lbl_Price.text = proDescObj.productRate
             cell.setShadow.viewdraw(cell.setShadow.bounds)
         }
         
-        cell.lbl_Name.font = UIFont(name: "Cormorant-Regular", size: 15)
-        cell.lbl_Price.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_Name.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.regularFont))
+        cell.lbl_Price.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
 
         
         return cell

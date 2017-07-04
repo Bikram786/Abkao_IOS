@@ -121,9 +121,9 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
         
-        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: 20)
-        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
-        cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: CGFloat(Constants.appFontSize.regularFont))
+        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
+        cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
 
         //cell.productNameView.setViewBoarder()
         //cell.productPriceView.setViewBoarder()

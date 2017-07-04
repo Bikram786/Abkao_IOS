@@ -18,7 +18,7 @@ class SetVideoSchedulerControl: AbstractControl {
     var isCheckStart:Bool?
     var isCheckEnd:Bool?
     var arrDays = NSMutableArray()
-    var arrAllDays = ["Mon","Thes","Wed","Thus","Fri","Sat","Sun"]
+    var arrAllDays = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
     var checkStartDate:Date?
     var checkEndDate:Date?
     var checkDay:Bool?
@@ -68,11 +68,11 @@ class SetVideoSchedulerControl: AbstractControl {
                 
                if day == "Mon"{
                 setSelectedItems(button: btn_Mon)
-               }else if (day == "Tues"){
+               }else if (day == "Tue"){
                 setSelectedItems(button: btn_Tues)
                }else if (day == "Wed"){
                 setSelectedItems(button: btn_Wed)
-               }else if (day == "Thur"){
+               }else if (day == "Thu"){
                 setSelectedItems(button: btn_Thur)
                }else if (day == "Fri"){
                 setSelectedItems(button: btn_Fri)

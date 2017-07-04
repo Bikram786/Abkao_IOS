@@ -113,11 +113,11 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
             
             if day == "Mon"{
                 setSelectedItems(image: cell.img_Mon)
-            }else if (day == "Tues"){
+            }else if (day == "Tue"){
                 setSelectedItems(image: cell.img_Tues)
             }else if (day == "Wed"){
                 setSelectedItems(image: cell.img_Wed)
-            }else if (day == "Thur"){
+            }else if (day == "Thu"){
                 setSelectedItems(image: cell.img_Thur)
             }else if (day == "Fri"){
                 setSelectedItems(image: cell.img_Fri)
