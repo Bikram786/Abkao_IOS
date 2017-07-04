@@ -258,9 +258,11 @@ open class CameraViewController: UIViewController {
      */
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupActions()
         checkPermissions()
         cameraView.configureFocus()
+
     }
 
     /**
@@ -272,6 +274,7 @@ open class CameraViewController: UIViewController {
         addCameraObserver()
         addRotateObserver()
         setupVolumeControl()
+
     }
     
     /**

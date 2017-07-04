@@ -45,10 +45,31 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
 
     }
     
+    
+
+    
     // MARK: - Super Class Method
     
     override var navTitle: String{
         return "Logout"
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        
+        return .landscape
+    }
+    
+    
+    
+    override var shouldAutorotate: Bool {
+        
+        return false
+    }
+    
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        
+        return .landscapeRight
     }
     
     
@@ -175,30 +196,32 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
     
     func setImageFromGaleryOrCamera() {
         
-        let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Choose An Option!", preferredStyle: .actionSheet)
+//        let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Choose An Option!", preferredStyle: .actionSheet)
+//        
+//        //Create and add the Cancel action
+//        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+//            //Just dismiss the action sheet
+//        }
+//        actionSheetController.addAction(cancelAction)
+//        
+//        //Create and add a second option action
+//        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Upload Picture", style: .default) { action -> Void in
         
-        //Create and add the Cancel action
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
-            //Just dismiss the action sheet
-        }
-        actionSheetController.addAction(cancelAction)
-        
-        //Create and add a second option action
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Upload Picture", style: .default) { action -> Void in
-            
-            self.imagePicker.allowsEditing = true
-            self.imagePicker.sourceType = .photoLibrary
-            
-            self.imagePicker.modalPresentationStyle = .popover
-            self.imagePicker.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-            self.imagePicker.popoverPresentationController?.sourceView = self.view
+//            self.imagePicker.allowsEditing = true
+//            self.imagePicker.sourceType = .photoLibrary
+//            
+//            self.imagePicker.modalPresentationStyle = .popover
+//            self.imagePicker.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+//            self.imagePicker.popoverPresentationController?.sourceView = self.view
             //self.imagePicker.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             //self.imagePicker.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
             
             let croppingEnabled = true
+        
             let cameraViewController = CameraViewController(croppingEnabled: croppingEnabled) { [weak self] image, asset in
                 // Do something with your image here.
                 // If cropping is enabled this image will be the cropped version
+                
                 
                 if image != nil {
                     let getImage = self?.resizeImage(image: image!, newWidth: 300)
@@ -210,22 +233,23 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                
                 self?.dismiss(animated: true, completion: nil)
             }
-            
+        
+        
             
             
             self.present(cameraViewController, animated: true)
             //self.present(self.imagePicker, animated: true, completion: nil)
             
             //Code for picking from camera roll goes here
-        }
+        //}
         
-        actionSheetController.addAction(choosePictureAction)
-        
-        actionSheetController.popoverPresentationController?.sourceView = view
-        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width/2, y: view.bounds.size.height, width: 1.0, height: 1.0)
+//        actionSheetController.addAction(choosePictureAction)
+//        
+//        actionSheetController.popoverPresentationController?.sourceView = view
+//        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width/2, y: view.bounds.size.height, width: 1.0, height: 1.0)
         
         //Present the AlertController
-        self.present(actionSheetController, animated: true, completion: nil)
+        //self.present(actionSheetController, animated: true, completion: nil)
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
