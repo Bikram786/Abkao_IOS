@@ -37,6 +37,13 @@ class SettingsManager: NSObject {
                         //-------------Update Modal for Home screen data
                         let userinfo : [String : Any] = ["userID":ModelManager.sharedInstance.profileManager.userObj?.userID as Any]
                         
+                        
+                        //save Settings Obj in defaults
+                        let encodedSettings = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.settingsManager.settingObj!)
+                        let userDefaults: UserDefaults = UserDefaults.standard
+                        userDefaults.set(encodedSettings, forKey: "currentsetting")                        
+                        userDefaults.synchronize()
+                        
                         ModelManager.sharedInstance.productManager.getAllProducts(userID: userinfo, handler: { (proObj, isSuccess, strMessage) in
                             
                         })

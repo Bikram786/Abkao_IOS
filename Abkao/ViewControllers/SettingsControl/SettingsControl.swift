@@ -51,11 +51,24 @@ class SettingsControl: AbstractControl {
     
     func saveSetting(){
         
+        
+        guard let vedURL = txt_DefaultURL.text, vedURL != "" else
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter default video URL")
+            return
+        }
+        
+         if(!(self.verifyUrl(urlString: txt_DefaultURL.text!)))
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter correct video URL")
+            return
+        }
+        
         var  dictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["price_grid_dimension"] = String(describing: setPriceRows!)
         dictData["image_grid_row"] = String(describing: setGridRows!)
-        dictData["video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
+        dictData["video_url"] = txt_DefaultURL.text!
         
         SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in

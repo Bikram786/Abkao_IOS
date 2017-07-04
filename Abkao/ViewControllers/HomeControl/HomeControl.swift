@@ -264,6 +264,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 //Schdule local notification, W.R.T its Start Time
                 
                 let dateObj = NSDate.getDateObj(formaterType: Constants.kDateFormatter, dateString: (nearestScheduleObj?.startTime!)!)
+                
+                print("ved start time : \(dateObj)")
 
                 requestIdentifier = (nearestScheduleObj?.scheduleID?.description)!
                 self.removeNotification(arrNotificationID: [requestIdentifier])
@@ -286,7 +288,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             youTubeView.clear()
             let myVideoURL = NSURL(string: strUrl)
             youTubeView.loadVideoURL(myVideoURL! as URL)
-            self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 10)
+            self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 3)
             
         }else{
             

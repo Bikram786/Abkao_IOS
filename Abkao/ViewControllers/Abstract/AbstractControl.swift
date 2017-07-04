@@ -26,6 +26,15 @@ class AbstractControl: UIViewController {
     }
     
     
+    func verifyUrl (urlString: String?) -> Bool {
+        if let urlString = urlString {
+            if let url  = NSURL(string: urlString) {
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        }
+        return false
+    }
+    
     // MARK : - Set Custom Navigation Bar
     
     func setNavigationBar() {

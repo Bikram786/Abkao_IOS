@@ -85,12 +85,18 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             
             return
         }
-        
+       
+         if(!(self.verifyUrl(urlString: txt_VideoURL.text)))
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter correct video URL")
+            return
+        }
         
         var  dictData : [String : Any] =  [String : Any]()
         dictData["product_name"] = txt_ProductName.text!
         dictData["product_price"] = txt_ProductPrice.text!
-        dictData["product_video_url"] = "https://www.youtube.com/watch?v=5ahMQwxN9Js"
+        dictData["product_video_url"] = txt_VideoURL.text
+        
         var  imageDictData : [String : Any] =  [String : Any]()
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         
