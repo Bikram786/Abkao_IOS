@@ -36,6 +36,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         super.viewWillAppear(true)
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         callProductAPI()
+        
     }
 
     
@@ -109,15 +110,20 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.selectionStyle = .none
         let proDescObj = arrProductImages[indexPath.row] as! ProductDescI
         cell.setImageView.setViewBoarder()
+        
+        self.removeCacheForHomeContentImage(url: proDescObj.productImgUrl!)
+        
         let url = URL(string: proDescObj.productImgUrl!)
+        
         cell.setImage.af_setImage(withURL: url!)
+        
         cell.lbl_ProductName.text = proDescObj.productName!.capitalized
         cell.lbl_ProductPrice.text = proDescObj.productPrice!
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
         
-        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: 20)
-        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: 15)
-        cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: 15)
+        cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: CGFloat(Constants.appFontSize.regularFont))
+        cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
+        cell.lbl_VideoURL.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))
 
         //cell.productNameView.setViewBoarder()
         //cell.productPriceView.setViewBoarder()
@@ -126,6 +132,10 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         return cell
         
     }
+    
+    
+
+
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     
         let proDescObj = arrProductImages[indexPath.row] as! ProductDescI
@@ -151,6 +161,22 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
     return [editAction,deleteAction]
     }
     
+    // MARK: - Custom Methods
+    
+    func removeCacheForHomeContentImage(url: String) {
+        let imageURL = URL(string : url)
+        let urlRequest = Foundation.URLRequest(url: imageURL!)
+        
+        let imageDownloader = UIImageView.af_sharedImageDownloader
+        
+        // Clear the URLRequest from the in-memory cache
+        _ = imageDownloader.imageCache?.removeImage(for: urlRequest, withIdentifier: nil)
+        // Clear the URLRequest from the on-disk cache
+        
+        imageDownloader.sessionManager.session.configuration.urlCache?.removeCachedResponse(for: urlRequest)
+    }
+    
+    // MARK: - Default methods
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

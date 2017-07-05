@@ -50,7 +50,7 @@ class ImageCellManager: NSObject {
             {
                 (jsonDict,statusCode) in
                 // success code
-               
+               print(jsonDict)
                 if(statusCode == 200){
                     let isSuccess = jsonDict.value(forKey: "success") as! Bool
                     if(isSuccess){
@@ -58,6 +58,8 @@ class ImageCellManager: NSObject {
                         self.updateHomeControlModalData()
 
                         let productDescObj = ProductDescI()
+                        productDescObj.setProductDescData(productInfoObj: jsonDict as! [String : AnyObject])
+                        
                         handler(productDescObj , true ,(jsonDict.value(forKey: "message") as? String)!)
                         
                     }else{
@@ -114,11 +116,12 @@ class ImageCellManager: NSObject {
                         
                         var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
                         
+                        self.arrProductImageGrid?.removeAll()
+                        
                         let arrData = productInfoObj["image_grid"] as! NSArray
+                        
                         if(arrData.count > 0)
                         {
-                            self.arrProductImageGrid?.removeAll()
-                            
                             for dictObj in arrData
                             {
                                 let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
@@ -126,8 +129,7 @@ class ImageCellManager: NSObject {
                                 let productObj = ProductDescI()
                                 productObj.setProductDescData(productInfoObj: tempProductInfoObj)
                                 
-                                self.arrProductImageGrid?.append(productObj)
-                                
+                                self.arrProductImageGrid?.append(productObj)                                
                             }
                         }
 

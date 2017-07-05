@@ -48,7 +48,7 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
         txt_Address?.addShadowToTextfield()
         countryPickerView.isHidden = true
         selectCityAndStatePickerView.isHidden = true
-        btn_Country?.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: 17)
+        btn_Country?.titleLabel!.font =  UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.regularFont))
         txt_AccountName?.setRightImage()
         //get Countries list
         ModelManager.sharedInstance.authManager.getCountriesList { (arrCountryI, isSuucess) in
@@ -61,6 +61,9 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
         return false
     }
     
+    
+    
+
     func checkValues(){
         
         guard let accountName = txt_AccountName?.text, accountName != "" else {
@@ -92,7 +95,19 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
                     dictData["country"] = btn_Country?.titleLabel?.text
                 }
                 
-                dictData["telephone"] = txt_Telephone?.text
+                
+                let strContact = txt_Telephone?.text
+                if(strContact != "")
+                {
+                    if(!(strContact?.isPhone())!)
+                    {
+                        SVProgressHUD.showError(withStatus: "Please enter correct phone no")
+
+                        return
+                    }
+                }
+                
+                dictData["telephone"] = strContact
                 
                 print(dictData)
                 

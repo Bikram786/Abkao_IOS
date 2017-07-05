@@ -33,6 +33,17 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         setStartingFields()
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
     }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(true)
+        
+        
+//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
+       
+
+    }
     
     // MARK: - Super Class Method
     
@@ -112,6 +123,8 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
             imageDictData["filecontent"] = sendFinalImage
             dictData["fileUpload"] = imageDictData
             
+            
+            print("Image update dictdata : \(dictData)")
             SVProgressHUD.show(withStatus: "Loading.....")
             
             ModelManager.sharedInstance.imageCellManager.updateRecord(userInfo: dictData) { (productObj, isSuccess, strMessage) in
@@ -171,16 +184,16 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         actionSheetController.addAction(cancelAction)
         
         //Create and add a second option action
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .default) { action -> Void in
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Upload Picture", style: .default) { action -> Void in
             
-            self.imagePicker.allowsEditing = false
+            self.imagePicker.allowsEditing = true
             self.imagePicker.sourceType = .photoLibrary
             
             self.imagePicker.modalPresentationStyle = .popover
             self.imagePicker.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
             self.imagePicker.popoverPresentationController?.sourceView = self.view
-            self.imagePicker.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-            self.imagePicker.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+            //self.imagePicker.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            //self.imagePicker.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
             
             let croppingEnabled = true
             let cameraViewController = CameraViewController(croppingEnabled: croppingEnabled) { [weak self] image, asset in

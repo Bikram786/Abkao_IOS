@@ -704,7 +704,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jai-FA-Gc0">
                                                                     <rect key="frame" x="5" y="5" width="70" height="19.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -719,7 +719,7 @@
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYc-hA-RKT">
                                                                     <rect key="frame" x="5" y="25.5" width="70" height="19.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1154,7 +1154,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwc-dv-C72">
                                         <rect key="frame" x="58" y="275" width="655" height="45"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set your default video URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-aD-8YS">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set your default video URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-aD-8YS">
                                                 <rect key="frame" x="20" y="0.0" width="615" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
@@ -3424,7 +3424,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-zW-puU">
                                                         <rect key="frame" x="61.5" y="400" width="696" height="45"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VIDEO URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-tM-3Zf">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VIDEO URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-tM-3Zf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3920,7 +3920,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-FX-AYh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-FX-AYh">
                                         <rect key="frame" x="135" y="92" width="114.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
@@ -3958,7 +3958,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-gz-AIA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-gz-AIA">
                                         <rect key="frame" x="404.5" y="92" width="115" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
@@ -4251,7 +4251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moO-lK-z30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321.6796875" y="259.375"/>
+            <point key="canvasLocation" x="3422" y="267"/>
         </scene>
         <!--Register Control-->
         <scene sceneID="Gvr-us-9ab">
@@ -5513,7 +5513,7 @@
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixN-pd-V2k">
                                                         <rect key="frame" x="340.5" y="250" width="292" height="50"/>
@@ -5549,7 +5549,7 @@
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUU-tU-xpq">
                                                         <rect key="frame" x="0.0" y="375" width="973" height="120"/>
@@ -5733,6 +5733,6 @@
         <image name="untick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zmb-0N-iGw"/>
+        <segue reference="Nlw-eG-AIb"/>
     </inferredMetricsTieBreakers>
 </document>
