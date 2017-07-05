@@ -1154,7 +1154,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwc-dv-C72">
                                         <rect key="frame" x="58" y="275" width="655" height="45"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set your default video URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-aD-8YS">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set your default video URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-aD-8YS">
                                                 <rect key="frame" x="20" y="0.0" width="615" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
@@ -4149,9 +4149,45 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBT-rx-zbK">
                                         <rect key="frame" x="0.0" y="0.0" width="924" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Ok-h1K">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="raf-ON-2F7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                <state key="normal" title="Cancle">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btn_CancelAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="Phf-cR-9op"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZK-vh-emM">
+                                                <rect key="frame" x="824" y="0.0" width="100" height="50"/>
+                                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="hwN-a0-7pY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btn_DoneAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="dbo-uW-9yR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="VZK-vh-emM" secondAttribute="trailing" id="FGy-zc-32a"/>
+                                            <constraint firstItem="d4z-Ok-h1K" firstAttribute="leading" secondItem="wBT-rx-zbK" secondAttribute="leading" id="HIq-Vn-YPT"/>
                                             <constraint firstAttribute="height" constant="50" id="RWe-ut-at8"/>
+                                            <constraint firstItem="d4z-Ok-h1K" firstAttribute="top" secondItem="wBT-rx-zbK" secondAttribute="top" id="aNy-iR-n06"/>
+                                            <constraint firstAttribute="bottom" secondItem="d4z-Ok-h1K" secondAttribute="bottom" id="aPL-Lr-9Cj"/>
+                                            <constraint firstItem="VZK-vh-emM" firstAttribute="top" secondItem="wBT-rx-zbK" secondAttribute="top" id="hWg-AR-MGK"/>
+                                            <constraint firstAttribute="bottom" secondItem="VZK-vh-emM" secondAttribute="bottom" id="snA-DI-QUL"/>
                                         </constraints>
                                     </view>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-kM-mOd">
