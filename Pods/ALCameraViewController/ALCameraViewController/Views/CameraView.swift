@@ -142,6 +142,8 @@ public class CameraView: UIView {
         preview.frame = bounds
 
         layer.addSublayer(preview)
+        
+        self.rotatePreview()
     }
     
     private func cameraWithPosition(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
