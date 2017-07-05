@@ -45,6 +45,22 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
 
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscapeRight
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+   
+//    override func shouldAutorotate() -> Bool {
+//        return true
+//    }
+//    
+//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+//        return [UIInterfaceOrientationMask.landscapeLeft,UIInterfaceOrientationMask.landscapeRight]
+//    }
+    
     // MARK: - Super Class Method
     
     override var navTitle: String{

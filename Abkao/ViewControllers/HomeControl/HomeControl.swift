@@ -85,17 +85,17 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
-        print(setPriceGrid!)
-        
-        setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
-        setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
+        setClv.isHidden=true
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
-        
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
         self.callProductAPI()
-
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setClv.isHidden=false
+        setPriceGridView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -127,8 +127,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func setIntialMethods(){
         
-        setImageGrid = 0
-        setPriceGrid = 0
+        setImageGrid = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+        setPriceGrid = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         leftTbl.delegate = self
         leftTbl.dataSource = self
         rightTbl.delegate = self
@@ -360,9 +360,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 if self.setPriceGrid != 0{
                     if productObj?.arrProductPrice?.count != 0 {
                         self.arrProductPrice = (productObj?.arrProductPrice as! NSMutableArray).mutableCopy() as! NSMutableArray
-                        self.setPriceGridView(priceItems: self.setPriceGrid!)
+                        
                     }
 
+                }else{
+                    
+                    self.setPriceGridView()
                 }
                 
                 self.leftTbl.reloadData()
@@ -372,19 +375,20 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 
                 
             }else{
+                
                 SVProgressHUD.showError(withStatus: responseMessage)
             }
         }
 
     }
     
-    func setPriceGridView(priceItems: Int){
+    func setPriceGridView(){
         
         //let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
         let layout = setClv.collectionViewLayout as! UICollectionViewFlowLayout
         
-        let setItemsCount:Int = priceItems
+        let setItemsCount:Int = setPriceGrid!
         
         //Get device width
         let width = Int(setClv.frame.width) - setItemsCount*setItemsCount
@@ -526,6 +530,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        print(setPriceGrid!)
         
         return setPriceGrid!*setPriceGrid!
     }

@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class SettingsControl: AbstractControl {
 
+    @IBOutlet weak var btn_Camera: UIButton!
+    
     var setGridRows:Int?
     var setPriceRows:Int?
     
@@ -25,6 +27,7 @@ class SettingsControl: AbstractControl {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btn_Camera.isHidden=true
         setViewShadow.viewdraw(setViewShadow.bounds)
         
         setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
