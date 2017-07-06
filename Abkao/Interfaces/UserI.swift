@@ -122,7 +122,7 @@ class UserI: NSObject,NSCoding {
         self.userID = dictData["userid"] as? Int
         self.accountName = dictData["account_name"] as? String ?? ""
         self.accountNo =   dictData["account_number"] as? String ?? ""
-        
+        self.password = dictData["password"] as? String ?? ""
 
     }
     

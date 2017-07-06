@@ -176,15 +176,6 @@ class AuthManager: NSObject {
         let userDefaults: UserDefaults = UserDefaults.standard
         userDefaults.set(encodedSettings, forKey: "currentsetting")
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         //save User Obj in defaults
         let encodedUser = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.profileManager.userObj!)
         userDefaults.set(encodedUser, forKey: "userinfo")

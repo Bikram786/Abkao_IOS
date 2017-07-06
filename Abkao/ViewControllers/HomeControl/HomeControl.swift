@@ -363,10 +363,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                         
                     }
 
-                }else{
+                }else if self.setPriceGrid == 0{
                     
                     self.setPriceGridView()
                 }
+                
                 
                 self.leftTbl.reloadData()
                 self.rightTbl.reloadData()
@@ -385,6 +386,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     func setPriceGridView(){
         
         //let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        if(setPriceGrid! > 0)
+        {
+            
+       setClv.isHidden = false
         
         let layout = setClv.collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -414,6 +420,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
        // setClv.invalidateIntrinsicContentSize()
         
         setClv.reloadData()
+        
+        }
+        else
+        
+        {
+            setClv.isHidden = true
+        }
         
     }
     
