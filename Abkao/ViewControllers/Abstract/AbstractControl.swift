@@ -110,7 +110,9 @@ class AbstractControl: UIViewController {
                 _leftSettingBtn = UIButton(type: .custom)
                 _leftSettingBtn.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
                 _leftSettingBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
-                _leftSettingBtn.addTarget(self, action: #selector(gotoSettingView), for: .touchUpInside)
+                let longGesture = UILongPressGestureRecognizer(target: self, action: Selector(("longTap:")))
+                _leftSettingBtn.addGestureRecognizer(longGesture)
+                //_leftSettingBtn.addTarget(self, action: #selector(gotoSettingView), for: .touchUpInside)
                 _leftSettingBtn.isHidden = !showLeftSetting
             }
             return _leftSettingBtn
@@ -199,6 +201,13 @@ class AbstractControl: UIViewController {
     
     func gotoSettingView() {
         
+    }
+    
+    func longTap(_ sender: UIGestureRecognizer){
+       
+        if sender.state == .began {
+            
+        }
     }
     
     func gotoLoginView() {
