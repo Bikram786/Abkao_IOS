@@ -28,6 +28,9 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         
         scanner = MTBBarcodeScanner(previewView: previewView)
 
+        scanner?.allowTapToFocus = true
+        
+
         
         //self.view.backgroundColor = UIColor.clear
         //setCamera()
