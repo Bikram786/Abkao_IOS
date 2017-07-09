@@ -43,7 +43,7 @@ extension HomeControl:UNUserNotificationCenterDelegate{
 }
 
 
-class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource, YouTubePlayerDelegate {
     
     //MARK: - Local Variables
 
@@ -120,10 +120,47 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         self.performSegue(withIdentifier: "goto_scanbarcodeview", sender: nil)
     }
     
-    override func gotoSettingView() {
+    override func longTap(_ sender: UIGestureRecognizer){
         
-        self.performSegue(withIdentifier: "goto_settingview", sender: nil)
+        if sender.state == .began {
+            gotoSetting()
+        }
     }
+    
+    
+    func gotoSetting(){
+        
+        
+        let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField : UITextField) -> Void in
+            textField.placeholder = "Password"
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+            print("Calncel clicked")
+            return
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            
+            print((alertController.textFields?[0].text)!)
+            
+            if((alertController.textFields?[0].text)! != (ModelManager.sharedInstance.profileManager.userObj?.password)!)
+            {
+                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter correct password")
+                return
+            }
+            
+              self.performSegue(withIdentifier: "goto_settingview", sender: nil)
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
+
     
     func setIntialMethods(){
         
@@ -290,6 +327,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             youTubeView.clear()
             let myVideoURL = NSURL(string: strUrl)
             youTubeView.loadVideoURL(myVideoURL! as URL)
+            youTubeView.delegate=self
             self.perform(#selector(HomeControl.playYoutubeVed), with: nil, afterDelay: 3)
             
         }else{
@@ -306,6 +344,18 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             simpleVideoView.layoutIfNeeded()
             self.perform(#selector(HomeControl.playSimpleVed), with: nil, afterDelay: 0.5)
             
+        }
+        
+        
+    }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+        print(playerState.rawValue)
+        
+        if playerState.rawValue == "0" {
+            
+            print("Video Is Stopped")
         }
         
         

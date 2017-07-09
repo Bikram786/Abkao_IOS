@@ -67,49 +67,66 @@ class SettingsControl: AbstractControl {
             return
         }
         
+        var  dictData : [String : Any] =  [String : Any]()
+        dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+        dictData["price_grid_dimension"] = String(describing: self.setPriceRows!)
+        dictData["image_grid_row"] = String(describing: self.setGridRows!)
+        dictData["video_url"] = self.txt_DefaultURL.text!
         
-        let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addTextField { (textField : UITextField) -> Void in
-            textField.placeholder = "Password"
-            
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-            print("Calncel clicked")
-            return
-        }
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-            
-            print((alertController.textFields?[0].text)!)
-            
-            if((alertController.textFields?[0].text)! != (ModelManager.sharedInstance.profileManager.userObj?.password)!)
-            {
-                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter correct password")
-                return
+        SVProgressHUD.show(withStatus: "Loading.....")
+        ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+            SVProgressHUD.dismiss()
+            if(isSuccess){
+                SVProgressHUD.showError(withStatus: strMessage)
+                self.callProductAPI()
+            }else{
+                SVProgressHUD.showError(withStatus: strMessage)
             }
             
-            var  dictData : [String : Any] =  [String : Any]()
-            dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
-            dictData["price_grid_dimension"] = String(describing: self.setPriceRows!)
-            dictData["image_grid_row"] = String(describing: self.setGridRows!)
-            dictData["video_url"] = self.txt_DefaultURL.text!
-            
-            SVProgressHUD.show(withStatus: "Loading.....")
-            ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
-                SVProgressHUD.dismiss()
-                if(isSuccess){
-                    SVProgressHUD.showError(withStatus: strMessage)
-                    self.callProductAPI()
-                }else{
-                    SVProgressHUD.showError(withStatus: strMessage)
-                }
-                
-            }
         }
-        alertController.addAction(cancelAction)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+        
+//        let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
+//        alertController.addTextField { (textField : UITextField) -> Void in
+//            textField.placeholder = "Password"
+//            
+//            
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+//            print("Calncel clicked")
+//            return
+//        }
+//        
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+//            
+//            print((alertController.textFields?[0].text)!)
+//            
+//            if((alertController.textFields?[0].text)! != (ModelManager.sharedInstance.profileManager.userObj?.password)!)
+//            {
+//                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter correct password")
+//                return
+//            }
+//            
+//            var  dictData : [String : Any] =  [String : Any]()
+//            dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
+//            dictData["price_grid_dimension"] = String(describing: self.setPriceRows!)
+//            dictData["image_grid_row"] = String(describing: self.setGridRows!)
+//            dictData["video_url"] = self.txt_DefaultURL.text!
+//            
+//            SVProgressHUD.show(withStatus: "Loading.....")
+//            ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
+//                SVProgressHUD.dismiss()
+//                if(isSuccess){
+//                    SVProgressHUD.showError(withStatus: strMessage)
+//                    self.callProductAPI()
+//                }else{
+//                    SVProgressHUD.showError(withStatus: strMessage)
+//                }
+//                
+//            }
+//        }
+//        alertController.addAction(cancelAction)
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
         
         
     }
