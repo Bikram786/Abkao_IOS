@@ -134,6 +134,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addTextField { (textField : UITextField) -> Void in
             textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+            
             
             
         }
@@ -352,11 +354,9 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
         
-        print(playerState.rawValue)
-        
         if playerState.rawValue == "0" {
             
-            print("Video Is Stopped")
+            getDayVideos()
         }
         
         
@@ -364,7 +364,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func playw(){
         
-        print("Video Is Stopped")
+        getDayVideos()
         
     }
     

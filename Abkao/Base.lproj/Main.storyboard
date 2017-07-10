@@ -5793,7 +5793,7 @@
         <image name="untick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Zmb-0N-iGw"/>
         <segue reference="Fng-wD-aR9"/>
-        <segue reference="Nlw-eG-AIb"/>
     </inferredMetricsTieBreakers>
 </document>
