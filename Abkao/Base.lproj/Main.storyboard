@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -192,7 +192,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-7W-hjT">
-                                        <rect key="frame" x="239" y="280" width="131" height="28"/>
+                                        <rect key="frame" x="234" y="280" width="141" height="28"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="13"/>
                                         <state key="normal" title="FORGOT PASSWORD ?">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,7 +202,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-tJ-3up">
-                                        <rect key="frame" x="239" y="303" width="131" height="2"/>
+                                        <rect key="frame" x="234" y="303" width="141" height="2"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="g8h-Hd-HYT"/>
@@ -212,13 +212,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNF-7o-ulb">
-                                        <rect key="frame" x="228.5" y="323" width="151.5" height="21"/>
+                                        <rect key="frame" x="213.5" y="323" width="181.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-i4-NPV">
-                                        <rect key="frame" x="278.5" y="349" width="51" height="33"/>
+                                        <rect key="frame" x="274.5" y="348" width="59" height="32"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -817,10 +817,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53T-ee-ncm">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="451-XR-Z8a">
                                 <rect key="frame" x="964" y="74" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -836,16 +832,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="53T-ee-ncm" secondAttribute="trailing" id="59F-Wn-Dji"/>
                             <constraint firstAttribute="trailing" secondItem="451-XR-Z8a" secondAttribute="trailing" constant="10" id="YS6-0o-KIH"/>
-                            <constraint firstItem="JRd-jo-vsZ" firstAttribute="top" secondItem="53T-ee-ncm" secondAttribute="bottom" id="gfN-tr-c0N"/>
-                            <constraint firstItem="53T-ee-ncm" firstAttribute="leading" secondItem="8Y1-1x-Vjv" secondAttribute="leading" id="idr-bp-ndB"/>
-                            <constraint firstItem="53T-ee-ncm" firstAttribute="top" secondItem="6cV-fU-JOK" secondAttribute="bottom" id="uhl-N9-8S2"/>
                             <constraint firstItem="451-XR-Z8a" firstAttribute="top" secondItem="6cV-fU-JOK" secondAttribute="bottom" constant="10" id="w6A-ko-mnP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="previewView" destination="53T-ee-ncm" id="XuF-IA-sQj"/>
+                        <outlet property="btnFlip" destination="451-XR-Z8a" id="2pB-QS-HhR"/>
                         <segue destination="hdH-Ck-JY9" kind="show" identifier="goto_productdetailsvc" id="C4B-4k-TB6"/>
                     </connections>
                 </viewController>
@@ -1059,7 +1051,7 @@
                                         <rect key="frame" x="58" y="155" width="655" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE GRID ROWS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZE-zs-E8g">
-                                                <rect key="frame" x="20" y="0.0" width="149.5" height="45"/>
+                                                <rect key="frame" x="20" y="0.0" width="155.5" height="45"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1114,7 +1106,7 @@
                                         <rect key="frame" x="58" y="215" width="655" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE GRID DIMENSION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4A-EO-2Qd">
-                                                <rect key="frame" x="20" y="0.0" width="188.5" height="45"/>
+                                                <rect key="frame" x="20" y="0.0" width="195" height="45"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1547,20 +1539,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2P-kg-cHF">
-                                                <rect key="frame" x="209" y="22.5" width="0.0" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2P-kg-cHF">
+                                                <rect key="frame" x="216" y="22.5" width="120" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT NO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-Eh-d2l">
-                                                <rect key="frame" x="644" y="11.5" width="126.5" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ACCOUNT NO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-Eh-d2l">
+                                                <rect key="frame" x="519" y="11.5" width="126.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foy-9k-fRn">
-                                                <rect key="frame" x="773" y="22.5" width="0.0" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foy-9k-fRn">
+                                                <rect key="frame" x="654" y="22.5" width="120" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1579,15 +1571,15 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="W7F-k0-Qgf" firstAttribute="top" secondItem="HQB-Eh-d2l" secondAttribute="bottom" constant="10" id="BmM-KN-zMy"/>
-                                            <constraint firstItem="D2P-kg-cHF" firstAttribute="leading" secondItem="o7M-7X-UyD" secondAttribute="trailing" constant="2" id="FXa-Tt-ZHa"/>
+                                            <constraint firstItem="D2P-kg-cHF" firstAttribute="leading" secondItem="o7M-7X-UyD" secondAttribute="trailing" constant="9" id="FXa-Tt-ZHa"/>
                                             <constraint firstItem="foy-9k-fRn" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="Gby-lN-QK2"/>
                                             <constraint firstItem="W7F-k0-Qgf" firstAttribute="leading" secondItem="W4k-0Z-vvA" secondAttribute="leading" id="PiA-MX-WdG"/>
                                             <constraint firstAttribute="trailing" secondItem="W7F-k0-Qgf" secondAttribute="trailing" id="bXE-V1-QUS"/>
-                                            <constraint firstAttribute="trailing" secondItem="foy-9k-fRn" secondAttribute="trailing" id="goD-9I-02U"/>
+                                            <constraint firstAttribute="trailing" secondItem="foy-9k-fRn" secondAttribute="trailing" constant="-1" id="goD-9I-02U"/>
                                             <constraint firstItem="o7M-7X-UyD" firstAttribute="leading" secondItem="W4k-0Z-vvA" secondAttribute="leading" id="iz3-Tx-uFm"/>
                                             <constraint firstItem="D2P-kg-cHF" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="qEU-Od-gRh"/>
                                             <constraint firstItem="o7M-7X-UyD" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="qTi-XO-9XS"/>
-                                            <constraint firstItem="foy-9k-fRn" firstAttribute="leading" secondItem="HQB-Eh-d2l" secondAttribute="trailing" constant="2" id="tKC-2j-nda"/>
+                                            <constraint firstItem="foy-9k-fRn" firstAttribute="leading" secondItem="HQB-Eh-d2l" secondAttribute="trailing" constant="8.5" id="tKC-2j-nda"/>
                                             <constraint firstItem="HQB-Eh-d2l" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="v4q-5J-dWU"/>
                                         </constraints>
                                     </view>
@@ -1751,6 +1743,8 @@
                     </view>
                     <connections>
                         <outlet property="itemNameView" destination="qPL-a2-giz" id="jTh-pB-1fn"/>
+                        <outlet property="lbl_AccountNo" destination="foy-9k-fRn" id="5zn-js-fw9"/>
+                        <outlet property="lbl_BarcodeNo" destination="D2P-kg-cHF" id="LmB-Bl-AIC"/>
                         <outlet property="lbl_ItemName" destination="8m8-fd-DEp" id="MZz-yi-YLa"/>
                         <outlet property="lbl_LocationName" destination="GfJ-Zp-haG" id="tGG-fo-scJ"/>
                         <outlet property="lbl_Price" destination="bdc-Xg-7m4" id="UL4-4U-sAt"/>
@@ -2748,7 +2742,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3878,7 +3872,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqt-IP-eCx">
-                                <rect key="frame" x="50" y="159" width="924" height="232.5"/>
+                                <rect key="frame" x="50" y="159" width="924" height="231.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCl-VJ-Kp7">
                                         <rect key="frame" x="437" y="0.0" width="50" height="92"/>
@@ -3890,7 +3884,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-XL-9b5">
-                                        <rect key="frame" x="343" y="29" width="94" height="35"/>
+                                        <rect key="frame" x="339" y="29" width="98" height="35"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                         <state key="normal" title="Start At " image="dropdown">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -3900,7 +3894,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av8-Ib-Onr">
-                                        <rect key="frame" x="487" y="29" width="94" height="35"/>
+                                        <rect key="frame" x="487" y="29" width="98" height="35"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
                                         <state key="normal" title="End At " image="dropdown">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -3910,13 +3904,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy5-3v-hWw">
-                                        <rect key="frame" x="0.0" y="92" width="115" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="92" width="115" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnf-bq-Xgu">
-                                        <rect key="frame" x="42" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="42" y="136.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="W2K-1A-4C6"/>
                                             <constraint firstAttribute="width" constant="30" id="WBU-3i-Mb5"/>
@@ -3927,7 +3921,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwx-IZ-UKj">
-                                        <rect key="frame" x="115" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="115" y="0.0" width="20" height="231.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="bmW-Fj-mdq"/>
                                         </constraints>
@@ -3936,115 +3930,115 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-FX-AYh">
-                                        <rect key="frame" x="135" y="92" width="114.5" height="25.5"/>
+                                        <rect key="frame" x="135" y="92" width="114.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="how-zQ-RhK">
-                                        <rect key="frame" x="177" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="177" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="tJY-5G-8AN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKK-sx-lgF">
-                                        <rect key="frame" x="249.5" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="249.5" y="0.0" width="20" height="231.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pap-yD-trD">
-                                        <rect key="frame" x="269.5" y="92" width="115" height="25.5"/>
+                                        <rect key="frame" x="269.5" y="92" width="115" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nll-Sb-raE">
-                                        <rect key="frame" x="312" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="312" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="aC0-sJ-uTP"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C05-Y3-8OU">
-                                        <rect key="frame" x="384.5" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="384.5" y="0.0" width="20" height="231.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-gz-AIA">
-                                        <rect key="frame" x="404.5" y="92" width="115" height="25.5"/>
+                                        <rect key="frame" x="404.5" y="92" width="115" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP4-ho-UiJ">
-                                        <rect key="frame" x="447" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="447" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="GAy-N8-1LL"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3m-Fq-4Kd">
-                                        <rect key="frame" x="519.5" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="519.5" y="0.0" width="20" height="231.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRe-EI-w1H">
-                                        <rect key="frame" x="539.5" y="92" width="115" height="25.5"/>
+                                        <rect key="frame" x="539.5" y="92" width="115" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kw-BZ-Wk2">
-                                        <rect key="frame" x="582" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="582" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="gf1-Uj-ZDG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mn-dJ-Xvx">
-                                        <rect key="frame" x="654.5" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="654.5" y="0.0" width="20" height="231.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1I-te-FJE">
-                                        <rect key="frame" x="674.5" y="92" width="114.5" height="25.5"/>
+                                        <rect key="frame" x="674.5" y="92" width="114.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-mF-jwT">
-                                        <rect key="frame" x="716" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="716" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="5RV-ga-McU"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvv-mW-wkQ">
-                                        <rect key="frame" x="789" y="0.0" width="20" height="232.5"/>
+                                        <rect key="frame" x="789" y="0.0" width="20" height="231.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5q-ho-5xM">
-                                        <rect key="frame" x="809" y="92" width="115" height="25.5"/>
+                                        <rect key="frame" x="809" y="92" width="115" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24L-u1-aTr">
-                                        <rect key="frame" x="851" y="137.5" width="30" height="30"/>
+                                        <rect key="frame" x="851" y="136.5" width="30" height="30"/>
                                         <state key="normal" image="untick"/>
                                         <connections>
                                             <action selector="btn_SetVideoTimeAction:" destination="7TY-1b-wIi" eventType="touchUpInside" id="RkU-ZP-k91"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Video URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jo3-fI-KM7">
-                                        <rect key="frame" x="23" y="177.5" width="878" height="45"/>
+                                        <rect key="frame" x="23" y="176.5" width="878" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="15"/>
@@ -4138,7 +4132,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-r3-CXw">
-                                <rect key="frame" x="50" y="391.5" width="924" height="100"/>
+                                <rect key="frame" x="50" y="390.5" width="924" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inX-cV-2x4">
                                         <rect key="frame" x="384.5" y="30" width="155" height="40"/>
@@ -4160,7 +4154,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEo-vs-E2M">
-                                <rect key="frame" x="50" y="491.5" width="924" height="276.5"/>
+                                <rect key="frame" x="50" y="490.5" width="924" height="277.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBT-rx-zbK">
                                         <rect key="frame" x="0.0" y="0.0" width="924" height="50"/>
@@ -4206,7 +4200,7 @@
                                         </constraints>
                                     </view>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-kM-mOd">
-                                        <rect key="frame" x="0.0" y="50" width="924" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="924" height="217.5"/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <date key="date" timeIntervalSinceReferenceDate="520049873.58145398">
                                             <!--2017-06-25 02:17:53 +0000-->
@@ -5793,7 +5787,7 @@
         <image name="untick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Zmb-0N-iGw"/>
         <segue reference="Fng-wD-aR9"/>
-        <segue reference="Nlw-eG-AIb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,10 +9,44 @@
 import UIKit
 import AVFoundation
 import SVProgressHUD
-import MTBBarcodeScanner
+//import MTBBarcodeScanner
+import ScanditBarcodeScanner
 
-class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDelegate {
+extension BarCodeScannerControl: SBSScanDelegate {
+    // This delegate method of the SBSScanDelegate protocol needs to be implemented by
+    // every app that uses the Scandit Barcode Scanner and this is where the custom application logic
+    // goes. In the example below, we are just showing an alert view with the result.
+    func barcodePicker(_ picker: SBSBarcodePicker, didScan session: SBSScanSession) {
+        // Call pauseScanning on the session (and on the session queue) to immediately pause scanning
+        // and close the camera. This is the preferred way to pause scanning barcodes from the
+        // SBSScanDelegate as it is made sure that no new codes are scanned.
+        // When calling pauseScanning on the picker, another code may be scanned before pauseScanning
+        // has completely paused the scanning process.
+        session.pauseScanning()
+        
+        let code = session.newlyRecognizedCodes[0]
+        // The barcodePicker(_:didScan:) delegate method is invoked from a picker-internal queue. To
+        // display the results in the UI, you need to dispatch to the main queue. Note that it's not
+        // allowed to use SBSScanSession in the dispatched block as it's only allowed to access the
+        // SBSScanSession inside the barcodePicker(_:didScan:) callback. It is however safe to
+        // use results returned by session.newlyRecognizedCodes etc.
+        DispatchQueue.main.async {
+            
+            self.callBarcodeAPI(barcodeValue: code.data!)
+            
+        }
+    }
+}
+
+
+
+class BarCodeScannerControl: AbstractControl {
     
+    var barcodePicker: SBSBarcodePicker?
+    let settings = SBSScanSettings.default()
+    
+    @IBOutlet weak var btnFlip: UIButton!
+    /*
     @IBOutlet var previewView: UIView!
     var scanner: MTBBarcodeScanner?
     
@@ -22,11 +56,14 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     var qrCodeFrameView:UIView?
     
     let supportedCodeTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scanner = MTBBarcodeScanner(previewView: previewView)
+        
+        setupScanner()
+        //scanner = MTBBarcodeScanner(previewView: previewView)
 
         scanner?.allowTapToFocus = true
         
@@ -46,30 +83,29 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setScanner()
+        //setScanner()
         
-//        if (captureSession?.isRunning == false) {
-//            captureSession?.startRunning();
-//        }
+
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.scanner?.stopScanning()
+       // self.scanner?.stopScanning()
         
 //        if (captureSession?.isRunning == true) {
 //            captureSession?.stopRunning();
 //        }
     }
     
+    
     @IBAction func btn_FlipCameraAction(_ sender: UIButton) {
      
-        self.scanner?.flipCamera()
+         barcodePicker?.switchCameraFacing()
     }
     
-    
+    /*
     func setFrontCamera()
     {
         if(self.scanner?.camera == MTBCamera.back)
@@ -83,6 +119,8 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
     override var showRight: Bool{
         return false
     }
+    
+    
     
     func setScanner(){
         
@@ -236,27 +274,31 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
             }
         }
     }
+    */
     
     func callBarcodeAPI(barcodeValue: String) {
-        
-        let strURL = (ModelManager.sharedInstance.profileManager.userObj?.accountNo)! + "," + barcodeValue
-        
-        print(strURL)
+
         
         SVProgressHUD.show(withStatus: "Loading.......")
         
-        ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeURL: strURL) { (userObj, isSuccess, strMessage) in
+        var barcodDict  = [String : Any]()
+        barcodDict["account_number"] = (ModelManager.sharedInstance.profileManager.userObj?.accountNo)
+        barcodDict["barcode_no"] = barcodeValue
+        
+        ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeDict: barcodDict) { (barCodeObj, isSuccess, strMessage) in
             
             SVProgressHUD.dismiss()
             
             if(isSuccess)
             {
                 let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
-                myVC.getPreviousProducts = userObj!
+                myVC.productBarCode = barcodeValue
+                myVC.getPreviousProducts = barCodeObj!
                 self.navigationController?.pushViewController(myVC, animated: true)
             }else{
                 
-                self.setScanner()
+                self.barcodePicker?.resumeScanning()
+                
                 SVProgressHUD.showError(withStatus: strMessage)
             }
             
@@ -268,5 +310,46 @@ class BarCodeScannerControl: AbstractControl, AVCaptureMetadataOutputObjectsDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    private func setupScanner() {
+        // Scandit Barcode Scanner Integration
+        // The following method calls illustrate how the Scandit Barcode Scanner can be integrated
+        // into your app.
+        
+        // Create the scan settings and enabling some symbologies
+        
+        settings.cameraFacingPreference = .front
+        settings.areaSettingsLandscape = SBSScanAreaSettings.defaultLandscape()
+        
+        let symbologies: Set<SBSSymbology> = [.ean8, .ean13, .qr]
+        for symbology in symbologies {
+            settings.setSymbology(symbology, enabled: true)
+        }
+        
+        // Create the barcode picker with the settings just created
+        barcodePicker = SBSBarcodePicker(settings:settings)
+        barcodePicker?.overlayController.beepEnabled()
+        barcodePicker?.overlayController.setCameraSwitchVisibility(.always)
+        // Add the barcode picker as a child view controller
+        
+        addChildViewController(barcodePicker!)
+        view.addSubview((barcodePicker?.view)!)
+        
+
+        self.view.addSubview(btnFlip)
+        
+        
+        
+        barcodePicker?.didMove(toParentViewController: self)
+        
+        // Set the allowed interface orientations. The value UIInterfaceOrientationMaskAll is the
+        // default and is only shown here for completeness.
+        barcodePicker?.allowedInterfaceOrientations = .all
+        // Set the delegate to receive scan event callbacks
+        barcodePicker?.scanDelegate = self
+        barcodePicker?.startScanning()
+    }
+    
+
 }
 

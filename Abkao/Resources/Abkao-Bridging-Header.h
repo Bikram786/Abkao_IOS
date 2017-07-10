@@ -11,4 +11,6 @@
 
 #import "GKImagePicker.h"
 
+#import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
+
 #endif

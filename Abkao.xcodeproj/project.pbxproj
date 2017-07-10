@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1840BA3B1F13646400CF01F7 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1840BA381F13646400CF01F7 /* CHANGELOG.txt */; };
+		1840BA3C1F13646400CF01F7 /* LICENSE-2.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */; };
+		1840BA3D1F13646400CF01F7 /* ScanditBarcodeScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */; };
+		1840BA3F1F13683400CF01F7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA3E1F13683400CF01F7 /* libc++.tbd */; };
+		1840BA411F13684000CF01F7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA401F13684000CF01F7 /* libz.tbd */; };
+		1840BA431F13685200CF01F7 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA421F13685200CF01F7 /* libiconv.tbd */; };
 		1883FE5C1F0B61B200BCAD7D /* String+ContactValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883FE5B1F0B61B200BCAD7D /* String+ContactValidation.swift */; };
 		18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797A1F038E5200C0C837 /* CountryI.swift */; };
 		18B8797D1F038E7600C0C837 /* StateI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797C1F038E7600C0C837 /* StateI.swift */; };
@@ -90,6 +96,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1840BA381F13646400CF01F7 /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
+		1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-2.0.txt"; sourceTree = "<group>"; };
+		1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ScanditBarcodeScanner.framework; sourceTree = "<group>"; };
+		1840BA3E1F13683400CF01F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1840BA401F13684000CF01F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1840BA421F13685200CF01F7 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		1883FE5B1F0B61B200BCAD7D /* String+ContactValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ContactValidation.swift"; sourceTree = "<group>"; };
 		18B8797A1F038E5200C0C837 /* CountryI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryI.swift; sourceTree = "<group>"; };
 		18B8797C1F038E7600C0C837 /* StateI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateI.swift; sourceTree = "<group>"; };
@@ -188,13 +200,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1840BA431F13685200CF01F7 /* libiconv.tbd in Frameworks */,
+				1840BA411F13684000CF01F7 /* libz.tbd in Frameworks */,
+				1840BA3F1F13683400CF01F7 /* libc++.tbd in Frameworks */,
 				F496B4BCF744F163B8018596 /* Pods_Abkao.framework in Frameworks */,
+				1840BA3D1F13646400CF01F7 /* ScanditBarcodeScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1840BA371F13646400CF01F7 /* ScanditSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1840BA381F13646400CF01F7 /* CHANGELOG.txt */,
+				1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */,
+				1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */,
+			);
+			path = ScanditSDK;
+			sourceTree = "<group>";
+		};
 		B6131FA11EF7C41300173984 /* UIAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +353,7 @@
 		B659DD961EF05BA400409825 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1840BA371F13646400CF01F7 /* ScanditSDK */,
 				467E2F9B1EFFEB1A008A92F2 /* empty.wav */,
 				B6131FA61EF7CA8300173984 /* GKImagePicker */,
 				B6131FA11EF7C41300173984 /* UIAlertView */,
@@ -550,6 +577,9 @@
 		CC45D00BECDDD2126B707732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1840BA421F13685200CF01F7 /* libiconv.tbd */,
+				1840BA401F13684000CF01F7 /* libz.tbd */,
+				1840BA3E1F13683400CF01F7 /* libc++.tbd */,
 				49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */,
 			);
 			name = Frameworks;
@@ -599,7 +629,7 @@
 				TargetAttributes = {
 					B659DD6D1EF0568000409825 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = U34S8JX9SK;
+						DevelopmentTeam = 49GS89E5L4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -642,10 +672,12 @@
 				B6131FC31EF7CA8300173984 /* PLCameraSheetButton.png in Resources */,
 				B6131FC81EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png in Resources */,
 				B659DD7C1EF0568100409825 /* Assets.xcassets in Resources */,
+				1840BA3B1F13646400CF01F7 /* CHANGELOG.txt in Resources */,
 				B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */,
 				B6131FC51EF7CA8300173984 /* PLCameraSheetButtonPressed.png in Resources */,
 				B659DD771EF0568000409825 /* Main.storyboard in Resources */,
 				B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */,
+				1840BA3C1F13646400CF01F7 /* LICENSE-2.0.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +862,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -874,7 +906,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -889,11 +921,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hiram Mac (KX5D4F498C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U34S8JX9SK;
+				DEVELOPMENT_TEAM = 49GS89E5L4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
+				);
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkaoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -907,11 +943,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U34S8JX9SK;
+				DEVELOPMENT_TEAM = 49GS89E5L4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
+				);
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkaoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

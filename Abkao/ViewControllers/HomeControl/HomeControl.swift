@@ -134,6 +134,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addTextField { (textField : UITextField) -> Void in
             textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+            
             
             
         }
@@ -342,6 +344,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             simpleVideoView.addSubview(playerController.view)
             playerController.view.frame = simpleVideoView.frame
             simpleVideoView.layoutIfNeeded()
+            NotificationCenter.default.addObserver(self, selector: #selector(HomeControl.playw), name:NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             self.perform(#selector(HomeControl.playSimpleVed), with: nil, afterDelay: 0.5)
             
         }
@@ -351,13 +354,17 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
         
-        print(playerState.rawValue)
-        
         if playerState.rawValue == "0" {
             
-            print("Video Is Stopped")
+            getDayVideos()
         }
         
+        
+    }
+    
+    func playw(){
+        
+        getDayVideos()
         
     }
     
