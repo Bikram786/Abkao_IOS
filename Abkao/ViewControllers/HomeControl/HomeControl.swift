@@ -342,6 +342,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             simpleVideoView.addSubview(playerController.view)
             playerController.view.frame = simpleVideoView.frame
             simpleVideoView.layoutIfNeeded()
+            NotificationCenter.default.addObserver(self, selector: #selector(HomeControl.playw), name:NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             self.perform(#selector(HomeControl.playSimpleVed), with: nil, afterDelay: 0.5)
             
         }
@@ -358,6 +359,12 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             print("Video Is Stopped")
         }
         
+        
+    }
+    
+    func playw(){
+        
+        print("Video Is Stopped")
         
     }
     
