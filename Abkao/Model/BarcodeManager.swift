@@ -10,43 +10,28 @@ import UIKit
 
 class BarcodeManager: NSObject {
     
-    func scanBarcode(barcodeURL: String, handler : @escaping (BarcodeI?, Bool , String) -> Void)
+    func scanBarcode(barcodeDict: [String : Any], handler : @escaping (BarcodeI?, Bool , String) -> Void)
     {
-        BaseWebAccessLayer.getRequestURLWithDictionaryResponse(requestType: .post, strURL: barcodeURL, headers: true, params: nil, result:
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "barcode", headers: true, params: barcodeDict, result:
             {
                 (jsonDict,statusCode) in
-                // success code      
-                                
-                if jsonDict != "null" {
-                    
-                    let data = self.convertToDictionary(text: jsonDict )
-                    let userObj = BarcodeI()
-                    userObj.setProductPriceData(productInfoObj: data! as [String : AnyObject])
-                    handler(userObj , true ,"Response sucessfully")
-                    
+                // success code
+                
+                print(jsonDict)
+                
+                if(jsonDict.value(forKey: "success") as! Bool)
+                {
+                    let barcodeObj = BarcodeI()
+                    barcodeObj.setProductPriceData(productInfoObj: jsonDict as! [String : AnyObject])
+                    handler(barcodeObj , true ,"Response sucessfully")
+                
                 }else{
-                    
+                
                     handler(nil , false ,"Product information not available")
                 }
-                
-                
-                
-                
-             
-                
-                
         })
     }
     
-    func convertToDictionary(text: String) -> [String: Any]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
+   
     
 }

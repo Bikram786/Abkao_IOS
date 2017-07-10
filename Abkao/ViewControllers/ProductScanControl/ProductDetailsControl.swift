@@ -10,14 +10,20 @@ import UIKit
 
 class ProductDetailsControl: AbstractControl {
     
+    var productBarCode : String?
+    var getPreviousProducts : BarcodeI?
     
-    var getPreviousProducts = BarcodeI()
     
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var locationNameView: UIView!
     @IBOutlet weak var itemNameView: UIView!
     @IBOutlet weak var priceView: UIView!
     @IBOutlet weak var promotionView: UIView!
+    
+    
+    @IBOutlet weak var lbl_BarcodeNo: UILabel!
+    @IBOutlet weak var lbl_AccountNo: UILabel!
+    
     @IBOutlet weak var lbl_LocationName: UILabel!
     @IBOutlet weak var lbl_ItemName: UILabel!
     @IBOutlet weak var lbl_Price: UILabel!
@@ -30,14 +36,31 @@ class ProductDetailsControl: AbstractControl {
     
     func setIntialView() {
         
-        lbl_LocationName?.text = getPreviousProducts.productLocation!
-        lbl_ItemName?.text = getPreviousProducts.productName!
-        lbl_Price?.text = getPreviousProducts.productRate!
-        if getPreviousProducts.productPromotionPrice! != 0 && getPreviousProducts.productPromotionQTY! != 0{
-            let twoDecimalPlaces = String(format: "%.2f", getPreviousProducts.productPromotionPrice!)
-            let finalText = String(getPreviousProducts.productPromotionQTY!) + " for $" + String(twoDecimalPlaces)
-            lbl_PromotionText?.text = finalText
+        lbl_BarcodeNo.text = productBarCode
+        
+        lbl_AccountNo.text = ModelManager.sharedInstance.profileManager.userObj?.accountNo
+        
+        if let proLocation = getPreviousProducts?.productLocation
+        {
+            lbl_LocationName?.text = proLocation
         }
+        
+        if let proName = getPreviousProducts?.productName
+        {
+            lbl_ItemName?.text = proName
+        }
+        
+        if let proPrice = getPreviousProducts?.productPromotionPrice
+        {
+            lbl_Price?.text = proPrice
+        }
+        
+        if let proPromotionText = getPreviousProducts?.productPromotionText
+        {
+            lbl_PromotionText?.text = proPromotionText
+        }
+        
+        
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()
         itemNameView.setViewBoarder()

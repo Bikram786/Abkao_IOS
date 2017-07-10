@@ -10,6 +10,11 @@ import UIKit
 import CoreData
 import UserNotifications
 import IQKeyboardManagerSwift
+import ScanditBarcodeScanner
+
+
+private let scanditBarcodeScannerAppKey = Constants.scannerKey
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         //self.printFonts()
+        
+        SBSLicense.setAppKey(scanditBarcodeScannerAppKey)
         
         IQKeyboardManager.sharedManager().enable = true
         
