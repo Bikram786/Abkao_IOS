@@ -629,7 +629,7 @@
 				TargetAttributes = {
 					B659DD6D1EF0568000409825 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 49GS89E5L4;
+						DevelopmentTeam = U34S8JX9SK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -921,7 +921,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hiram Mac (KX5D4F498C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49GS89E5L4;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
@@ -929,7 +929,7 @@
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkaoa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -943,7 +943,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49GS89E5L4;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
@@ -951,7 +951,7 @@
 				INFOPLIST_FILE = Abkao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkaoa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.abkao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

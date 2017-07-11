@@ -62,10 +62,10 @@ class BarCodeScannerControl: AbstractControl {
         super.viewDidLoad()
         
         
-        setupScanner()
+        
         //scanner = MTBBarcodeScanner(previewView: previewView)
 
-        scanner?.allowTapToFocus = true
+        //scanner?.allowTapToFocus = true
         
 
         
@@ -83,8 +83,7 @@ class BarCodeScannerControl: AbstractControl {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //setScanner()
-        
+        setupScanner()
 
     }
     
@@ -337,7 +336,6 @@ class BarCodeScannerControl: AbstractControl {
         
 
         self.view.addSubview(btnFlip)
-        
         
         
         barcodePicker?.didMove(toParentViewController: self)
