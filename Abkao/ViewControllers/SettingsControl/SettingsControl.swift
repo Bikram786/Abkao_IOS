@@ -37,16 +37,20 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         
         //Set ColorPicker Delegate
         
+        viewColorPicker.backgroundColor = UIColor.black
+        
         let neatColorPicker = ChromaColorPicker(frame: viewColorPicker.bounds)
         neatColorPicker.delegate = self
         neatColorPicker.padding = 5
         neatColorPicker.stroke = 5
         
-        neatColorPicker.hexLabel.textColor = UIColor.red
+        neatColorPicker.hexLabel.textColor = UIColor.white
         
         viewColorPicker.addSubview(neatColorPicker)
         viewColorPicker.layoutIfNeeded()
         view.layoutIfNeeded()
+        
+        
         
         btn_Camera.isHidden = true
         viewColorPicker.isHidden=true
@@ -75,7 +79,7 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         selectedBgColorHex = hexString
         print(hexString)
         
-        btnSelectColor.backgroundColor = color
+        //btnSelectColor.backgroundColor = color
         viewColorPicker.isHidden = true
     }
     
