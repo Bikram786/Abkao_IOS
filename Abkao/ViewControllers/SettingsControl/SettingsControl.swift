@@ -9,10 +9,15 @@
 import UIKit
 import SVProgressHUD
 
-class SettingsControl: AbstractControl {
+import ChromaColorPicker
 
+class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
+
+    @IBOutlet weak var viewColorPicker: UIView!
+    
     @IBOutlet weak var btn_Camera: UIButton!
     
+    @IBOutlet weak var btnSelectColor: UIButton!
     var setGridRows:Int?
     var setPriceRows:Int?
     
@@ -27,7 +32,17 @@ class SettingsControl: AbstractControl {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btn_Camera.isHidden=true
+        //Set ColorPicker Delegate
+        
+        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        neatColorPicker.delegate = self
+        neatColorPicker.padding = 5
+        neatColorPicker.stroke = 3
+        neatColorPicker.hexLabel.textColor = UIColor.red
+        
+        viewColorPicker.addSubview(neatColorPicker)
+        
+        btn_Camera.isHidden = true
         setViewShadow.viewdraw(setViewShadow.bounds)
         
         setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
@@ -45,6 +60,20 @@ class SettingsControl: AbstractControl {
         callProductAPI()
         
     }
+    
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor)
+    {
+        btnSelectColor.backgroundColor = color
+        viewColorPicker.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super .viewWillAppear(true)
+        
+        viewColorPicker.isHidden = true
+    }
+    
 
     // MARK: - Super Class Method
     
@@ -234,6 +263,15 @@ class SettingsControl: AbstractControl {
         
         saveSetting()
     }
+    
+    
+    
+    
+    @IBAction func selectColor(_ sender: UIButton) {
+        
+        viewColorPicker.isHidden = false
+    }
+    
     
     
     override func didReceiveMemoryWarning() {

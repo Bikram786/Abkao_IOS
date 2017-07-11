@@ -14,12 +14,14 @@ class Settingsl: NSObject,NSCoding {
     public var imageGridRow: Int?
     public var priceGridDimention: Int?
     public var videoURL: String?
+    public var backGroundColor : String?
   
     
     override init(){
         self.imageGridRow = 0
         self.priceGridDimention = 0
         self.videoURL = ""
+        self.backGroundColor = ""
     }
     
     
@@ -27,6 +29,7 @@ class Settingsl: NSObject,NSCoding {
         self.imageGridRow = 0
         self.priceGridDimention = 0
         self.videoURL = ""
+        self.backGroundColor = ""
         }
     
     required init(coder decoder: NSCoder)
@@ -34,6 +37,7 @@ class Settingsl: NSObject,NSCoding {
         self.videoURL = decoder.decodeObject(forKey: "videoURL") as? String ?? ""
         self.priceGridDimention = decoder.decodeObject(forKey: "priceGridDimention") as? Int ?? decoder.decodeInteger(forKey: "priceGridDimention")
         self.imageGridRow = decoder.decodeObject(forKey: "imageGridRow") as? Int ?? decoder.decodeInteger(forKey: "imageGridRow")
+        self.backGroundColor = decoder.decodeObject(forKey: "backgroundColor") as? String ?? ""
     }
     
     
@@ -42,6 +46,7 @@ class Settingsl: NSObject,NSCoding {
         coder.encode(videoURL, forKey: "videoURL")
         coder.encode(priceGridDimention, forKey: "priceGridDimention")
         coder.encode(imageGridRow, forKey: "imageGridRow")
+        coder.encode(imageGridRow, forKey: "backgroundColor")
     }
     
 }

@@ -60,6 +60,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     var setImageGrid : Int?
     var setPriceGrid : Int?
     var defaultUrl : String?
+    var setBackgroundColo
     
     var arrProductDes = NSMutableArray()
     var arrProductPrice = NSMutableArray()

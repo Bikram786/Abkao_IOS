@@ -60,12 +60,13 @@ class ProductDetailsControl: AbstractControl {
             lbl_PromotionText?.text = proPromotionText
         }
         
-        
+        /*
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()
         itemNameView.setViewBoarder()
         priceView.setViewBoarder()
         promotionView.setViewBoarder()
+      */
     }
     
     

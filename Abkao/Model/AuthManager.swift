@@ -170,6 +170,7 @@ class AuthManager: NSObject {
         ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow = Int((dictData["image_grid_row"] as? String)!)
         ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention = Int((dictData["price_grid_dimension"] as? String)!)
         ModelManager.sharedInstance.settingsManager.settingObj?.videoURL = (dictData["video_url"] as? String ?? "")
+        ModelManager.sharedInstance.settingsManager.settingObj?.backGroundColor = (dictData["backgroundColor"] as? String ?? "")
         
         //save Settings Obj in defaults
         let encodedSettings = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.settingsManager.settingObj!)
