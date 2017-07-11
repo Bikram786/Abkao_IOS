@@ -37,7 +37,7 @@ class Settingsl: NSObject,NSCoding {
         self.videoURL = decoder.decodeObject(forKey: "videoURL") as? String ?? ""
         self.priceGridDimention = decoder.decodeObject(forKey: "priceGridDimention") as? Int ?? decoder.decodeInteger(forKey: "priceGridDimention")
         self.imageGridRow = decoder.decodeObject(forKey: "imageGridRow") as? Int ?? decoder.decodeInteger(forKey: "imageGridRow")
-        self.backGroundColor = decoder.decodeObject(forKey: "backgroundColor") as? String ?? ""
+        self.backGroundColor = decoder.decodeObject(forKey: "backGroundColor") as? String ?? ""
     }
     
     
@@ -46,7 +46,7 @@ class Settingsl: NSObject,NSCoding {
         coder.encode(videoURL, forKey: "videoURL")
         coder.encode(priceGridDimention, forKey: "priceGridDimention")
         coder.encode(imageGridRow, forKey: "imageGridRow")
-        coder.encode(imageGridRow, forKey: "backgroundColor")
+        coder.encode(imageGridRow, forKey: "backGroundColor")
     }
     
 }
