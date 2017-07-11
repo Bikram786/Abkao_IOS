@@ -354,15 +354,15 @@
 			isa = PBXGroup;
 			children = (
 				1840BA371F13646400CF01F7 /* ScanditSDK */,
-				467E2F9B1EFFEB1A008A92F2 /* empty.wav */,
 				B6131FA61EF7CA8300173984 /* GKImagePicker */,
 				B6131FA11EF7C41300173984 /* UIAlertView */,
 				B65ABF541EF4457D0040D260 /* CustomFonts */,
-				B659DD971EF05BA400409825 /* Abkao-Bridging-Header.h */,
 				B659DD981EF05BA400409825 /* Categories */,
+				B659DD9F1EF05BA400409825 /* Utilities */,
+				467E2F9B1EFFEB1A008A92F2 /* empty.wav */,
+				B659DD971EF05BA400409825 /* Abkao-Bridging-Header.h */,
 				B659DD9D1EF05BA400409825 /* Config.swift */,
 				B659DD9E1EF05BA400409825 /* Constants.swift */,
-				B659DD9F1EF05BA400409825 /* Utilities */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -711,7 +711,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B8BAD6F92E847A3B456289EE /* [CP] Copy Pods Resources */ = {

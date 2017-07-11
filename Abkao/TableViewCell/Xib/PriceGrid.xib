@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="507" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="meh-oP-Dyq" id="7N3-px-RcQ">
-                <rect key="frame" x="0.0" y="0.0" width="507" height="125"/>
+                <rect key="frame" x="0.0" y="0.0" width="507" height="124.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIA-bF-4uh">
@@ -44,7 +44,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="w3H-IT-3zh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

@@ -13,4 +13,5 @@
 
 #import <ScanditBarcodeScanner/ScanditBarcodeScanner.h>
 
+
 #endif

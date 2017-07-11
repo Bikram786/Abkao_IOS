@@ -33,6 +33,7 @@ class SettingsManager: NSObject {
                         self.settingObj?.imageGridRow = Int((jsonDict["image_grid_row"] as? String)!)
                         self.settingObj?.priceGridDimention = Int((jsonDict["price_grid_dimension"] as? String)!)
                         self.settingObj?.videoURL = (jsonDict["video_url"] as? String ?? "")
+                        self.settingObj?.backGroundColor = (jsonDict["backgroundColor"] as? String ?? "")
                         
                         //-------------Update Modal for Home screen data
                         let userinfo : [String : Any] = ["userID":ModelManager.sharedInstance.profileManager.userObj?.userID as Any]

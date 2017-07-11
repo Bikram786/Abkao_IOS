@@ -13,5 +13,6 @@ target 'Abkao' do
   pod 'ALCameraViewController'
   pod 'YouTubePlayer'
   pod 'IQKeyboardManagerSwift'
-  pod "MTBBarcodeScanner"
+  pod 'ChromaColorPicker'
+
 end
