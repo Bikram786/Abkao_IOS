@@ -18,6 +18,9 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
     @IBOutlet weak var btn_Camera: UIButton!
     
     @IBOutlet weak var btnSelectColor: UIButton!
+    
+    var selectedBgColorHex : String = (ModelManager.sharedInstance.settingsManager.settingObj?.backGroundColor)!
+    
     var setGridRows:Int?
     var setPriceRows:Int?
     
@@ -37,7 +40,8 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         neatColorPicker.delegate = self
         neatColorPicker.padding = 5
-        neatColorPicker.stroke = 3
+        neatColorPicker.stroke = 5
+        
         neatColorPicker.hexLabel.textColor = UIColor.red
         
         viewColorPicker.addSubview(neatColorPicker)
@@ -63,6 +67,11 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor)
     {
+        let hexString = color.toHexString
+        
+        selectedBgColorHex = hexString
+        print(hexString)
+        
         btnSelectColor.backgroundColor = color
         viewColorPicker.isHidden = true
     }
@@ -101,6 +110,7 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         dictData["price_grid_dimension"] = String(describing: self.setPriceRows!)
         dictData["image_grid_row"] = String(describing: self.setGridRows!)
         dictData["video_url"] = self.txt_DefaultURL.text!
+        dictData["backgroundColor"] = self.selectedBgColorHex
         
         SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in

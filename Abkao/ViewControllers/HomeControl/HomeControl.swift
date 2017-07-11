@@ -88,6 +88,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         super.viewWillAppear(true)
         setClv.isHidden=true
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
+        
         bgColor = ModelManager.sharedInstance.settingsManager.settingObj?.backGroundColor
         
         self.view.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
