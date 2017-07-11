@@ -37,7 +37,7 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         
         //Set ColorPicker Delegate
         
-        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let neatColorPicker = ChromaColorPicker(frame: viewColorPicker.bounds)
         neatColorPicker.delegate = self
         neatColorPicker.padding = 5
         neatColorPicker.stroke = 5
@@ -45,8 +45,11 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         neatColorPicker.hexLabel.textColor = UIColor.red
         
         viewColorPicker.addSubview(neatColorPicker)
+        viewColorPicker.layoutIfNeeded()
+        view.layoutIfNeeded()
         
         btn_Camera.isHidden = true
+        viewColorPicker.isHidden=true
         setViewShadow.viewdraw(setViewShadow.bounds)
         
         setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
