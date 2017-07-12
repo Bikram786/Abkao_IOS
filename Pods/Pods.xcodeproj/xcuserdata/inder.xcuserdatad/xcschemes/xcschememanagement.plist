@@ -19,12 +19,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<key>ChromaColorPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MTBBarcodeScanner.xcscheme</key>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,27 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6D8FCB3E60F6696E5B6030DA87CF7FCC</key>
+		<key>304FBA1ED7EDD51319FC31BDBA858006</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>765190E296E4E7D92ABD2FB07E8C2B0F</key>
+		<key>5D5B67B3AA00C5080957A07A50856C9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C1D5527393BD96FBA16932139041B48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>98EE45A6A0115D5D308B21811EA11874</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9DF61A38842AB92FE7443ED3A096DCD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5029D09D8EDF73FE6A0A58AC45916AB</key>
+		<key>D7FAEFEAF68AE19EB2D22369766AF24E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7FAEFEAF68AE19EB2D22369766AF24E</key>
+		<key>E497FFBFA222C9628A0BB4EE9851F5D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAC5DE6CF8BF47E343D1A6C843286A87</key>
 		<dict>
 			<key>primary</key>
 			<true/>
