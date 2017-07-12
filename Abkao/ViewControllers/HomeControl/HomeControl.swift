@@ -535,7 +535,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     let url = URL(string: proDescObj.productImgUrl!)
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
-                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice))"
+                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice!))"
                     
                 }
                 
@@ -565,7 +565,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     let url = URL(string: proDescObj.productImgUrl!)
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
-                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice))"
+                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice!))"
                     
                 }
                 
@@ -633,7 +633,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
             cell.lbl_Name.text = proDescObj.productName?.capitalized
-            cell.lbl_Price.text = "$\(String(describing: proDescObj.productRate))"
+            cell.lbl_Price.text = "$\(String(describing: proDescObj.productRate!))"
             cell.setShadow.viewdraw(cell.setShadow.bounds)
         }
         
