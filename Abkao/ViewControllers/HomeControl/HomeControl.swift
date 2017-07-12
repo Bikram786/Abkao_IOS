@@ -94,6 +94,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         self.view.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
         viewsBase.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
+        setClv.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
+        //leftTbl.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
         
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
@@ -516,6 +518,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             if tableView == leftTbl {
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                cell?.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
                 cell?.selectionStyle = .none
                 
                 if indexPath.row >= leftData.count {
@@ -545,6 +548,8 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             if tableView == rightTbl {
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemDetails
+                cell?.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
+
                 cell?.selectionStyle = .none
                 
                 if indexPath.row >= rightData.count {

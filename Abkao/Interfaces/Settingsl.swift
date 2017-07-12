@@ -46,7 +46,7 @@ class Settingsl: NSObject,NSCoding {
         coder.encode(videoURL, forKey: "videoURL")
         coder.encode(priceGridDimention, forKey: "priceGridDimention")
         coder.encode(imageGridRow, forKey: "imageGridRow")
-        coder.encode(imageGridRow, forKey: "backGroundColor")
+        coder.encode(backGroundColor, forKey: "backGroundColor")
     }
     
 }
