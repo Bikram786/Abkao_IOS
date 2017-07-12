@@ -49,6 +49,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 
     var requestIdentifier = ""
     
+    @IBOutlet weak var viewsBase: UIView!
     @IBOutlet weak var setClv: UICollectionView!
     @IBOutlet weak var leftTbl: UITableView!
     @IBOutlet weak var rightTbl: UITableView!
@@ -92,6 +93,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         bgColor = ModelManager.sharedInstance.settingsManager.settingObj?.backGroundColor
         
         self.view.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
+        viewsBase.backgroundColor = UIColor.hexStringToUIColor(hex: bgColor!)
         
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
