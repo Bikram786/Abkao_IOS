@@ -57,11 +57,11 @@ public struct Constants {
     
     struct appFontSize
     {
-        static let extraSmallFont = 12.00
-        static let smallFont = 15.00
-        static let regularFont = 18.00
-        static let largeFont = 20.00
-        static let extraLargeFont = 22.00
+        static let extraSmallFont = 16.00
+        static let smallFont = 18.00
+        static let regularFont = 20.00
+        static let largeFont = 22.00
+        static let extraLargeFont = 24.00
         
     }
 
