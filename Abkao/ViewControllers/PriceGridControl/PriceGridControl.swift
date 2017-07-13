@@ -109,7 +109,7 @@ class PriceGridControl: AbstractControl,UITableViewDelegate, UITableViewDataSour
         let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
         cell.lbl_ProductName.text = proDescObj.productName?.capitalized
         cell.setView.setViewBoarder()
-        cell.lbl_ProductPrice.text = proDescObj.productRate
+        cell.lbl_ProductPrice.text = "$ \(String(describing: proDescObj.productRate!))"
         
         cell.lbl_ProductName.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.regularFont))
         cell.lbl_ProductPrice.font = UIFont(name: "Cormorant-Regular", size: CGFloat(Constants.appFontSize.smallFont))

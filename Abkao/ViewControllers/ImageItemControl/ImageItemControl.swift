@@ -222,7 +222,7 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
                 
                 
                 if image != nil {
-                    let getImage = self?.resizeImage(image: image!, newWidth: 300)
+                    let getImage = self?.resizeImage(image: image!, newWidth: 500)
                     self?.setupImage.image = getImage
                     let imageData = UIImageJPEGRepresentation(getImage!, 0.2)
                     self?.sendFinalImage = (imageData?.base64EncodedString(options: .endLineWithLineFeed))!

@@ -118,7 +118,7 @@ class ImageCellControl: AbstractControl ,UITableViewDelegate, UITableViewDataSou
         cell.setImage.af_setImage(withURL: url!)
         
         cell.lbl_ProductName.text = proDescObj.productName!.capitalized
-        cell.lbl_ProductPrice.text = proDescObj.productPrice!
+        cell.lbl_ProductPrice.text = "$ \(String(describing: proDescObj.productPrice!))"
         cell.lbl_VideoURL.text = proDescObj.productVedUrl!
         
         cell.lbl_ProductName.font = UIFont(name: "Cormorant-Bold", size: CGFloat(Constants.appFontSize.regularFont))
