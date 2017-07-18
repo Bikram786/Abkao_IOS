@@ -393,13 +393,13 @@
 		B659DDBC1EF05BA400409825 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B659DDC71EF05BA400409825 /* InitialScreens */,
 				B61E4A151EFF4E5E00A573F3 /* SetVideoSchedulerControl */,
 				B659DDBD1EF05BA400409825 /* Abstract */,
 				B659DDBF1EF05BA400409825 /* BarCodeScannerControl */,
 				B659DDC11EF05BA400409825 /* HomeControl */,
 				B659DDC31EF05BA400409825 /* ImageCellControl */,
 				B659DDC51EF05BA400409825 /* ImageItemControl */,
-				B659DDC71EF05BA400409825 /* InitialScreens */,
 				B659DDCB1EF05BA400409825 /* PriceGridControl */,
 				B659DDCD1EF05BA400409825 /* PriceItemControl */,
 				B659DDCF1EF05BA400409825 /* ProductScanControl */,
@@ -632,7 +632,7 @@
 				TargetAttributes = {
 					B659DD6D1EF0568000409825 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = U34S8JX9SK;
+						DevelopmentTeam = 49GS89E5L4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -714,7 +714,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B8BAD6F92E847A3B456289EE /* [CP] Copy Pods Resources */ = {
@@ -925,7 +925,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hiram Mac (KX5D4F498C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U34S8JX9SK;
+				DEVELOPMENT_TEAM = 49GS89E5L4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
@@ -947,7 +947,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U34S8JX9SK;
+				DEVELOPMENT_TEAM = 49GS89E5L4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",

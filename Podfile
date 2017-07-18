@@ -14,5 +14,6 @@ target 'Abkao' do
   pod 'YouTubePlayer'
   pod 'IQKeyboardManagerSwift'
   pod 'ChromaColorPicker'
+  pod 'BarcodeScanner'
 
 end

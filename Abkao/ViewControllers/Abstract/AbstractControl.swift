@@ -43,7 +43,12 @@ class AbstractControl: UIViewController {
         if navTitle == "Setting" {
             leftItem = UIBarButtonItem(customView: leftSettingBtn)
             self.navigationItem.setLeftBarButton(leftItem, animated: true)
-        }else{
+        }
+        else if navTitle == "Back"{
+            leftItem = UIBarButtonItem(customView: leftSettingBtn)
+            self.navigationItem.setLeftBarButton(leftItem, animated: true)
+        }
+        else{
             leftItem = UIBarButtonItem(customView: leftBackView)
             self.navigationItem.setLeftBarButton(leftItem, animated: true)
         }

@@ -13,6 +13,41 @@ import AVFoundation
 import AlamofireImage
 import SVProgressHUD
 import UserNotifications
+import BarcodeScanner
+
+
+extension HomeControl: BarcodeScannerCodeDelegate {
+    
+    func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
+        print(code)
+        print(type)
+        
+//        self.navigationController?.popViewController(animated: false)
+
+        self.callBarcodeAPI(barcodeValue: code)
+        
+
+//        let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+//        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+//            controller.resetWithError()
+//        }
+    }
+}
+
+extension HomeControl: BarcodeScannerErrorDelegate {
+    
+    func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
+        print(error)
+    }
+}
+
+extension HomeControl: BarcodeScannerDismissalDelegate {
+    
+    func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
 
 //MARK: - Local Notification Methods
 
@@ -45,8 +80,11 @@ extension HomeControl:UNUserNotificationCenterDelegate{
 
 class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource, YouTubePlayerDelegate {
     
+    
     //MARK: - Local Variables
 
+    let controller = BarcodeScannerController()
+    
     var requestIdentifier = ""
     
     @IBOutlet weak var viewsBase: UIView!
@@ -100,6 +138,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         SVProgressHUD.setMinimumDismissTimeInterval(0.01)
         self.getDayVideos()
         self.callProductAPI()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -121,14 +160,27 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     override var navTitle: String {
         
-        return "Setting"
+        return "Back"
     }
     
     
     override func gotoScanView() {
         
-        self.performSegue(withIdentifier: "goto_scanbarcodeview", sender: nil)
+        controller.codeDelegate = self
+        controller.errorDelegate = self
+        controller.dismissalDelegate = self
+        
+        self.navigationController?.navigationBar.backItem?.title = "Anything Else"
+        
+        navigationController?.pushViewController(controller, animated: true)
+
     }
+    
+    func callMethod() {
+        //do stuff here
+        print("Button Clicked")
+    }
+    
     
     override func longTap(_ sender: UIGestureRecognizer){
         
@@ -144,9 +196,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         let alertController = UIAlertController(title: "Abkao", message: "Please enter your password", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addTextField { (textField : UITextField) -> Void in
             textField.placeholder = "Password"
-            textField.isSecureTextEntry = true
-            
-            
+            textField.isSecureTextEntry = true                        
             
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
@@ -196,10 +246,43 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         //API Calls
         let strDayName = NSDate().dayOfWeek()
         
-        
         self.getProductsByDay(strDay: strDayName!)
+        
+        BarcodeScanner.CloseButton.text = NSLocalizedString("Back", comment: "")
 
     }
+    
+    //MARK: - BarcodeApi Methods
+    
+    func callBarcodeAPI(barcodeValue: String) {
+        
+        //SVProgressHUD.show(withStatus: "Loading.......")
+        
+        var barcodDict  = [String : Any]()
+        barcodDict["account_number"] = (ModelManager.sharedInstance.profileManager.userObj?.accountNo)
+        barcodDict["barcode_no"] = barcodeValue
+        
+        ModelManager.sharedInstance.barcodeManager.scanBarcode(barcodeDict: barcodDict) { (barCodeObj, isSuccess, strMessage) in
+            
+            SVProgressHUD.dismiss()
+            
+            self.controller.reset(animated: false)
+
+            if(isSuccess)
+            {
+                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsControl") as! ProductDetailsControl
+                myVC.productBarCode = barcodeValue
+                myVC.getPreviousProducts = barCodeObj!
+                self.navigationController?.pushViewController(myVC, animated: true)
+            }else{
+                print("No product data found after scanning")
+            }
+            
+        }
+        
+    }
+    
+
     
     //MARK: - Custom Methods
     
