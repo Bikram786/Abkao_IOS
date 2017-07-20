@@ -10,10 +10,9 @@ import UIKit
 import CoreData
 import UserNotifications
 import IQKeyboardManagerSwift
-import ScanditBarcodeScanner
 
 
-private let scanditBarcodeScannerAppKey = Constants.scannerKey
+//private let scanditBarcodeScannerAppKey = Constants.scannerKey
 
 
 @UIApplicationMain
@@ -22,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func printFonts() {
-        let fontFamilyNames = UIFont.familyNames
-        for familyName in fontFamilyNames {
-            let names = UIFont.fontNames(forFamilyName: familyName)
-        }
+//        let fontFamilyNames = UIFont.familyNames
+//        for familyName in fontFamilyNames {
+//            let names = UIFont.fontNames(forFamilyName: familyName)
+//        }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -33,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         //self.printFonts()
         
-        SBSLicense.setAppKey(scanditBarcodeScannerAppKey)
+        //SBSLicense.setAppKey(scanditBarcodeScannerAppKey)
         
         IQKeyboardManager.sharedManager().enable = true
         

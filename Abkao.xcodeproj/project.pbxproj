@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1840BA3B1F13646400CF01F7 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1840BA381F13646400CF01F7 /* CHANGELOG.txt */; };
-		1840BA3C1F13646400CF01F7 /* LICENSE-2.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */; };
-		1840BA3D1F13646400CF01F7 /* ScanditBarcodeScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */; };
 		1840BA3F1F13683400CF01F7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA3E1F13683400CF01F7 /* libc++.tbd */; };
 		1840BA411F13684000CF01F7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA401F13684000CF01F7 /* libz.tbd */; };
 		1840BA431F13685200CF01F7 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840BA421F13685200CF01F7 /* libiconv.tbd */; };
@@ -97,9 +94,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1840BA381F13646400CF01F7 /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
-		1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-2.0.txt"; sourceTree = "<group>"; };
-		1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ScanditBarcodeScanner.framework; sourceTree = "<group>"; };
 		1840BA3E1F13683400CF01F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1840BA401F13684000CF01F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1840BA421F13685200CF01F7 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -206,23 +200,12 @@
 				1840BA411F13684000CF01F7 /* libz.tbd in Frameworks */,
 				1840BA3F1F13683400CF01F7 /* libc++.tbd in Frameworks */,
 				F496B4BCF744F163B8018596 /* Pods_Abkao.framework in Frameworks */,
-				1840BA3D1F13646400CF01F7 /* ScanditBarcodeScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1840BA371F13646400CF01F7 /* ScanditSDK */ = {
-			isa = PBXGroup;
-			children = (
-				1840BA381F13646400CF01F7 /* CHANGELOG.txt */,
-				1840BA391F13646400CF01F7 /* LICENSE-2.0.txt */,
-				1840BA3A1F13646400CF01F7 /* ScanditBarcodeScanner.framework */,
-			);
-			path = ScanditSDK;
-			sourceTree = "<group>";
-		};
 		B6131FA11EF7C41300173984 /* UIAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,7 +338,6 @@
 		B659DD961EF05BA400409825 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1840BA371F13646400CF01F7 /* ScanditSDK */,
 				B6131FA61EF7CA8300173984 /* GKImagePicker */,
 				B6131FA11EF7C41300173984 /* UIAlertView */,
 				B65ABF541EF4457D0040D260 /* CustomFonts */,
@@ -632,7 +614,7 @@
 				TargetAttributes = {
 					B659DD6D1EF0568000409825 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 49GS89E5L4;
+						DevelopmentTeam = U34S8JX9SK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -675,12 +657,10 @@
 				B6131FC31EF7CA8300173984 /* PLCameraSheetButton.png in Resources */,
 				B6131FC81EF7CA8300173984 /* PLCameraSheetDoneButton@2x.png in Resources */,
 				B659DD7C1EF0568100409825 /* Assets.xcassets in Resources */,
-				1840BA3B1F13646400CF01F7 /* CHANGELOG.txt in Resources */,
 				B6131FC91EF7CA8300173984 /* PLCameraSheetDoneButtonPressed.png in Resources */,
 				B6131FC51EF7CA8300173984 /* PLCameraSheetButtonPressed.png in Resources */,
 				B659DD771EF0568000409825 /* Main.storyboard in Resources */,
 				B6FF57151EF6888E0010301E /* VideoSchedulerHeader.xib in Resources */,
-				1840BA3C1F13646400CF01F7 /* LICENSE-2.0.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,7 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hiram Mac (KX5D4F498C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49GS89E5L4;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
@@ -947,7 +927,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49GS89E5L4;
+				DEVELOPMENT_TEAM = U34S8JX9SK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Abkao/Resources/ScanditSDK",
