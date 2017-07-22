@@ -13,6 +13,18 @@
 		1883FE5C1F0B61B200BCAD7D /* String+ContactValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883FE5B1F0B61B200BCAD7D /* String+ContactValidation.swift */; };
 		18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797A1F038E5200C0C837 /* CountryI.swift */; };
 		18B8797D1F038E7600C0C837 /* StateI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797C1F038E7600C0C837 /* StateI.swift */; };
+		461B42DD1F236FED00B8C707 /* Question1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42DC1F236FED00B8C707 /* Question1.swift */; };
+		461B42DF1F236FFF00B8C707 /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42DE1F236FFF00B8C707 /* Question2.swift */; };
+		461B42E11F23700D00B8C707 /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E01F23700D00B8C707 /* Question3.swift */; };
+		461B42E31F23701900B8C707 /* Question4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E21F23701900B8C707 /* Question4.swift */; };
+		461B42E51F23702600B8C707 /* Question5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E41F23702600B8C707 /* Question5.swift */; };
+		461B42E71F23704C00B8C707 /* Question6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E61F23704C00B8C707 /* Question6.swift */; };
+		461B42E91F23707900B8C707 /* SummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E81F23707900B8C707 /* SummaryVC.swift */; };
+		461B42EB1F23C01200B8C707 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42EA1F23C01200B8C707 /* QuestionManager.swift */; };
+		461B42ED1F23CA9700B8C707 /* DepartmentI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42EC1F23CA9700B8C707 /* DepartmentI.swift */; };
+		461B42EF1F23CEFB00B8C707 /* PromotionI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42EE1F23CEFB00B8C707 /* PromotionI.swift */; };
+		461B42F11F23D5B300B8C707 /* DiscountI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42F01F23D5B300B8C707 /* DiscountI.swift */; };
+		461B42F31F23D75600B8C707 /* SpecialProductI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42F21F23D75600B8C707 /* SpecialProductI.swift */; };
 		467E2F9C1EFFEB1B008A92F2 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 467E2F9B1EFFEB1A008A92F2 /* empty.wav */; };
 		46D3A3A91F154C8C00CF4542 /* UIColor+HexOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3A3A81F154C8C00CF4542 /* UIColor+HexOperation.swift */; };
 		B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6131FA21EF7C41300173984 /* ShowAlerts.swift */; };
@@ -101,6 +113,18 @@
 		18B8797A1F038E5200C0C837 /* CountryI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryI.swift; sourceTree = "<group>"; };
 		18B8797C1F038E7600C0C837 /* StateI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateI.swift; sourceTree = "<group>"; };
 		34C2F26954D0D6F84280EBB7 /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
+		461B42DC1F236FED00B8C707 /* Question1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question1.swift; sourceTree = "<group>"; };
+		461B42DE1F236FFF00B8C707 /* Question2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
+		461B42E01F23700D00B8C707 /* Question3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
+		461B42E21F23701900B8C707 /* Question4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question4.swift; sourceTree = "<group>"; };
+		461B42E41F23702600B8C707 /* Question5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question5.swift; sourceTree = "<group>"; };
+		461B42E61F23704C00B8C707 /* Question6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question6.swift; sourceTree = "<group>"; };
+		461B42E81F23707900B8C707 /* SummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVC.swift; sourceTree = "<group>"; };
+		461B42EA1F23C01200B8C707 /* QuestionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		461B42EC1F23CA9700B8C707 /* DepartmentI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentI.swift; sourceTree = "<group>"; };
+		461B42EE1F23CEFB00B8C707 /* PromotionI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionI.swift; sourceTree = "<group>"; };
+		461B42F01F23D5B300B8C707 /* DiscountI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountI.swift; sourceTree = "<group>"; };
+		461B42F21F23D75600B8C707 /* SpecialProductI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialProductI.swift; sourceTree = "<group>"; };
 		467E2F9B1EFFEB1A008A92F2 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
 		46D3A3A81F154C8C00CF4542 /* UIColor+HexOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexOperation.swift"; sourceTree = "<group>"; };
 		49C4EE231DE527C5F41A233B /* Pods_Abkao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abkao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +230,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461B42DB1F236FBF00B8C707 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				461B42DC1F236FED00B8C707 /* Question1.swift */,
+				461B42DE1F236FFF00B8C707 /* Question2.swift */,
+				461B42E01F23700D00B8C707 /* Question3.swift */,
+				461B42E21F23701900B8C707 /* Question4.swift */,
+				461B42E41F23702600B8C707 /* Question5.swift */,
+				461B42E61F23704C00B8C707 /* Question6.swift */,
+				461B42E81F23707900B8C707 /* SummaryVC.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
 		B6131FA11EF7C41300173984 /* UIAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +353,10 @@
 				B6F57C0B1EF6F40500E0B808 /* Settingsl.swift */,
 				18B8797A1F038E5200C0C837 /* CountryI.swift */,
 				18B8797C1F038E7600C0C837 /* StateI.swift */,
+				461B42F21F23D75600B8C707 /* SpecialProductI.swift */,
+				461B42EC1F23CA9700B8C707 /* DepartmentI.swift */,
+				461B42EE1F23CEFB00B8C707 /* PromotionI.swift */,
+				461B42F01F23D5B300B8C707 /* DiscountI.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -323,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				B6131FA41EF7C73400173984 /* ProfileManager.swift */,
+				461B42EA1F23C01200B8C707 /* QuestionManager.swift */,
 				B659DD8E1EF05BA400409825 /* AuthManager.swift */,
 				B659DD8F1EF05BA400409825 /* BarcodeManager.swift */,
 				B659DD941EF05BA400409825 /* ScheduleManager.swift */,
@@ -375,6 +418,7 @@
 		B659DDBC1EF05BA400409825 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				461B42DB1F236FBF00B8C707 /* Questions */,
 				B659DDC71EF05BA400409825 /* InitialScreens */,
 				B61E4A151EFF4E5E00A573F3 /* SetVideoSchedulerControl */,
 				B659DDBD1EF05BA400409825 /* Abstract */,
@@ -724,10 +768,12 @@
 				B65ABF511EF429A70040D260 /* PriceGrid.swift in Sources */,
 				B659DDFE1EF05BA400409825 /* HomeControl.swift in Sources */,
 				B6FF57171EF688AF0010301E /* VideoSchedulerHeader.swift in Sources */,
+				461B42F31F23D75600B8C707 /* SpecialProductI.swift in Sources */,
 				B659DE001EF05BA400409825 /* ImageItemControl.swift in Sources */,
 				18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */,
 				46D3A3A91F154C8C00CF4542 /* UIColor+HexOperation.swift in Sources */,
 				B6131FC01EF7CA8300173984 /* GKImageCropViewController.m in Sources */,
+				461B42ED1F23CA9700B8C707 /* DepartmentI.swift in Sources */,
 				B6FF57131EF681FA0010301E /* VideoScheduler.swift in Sources */,
 				18B8797D1F038E7600C0C837 /* StateI.swift in Sources */,
 				B659DE0A1EF05BA400409825 /* BaseWebAccessLayer.swift in Sources */,
@@ -735,13 +781,17 @@
 				B6F57C0C1EF6F40500E0B808 /* Settingsl.swift in Sources */,
 				B659DDDC1EF05BA400409825 /* ProductPriceI.swift in Sources */,
 				B659DE021EF05BA400409825 /* LoginControl.swift in Sources */,
+				461B42E71F23704C00B8C707 /* Question6.swift in Sources */,
 				B659DD7A1EF0568100409825 /* Abkao.xcdatamodeld in Sources */,
 				B6131FA31EF7C41300173984 /* ShowAlerts.swift in Sources */,
 				B659DDDD1EF05BA400409825 /* SchedulerI.swift in Sources */,
 				B659DDE01EF05BA400409825 /* BarcodeManager.swift in Sources */,
+				461B42E91F23707900B8C707 /* SummaryVC.swift in Sources */,
 				B6131FBE1EF7CA8300173984 /* GKImageCropOverlayView.m in Sources */,
 				B659DE061EF05BA400409825 /* ProductDetailsControl.swift in Sources */,
 				B6F57C101EF6F4CD00E0B808 /* PriceCellManager.swift in Sources */,
+				461B42E51F23702600B8C707 /* Question5.swift in Sources */,
+				461B42DD1F236FED00B8C707 /* Question1.swift in Sources */,
 				1883FE5C1F0B61B200BCAD7D /* String+ContactValidation.swift in Sources */,
 				B659DDE11EF05BA400409825 /* ModelManager.swift in Sources */,
 				B659DDEC1EF05BA400409825 /* Constants.swift in Sources */,
@@ -750,9 +800,11 @@
 				B6131FBF1EF7CA8300173984 /* GKImageCropView.m in Sources */,
 				B659DDEA1EF05BA400409825 /* UIView+Customization.swift in Sources */,
 				B6131FA51EF7C73400173984 /* ProfileManager.swift in Sources */,
+				461B42F11F23D5B300B8C707 /* DiscountI.swift in Sources */,
 				B659DDED1EF05BA400409825 /* UIColor+Hex.swift in Sources */,
 				B659DE051EF05BA400409825 /* PriceItemControl.swift in Sources */,
 				B65ABF501EF429A70040D260 /* ItemDetails.swift in Sources */,
+				461B42EB1F23C01200B8C707 /* QuestionManager.swift in Sources */,
 				B6FF57191EF6C22F0010301E /* ItemDetails2.swift in Sources */,
 				B659DDDB1EF05BA400409825 /* ProductI.swift in Sources */,
 				B659DDFD1EF05BA400409825 /* BarCodeScannerControl.swift in Sources */,
@@ -763,13 +815,16 @@
 				B659DDE71EF05BA400409825 /* Date+Customization.swift in Sources */,
 				B659DDE31EF05BA400409825 /* ProductManager.swift in Sources */,
 				B6525E4C1F0A02D200F2B274 /* SecondRegisterControl.swift in Sources */,
+				461B42EF1F23CEFB00B8C707 /* PromotionI.swift in Sources */,
 				B659DE041EF05BA400409825 /* PriceGridControl.swift in Sources */,
 				B659DE091EF05BA400409825 /* VideoSchedulerControl.swift in Sources */,
 				B6131FC21EF7CA8300173984 /* GKResizeableCropOverlayView.m in Sources */,
 				B659DDE91EF05BA400409825 /* UITextfield+Customization.swift in Sources */,
 				B659DDEB1EF05BA400409825 /* Config.swift in Sources */,
 				B659DDFF1EF05BA400409825 /* ImageCellControl.swift in Sources */,
+				461B42DF1F236FFF00B8C707 /* Question2.swift in Sources */,
 				B6131FC11EF7CA8300173984 /* GKImagePicker.m in Sources */,
+				461B42E11F23700D00B8C707 /* Question3.swift in Sources */,
 				B6F57C0E1EF6F4BB00E0B808 /* ImageCellManager.swift in Sources */,
 				B61E4A171EFF4EAE00A573F3 /* SetVideoSchedulerControl.swift in Sources */,
 				B659DD721EF0568000409825 /* AppDelegate.swift in Sources */,
@@ -778,6 +833,7 @@
 				B659DDDF1EF05BA400409825 /* AuthManager.swift in Sources */,
 				B659DDE81EF05BA400409825 /* UILabel+Customization.swift in Sources */,
 				B659DE081EF05BA400409825 /* UINavigationControl.swift in Sources */,
+				461B42E31F23701900B8C707 /* Question4.swift in Sources */,
 				B65ABF4F1EF429A70040D260 /* ImageControl.swift in Sources */,
 				B6525E4A1F09FCED00F2B274 /* FirstRegisterControl.swift in Sources */,
 			);

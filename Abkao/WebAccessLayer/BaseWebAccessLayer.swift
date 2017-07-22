@@ -150,6 +150,52 @@ class BaseWebAccessLayer: NSObject {
     }
 
     
+    class func newAzureRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (NSDictionary , Int) -> Void) {
+        
+        
+        if (reachability?.isReachable)!
+        {
+            // proceed
+            
+            SVProgressHUD.setStatus("Loging.....")
+            
+            var finalStrUrl = String()
+            
+            finalStrUrl = Constants.azureBaseUrl + strURL
+            
+            let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            
+            let headersHttp = [
+                // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
+                "Content-Type": "application/json"
+            ]
+            
+            
+            let alamofiremManager = Alamofire.SessionManager.default
+            
+            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+            
+            alamofiremManager.request(escapedUrl!, method: requestType, parameters: params!, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                
+                if responseObject.result.isSuccess {
+                    
+                    SVProgressHUD.dismiss()
+                    let statusCode : Int = (responseObject.response?.statusCode)!
+                    let resJson = responseObject.result.value as! NSDictionary
+                    result(resJson , statusCode)
+                    
+                }
+            }
+            
+        }
+        else
+        {
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
+        }
+        
+    }
+    
     
     //
     //    class func tempRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool, params : NSDictionary?, result:@escaping (NSDictionary , Int) -> Void) {

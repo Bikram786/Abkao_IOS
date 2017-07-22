@@ -15,6 +15,8 @@ public struct Constants {
     
     static let baseUrl = "http://6.abkao-webservices.appspot.com/"
 
+    static let azureBaseUrl = "http://nexportretail.azurewebsites.net/api/"
+
     
     
     static let kDateFormatter = "MM-dd-yyyy hh:mma"
