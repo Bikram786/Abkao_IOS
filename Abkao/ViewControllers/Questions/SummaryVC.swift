@@ -12,13 +12,27 @@ class SummaryVC: AbstractControl {
 
     @IBOutlet weak var setViewShadow: UIView!
 
+    @IBOutlet weak var lbl1: UILabel!
+    @IBOutlet weak var lbl2: UILabel!
+    @IBOutlet weak var lbl3: UILabel!
+    @IBOutlet weak var lbl4: UILabel!
+    @IBOutlet weak var lbl5: UILabel!
+    @IBOutlet weak var lbl6: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setViewShadow.viewdraw(setViewShadow.bounds)
+        
+        setAllData()
 
+    }
+    
+    func setAllData()  {
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
