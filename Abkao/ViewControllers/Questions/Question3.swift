@@ -8,28 +8,151 @@
 
 import UIKit
 
-class Question3: UIViewController {
+class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    var departmentObj : DepartmentI?
+    @IBOutlet weak var txtDepartment: UITextField!
+    @IBOutlet weak var setViewShadow: UIView!
 
+    
+    @IBOutlet weak var pickerSuperView: UIView!
+    
+    var locationID : Int64?
+    
+    var arrDepartments : NSMutableArray = NSMutableArray()
+    
+    @IBOutlet weak var viewPicker: UIPickerView!
+    
+    @IBOutlet weak var pickerDepartments: UIPickerView!
+    
+    var selectedDepartmentNo : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-    }
+        setViewShadow.viewdraw(setViewShadow.bounds)
+        txtDepartment.addShadowToTextfield()
 
+
+        
+        viewPicker.dataSource = self
+        viewPicker.delegate = self
+        
+        txtDepartment.text = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? String
+        
+        //Remove this code
+        locationID = 93027
+
+        
+        ModelManager.sharedInstance.questionManager.getDepartments(locationId: (locationID?.description)!) { (arrDepartMentsObj, isSuccess, msg) in
+            
+            self.arrDepartments.addObjects(from: arrDepartMentsObj!)
+            self.pickerDepartments.reloadAllComponents()
+            
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        pickerSuperView.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    //MARK: - UIPickerView Delegate & Data Source Methods
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrDepartments.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let departmentObj = arrDepartments.object(at: row) as! DepartmentI
+        
+        return departmentObj.departmentNo?.description
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        departmentObj = arrDepartments.object(at: row) as? DepartmentI
+        
+//        selectedDepartmentNo =  departmentObj.departmentNo?.description
+        
+    }
+    
+    // MARK: - Custom Functions
+    
+    @IBAction func clkNext(_ sender: UIButton) {
+        
+        
+        //Temp Code
+        
+        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
+        self.navigationController?.pushViewController(myVC, animated: true)
+        
+        return
+        //
+        
+        
+        
+        if((departmentObj?.departmentNo == 1) || (departmentObj?.departmentNo == 2))
+        {
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
+        else
+        {
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
+        
+    }
+    
+    
+    
+    @IBAction func clkDone(_ sender: Any) {
+        
+        ModelManager.sharedInstance.questionManager.dictQuestion["question3"] = departmentObj?.departmentNo?.description as AnyObject
+        
+        txtDepartment.text = departmentObj?.departmentNo?.description
+        
+        pickerSuperView.isHidden = true
+    }
+    
+    // MARK: - TextFiels Delegates
+    
+    public func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        textField.resignFirstResponder()
+        self.pickerSuperView.isHidden = false
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

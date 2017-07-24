@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SummaryVC: UIViewController {
+class SummaryVC: AbstractControl {
 
+    @IBOutlet weak var setViewShadow: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setViewShadow.viewdraw(setViewShadow.bounds)
+
     }
 
     override func didReceiveMemoryWarning() {

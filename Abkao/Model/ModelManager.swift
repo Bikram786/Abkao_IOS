@@ -18,6 +18,7 @@ class ModelManager: NSObject {
     var imageCellManager : ImageCellManager
     var priceCellManager : PriceCellManager
     var profileManager : ProfileManager
+    var questionManager : QuestionManager
     
     static let sharedInstance = ModelManager()
     
@@ -31,6 +32,7 @@ class ModelManager: NSObject {
         imageCellManager = ImageCellManager()
         priceCellManager = PriceCellManager()
         profileManager = ProfileManager()
+        questionManager = QuestionManager()
         
     }
     

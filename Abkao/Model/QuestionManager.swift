@@ -40,7 +40,7 @@ class QuestionManager: NSObject {
     func getAllSpecialProducts(handler : @escaping ([SpecialProductI]?, Bool , String) -> Void)
     {
         
-        BaseWebAccessLayer.newAzureRequestURLWithDictionaryResponse(requestType: .get, strURL: "", headers: true, params: nil, result:
+        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "", headers: true, params: nil, result:
             {
                 (jsonDict,statusCode) in
                 // success code
@@ -96,167 +96,105 @@ class QuestionManager: NSObject {
     
     func getDepartments(locationId: String, handler : @escaping ([DepartmentI]?, Bool , String) -> Void) {
         
-        BaseWebAccessLayer.newAzureRequestURLWithDictionaryResponse(requestType: .get, strURL: "ReferenceData/GetDepartments/?locationId=\(locationId)", headers: true, params: nil, result:
+        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "ReferenceData/GetDepartments/?locationId=\(locationId)", headers: true, params: nil, result:
             {
-                (jsonDict,statusCode) in
+                (arrData,statusCode) in
                 // success code
                 
-                print(jsonDict)
+                print(arrData)
                 
-                if(jsonDict.value(forKey: "success") as! Bool)
+                if(arrData.count > 0)
                 {
                     
-                    if(statusCode == 200){
-                        
-                        let data = jsonDict.value(forKey: "data") as! NSDictionary
-                        let isSuccess = data["success"] as! Bool
-                        if(isSuccess){
-                            
-                            
-                            var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
-                            
-                            self.arrDepartments?.removeAll()
-                            
-                            let arrData = productInfoObj["image_grid"] as! NSArray
-                            
-                            if(arrData.count > 0)
-                            {
-                                for dictObj in arrData
-                                {
-                                    let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
-                                    
-                                    let departmentI = DepartmentI()
-                                    departmentI.setDepartmentInfo(dictData: tempProductInfoObj)
-                                    self.arrDepartments?.append(departmentI)
-                                }
-                            }
-                            
-                            handler(self.arrDepartments,true,"Departments Received")
-                            
-                        }else{
-                            
-                            handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                        }
-                    }
-                    else{
-                        
-                        handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                    }
+                    self.arrDepartments?.removeAll()
                     
+                    
+                    for dictObj in arrData
+                    {
+                        let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                        //print(tempProductInfoObj)
+                        let departmentI = DepartmentI()
+                        departmentI.setDepartmentInfo(dictData: tempProductInfoObj)
+                        self.arrDepartments?.append(departmentI)
+                    }
+                    handler(self.arrDepartments,true,"Departments Received")
+                    
+                    
+                }else{
+                    
+                    //handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
                 }
-                
         })
-
+        
         
     }
     
     func getAllPromotions(handler : @escaping ([PromotionI]?, Bool , String) -> Void) {
         
-        BaseWebAccessLayer.newAzureRequestURLWithDictionaryResponse(requestType: .get, strURL: "Promotion/GetAllPromotions", headers: true, params: nil, result:
+        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "Promotion/GetAllPromotions", headers: true, params: nil, result:
             {
-                (jsonDict,statusCode) in
-                // success code
                 
-                print(jsonDict)
-                
-                if(jsonDict.value(forKey: "success") as! Bool)
-                {
+                    (arrData,statusCode) in
+                    // success code
                     
-                    if(statusCode == 200){
+                    print(arrData)
+                    
+                    if(arrData.count > 0)
+                    {
                         
-                        let data = jsonDict.value(forKey: "data") as! NSDictionary
-                        let isSuccess = data["success"] as! Bool
-                        if(isSuccess){
+                        self.arrAllPromotions?.removeAll()
+                        
+                        
+                        for dictObj in arrData
+                        {
+                            let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                            //print(tempProductInfoObj)
+                            let promotionI = PromotionI()
+                            promotionI.setPromotionInfo(dictData: tempProductInfoObj)
                             
-                            
-                            var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
-                            
-                            self.arrAllSpecialProducts?.removeAll()
-                            
-                            let arrData = productInfoObj["image_grid"] as! NSArray
-                            
-                            if(arrData.count > 0)
-                            {
-                                for dictObj in arrData
-                                {
-                                    let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
-                                    
-                                    let promotionI = PromotionI()
-                                    promotionI.setPromotionInfo(dictData: tempProductInfoObj)
-                                    
-                                    self.arrAllPromotions?.append(promotionI)
-                                }
-                            }
-                            
-                            handler(self.arrAllPromotions,true,"Products Received")
-                            
-                        }else{
-                            
-                            handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
+                            self.arrAllPromotions?.append(promotionI)
                         }
-                    }
-                    else{
+                        handler(self.arrAllPromotions,true,"Promotions Received")
                         
-                        handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }else{
+                        
+                        //handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
                     }
-                    
-                }
+                })
                 
-        })
-
-        
     }
     
     func getAllDiscounts(handler : @escaping ([DiscountI]?, Bool , String) -> Void) {
         
-        BaseWebAccessLayer.newAzureRequestURLWithDictionaryResponse(requestType: .get, strURL: "ReferenceData/GetAllDiscounts", headers: true, params: nil, result:
+        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "ReferenceData/GetAllDiscounts", headers: true, params: nil, result:
             {
-                (jsonDict,statusCode) in
+                
+                (arrData,statusCode) in
                 // success code
                 
-                print(jsonDict)
+                print(arrData)
                 
-                if(jsonDict.value(forKey: "success") as! Bool)
+                if(arrData.count > 0)
                 {
                     
-                    if(statusCode == 200){
-                        
-                        let data = jsonDict.value(forKey: "data") as! NSDictionary
-                        let isSuccess = data["success"] as! Bool
-                        if(isSuccess){
-                            
-                            
-                            var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
-                            
-                            self.arrAllSpecialProducts?.removeAll()
-                            
-                            let arrData = productInfoObj["image_grid"] as! NSArray
-                            
-                            if(arrData.count > 0)
-                            {
-                                for dictObj in arrData
-                                {
-                                    let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
-                                    
-                                    let discountI = DiscountI()
-                                    discountI.setDiscountInfo(dictData: tempProductInfoObj)
-                                    
-                                    self.arrAllDiscounts?.append(discountI)
-                                }
-                            }
-                            
-                            handler(self.arrAllDiscounts,true,"Products Received")
-                            
-                        }else{
-                            
-                            handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                        }
-                    }
-                    else{
-                        
-                        handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                    }
+                    self.arrAllDiscounts?.removeAll()
                     
+                    
+                    for dictObj in arrData
+                    {
+                        let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                        //print(tempProductInfoObj)
+                        let discountI = DiscountI()
+                        discountI.setDiscountInfo(dictData: tempProductInfoObj)
+                        self.arrAllDiscounts?.append(discountI)
+                    }
+                    handler(self.arrAllDiscounts,true,"All Discounts Received")
+                    
+                    
+                }else{
+                    
+                    //handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
                 }
         })
 

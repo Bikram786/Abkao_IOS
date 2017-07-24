@@ -166,6 +166,13 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
     
     override func gotoScanView() {
         
+        //Temp Code
+
+        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question1") as! Question1
+        self.navigationController?.pushViewController(myVC, animated: true)
+        
+        return
+        
         controller.codeDelegate = self
         controller.errorDelegate = self
         controller.dismissalDelegate = self

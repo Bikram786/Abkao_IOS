@@ -150,7 +150,7 @@ class BaseWebAccessLayer: NSObject {
     }
 
     
-    class func newAzureRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (NSDictionary , Int) -> Void) {
+    class func newAzureRequestURLWithArrayResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (NSArray , Int) -> Void) {
         
         
         if (reachability?.isReachable)!
@@ -175,17 +175,38 @@ class BaseWebAccessLayer: NSObject {
             
             alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
             
-            alamofiremManager.request(escapedUrl!, method: requestType, parameters: params!, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+            if let prams = params
+            {
                 
-                if responseObject.result.isSuccess {
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: prams, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
                     
-                    SVProgressHUD.dismiss()
-                    let statusCode : Int = (responseObject.response?.statusCode)!
-                    let resJson = responseObject.result.value as! NSDictionary
-                    result(resJson , statusCode)
-                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let arrResponse = responseObject.result.value as! NSArray
+                        result(arrResponse , statusCode)
+                        
+                    }
                 }
             }
+            else
+            {
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: nil, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let arrResponse = responseObject.result.value as! NSArray
+                      
+                        result(arrResponse , statusCode)
+                        
+                    }
+                }
+
+            }
+            
             
         }
         else
