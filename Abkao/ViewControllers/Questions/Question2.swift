@@ -8,10 +8,17 @@
 
 import UIKit
 
-class Question2: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
+class Question2: AbstractControl {
 
     var arrPrices : NSMutableArray = NSMutableArray()
 
+    @IBOutlet weak var lblGrossMargin: UILabel!
+    @IBOutlet weak var lblSugestedRetail: UILabel!
+    @IBOutlet weak var lblLastPurchasePrice: UILabel!
+    @IBOutlet weak var lblLastPurchaseDate: UILabel!
+    @IBOutlet weak var lblLastPurchaseVendor: UILabel!
+
+    
     
     @IBOutlet weak var txtProductPrice: UITextField!
     @IBOutlet weak var setViewShadow: UIView!
@@ -25,20 +32,53 @@ class Question2: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var selectedPrice : String?
     
+    var scannedProductId : Int?
+    var locationId : Int?
+    
+    var objSellingPrice : SellingPriceI?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.pickerSuperView.isHidden = true
         
         txtProductPrice.text = ModelManager.sharedInstance.questionManager.dictQuestion["question2"] as? String
 
-        
         setViewShadow.viewdraw(setViewShadow.bounds)
 
         txtProductPrice.addShadowToTextfield()
-
+        
+        scannedProductId = 000002820000384
+        locationId =  93027
+        
+        ModelManager.sharedInstance.questionManager.getSellingPrice(productScannedId: (scannedProductId?.description)!, locationID: (locationId?.description)!) { (objSP, isSuccess, msg) in
+        
+            self.objSellingPrice = objSP
+            
+        }
     }
     
+    
+    func calculateGrossMargin(spObj : SellingPriceI)  {
+        
+        
+        let strPrice = txtProductPrice.text
+        let floatPrice = (strPrice! as NSString).floatValue
+        
+        let grossMargin = (floatPrice)/(spObj.strLastPurcahsePrice! - 1)
+        
+        let twoDecimalPlaces = String(format: "%.2f", grossMargin)
+
+        lblGrossMargin.text = "\(twoDecimalPlaces.description) %"
+        lblSugestedRetail.text = spObj.strSuggestedRetail?.description
+        lblLastPurchasePrice.text = spObj.strLastPurcahsePrice?.description
+        lblLastPurchaseDate.text = spObj.strLastPurchaseDate
+        lblLastPurchaseVendor.text = spObj.strLastPurchaseVendor
+        
+    }
+    
+    /*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -82,11 +122,22 @@ class Question2: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
 //        selectedDepartmentNo =  departmentObj.departmentNo?.description
         
     }
-    
+     
+     @IBAction func clkDone(_ sender: Any) {
+     
+     ModelManager.sharedInstance.questionManager.setValue(selectedPrice, forKey: "question2")
+     
+     pickerSuperView.isHidden = true
+     }
+     
+     
+    */
     // MARK: - Custom Functions
     
     
     @IBAction func clkNext(_ sender: UIButton) {
+        
+    ModelManager.sharedInstance.questionManager.dictQuestion["question2"] = txtProductPrice.text as AnyObject
         
         let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question3") as! Question3
         self.navigationController?.pushViewController(myVC, animated: true)
@@ -94,20 +145,18 @@ class Question2: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     
-    
-    @IBAction func clkDone(_ sender: Any) {
-        
-        ModelManager.sharedInstance.questionManager.setValue(selectedPrice, forKey: "question2")
-        
-        pickerSuperView.isHidden = true
-    }
-    
     // MARK: - TextFiels Delegates
     
     public func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        textField.resignFirstResponder()
-        self.pickerSuperView.isHidden = false
+        //textField.resignFirstResponder()
+        //self.pickerSuperView.isHidden = false
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        self.calculateGrossMargin(spObj: objSellingPrice!)
+
     }
     
 

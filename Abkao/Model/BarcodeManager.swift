@@ -10,6 +10,9 @@ import UIKit
 
 class BarcodeManager: NSObject {
     
+    var barCodeValue : String?
+
+    
     func scanBarcode(barcodeDict: [String : Any], handler : @escaping (BarcodeI?, Bool , String) -> Void)
     {
         BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "barcode", headers: true, params: barcodeDict, result:

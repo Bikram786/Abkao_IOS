@@ -217,6 +217,141 @@ class BaseWebAccessLayer: NSObject {
         
     }
     
+    class func newAzureRequestURLWithDictResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (NSDictionary , Int) -> Void) {
+        
+        
+        if (reachability?.isReachable)!
+        {
+            // proceed
+            
+            SVProgressHUD.setStatus("Loging.....")
+            
+            var finalStrUrl = String()
+            
+            finalStrUrl = Constants.azureBaseUrl + strURL
+            
+            let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            
+            let headersHttp = [
+                // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
+                "Content-Type": "application/json"
+            ]
+            
+            
+            let alamofiremManager = Alamofire.SessionManager.default
+            
+            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+            
+            if let prams = params
+            {
+                
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: prams, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let dictResponse = responseObject.result.value as! NSDictionary
+                        result(dictResponse , statusCode)
+                        
+                    }
+                }
+            }
+            else
+            {
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: nil, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let dictResponse = responseObject.result.value as! NSDictionary
+                        
+                        result(dictResponse , statusCode)
+                        
+                    }
+                }
+                
+            }
+            
+            
+        }
+        else
+        {
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
+        }
+        
+    }
+    
+    
+    class func newAzureRequestURLWithBoolResponse(requestType : HTTPMethod , strURL: String,headers : Bool,params : [String : Any]?, result:@escaping (Bool) -> Void) {
+        
+        
+        if (reachability?.isReachable)!
+        {
+            // proceed
+            
+            SVProgressHUD.setStatus("Loging.....")
+            
+            var finalStrUrl = String()
+            
+            finalStrUrl = Constants.azureBaseUrl + strURL
+            
+            let escapedUrl = finalStrUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            
+            let headersHttp = [
+                // "User-Agent" : "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0 Mobile/14B100 Safari/602.1",
+                "Content-Type": "application/json"
+            ]
+            
+            
+            let alamofiremManager = Alamofire.SessionManager.default
+            
+            alamofiremManager.session.configuration.timeoutIntervalForRequest = 30
+            
+            if let prams = params
+            {
+                
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: prams, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let isSuccess = responseObject.result.value as! Bool
+                        result(isSuccess)
+                        
+                    }
+                }
+            }
+            else
+            {
+                alamofiremManager.request(escapedUrl!, method: requestType, parameters: nil, encoding: JSONEncoding.default, headers: headersHttp).responseJSON {  (responseObject) in
+                    
+                    if responseObject.result.isSuccess {
+                        
+                        SVProgressHUD.dismiss()
+                        let statusCode : Int = (responseObject.response?.statusCode)!
+                        let isSuccess = responseObject.result.value as! Bool
+                        
+                        result(isSuccess )
+                        
+                    }
+                }
+                
+            }
+            
+            
+        }
+        else
+        {
+            SVProgressHUD.setMinimumDismissTimeInterval(0.01)
+            SVProgressHUD.showError(withStatus: "No Internet Available")
+        }
+        
+    }
+    
     
     //
     //    class func tempRequestURLWithDictionaryResponse(requestType : HTTPMethod , strURL: String,headers : Bool, params : NSDictionary?, result:@escaping (NSDictionary , Int) -> Void) {

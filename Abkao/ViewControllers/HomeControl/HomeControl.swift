@@ -24,6 +24,7 @@ extension HomeControl: BarcodeScannerCodeDelegate {
         
 //        self.navigationController?.popViewController(animated: false)
 
+        ModelManager.sharedInstance.barcodeManager.barCodeValue = code
         self.callBarcodeAPI(barcodeValue: code)
         
 

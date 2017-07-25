@@ -51,6 +51,8 @@ class Question4: AbstractControl {
             return
         }
         
+        ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = txtContainerSize.text as AnyObject
+        
         let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
         self.navigationController?.pushViewController(myVC, animated: true)
         

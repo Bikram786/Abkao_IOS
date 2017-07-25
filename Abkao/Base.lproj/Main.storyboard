@@ -5852,7 +5852,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7i-2i-Lhf">
-                                        <rect key="frame" x="406" y="4" width="212" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Q">
                                                 <attributes>
@@ -5899,9 +5899,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 1">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -5973,17 +6018,17 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="SNI-lD-UfY"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsc-3M-Rcd">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFm-cC-K2U">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFm-cC-K2U">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="hl6-aI-SL2" id="Ufh-n3-ibw"/>
@@ -6156,7 +6201,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOE-HX-qPX">
-                                        <rect key="frame" x="406" y="4" width="212" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Q">
                                                 <attributes>
@@ -6203,9 +6248,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 2">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6277,17 +6367,17 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="uAd-CU-dra"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jm-qJ-QbQ">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spT-nf-MOn">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spT-nf-MOn">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qtv-7D-Jdb" id="2do-6B-rEL"/>
@@ -6301,6 +6391,104 @@
                                                     <constraint firstAttribute="height" constant="45" id="P3J-lI-y48"/>
                                                     <constraint firstItem="spT-nf-MOn" firstAttribute="top" secondItem="0jm-qJ-QbQ" secondAttribute="top" id="ciq-eO-BeV"/>
                                                     <constraint firstItem="spT-nf-MOn" firstAttribute="leading" secondItem="0jm-qJ-QbQ" secondAttribute="leading" id="xbC-sD-GDw"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZs-nC-rrn" userLabel="ViewAllSubview">
+                                                <rect key="frame" x="62" y="149" width="696" height="374"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gross Margin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-S0-pSm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="696" height="18"/>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-mr-Jbp">
+                                                        <rect key="frame" x="0.0" y="30" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Retail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-PZ-BNo">
+                                                        <rect key="frame" x="0.0" y="70" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-u1-fCE">
+                                                        <rect key="frame" x="0.0" y="100" width="696" height="24.5"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-vV-9gy">
+                                                        <rect key="frame" x="0.0" y="144.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-JO-xZJ">
+                                                        <rect key="frame" x="0.0" y="169.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xII-1Y-cnU">
+                                                        <rect key="frame" x="0.0" y="214.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-Nq-5gg">
+                                                        <rect key="frame" x="0.0" y="244.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Vendor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-Pk-UUU">
+                                                        <rect key="frame" x="0.0" y="289.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-bp-UYR">
+                                                        <rect key="frame" x="0.0" y="319.5" width="696" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="TcD-S0-pSm" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="1eH-zQ-OBW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Uii-PZ-BNo" secondAttribute="trailing" id="9Fq-Dz-U0h"/>
+                                                    <constraint firstItem="jsh-Pk-UUU" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="A49-2M-cvb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1jb-bp-UYR" secondAttribute="trailing" id="Cle-x0-1VS"/>
+                                                    <constraint firstItem="R5e-u1-fCE" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="Clg-to-RXx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TcD-S0-pSm" secondAttribute="trailing" id="DBR-KF-btk"/>
+                                                    <constraint firstItem="Ebe-mr-Jbp" firstAttribute="top" secondItem="TcD-S0-pSm" secondAttribute="bottom" constant="12" id="Db0-fE-j5r"/>
+                                                    <constraint firstItem="f1E-JO-xZJ" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="EQe-zP-i7D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RMl-vV-9gy" secondAttribute="trailing" id="F7j-Mp-83t"/>
+                                                    <constraint firstItem="Uii-PZ-BNo" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="FGM-5s-Pnz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xII-1Y-cnU" secondAttribute="trailing" id="Lhh-bD-gcU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SnP-Nq-5gg" secondAttribute="trailing" id="MTm-kq-TrG"/>
+                                                    <constraint firstItem="SnP-Nq-5gg" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="NFK-J8-oKo"/>
+                                                    <constraint firstItem="jsh-Pk-UUU" firstAttribute="top" secondItem="SnP-Nq-5gg" secondAttribute="bottom" constant="20" id="T7z-S3-JGC"/>
+                                                    <constraint firstItem="Uii-PZ-BNo" firstAttribute="top" secondItem="Ebe-mr-Jbp" secondAttribute="bottom" constant="15" id="VVm-cF-eSY"/>
+                                                    <constraint firstItem="f1E-JO-xZJ" firstAttribute="top" secondItem="RMl-vV-9gy" secondAttribute="bottom" id="WBG-wx-zUA"/>
+                                                    <constraint firstItem="xII-1Y-cnU" firstAttribute="top" secondItem="f1E-JO-xZJ" secondAttribute="bottom" constant="20" id="Yby-VV-adq"/>
+                                                    <constraint firstItem="TcD-S0-pSm" firstAttribute="top" secondItem="cZs-nC-rrn" secondAttribute="top" id="Yj8-8D-Z8X"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jsh-Pk-UUU" secondAttribute="trailing" id="a5b-iv-ztF"/>
+                                                    <constraint firstItem="R5e-u1-fCE" firstAttribute="top" secondItem="Uii-PZ-BNo" secondAttribute="bottom" constant="5" id="bcp-IP-ogg"/>
+                                                    <constraint firstItem="1jb-bp-UYR" firstAttribute="top" secondItem="jsh-Pk-UUU" secondAttribute="bottom" constant="5" id="f6g-Z3-FJA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="R5e-u1-fCE" secondAttribute="trailing" id="f9b-Sv-IrR"/>
+                                                    <constraint firstItem="RMl-vV-9gy" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="fvg-pE-YEB"/>
+                                                    <constraint firstItem="RMl-vV-9gy" firstAttribute="top" secondItem="R5e-u1-fCE" secondAttribute="bottom" constant="20" id="iqf-ol-rjv"/>
+                                                    <constraint firstItem="1jb-bp-UYR" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="mJN-O3-XVd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="f1E-JO-xZJ" secondAttribute="trailing" id="n5S-9v-8xY"/>
+                                                    <constraint firstItem="xII-1Y-cnU" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="rXt-1f-bZ3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ebe-mr-Jbp" secondAttribute="trailing" id="u8e-bo-VKv"/>
+                                                    <constraint firstItem="Ebe-mr-Jbp" firstAttribute="leading" secondItem="cZs-nC-rrn" secondAttribute="leading" id="zGp-FL-aaB"/>
+                                                    <constraint firstItem="SnP-Nq-5gg" firstAttribute="top" secondItem="xII-1Y-cnU" secondAttribute="bottom" constant="5" id="ziB-LH-y8W"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="der-Zc-Dx5">
@@ -6333,12 +6521,14 @@
                                         <constraints>
                                             <constraint firstItem="der-Zc-Dx5" firstAttribute="leading" secondItem="YSG-Cl-qWi" secondAttribute="leading" constant="-1" id="0IB-R3-l2K"/>
                                             <constraint firstItem="x5h-pk-FLv" firstAttribute="leading" secondItem="YSG-Cl-qWi" secondAttribute="leading" constant="61" id="47G-im-wJv"/>
+                                            <constraint firstItem="cZs-nC-rrn" firstAttribute="leading" secondItem="YSG-Cl-qWi" secondAttribute="leading" constant="62" id="7C7-ov-E8o"/>
                                             <constraint firstItem="eRp-L7-WWD" firstAttribute="width" secondItem="YSG-Cl-qWi" secondAttribute="width" id="BSL-vf-pgl"/>
                                             <constraint firstAttribute="trailing" secondItem="0jm-qJ-QbQ" secondAttribute="trailing" constant="61" id="Cb0-2m-QoI"/>
                                             <constraint firstItem="0jm-qJ-QbQ" firstAttribute="top" secondItem="x5h-pk-FLv" secondAttribute="bottom" constant="16" id="Elq-ba-N0y"/>
                                             <constraint firstItem="0jm-qJ-QbQ" firstAttribute="leading" secondItem="YSG-Cl-qWi" secondAttribute="leading" constant="62" id="H9o-wk-BqF"/>
                                             <constraint firstItem="eRp-L7-WWD" firstAttribute="leading" secondItem="YSG-Cl-qWi" secondAttribute="leading" id="Ng3-cp-5pN"/>
                                             <constraint firstItem="eRp-L7-WWD" firstAttribute="centerY" secondItem="YSG-Cl-qWi" secondAttribute="centerY" id="QkB-vh-HMi"/>
+                                            <constraint firstAttribute="trailing" secondItem="cZs-nC-rrn" secondAttribute="trailing" constant="61" id="QrW-Py-edv"/>
                                             <constraint firstAttribute="bottom" secondItem="der-Zc-Dx5" secondAttribute="bottom" constant="15" id="R7A-4C-lSI"/>
                                             <constraint firstItem="x5h-pk-FLv" firstAttribute="top" secondItem="YSG-Cl-qWi" secondAttribute="top" constant="35" id="Wo5-0D-MeZ"/>
                                             <constraint firstItem="der-Zc-Dx5" firstAttribute="centerX" secondItem="YSG-Cl-qWi" secondAttribute="centerX" id="ZQ1-Zw-6nj"/>
@@ -6346,6 +6536,8 @@
                                             <constraint firstItem="eRp-L7-WWD" firstAttribute="top" secondItem="YSG-Cl-qWi" secondAttribute="top" id="fMW-gI-VvE"/>
                                             <constraint firstAttribute="trailing" secondItem="eRp-L7-WWD" secondAttribute="trailing" id="fQU-Hl-d3o"/>
                                             <constraint firstAttribute="bottom" secondItem="eRp-L7-WWD" secondAttribute="bottom" id="j4U-Gx-wWn"/>
+                                            <constraint firstAttribute="bottom" secondItem="cZs-nC-rrn" secondAttribute="bottom" constant="15" id="ndI-wd-ayc"/>
+                                            <constraint firstItem="cZs-nC-rrn" firstAttribute="top" secondItem="0jm-qJ-QbQ" secondAttribute="bottom" constant="23" id="qPI-Xq-6KB"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
@@ -6390,10 +6582,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="8YB-58-luG"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="qtv-7D-Jdb" id="e12-3e-zzx"/>
-                                            <outlet property="delegate" destination="qtv-7D-Jdb" id="EcQ-oT-sdI"/>
-                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6424,6 +6612,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblGrossMargin" destination="Ebe-mr-Jbp" id="o3c-hO-XBW"/>
+                        <outlet property="lblLastPurchaseDate" destination="SnP-Nq-5gg" id="CxR-7w-KnA"/>
+                        <outlet property="lblLastPurchasePrice" destination="f1E-JO-xZJ" id="hQ2-rR-fWI"/>
+                        <outlet property="lblLastPurchaseVendor" destination="1jb-bp-UYR" id="2rt-k3-CmI"/>
+                        <outlet property="lblSugestedRetail" destination="R5e-u1-fCE" id="TUU-re-nr0"/>
                         <outlet property="pickerSuperView" destination="pb5-bg-kU5" id="gd7-jI-W4c"/>
                         <outlet property="setViewShadow" destination="EPc-Zn-6lZ" id="7E8-fs-NXO"/>
                         <outlet property="txtProductPrice" destination="spT-nf-MOn" id="sua-Iz-vb7"/>
@@ -6432,7 +6625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64q-nL-jYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6005" y="-1148"/>
+            <point key="canvasLocation" x="6004.6875" y="-1148.4375"/>
         </scene>
         <!--Question3-->
         <scene sceneID="SOK-xl-iu8">
@@ -6507,9 +6700,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 3">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6587,7 +6825,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-YW-K8u">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-pl-SlZ">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-pl-SlZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -6766,7 +7004,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-OC-bqx">
-                                        <rect key="frame" x="406" y="4" width="212" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Q">
                                                 <attributes>
@@ -6813,9 +7051,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 4">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6894,7 +7177,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zq-xO-NoI">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-Cs-0B9">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-Cs-0B9">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -7015,7 +7298,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-P9-Vhg">
-                                        <rect key="frame" x="406" y="4" width="212" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Q">
                                                 <attributes>
@@ -7062,9 +7345,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 5">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7303,7 +7631,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-sF-UMP">
-                                        <rect key="frame" x="406" y="4" width="212" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Q">
                                                 <attributes>
@@ -7350,9 +7678,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTION 6">
+                                            <fragment content="UESTIO">
                                                 <attributes>
                                                     <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="N">
+                                                <attributes>
+                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7431,7 +7804,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-zL-1yv">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-D6-eii">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-D6-eii">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -7524,6 +7897,10 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHi-YH-qhi">
                                         <rect key="frame" x="0.0" y="52" width="1024" height="216"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="HOo-Ph-YRI" id="5hj-Ed-mDz"/>
+                                            <outlet property="delegate" destination="HOo-Ph-YRI" id="gfd-3E-k8z"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -7927,7 +8304,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_SaveAction:" destination="tga-nh-aar" eventType="touchUpInside" id="6YX-Pp-vPr"/>
+                                                            <action selector="clkSubmit:" destination="fbd-Ot-bt9" eventType="touchUpInside" id="92J-K1-AZX"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

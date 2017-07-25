@@ -21,7 +21,9 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerProduct: UIPickerView!
     
-    var selectedProductName : String?
+    var objSpecialProduct : SpecialProductI?
+    
+    var scannedProductId : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +41,16 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerProduct.delegate = self
         
         
+        scannedProductId = "000002820000384"
         
+        ModelManager.sharedInstance.questionManager.getAllProductsNames(productScannedId: self.scannedProductId!) { (arrProductName, isSuccess, msg) in
+            
+            self.arrProducts.removeAllObjects()
+            self.arrProducts.addObjects(from: arrProductName!)
+            self.pickerProduct.reloadAllComponents()
+        }
         
-//        ModelManager.sharedInstance.questionManager.getDepartments(locationId: (locationID?.description)!) { (arrDepartMentsObj, isSuccess, msg) in
-//            
-//            self.arrDepartments?.addObjects(from: arrDepartMentsObj!)
-//            self.pickerDepartments.reloadAllComponents()
-//            
-//        }
+
 
     }
     
@@ -87,7 +91,7 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         let specialProductObj = arrProducts.object(at: row) as! SpecialProductI
 
-        selectedProductName = specialProductObj.name
+        objSpecialProduct = specialProductObj
         
         
     }
@@ -104,9 +108,16 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
-        ModelManager.sharedInstance.questionManager.setValue(selectedProductName, forKey: "question1")
         
-        txtProduct.text = selectedProductName
+        if(arrProducts.count > 0)
+        {
+            objSpecialProduct = arrProducts.object(at: 0) as? SpecialProductI
+        }
+        
+        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = objSpecialProduct?.name?.description as AnyObject
+            
+        
+        txtProduct.text = objSpecialProduct?.name
         
         pickerSuperView.isHidden = true
     }

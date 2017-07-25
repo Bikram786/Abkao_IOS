@@ -130,6 +130,11 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
+        if(arrDepartments.count > 0)
+        {
+            departmentObj = arrDepartments.object(at: 0) as? DepartmentI
+        }
+        
         ModelManager.sharedInstance.questionManager.dictQuestion["question3"] = departmentObj?.departmentNo?.description as AnyObject
         
         txtDepartment.text = departmentObj?.departmentNo?.description

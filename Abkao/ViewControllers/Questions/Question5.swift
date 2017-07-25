@@ -97,6 +97,11 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
+        if(arrPromotions.count > 0)
+        {
+            objPromotion = arrPromotions.object(at: 0) as? PromotionI
+        }
+        
         ModelManager.sharedInstance.questionManager.dictQuestion["question5"] = objPromotion?.price?.description as AnyObject
         
         txtPromotion.text = objPromotion?.price?.description

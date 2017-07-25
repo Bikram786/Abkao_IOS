@@ -13,6 +13,7 @@
 		1883FE5C1F0B61B200BCAD7D /* String+ContactValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883FE5B1F0B61B200BCAD7D /* String+ContactValidation.swift */; };
 		18B8797B1F038E5200C0C837 /* CountryI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797A1F038E5200C0C837 /* CountryI.swift */; };
 		18B8797D1F038E7600C0C837 /* StateI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8797C1F038E7600C0C837 /* StateI.swift */; };
+		460EE5A51F273C7C00C33083 /* SellingPriceI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EE5A41F273C7C00C33083 /* SellingPriceI.swift */; };
 		461B42DD1F236FED00B8C707 /* Question1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42DC1F236FED00B8C707 /* Question1.swift */; };
 		461B42DF1F236FFF00B8C707 /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42DE1F236FFF00B8C707 /* Question2.swift */; };
 		461B42E11F23700D00B8C707 /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B42E01F23700D00B8C707 /* Question3.swift */; };
@@ -113,6 +114,7 @@
 		18B8797A1F038E5200C0C837 /* CountryI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryI.swift; sourceTree = "<group>"; };
 		18B8797C1F038E7600C0C837 /* StateI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateI.swift; sourceTree = "<group>"; };
 		34C2F26954D0D6F84280EBB7 /* Pods-Abkao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abkao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abkao/Pods-Abkao.release.xcconfig"; sourceTree = "<group>"; };
+		460EE5A41F273C7C00C33083 /* SellingPriceI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellingPriceI.swift; sourceTree = "<group>"; };
 		461B42DC1F236FED00B8C707 /* Question1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question1.swift; sourceTree = "<group>"; };
 		461B42DE1F236FFF00B8C707 /* Question2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
 		461B42E01F23700D00B8C707 /* Question3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				18B8797A1F038E5200C0C837 /* CountryI.swift */,
 				18B8797C1F038E7600C0C837 /* StateI.swift */,
 				461B42F21F23D75600B8C707 /* SpecialProductI.swift */,
+				460EE5A41F273C7C00C33083 /* SellingPriceI.swift */,
 				461B42EC1F23CA9700B8C707 /* DepartmentI.swift */,
 				461B42EE1F23CEFB00B8C707 /* PromotionI.swift */,
 				461B42F01F23D5B300B8C707 /* DiscountI.swift */,
@@ -815,6 +818,7 @@
 				B659DDE71EF05BA400409825 /* Date+Customization.swift in Sources */,
 				B659DDE31EF05BA400409825 /* ProductManager.swift in Sources */,
 				B6525E4C1F0A02D200F2B274 /* SecondRegisterControl.swift in Sources */,
+				460EE5A51F273C7C00C33083 /* SellingPriceI.swift in Sources */,
 				461B42EF1F23CEFB00B8C707 /* PromotionI.swift in Sources */,
 				B659DE041EF05BA400409825 /* PriceGridControl.swift in Sources */,
 				B659DE091EF05BA400409825 /* VideoSchedulerControl.swift in Sources */,

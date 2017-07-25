@@ -26,13 +26,50 @@ class SummaryVC: AbstractControl {
         // Do any additional setup after loading the view.
         setViewShadow.viewdraw(setViewShadow.bounds)
         
-        setAllData()
+        let dictData = ModelManager.sharedInstance.questionManager.dictQuestion
+        
+        lbl1.text = "Ans. \(String(describing: dictData["question1"] as? String))"
+        lbl2.text = "Ans. \(String(describing: dictData["question2"] as? String))"
+        lbl3.text = "Ans. \(String(describing: dictData["question3"] as? String))"
+        lbl4.text = "Ans. \(String(describing: dictData["question4"] as? String))"
+        lbl5.text = "Ans. \(String(describing: dictData["question5"] as? String))"
+        lbl6.text = "Ans. \(String(describing: dictData["question6"] as? String))"
+        
 
     }
     
-    func setAllData()  {
+    func saveAllData(dictData : [String : AnyObject])  {
         
         
+        var dictPostData : [String : AnyObject] = [:]
+        
+        dictPostData["Locationid"] = dictData["\(String(describing: ModelManager.sharedInstance.profileManager.userObj?.accountNo))"]
+        dictPostData["ItemCode"] = dictData["\(String(describing: ModelManager.sharedInstance.barcodeManager.barCodeValue))"]
+        dictPostData["Token"] = "NexgenceRetail$1" as AnyObject
+
+        dictPostData["ItemName"] = dictData["question1"]
+        dictPostData["Price"] = dictData["question2"]
+        dictPostData["DepartmentId"] = dictData["question3"]
+        dictPostData["ContainerSize"] = dictData["question4"]
+        dictPostData["PromotionName"] = dictData["question5"]
+        dictPostData["DiscountItemCode"] = dictData["question6"]
+        
+        print("Response : \(dictPostData)")
+        
+        ModelManager.sharedInstance.questionManager.saveNewProduct(dictProductInfo: dictPostData) { (isSuccess) in
+            
+            if(isSuccess)
+            {
+                print("new product from barcode : Successfuly added")
+            }
+            else
+            {
+                print("ooooooppps")
+
+            }
+            
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +77,11 @@ class SummaryVC: AbstractControl {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func clkSubmit(_ sender: UIButton) {
+        
+        saveAllData(dictData: ModelManager.sharedInstance.questionManager.dictQuestion)
+
+    }
 
     /*
     // MARK: - Navigation

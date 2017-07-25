@@ -29,6 +29,9 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         setViewShadow.viewdraw(setViewShadow.bounds)
         txtDiscount.addShadowToTextfield()
         
+        viewPicker.dataSource = self
+        viewPicker.delegate = self
+        
         ModelManager.sharedInstance.questionManager.getAllDiscounts(handler: { (arrDiscounts, isSuccess, msg) in
             
             self.arrDiscounts.addObjects(from: arrDiscounts!)
@@ -90,6 +93,11 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     @IBAction func clkDone(_ sender: Any) {
+        
+        if(arrDiscounts.count > 0)
+        {
+            objDiscount = arrDiscounts.object(at: 0) as? DiscountI
+        }
         
         ModelManager.sharedInstance.questionManager.dictQuestion["question6"] = objDiscount?.price?.description as AnyObject
         

@@ -37,61 +37,70 @@ class QuestionManager: NSObject {
         arrAllSpecialProducts?.removeAll()
     }
     
-    func getAllSpecialProducts(handler : @escaping ([SpecialProductI]?, Bool , String) -> Void)
+    
+   // http://nexportretail.azurewebsites.net/api/PriceBookQuery/GetProductNamesNonCache/?upc=000002820000384
+    
+    
+    func getAllProductsNames(productScannedId : String, handler : @escaping ([SpecialProductI]?, Bool , String) -> Void)
     {
         
-        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "", headers: true, params: nil, result:
+        BaseWebAccessLayer.newAzureRequestURLWithArrayResponse(requestType: .get, strURL: "PriceBookQuery/GetProductNamesNonCache/?upc=\(productScannedId)", headers: true, params: nil, result:
             {
-                (jsonDict,statusCode) in
+                (arrData,statusCode) in
                 // success code
                 
-                print(jsonDict)
+                print(arrData)
                 
-                if(jsonDict.value(forKey: "success") as! Bool)
+                if(arrData.count > 0)
                 {
                     
-                    if(statusCode == 200){
-                        
-                        let data = jsonDict.value(forKey: "data") as! NSDictionary
-                        let isSuccess = data["success"] as! Bool
-                        if(isSuccess){
-                            
-                            
-                            var productInfoObj : [String : AnyObject] = jsonDict.value(forKey: "data") as! [String : AnyObject]
-                            
-                            self.arrAllSpecialProducts?.removeAll()
-                            
-                            let arrData = productInfoObj["image_grid"] as! NSArray
-                            
-                            if(arrData.count > 0)
-                            {
-                                for dictObj in arrData
-                                {
-                                    let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
-                                    
-                                    let specialProductI = SpecialProductI()
-                                    specialProductI.setSpecialProductInfo(dictData: tempProductInfoObj )
-                                    self.arrAllSpecialProducts?.append(specialProductI)
-                                }
-                            }
-                            
-                            handler(self.arrAllSpecialProducts,true,"Products Received")
-                            
-                        }else{
-                            
-                            handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                        }
-                    }
-                    else{
-                        
-                        handler(nil,false,(jsonDict.value(forKey: "message") as? String)!)
-                    }
+                    self.arrAllSpecialProducts?.removeAll()
                     
+                    
+                    for dictObj in arrData
+                    {
+                        let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
+                        //print(tempProductInfoObj)
+                        let specialProduct = SpecialProductI()
+                        specialProduct.setProductName(dictData: tempProductInfoObj)
+                        self.arrAllSpecialProducts?.append(specialProduct)
+                    }
+                    handler(self.arrAllSpecialProducts,true,"Product names Received")
+                    
+                    
+                }else{
+                    
+                    handler(nil,false,"No names received")
                 }
-                
         })
     }
     
+    
+    func getSellingPrice(productScannedId : String, locationID : String, handler : @escaping (SellingPriceI?, Bool , String) -> Void)
+    {
+        BaseWebAccessLayer.newAzureRequestURLWithDictResponse(requestType: .get, strURL: "PriceBookQuery/GetProduct/?parameters=\(locationID),\(productScannedId)", headers: true, params: nil, result:
+            {
+                (dictInfoData,statusCode) in
+                // success code
+                
+                print(dictInfoData)
+                
+                if ((dictInfoData.value(forKey: "LastPurchaseVendorName")) != nil)
+                {
+                    
+                    
+                    let sellingPriceI = SellingPriceI()
+                    sellingPriceI.setSellingPrice(dictData: dictInfoData as! [String : AnyObject])
+                    
+                    handler(sellingPriceI,true,"Product names Received")
+                    
+                    
+                }else{
+                    
+                    handler(nil,false,dictInfoData.value(forKey: "Message") as! String)
+                }
+        })
+    }
     
     
     func getDepartments(locationId: String, handler : @escaping ([DepartmentI]?, Bool , String) -> Void) {
@@ -184,7 +193,7 @@ class QuestionManager: NSObject {
                     for dictObj in arrData
                     {
                         let tempProductInfoObj : [String : AnyObject] = dictObj as! [String : AnyObject]
-                        //print(tempProductInfoObj)
+                        print(tempProductInfoObj)
                         let discountI = DiscountI()
                         discountI.setDiscountInfo(dictData: tempProductInfoObj)
                         self.arrAllDiscounts?.append(discountI)
@@ -201,7 +210,15 @@ class QuestionManager: NSObject {
         
     }
     
-    func saveNewProduct(dictProductInfo: [String : Any], handler : @escaping ( Bool , String) -> Void)  {
+    func saveNewProduct(dictProductInfo: [String : Any], handler : @escaping (Bool) -> Void)  {
+        
+        BaseWebAccessLayer.newAzureRequestURLWithBoolResponse(requestType: .post, strURL: "PriceBookQuery/PostProductFastSingle", headers: true, params: dictProductInfo, result:
+            {
+                (isSuccess) in
+                
+                handler(isSuccess)
+        })
+
         
     }
     
