@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Question2: AbstractControl {
+class Question2: AbstractControl,UITextFieldDelegate {
 
     var arrPrices : NSMutableArray = NSMutableArray()
 
@@ -32,8 +32,8 @@ class Question2: AbstractControl {
     
     var selectedPrice : String?
     
-    var scannedProductId : Int?
-    var locationId : Int?
+    var scannedProductId : String?
+    var locationId : Int64?
     
     var objSellingPrice : SellingPriceI?
     
@@ -45,12 +45,19 @@ class Question2: AbstractControl {
         
         txtProductPrice.text = ModelManager.sharedInstance.questionManager.dictQuestion["question2"] as? String
 
+        txtProductPrice.delegate = self
+        
         setViewShadow.viewdraw(setViewShadow.bounds)
 
         txtProductPrice.addShadowToTextfield()
         
-        scannedProductId = 000002820000384
+        
+        //temp code
+        scannedProductId = "000002820000384"
         locationId =  93027
+        
+        
+        scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
         
         ModelManager.sharedInstance.questionManager.getSellingPrice(productScannedId: (scannedProductId?.description)!, locationID: (locationId?.description)!) { (objSP, isSuccess, msg) in
         
@@ -59,6 +66,25 @@ class Question2: AbstractControl {
         }
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: .UIKeyboardWillHide , object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+
+    }
+    
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
+    }
     
     func calculateGrossMargin(spObj : SellingPriceI)  {
         
@@ -71,8 +97,8 @@ class Question2: AbstractControl {
         let twoDecimalPlaces = String(format: "%.2f", grossMargin)
 
         lblGrossMargin.text = "\(twoDecimalPlaces.description) %"
-        lblSugestedRetail.text = spObj.strSuggestedRetail?.description
-        lblLastPurchasePrice.text = spObj.strLastPurcahsePrice?.description
+        lblSugestedRetail.text = "\(String(describing: spObj.strSuggestedRetail!.description))$"
+        lblLastPurchasePrice.text = "\(String(describing: spObj.strLastPurcahsePrice!.description))$"
         lblLastPurchaseDate.text = spObj.strLastPurchaseDate
         lblLastPurchaseVendor.text = spObj.strLastPurchaseVendor
         
@@ -137,28 +163,51 @@ class Question2: AbstractControl {
     
     @IBAction func clkNext(_ sender: UIButton) {
         
-    ModelManager.sharedInstance.questionManager.dictQuestion["question2"] = txtProductPrice.text as AnyObject
+        if(validateData())
+        {            
+            ModelManager.sharedInstance.questionManager.dictQuestion["question2"] = txtProductPrice.text as AnyObject
+            
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question3") as! Question3
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
+    }
+    
+    func validateData()->Bool {
         
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question3") as! Question3
-        self.navigationController?.pushViewController(myVC, animated: true)
+        if(txtProductPrice.text == "")
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter selling price")
+            
+            return false
+        }
+        
+        return true
         
     }
+    
 
     
     // MARK: - TextFiels Delegates
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        print("Keyboard will hide!")
+        
+        self.calculateGrossMargin(spObj: objSellingPrice!)
+    }
     
     public func textFieldDidBeginEditing(_ textField: UITextField)
     {
         //textField.resignFirstResponder()
         //self.pickerSuperView.isHidden = false
     }
-    
-    public func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        self.calculateGrossMargin(spObj: objSellingPrice!)
 
-    }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    
+    {
+        if string == "" {return true}
+        return string.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890.")) == nil ? false : true
+    }
 
     /*
     // MARK: - Navigation

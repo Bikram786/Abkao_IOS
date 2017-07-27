@@ -34,7 +34,12 @@ class QuestionManager: NSObject {
     func resetDictInfo()  {
         
         dictQuestion.removeAll()
-        arrAllSpecialProducts?.removeAll()
+        
+//        arrAllSpecialProducts?.removeAll()
+//        arrDepartments?.removeAll()
+//        arrAllPromotions?.removeAll()
+//        arrAllDiscounts?.removeAll()
+
     }
     
     
@@ -70,7 +75,7 @@ class QuestionManager: NSObject {
                     
                 }else{
                     
-                    handler(nil,false,"No names received")
+                    handler(self.arrAllSpecialProducts,false,"No names received")
                 }
         })
     }

@@ -60,6 +60,11 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerSuperView.isHidden = true
     }
     
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -111,18 +116,23 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         return
         //
         
-        
-        
-        if((departmentObj?.departmentNo == 1) || (departmentObj?.departmentNo == 2))
+        if(validateData())
         {
-            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
-            self.navigationController?.pushViewController(myVC, animated: true)
+            if((departmentObj?.departmentNo == 1) || (departmentObj?.departmentNo == 2))
+            {
+                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
+                self.navigationController?.pushViewController(myVC, animated: true)
+            }
+            else
+            {
+                ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = "" as AnyObject
+                
+                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
+                self.navigationController?.pushViewController(myVC, animated: true)
+            }
+
         }
-        else
-        {
-            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
-            self.navigationController?.pushViewController(myVC, animated: true)
-        }
+        
         
     }
     
@@ -140,6 +150,19 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         txtDepartment.text = departmentObj?.departmentNo?.description
         
         pickerSuperView.isHidden = true
+    }
+    
+    func validateData()->Bool {
+        
+        if(txtDepartment.text == "")
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter product department")
+            
+            return false
+        }
+        
+        return true
+        
     }
     
     // MARK: - TextFiels Delegates

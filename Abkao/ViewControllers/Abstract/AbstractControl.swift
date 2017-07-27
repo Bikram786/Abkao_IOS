@@ -39,9 +39,16 @@ class AbstractControl: UIViewController {
     
     func setNavigationBar() {
         var leftItem: UIBarButtonItem!
+       
         self.navigationItem.title = navTitle
+        
         if navTitle == "Setting" {
             leftItem = UIBarButtonItem(customView: leftSettingBtn)
+            self.navigationItem.setLeftBarButton(leftItem, animated: true)
+        }
+            
+        else if navTitle == "OnlyLeftBack"{
+            leftItem = UIBarButtonItem(customView: leftBackView)
             self.navigationItem.setLeftBarButton(leftItem, animated: true)
         }
         else if navTitle == "Back"{
@@ -52,13 +59,19 @@ class AbstractControl: UIViewController {
             leftItem = UIBarButtonItem(customView: leftBackView)
             self.navigationItem.setLeftBarButton(leftItem, animated: true)
         }
-        var rightItem: UIBarButtonItem!
-        if navTitle == "Logout"{
-            rightItem = UIBarButtonItem(customView: logoutBtn)
-        }else{
-            rightItem = UIBarButtonItem(customView: rightBtn)
+        
+        if(self.navigationItem.title != "OnlyLeftBack")
+        {
+            var rightItem: UIBarButtonItem!
+            if navTitle == "Logout"{
+                rightItem = UIBarButtonItem(customView: logoutBtn)
+            }else{
+                rightItem = UIBarButtonItem(customView: rightBtn)
+            }
+            self.navigationItem.setRightBarButton(rightItem, animated: true)
         }
-        self.navigationItem.setRightBarButton(rightItem, animated: true)
+
+        
         self.navigationItem.titleView = centerImage
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Question4: AbstractControl {
+class Question4: AbstractControl,UITextFieldDelegate {
 
     
     @IBOutlet weak var setViewShadow: UIView!
@@ -24,11 +24,16 @@ class Question4: AbstractControl {
         // Do any additional setup after loading the view.
         
         txtContainerSize.addShadowToTextfield()
-        
+        txtContainerSize.delegate = self
         
         txtContainerSize.text = ModelManager.sharedInstance.questionManager.dictQuestion["question4"] as? String
     }
 
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,16 +50,26 @@ class Question4: AbstractControl {
     
     @IBAction func clkNext(_ sender: UIButton) {
         
+        if(validateData())
+        {               
+            ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = txtContainerSize.text as AnyObject
+            
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
+    }
+    
+    func validateData()->Bool {
+        
         if(txtContainerSize.text == "")
         {
             ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter container size")
-            return
+            
+            
+            return false
         }
         
-        ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = txtContainerSize.text as AnyObject
-        
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
-        self.navigationController?.pushViewController(myVC, animated: true)
+        return true
         
     }
     
@@ -62,10 +77,10 @@ class Question4: AbstractControl {
     // MARK: - TextFiels Delegates
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+        
     {
-        let allowedCharacters = CharacterSet.decimalDigits
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
+        if string == "" {return true}
+        return string.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890.")) == nil ? false : true
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField)

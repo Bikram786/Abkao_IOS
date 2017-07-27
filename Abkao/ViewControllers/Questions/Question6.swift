@@ -11,15 +11,19 @@ import UIKit
 class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
 
 
+    @IBOutlet weak var btnCheckBox: UIButton!
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var txtDiscount: UITextField!
     
     @IBOutlet weak var pickerSuperView: UIView!
     @IBOutlet weak var viewPicker: UIPickerView!
     
+
     
     var objDiscount : DiscountI?
     var arrDiscounts : NSMutableArray = NSMutableArray()
+
+    var isChecked : Bool = false
 
     
     override func viewDidLoad() {
@@ -31,6 +35,16 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         
         viewPicker.dataSource = self
         viewPicker.delegate = self
+        
+        txtDiscount.isUserInteractionEnabled = true
+        if(txtDiscount.text == "No Thanks")
+        {
+            txtDiscount.isUserInteractionEnabled = false
+            isChecked = true
+            txtDiscount.text = ""
+            btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
+        }
+        
         
         ModelManager.sharedInstance.questionManager.getAllDiscounts(handler: { (arrDiscounts, isSuccess, msg) in
             
@@ -50,6 +64,10 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         pickerSuperView.isHidden = true
     }
     
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
+    }
     //MARK: - UIPickerView Delegate & Data Source Methods
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -105,6 +123,47 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         
         pickerSuperView.isHidden = true
     }
+    
+    @IBAction func clkbtnCheck(_ sender: Any) {
+        
+        if(isChecked)
+        {
+            btnCheckBox.setImage(UIImage(named: "untick.png"), for: UIControlState.normal)
+            txtDiscount.isUserInteractionEnabled = true
+
+            isChecked = false
+        }
+        else
+        {
+            btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
+            
+            isChecked = true
+            txtDiscount.isUserInteractionEnabled = false
+
+            txtDiscount.text = ""
+            
+            ModelManager.sharedInstance.questionManager.dictQuestion["question6"] = "No Thanks" as AnyObject
+            
+        }
+    }
+    
+    func validateData()->Bool {
+        
+        if(!isChecked)
+        {
+            if(txtDiscount.text == "")
+            {
+                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter checkout discount")
+                
+                
+                return false
+            }
+            
+            return true
+        }
+        return true
+    }
+
     
     // MARK: - TextFiels Delegates
     

@@ -27,31 +27,47 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         txtProduct.text = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? String
         
         setViewShadow.viewdraw(setViewShadow.bounds)
-
+        
         
         txtProduct.addShadowToTextfield()
-
+        
         
         pickerProduct.dataSource = self
         pickerProduct.delegate = self
         
+        //temp
+        //scannedProductId = "000002820000384"
         
-        scannedProductId = "000002820000384"
+        scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
         
         ModelManager.sharedInstance.questionManager.getAllProductsNames(productScannedId: self.scannedProductId!) { (arrProductName, isSuccess, msg) in
             
             self.arrProducts.removeAllObjects()
             self.arrProducts.addObjects(from: arrProductName!)
             self.pickerProduct.reloadAllComponents()
+            
+            if(arrProductName?.count == 0)
+            {
+                let alert: UIAlertController = UIAlertController(title: "No product name found" as String, message: "I'm sorry but there is no commonly known name for this product." as String, preferredStyle: .alert)
+                
+                let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+                alert.addAction(nextAction)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
         }
         
-
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +79,11 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
     }
     
     //MARK: - UIPickerView Delegate & Data Source Methods
@@ -100,9 +121,11 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkNext(_ sender: UIButton) {
         
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question2") as! Question2
-        self.navigationController?.pushViewController(myVC, animated: true)
-        
+        if(validateData())
+        {
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question2") as! Question2
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
     }
     
     
@@ -120,6 +143,18 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         txtProduct.text = objSpecialProduct?.name
         
         pickerSuperView.isHidden = true
+    }
+    
+    func validateData()->Bool {
+        
+        if(txtProduct.text == "")
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter product name")
+            
+            return false
+        }
+        return true
+
     }
     
     // MARK: - TextFiels Delegates

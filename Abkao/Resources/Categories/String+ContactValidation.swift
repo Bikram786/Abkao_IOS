@@ -26,4 +26,6 @@ extension String {
         let filtered = inputString.joined(separator: "")
         return  self == filtered
     }
+    
+
 }

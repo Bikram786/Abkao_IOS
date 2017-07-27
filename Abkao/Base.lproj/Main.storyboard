@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1773,12 +1773,27 @@
                                     <constraint firstItem="8QU-fr-ad4" firstAttribute="height" secondItem="W4k-0Z-vvA" secondAttribute="height" id="zsX-bY-zMb"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpR-3A-qep">
+                                <rect key="frame" x="412" y="678" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="23"/>
+                                <state key="normal" title="TRANSFER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clkBtnTransfer:" destination="hdH-Ck-JY9" eventType="touchUpInside" id="hKK-Sl-umV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HpR-3A-qep" secondAttribute="trailing" constant="412" id="AhX-g5-Qhl"/>
                             <constraint firstItem="5EZ-Fs-wt7" firstAttribute="height" secondItem="TEs-XH-Pwl" secondAttribute="height" multiplier="0.1106" id="DJX-Fa-KzQ"/>
                             <constraint firstItem="lMT-IV-JAc" firstAttribute="width" secondItem="TEs-XH-Pwl" secondAttribute="width" multiplier="0.839" id="G7u-5g-Dlq"/>
                             <constraint firstItem="5EZ-Fs-wt7" firstAttribute="top" secondItem="yaC-Jc-XLA" secondAttribute="bottom" id="HcP-Bu-fDi"/>
+                            <constraint firstItem="HpR-3A-qep" firstAttribute="leading" secondItem="TEs-XH-Pwl" secondAttribute="leading" constant="412" id="O0B-NR-mvk"/>
+                            <constraint firstItem="MfL-l1-pHu" firstAttribute="top" secondItem="HpR-3A-qep" secondAttribute="bottom" constant="50" id="TPy-1b-ccx"/>
+                            <constraint firstItem="HpR-3A-qep" firstAttribute="top" secondItem="lMT-IV-JAc" secondAttribute="bottom" constant="180" id="TdX-cD-Mnn"/>
                             <constraint firstItem="lMT-IV-JAc" firstAttribute="top" secondItem="5EZ-Fs-wt7" secondAttribute="bottom" id="VIs-zd-SKl"/>
                             <constraint firstItem="5EZ-Fs-wt7" firstAttribute="leading" secondItem="TEs-XH-Pwl" secondAttribute="leading" id="aZ3-Sq-fae"/>
                             <constraint firstItem="lMT-IV-JAc" firstAttribute="centerX" secondItem="TEs-XH-Pwl" secondAttribute="centerX" id="eAk-rL-qlw"/>
@@ -1788,6 +1803,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnTransfer" destination="HpR-3A-qep" id="BF3-a4-u57"/>
                         <outlet property="itemNameView" destination="qPL-a2-giz" id="jTh-pB-1fn"/>
                         <outlet property="lbl_AccountNo" destination="foy-9k-fRn" id="5zn-js-fw9"/>
                         <outlet property="lbl_BarcodeNo" destination="D2P-kg-cHF" id="LmB-Bl-AIC"/>
@@ -2788,7 +2804,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -6403,55 +6419,55 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-mr-Jbp">
-                                                        <rect key="frame" x="0.0" y="30" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="30" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Retail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-PZ-BNo">
-                                                        <rect key="frame" x="0.0" y="70" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-u1-fCE">
-                                                        <rect key="frame" x="0.0" y="100" width="696" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="99" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-vV-9gy">
-                                                        <rect key="frame" x="0.0" y="144.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="143.5" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-JO-xZJ">
-                                                        <rect key="frame" x="0.0" y="169.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="168" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xII-1Y-cnU">
-                                                        <rect key="frame" x="0.0" y="214.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="212.5" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-Nq-5gg">
-                                                        <rect key="frame" x="0.0" y="244.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="242" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Vendor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-Pk-UUU">
-                                                        <rect key="frame" x="0.0" y="289.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="286.5" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-bp-UYR">
-                                                        <rect key="frame" x="0.0" y="319.5" width="696" height="25"/>
+                                                        <rect key="frame" x="0.0" y="316" width="696" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6817,13 +6833,13 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What department do you want to place it in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUS-Qg-jB4">
-                                                <rect key="frame" x="61" y="35" width="696" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="61" y="35" width="696" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-YW-K8u">
-                                                <rect key="frame" x="62" y="81" width="696" height="45"/>
+                                                <rect key="frame" x="62" y="85" width="696" height="45"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-pl-SlZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
@@ -7170,7 +7186,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Hbv-Xw-bua"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -7457,14 +7473,45 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07f-dm-HbJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="819" height="538"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-Ak-YMy">
+                                                        <rect key="frame" x="65" y="140" width="187" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Thanks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C9-o2-28F">
+                                                                <rect key="frame" x="61" y="10" width="92" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3a-vz-n3V">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" backgroundImage="untick"/>
+                                                                <connections>
+                                                                    <action selector="clkbtnCheck:" destination="kCu-2W-aP6" eventType="touchUpInside" id="d5i-jz-Ryu"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="187" id="50L-cC-yQ3"/>
+                                                            <constraint firstAttribute="height" constant="50" id="7ja-Kj-O1s"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Eme-Ak-YMy" firstAttribute="top" secondItem="07f-dm-HbJ" secondAttribute="top" constant="140" id="dFW-ZD-9Uu"/>
+                                                    <constraint firstItem="Eme-Ak-YMy" firstAttribute="leading" secondItem="07f-dm-HbJ" secondAttribute="leading" constant="65" id="fmG-ic-mzs"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply a promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-OL-BAR">
                                                 <rect key="frame" x="61" y="35" width="696" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="g2m-Ic-sXw"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -7595,6 +7642,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCheckBox" destination="P3a-vz-n3V" id="kAJ-8v-Foc"/>
                         <outlet property="pickerSuperView" destination="777-V7-u7v" id="yMW-Tf-siA"/>
                         <outlet property="setViewShadow" destination="QCP-qt-51O" id="5KW-0Q-B59"/>
                         <outlet property="txtPromotion" destination="FyU-gb-TS2" id="NfG-Vj-z8m"/>
@@ -7603,7 +7651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ty-l2-TnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8043" y="-1148"/>
+            <point key="canvasLocation" x="8042.5781249999991" y="-1148.4375"/>
         </scene>
         <!--Question6-->
         <scene sceneID="dR6-f7-jiV">
@@ -7790,14 +7838,45 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2l-3Z-ysa">
                                                 <rect key="frame" x="0.0" y="0.0" width="819" height="538"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGl-iT-MId">
+                                                        <rect key="frame" x="65" y="140" width="187" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Thanks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eba-xb-CTF">
+                                                                <rect key="frame" x="61" y="10" width="92" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD5-gb-t1I">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" image="untick"/>
+                                                                <connections>
+                                                                    <action selector="clkbtnCheck:" destination="HOo-Ph-YRI" eventType="touchUpInside" id="hzG-vS-DRE"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="187" id="Ioh-xJ-brt"/>
+                                                            <constraint firstAttribute="height" constant="50" id="yoH-Ad-gZq"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="dGl-iT-MId" firstAttribute="leading" secondItem="o2l-3Z-ysa" secondAttribute="leading" constant="65" id="MDc-sT-DI5"/>
+                                                    <constraint firstItem="dGl-iT-MId" firstAttribute="top" secondItem="o2l-3Z-ysa" secondAttribute="top" constant="140" id="els-RS-ZOS"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Df-pz-EF5">
                                                 <rect key="frame" x="61" y="35" width="696" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="beC-qx-Esp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -7932,6 +8011,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCheckBox" destination="UD5-gb-t1I" id="akX-Uj-SsM"/>
                         <outlet property="pickerSuperView" destination="7rZ-GK-TSP" id="YWW-Gi-QbR"/>
                         <outlet property="setViewShadow" destination="25W-Ol-2hS" id="eiq-e0-zOk"/>
                         <outlet property="txtDiscount" destination="Kvj-D6-eii" id="ShX-aB-xhX"/>
@@ -8138,7 +8218,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-86-brC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-86-brC">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8161,7 +8241,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Qh-ZYg">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Selling Price?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Qh-ZYg">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8184,7 +8264,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-O4-X8m">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Department?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-O4-X8m">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8207,7 +8287,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-0Z-PfS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Container?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-0Z-PfS">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8230,7 +8310,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8253,7 +8333,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Apply a checkout discount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-1M-Oqw">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Discountt?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-1M-Oqw">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>

@@ -9,6 +9,7 @@
 import UIKit
 
 class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var btnCheckBox: UIButton!
 
     @IBOutlet weak var txtPromotion: UITextField!
     @IBOutlet weak var setViewShadow: UIView!
@@ -18,6 +19,8 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     var objPromotion : PromotionI?
     var arrPromotions : NSMutableArray = NSMutableArray()
+    
+    var isChecked : Bool = false
 
     
     
@@ -33,6 +36,17 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         viewPicker.delegate = self
         
         txtPromotion.text = ModelManager.sharedInstance.questionManager.dictQuestion["question5"] as? String
+        
+        txtPromotion.isUserInteractionEnabled = true
+
+        
+        if(txtPromotion.text == "No Thanks")
+        {
+            txtPromotion.isUserInteractionEnabled = false
+            isChecked = true
+            txtPromotion.text = ""
+            btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
+        }
 
         ModelManager.sharedInstance.questionManager.getAllPromotions
             { (arrPromotions, isSuccess, msg) in
@@ -52,6 +66,11 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         super.viewWillAppear(true)
         
         pickerSuperView.isHidden = true
+    }
+    
+    override var navTitle: String {
+        
+        return "OnlyLeftBack"
     }
     //MARK: - UIPickerView Delegate & Data Source Methods
     
@@ -85,11 +104,11 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkNext(_ sender: UIButton) {
         
-        
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question6") as! Question6
-        self.navigationController?.pushViewController(myVC, animated: true)
-        
-
+        if(validateData())
+        {
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question6") as! Question6
+            self.navigationController?.pushViewController(myVC, animated: true)
+        }
         
     }
     
@@ -101,12 +120,50 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         {
             objPromotion = arrPromotions.object(at: 0) as? PromotionI
         }
-        
+
         ModelManager.sharedInstance.questionManager.dictQuestion["question5"] = objPromotion?.price?.description as AnyObject
         
         txtPromotion.text = objPromotion?.price?.description
         
         pickerSuperView.isHidden = true
+    }
+    
+     @IBAction func clkbtnCheck(_ sender: Any) {
+        
+        if(isChecked)
+        {
+            btnCheckBox.setImage(UIImage(named: "untick.png"), for: UIControlState.normal)
+            txtPromotion.isUserInteractionEnabled = true
+            isChecked = false
+        }
+        else
+        {
+            btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
+
+            isChecked = true
+            txtPromotion.isUserInteractionEnabled = false
+            txtPromotion.text = ""
+        ModelManager.sharedInstance.questionManager.dictQuestion["question5"] = "No Thanks" as AnyObject
+            
+        }
+    }
+    
+    
+    func validateData()->Bool {
+        
+        if(!isChecked)
+        {
+            if(txtPromotion.text == "")
+            {
+                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter promotion discount")
+                
+                
+                return false
+            }
+            
+            return true
+        }
+        return true
     }
     
     // MARK: - TextFiels Delegates

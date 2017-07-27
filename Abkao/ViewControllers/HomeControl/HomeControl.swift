@@ -1,4 +1,4 @@
-//
+
 //  HomeControl.swift
 //  Abkao
 //
@@ -169,10 +169,10 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         //Temp Code
 
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question1") as! Question1
-        self.navigationController?.pushViewController(myVC, animated: true)
-        
-        return
+//        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question1") as! Question1
+//        self.navigationController?.pushViewController(myVC, animated: true)
+//        
+//        return
         
         controller.codeDelegate = self
         controller.errorDelegate = self
@@ -772,7 +772,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 //            content.subtitle = "Get Ready"
             content.sound = UNNotificationSound.init(named: "empty.wav")
 
+            //temp block
+            
             content.setValue("YES", forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
+            
+            
             //content.body = ""
             
             //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,

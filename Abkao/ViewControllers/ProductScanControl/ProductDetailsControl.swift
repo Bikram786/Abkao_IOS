@@ -14,6 +14,8 @@ class ProductDetailsControl: AbstractControl {
     var getPreviousProducts : BarcodeI?
     
     
+    @IBOutlet weak var btnTransfer: UIButton!
+    
     @IBOutlet weak var setViewShadow: UIView!
     @IBOutlet weak var locationNameView: UIView!
     @IBOutlet weak var itemNameView: UIView!
@@ -31,12 +33,14 @@ class ProductDetailsControl: AbstractControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         btnTransfer.isHidden = true
         setIntialView()
     }
     
     func setIntialView() {
         
-        lbl_BarcodeNo.text = productBarCode
+        lbl_BarcodeNo.text = ModelManager.sharedInstance.barcodeManager.barCodeValue
         
         lbl_AccountNo.text = ModelManager.sharedInstance.profileManager.userObj?.accountNo
         
@@ -60,6 +64,11 @@ class ProductDetailsControl: AbstractControl {
             lbl_PromotionText?.text = proPromotionText
         }
         
+        if(lbl_ItemName?.text == "")
+        {
+            btnTransfer.isHidden = false
+        }
+        
         /*
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()
@@ -80,6 +89,11 @@ class ProductDetailsControl: AbstractControl {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func clkBtnTransfer(_ sender: UIButton) {
+        
+        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question1") as! Question1
+        self.navigationController?.pushViewController(myVC, animated: true)
+    }
     
     /*
      // MARK: - Navigation

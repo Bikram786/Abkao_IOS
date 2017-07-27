@@ -1,4 +1,4 @@
-//
+ //
 //  ChromaShadeSlider.swift
 //
 //  Copyright © 2016 Jonathan Cardasis. All rights reserved.
@@ -93,7 +93,7 @@ open class ChromaShadeSlider: UIControl {
         handleView.color = UIColor.blue
         handleView.circleLayer.borderWidth = 3
         handleView.isUserInteractionEnabled = false //disable interaction for touch events
-        self.layer.addSublayer(handleView.layer)
+        self.addSubview(handleView)
         
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapRecognized))
         doubleTapGesture.numberOfTapsRequired = 2
@@ -176,6 +176,10 @@ open class ChromaShadeSlider: UIControl {
         
         self.sendActions(for: .valueChanged)
         return true
+    }
+    
+    override open func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        self.sendActions(for: .editingDidEnd)
     }
     
     func doubleTapRecognized(_ recognizer: UITapGestureRecognizer){
