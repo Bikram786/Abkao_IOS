@@ -18,7 +18,7 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerSuperView: UIView!
     
-    var locationID : Int64?
+    var locationID : String?
     
     var arrDepartments : NSMutableArray = NSMutableArray()
     
@@ -42,8 +42,11 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         txtDepartment.text = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? String
         
-        //Remove this code
-        locationID = 93027
+        //temp code
+        //locationID = 93027
+
+        
+        locationID =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
 
         
         ModelManager.sharedInstance.questionManager.getDepartments(locationId: (locationID?.description)!) { (arrDepartMentsObj, isSuccess, msg) in
@@ -110,10 +113,10 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         //Temp Code
         
-        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
-        self.navigationController?.pushViewController(myVC, animated: true)
-        
-        return
+//        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
+//        self.navigationController?.pushViewController(myVC, animated: true)
+//        
+//        return
         //
         
         if(validateData())

@@ -35,7 +35,27 @@ class ProductDetailsControl: AbstractControl {
         super.viewDidLoad()
         
          btnTransfer.isHidden = true
+        
+        print(ModelManager.sharedInstance.profileManager.userObj!.accountNo ?? "")
+        
+        
         setIntialView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+        
+        ModelManager.sharedInstance.barcodeManager.isBarcodeDetailsOpen = true
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(true)
+        
+        ModelManager.sharedInstance.barcodeManager.isBarcodeDetailsOpen = false
+
     }
     
     func setIntialView() {
@@ -81,7 +101,7 @@ class ProductDetailsControl: AbstractControl {
     
     
     override var navTitle: String{
-        return "Logout"
+        return "OnlyLeftBack"
     }
     
     override func didReceiveMemoryWarning() {

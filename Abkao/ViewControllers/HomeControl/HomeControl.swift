@@ -127,6 +127,11 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
         
         super.viewWillAppear(true)
         setClv.isHidden=true
+        
+        
+        ModelManager.sharedInstance.barcodeManager.isBarcodeDetailsOpen = false
+        
+        
         defaultUrl = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
         
         bgColor = ModelManager.sharedInstance.settingsManager.settingObj?.backGroundColor

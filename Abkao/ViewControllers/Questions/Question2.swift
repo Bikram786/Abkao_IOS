@@ -33,7 +33,7 @@ class Question2: AbstractControl,UITextFieldDelegate {
     var selectedPrice : String?
     
     var scannedProductId : String?
-    var locationId : Int64?
+    var locationId : String?
     
     var objSellingPrice : SellingPriceI?
     
@@ -53,8 +53,10 @@ class Question2: AbstractControl,UITextFieldDelegate {
         
         
         //temp code
-        scannedProductId = "000002820000384"
-        locationId =  93027
+        //scannedProductId = "000002820000384"
+        //locationID = 93027
+
+        locationId =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
         
         
         scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue

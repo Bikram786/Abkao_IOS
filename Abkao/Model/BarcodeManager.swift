@@ -11,6 +11,7 @@ import UIKit
 class BarcodeManager: NSObject {
     
     var barCodeValue : String?
+    var isBarcodeDetailsOpen : Bool?
 
     
     func scanBarcode(barcodeDict: [String : Any], handler : @escaping (BarcodeI?, Bool , String) -> Void)

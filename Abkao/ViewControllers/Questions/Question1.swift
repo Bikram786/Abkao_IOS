@@ -57,7 +57,13 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
                 
                 let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
                     
-                    self.navigationController?.popViewController(animated: true)
+                    
+                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+                    for aViewController in viewControllers {
+                        if aViewController is HomeControl {
+                            self.navigationController!.popToViewController(aViewController, animated: true)
+                        }
+                    }
                 }
                 
                 alert.addAction(nextAction)

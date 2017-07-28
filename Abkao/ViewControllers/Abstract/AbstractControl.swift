@@ -208,7 +208,21 @@ class AbstractControl: UIViewController {
     
     func handleTap(_ sender: UITapGestureRecognizer) {
         
-        _ = self.navigationController?.popViewController(animated: true)
+        
+        if(ModelManager.sharedInstance.barcodeManager.isBarcodeDetailsOpen == true)
+        {
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for aViewController in viewControllers {
+                if aViewController is HomeControl {
+                    self.navigationController!.popToViewController(aViewController, animated: true)
+                }
+            }
+        }
+        else
+        {
+            _ = self.navigationController?.popViewController(animated: true)
+
+        }
     }
     
     // MARK : - Navigation Bar Action Methods

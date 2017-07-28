@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -2804,7 +2804,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8431,6 +8431,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="constraintView4" destination="sEh-zQ-Y8a" id="Zyu-7z-AeH"/>
                         <outlet property="lbl1" destination="eXK-86-brC" id="Cqg-QT-cjQ"/>
                         <outlet property="lbl2" destination="I1X-Qh-ZYg" id="hmC-8b-bU9"/>
                         <outlet property="lbl3" destination="VV1-O4-X8m" id="GRF-91-Brv"/>

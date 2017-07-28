@@ -19,12 +19,21 @@ class SummaryVC: AbstractControl {
     @IBOutlet weak var lbl5: UILabel!
     @IBOutlet weak var lbl6: UILabel!
 
+    @IBOutlet weak var constraintView4: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setViewShadow.viewdraw(setViewShadow.bounds)
+        
+        let strQuestion4 = ModelManager.sharedInstance.questionManager.dictQuestion["question4"] as! String
+        
+        if(strQuestion4 == "")
+        {
+            constraintView4.constant = 0
+        }
+        
         
         let dictData = ModelManager.sharedInstance.questionManager.dictQuestion
         
@@ -49,7 +58,7 @@ class SummaryVC: AbstractControl {
         
         var dictPostData : [String : AnyObject] = [:]
         
-        dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj?.accountNo as AnyObject
+        dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj!.accountNo as AnyObject
         dictPostData["ItemCode"] = ModelManager.sharedInstance.barcodeManager.barCodeValue as AnyObject
         
         dictPostData["Token"] = "NexgenceRetail$1" as AnyObject
@@ -80,7 +89,10 @@ class SummaryVC: AbstractControl {
             }
             else
             {
-                print("ooooooppps")
+                
+                ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Error!", strDialogMessege: "New product details not saved because of technical error, please try again.")
+                
+
 
             }
             
