@@ -35,13 +35,17 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         viewPicker.dataSource = self
         viewPicker.delegate = self
         
-        txtPromotion.text = ModelManager.sharedInstance.questionManager.dictQuestion["question5"] as? String
+        
+        objPromotion = ModelManager.sharedInstance.questionManager.dictQuestion["question5"] as? PromotionI
+        
+        txtPromotion.text = objPromotion?.name
         
         txtPromotion.isUserInteractionEnabled = true
 
         
         if(txtPromotion.text == "No Thanks")
         {
+            objPromotion = nil
             txtPromotion.isUserInteractionEnabled = false
             isChecked = true
             txtPromotion.text = ""
@@ -91,7 +95,7 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         
         let promotionObj = arrPromotions.object(at: row) as! PromotionI
         
-        return promotionObj.price?.description
+        return promotionObj.name?.description
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -116,14 +120,14 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
-        if(arrPromotions.count > 0)
+        if((objPromotion == nil) && (arrPromotions.count > 0))
         {
             objPromotion = arrPromotions.object(at: 0) as? PromotionI
         }
 
-        ModelManager.sharedInstance.questionManager.dictQuestion["question5"] = objPromotion?.price?.description as AnyObject
+        ModelManager.sharedInstance.questionManager.dictQuestion["question5"] = objPromotion as AnyObject
         
-        txtPromotion.text = objPromotion?.price?.description
+        txtPromotion.text = objPromotion?.name?.description
         
         pickerSuperView.isHidden = true
     }
@@ -140,6 +144,7 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         {
             btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
 
+            objPromotion = nil
             isChecked = true
             txtPromotion.isUserInteractionEnabled = false
             txtPromotion.text = ""

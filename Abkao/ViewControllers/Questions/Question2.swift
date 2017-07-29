@@ -19,6 +19,11 @@ class Question2: AbstractControl,UITextFieldDelegate {
     @IBOutlet weak var lblLastPurchaseVendor: UILabel!
 
     
+    @IBOutlet weak var lblHeadGross: UILabel!
+    @IBOutlet weak var lblHeadsugestedRetail: UILabel!
+    @IBOutlet weak var lblHeadPurchasePriceGross: UILabel!
+    @IBOutlet weak var lblHeadPurchaseDate: UILabel!
+    @IBOutlet weak var lblHeadPurchaseVendor: UILabel!
     
     @IBOutlet weak var txtProductPrice: UITextField!
     @IBOutlet weak var setViewShadow: UIView!
@@ -53,17 +58,25 @@ class Question2: AbstractControl,UITextFieldDelegate {
         
         
         //temp code
-        //scannedProductId = "000002820000384"
-        //locationID = 93027
-
+        /*
+        scannedProductId = "000002820000384"
+        locationId = "93027"
+        */
+        
         locationId =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
         
-        
         scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
+ 
         
+
         ModelManager.sharedInstance.questionManager.getSellingPrice(productScannedId: (scannedProductId?.description)!, locationID: (locationId?.description)!) { (objSP, isSuccess, msg) in
         
             self.objSellingPrice = objSP
+            
+            if((self.txtProductPrice.text?.characters.count)! > 0)
+            {
+                self.calculateGrossMargin(spObj: self.objSellingPrice!)
+            }
             
         }
     }
@@ -101,9 +114,37 @@ class Question2: AbstractControl,UITextFieldDelegate {
         lblGrossMargin.text = "\(twoDecimalPlaces.description) %"
         lblSugestedRetail.text = "\(String(describing: spObj.strSuggestedRetail!.description))$"
         lblLastPurchasePrice.text = "\(String(describing: spObj.strLastPurcahsePrice!.description))$"
-        lblLastPurchaseDate.text = spObj.strLastPurchaseDate
+        //lblLastPurchaseDate.text = spObj.strLastPurchaseDate
         lblLastPurchaseVendor.text = spObj.strLastPurchaseVendor
         
+        setHeadings()
+        
+        if((spObj.strLastPurchaseDate != "") || (spObj.strLastPurchaseDate != nil))
+        {
+        lblLastPurchaseDate.text = getFromattedDateStr(spObj: spObj)
+        }
+        else
+        {
+            lblLastPurchaseDate.text = "N/A"
+        }
+        
+        
+        
+    }
+    
+    func getFromattedDateStr(spObj : SellingPriceI) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"//this your string date format
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let dateObj = dateFormatter.date(from: spObj.strLastPurchaseDate!)
+        
+        
+        dateFormatter.dateFormat = "d MMM yy"///this is what you want to convert format
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        
+        return dateFormatter.string(from: dateObj!)
+
     }
     
     /*
@@ -185,6 +226,15 @@ class Question2: AbstractControl,UITextFieldDelegate {
         
         return true
         
+    }
+    
+    func setHeadings()
+    {
+        lblHeadGross.text = "Gross Margin:"
+        lblHeadsugestedRetail.text = "Suggested Retail:"
+        lblHeadPurchasePriceGross.text = "Last Purchase Price:"
+        lblHeadPurchaseDate.text = "Last Purchase Date:"
+        lblHeadPurchaseVendor.text = "Last Purchase Vendor:"
     }
     
 

@@ -29,7 +29,7 @@ class SummaryVC: AbstractControl {
         
         let strQuestion4 = ModelManager.sharedInstance.questionManager.dictQuestion["question4"] as! String
         
-        if(strQuestion4 == "")
+        if(strQuestion4 == "0")
         {
             constraintView4.constant = 0
         }
@@ -37,14 +37,42 @@ class SummaryVC: AbstractControl {
         
         let dictData = ModelManager.sharedInstance.questionManager.dictQuestion
         
-        lbl1.text = "Ans. \(String(describing: dictData["question1"] as! String))"
-        lbl2.text = "Ans. \(String(describing: dictData["question2"] as! String))$"
-        lbl3.text = "Ans. \(String(describing: dictData["question3"] as! String))"
-        lbl4.text = "Ans. \(String(describing: dictData["question4"] as! String))"
-        lbl5.text = "Ans. \(String(describing: dictData["question5"] as! String))"
-        lbl6.text = "Ans. \(String(describing: dictData["question6"] as! String))"
+        print(dictData)
         
+        let objSpecialProduct = dictData["question1"] as! SpecialProductI
+        
+        let objDepartment = dictData["question3"] as! DepartmentI
+        
+        
+        
+        lbl1.text = objSpecialProduct.name
+        lbl2.text = "\(String(describing: dictData["question2"] as! String))$"
+        lbl3.text = objDepartment.departmentName
+        lbl4.text = "\(String(describing: dictData["question4"] as! String))"
+        
+        if (dictData["question5"] is String)
+        {
+            lbl5.text = "No Thanks"
+        }
+        else
+        {
+            let objPromotion = dictData["question5"] as! PromotionI
+            lbl5.text = objPromotion.name
 
+        }
+        
+        
+        if (dictData["question6"] is String)
+        {
+            lbl6.text = "No Thanks"
+        }
+        else
+        {
+            let objDiscount = dictData["question6"] as! DiscountI
+            lbl6.text = objDiscount.recordName
+            
+        }
+        
     }
     
     override var navTitle: String {
@@ -55,22 +83,56 @@ class SummaryVC: AbstractControl {
     
     func saveAllData(dictData : [String : AnyObject])  {
         
-        
         var dictPostData : [String : AnyObject] = [:]
+        
+        let objSpecialProduct = dictData["question1"] as! SpecialProductI
+        
+        let objDepartment = dictData["question3"] as! DepartmentI
+        
+
+        if (dictData["question5"] is String)
+        {
+            dictPostData["PromotionName"] = "No Thanks" as AnyObject
+        }
+        else
+        {
+            let objPromotion = dictData["question5"] as! PromotionI
+            
+            dictPostData["PromotionName"] = objPromotion.name as AnyObject
+            
+        }
+        
+        
+        if (dictData["question6"] is String)
+        {
+            dictPostData["DiscountItemCode"] = "No Thanks" as AnyObject
+        }
+        else
+        {
+            let objDiscount = dictData["question6"] as! DiscountI
+            dictPostData["DiscountItemCode"] = objDiscount.skuNo as AnyObject
+            
+        }
+        
+        
+        
+        
         
         dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj!.accountNo as AnyObject
         dictPostData["ItemCode"] = ModelManager.sharedInstance.barcodeManager.barCodeValue as AnyObject
         
         dictPostData["Token"] = "NexgenceRetail$1" as AnyObject
 
-        dictPostData["ItemName"] = dictData["question1"]
+        dictPostData["ItemName"] = objSpecialProduct.name as AnyObject
         dictPostData["Price"] = dictData["question2"]
-        dictPostData["DepartmentId"] = dictData["question3"]
+        dictPostData["DepartmentId"] = objDepartment.departmentNo as AnyObject
         dictPostData["ContainerSize"] = dictData["question4"]
-        dictPostData["PromotionName"] = dictData["question5"]
-        dictPostData["DiscountItemCode"] = dictData["question6"]
+        
         
         print("Response : \(dictPostData)")
+        
+        //temp code
+//        return
         
         ModelManager.sharedInstance.questionManager.saveNewProduct(dictProductInfo: dictPostData) { (isSuccess) in
             

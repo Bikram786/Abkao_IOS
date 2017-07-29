@@ -29,7 +29,12 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        txtProduct.text = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? String
+        
+        //txtProduct.text = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? String
+        
+        objSpecialProduct = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? SpecialProductI
+        
+        txtProduct.text = objSpecialProduct?.name
         
         setViewShadow.viewdraw(setViewShadow.bounds)
         
@@ -136,14 +141,13 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     @IBAction func clkDone(_ sender: Any) {
-        
-        
-        if(arrProducts.count > 0)
+                
+        if((objSpecialProduct == nil) && (arrProducts.count > 0))
         {
             objSpecialProduct = arrProducts.object(at: 0) as? SpecialProductI
         }
         
-        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = objSpecialProduct?.name?.description as AnyObject
+        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = objSpecialProduct as AnyObject
             
         
         txtProduct.text = objSpecialProduct?.name

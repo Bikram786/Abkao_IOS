@@ -35,17 +35,19 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         setViewShadow.viewdraw(setViewShadow.bounds)
         txtDepartment.addShadowToTextfield()
 
-
-        
         viewPicker.dataSource = self
         viewPicker.delegate = self
         
-        txtDepartment.text = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? String
+//        txtDepartment.text = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? String
         
+        
+        departmentObj = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? DepartmentI
+        
+        txtDepartment.text = departmentObj?.departmentName?.description
         //temp code
-        //locationID = 93027
 
-        
+        //locationID = "93027"
+
         locationID =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
 
         
@@ -94,7 +96,7 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         let departmentObj = arrDepartments.object(at: row) as! DepartmentI
         
-        return departmentObj.departmentNo?.description
+        return departmentObj.departmentName?.description
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -112,12 +114,12 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         
         //Temp Code
+        /*
+        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
+        self.navigationController?.pushViewController(myVC, animated: true)
         
-//        let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
-//        self.navigationController?.pushViewController(myVC, animated: true)
-//        
-//        return
-        //
+        return
+        */
         
         if(validateData())
         {
@@ -128,7 +130,7 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
             }
             else
             {
-                ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = "" as AnyObject
+                ModelManager.sharedInstance.questionManager.dictQuestion["question4"] = "0" as AnyObject
                 
                 let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question5") as! Question5
                 self.navigationController?.pushViewController(myVC, animated: true)
@@ -143,14 +145,16 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
-        if(arrDepartments.count > 0)
+        if((departmentObj == nil) && (arrDepartments.count > 0))
         {
             departmentObj = arrDepartments.object(at: 0) as? DepartmentI
         }
         
-        ModelManager.sharedInstance.questionManager.dictQuestion["question3"] = departmentObj?.departmentNo?.description as AnyObject
+    
+        ModelManager.sharedInstance.questionManager.dictQuestion["question3"] = departmentObj as AnyObject
         
-        txtDepartment.text = departmentObj?.departmentNo?.description
+        txtDepartment.text = departmentObj?.departmentName?.description
+        
         
         pickerSuperView.isHidden = true
     }

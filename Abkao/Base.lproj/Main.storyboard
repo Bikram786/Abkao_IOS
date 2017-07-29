@@ -1777,7 +1777,7 @@
                                 <rect key="frame" x="412" y="678" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.58373916150000005" green="0.59528815749999997" blue="0.75675648449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="23"/>
-                                <state key="normal" title="TRANSFER">
+                                <state key="normal" title="ADD PRODUCT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2804,7 +2804,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3094,7 +3094,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuw-Vi-GrT">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="85"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvL-yn-eDS">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="4"/>
@@ -3394,7 +3394,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIG-BB-2qu">
-                                <rect key="frame" x="102.5" y="105" width="819" height="537.5"/>
+                                <rect key="frame" x="102.5" y="149" width="819" height="537.5"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CE-F7-uiS">
                                         <rect key="frame" x="0.0" y="0.0" width="819" height="537.5"/>
@@ -5868,11 +5868,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7i-2i-Lhf">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="366" y="4" width="293.5" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -5915,9 +5915,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="RODUCT ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -5962,7 +5962,52 @@
                                             </fragment>
                                             <fragment content="N">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="AME">
+                                                <attributes>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6041,7 +6086,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsc-3M-Rcd">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFm-cC-K2U">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFm-cC-K2U">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
@@ -6217,11 +6262,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOE-HX-qPX">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="456.5" y="4" width="112" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6264,54 +6309,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="RICE">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="N">
-                                                <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6390,7 +6390,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jm-qJ-QbQ">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spT-nf-MOn">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spT-nf-MOn">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
@@ -6412,62 +6412,62 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZs-nC-rrn" userLabel="ViewAllSubview">
                                                 <rect key="frame" x="62" y="149" width="696" height="374"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gross Margin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-S0-pSm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="696" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-S0-pSm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-mr-Jbp">
-                                                        <rect key="frame" x="0.0" y="30" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-mr-Jbp">
+                                                        <rect key="frame" x="0.0" y="12" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Retail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-PZ-BNo">
-                                                        <rect key="frame" x="0.0" y="69.5" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-PZ-BNo">
+                                                        <rect key="frame" x="0.0" y="27" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-u1-fCE">
-                                                        <rect key="frame" x="0.0" y="99" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-u1-fCE">
+                                                        <rect key="frame" x="0.0" y="32" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-vV-9gy">
-                                                        <rect key="frame" x="0.0" y="143.5" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-vV-9gy">
+                                                        <rect key="frame" x="0.0" y="52" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-JO-xZJ">
-                                                        <rect key="frame" x="0.0" y="168" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-JO-xZJ">
+                                                        <rect key="frame" x="0.0" y="52" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xII-1Y-cnU">
-                                                        <rect key="frame" x="0.0" y="212.5" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xII-1Y-cnU">
+                                                        <rect key="frame" x="0.0" y="72" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-Nq-5gg">
-                                                        <rect key="frame" x="0.0" y="242" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-Nq-5gg">
+                                                        <rect key="frame" x="0.0" y="77" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Purchase Vendor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-Pk-UUU">
-                                                        <rect key="frame" x="0.0" y="286.5" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-Pk-UUU">
+                                                        <rect key="frame" x="0.0" y="97" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-bp-UYR">
-                                                        <rect key="frame" x="0.0" y="316" width="696" height="24.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-bp-UYR">
+                                                        <rect key="frame" x="0.0" y="102" width="696" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6629,6 +6629,11 @@
                     </view>
                     <connections>
                         <outlet property="lblGrossMargin" destination="Ebe-mr-Jbp" id="o3c-hO-XBW"/>
+                        <outlet property="lblHeadGross" destination="TcD-S0-pSm" id="urg-3i-fUO"/>
+                        <outlet property="lblHeadPurchaseDate" destination="xII-1Y-cnU" id="1Cn-vh-nLp"/>
+                        <outlet property="lblHeadPurchasePriceGross" destination="RMl-vV-9gy" id="QiY-uu-Ok9"/>
+                        <outlet property="lblHeadPurchaseVendor" destination="jsh-Pk-UUU" id="ta1-Fj-FX7"/>
+                        <outlet property="lblHeadsugestedRetail" destination="Uii-PZ-BNo" id="ven-Ix-5QJ"/>
                         <outlet property="lblLastPurchaseDate" destination="SnP-Nq-5gg" id="CxR-7w-KnA"/>
                         <outlet property="lblLastPurchasePrice" destination="f1E-JO-xZJ" id="hQ2-rR-fWI"/>
                         <outlet property="lblLastPurchaseVendor" destination="1jb-bp-UYR" id="2rt-k3-CmI"/>
@@ -6671,9 +6676,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-nu-IID">
                                         <rect key="frame" x="0.0" y="4" width="1024" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="D">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6716,54 +6721,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="EPARTMENT">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="N">
-                                                <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -6841,7 +6801,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-YW-K8u">
                                                 <rect key="frame" x="62" y="85" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-pl-SlZ">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-pl-SlZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -7020,11 +6980,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-OC-bqx">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="362" y="4" width="301" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="C">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7067,9 +7027,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="ONTAINER ">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7112,9 +7072,54 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="N">
+                                            <fragment content="S">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="IZE">
+                                                <attributes>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7193,7 +7198,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zq-xO-NoI">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-Cs-0B9">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-Cs-0B9">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -7314,11 +7319,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-P9-Vhg">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="402" y="4" width="220.5" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="P">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7361,54 +7366,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="ROMOTION">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="N">
-                                                <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7518,7 +7478,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1E-bx-LZC">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PRODUCT PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-gb-TS2">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-gb-TS2">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -7679,11 +7639,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-sF-UMP">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="418.5" y="4" width="188" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Q">
+                                            <fragment content="D">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7726,54 +7686,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UESTIO">
+                                            <fragment content="ISCOUNT">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="N">
-                                                <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -7883,7 +7798,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-zL-1yv">
                                                 <rect key="frame" x="62" y="81" width="696" height="45"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ANSWER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-D6-eii">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RESPONSE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-D6-eii">
                                                         <rect key="frame" x="0.0" y="0.0" width="696" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8048,11 +7963,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxM-Jv-H6x">
-                                        <rect key="frame" x="418.5" y="4" width="187.5" height="81"/>
+                                        <rect key="frame" x="388.5" y="4" width="247.5" height="81"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="S">
+                                            <fragment content="V">
                                                 <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="42" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -8095,54 +8010,9 @@
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="UMMAR">
+                                            <fragment content="ERIFICATION">
                                                 <attributes>
-                                                    <font key="NSFont" size="35" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Y">
-                                                <attributes>
-                                                    <font key="NSFont" size="42" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="35" name="Helvetica"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
                                                             <textTab alignment="left" location="28.299999237060547">
@@ -8211,14 +8081,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-0W-okZ">
                                                         <rect key="frame" x="60" y="25" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que. What would you like to name this product?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37W-aA-V6q">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What would you like to name this product?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37W-aA-V6q">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-86-brC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-86-brC">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8234,14 +8104,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHN-Ac-P4N">
                                                         <rect key="frame" x="60" y="100" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que. How much do you want to sell it for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjX-ou-QQq">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much do you want to sell it for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjX-ou-QQq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Selling Price?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Qh-ZYg">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Qh-ZYg">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8257,14 +8127,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-nD-owc">
                                                         <rect key="frame" x="60" y="175" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que. What department do you want to place it in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxN-wE-kFt">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What department do you want to place it in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxN-wE-kFt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Department?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-O4-X8m">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-O4-X8m">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8280,14 +8150,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fac-tk-9Mo">
                                                         <rect key="frame" x="60" y="250" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que. What is the container size?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP1-vu-LvG">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the container size?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP1-vu-LvG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Container?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-0Z-PfS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-0Z-PfS">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8303,14 +8173,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-IS-kTq">
                                                         <rect key="frame" x="60" y="325" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que. Apply a promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-rd-lH3">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apply a promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-rd-lH3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8333,7 +8203,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ans. Discountt?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-1M-Oqw">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-1M-Oqw">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
@@ -8453,6 +8323,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nlw-eG-AIb"/>
-        <segue reference="EMp-rd-zQg"/>
+        <segue reference="Fng-wD-aR9"/>
     </inferredMetricsTieBreakers>
 </document>

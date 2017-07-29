@@ -63,7 +63,7 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
-            SVProgressHUD.setStatus("Loging.....")
+            SVProgressHUD.setStatus("Logging.....")
             
             var finalStrUrl = String()
             
@@ -111,7 +111,7 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
-            SVProgressHUD.setStatus("Loging.....")
+            SVProgressHUD.setStatus("Logging.....")
             
             var finalStrUrl = String()
             
@@ -157,7 +157,7 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
-            SVProgressHUD.setStatus("Loging.....")
+            SVProgressHUD.setStatus("Logging.....")
             
             var finalStrUrl = String()
             
@@ -224,7 +224,7 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
-            SVProgressHUD.setStatus("Loging.....")
+            SVProgressHUD.setStatus("Logging.....")
             
             var finalStrUrl = String()
             
@@ -292,7 +292,7 @@ class BaseWebAccessLayer: NSObject {
         {
             // proceed
             
-            SVProgressHUD.setStatus("Loging.....")
+            SVProgressHUD.setStatus("Logging.....")
             
             var finalStrUrl = String()
             

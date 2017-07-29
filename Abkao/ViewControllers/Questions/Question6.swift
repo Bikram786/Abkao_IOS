@@ -37,8 +37,14 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         viewPicker.delegate = self
         
         txtDiscount.isUserInteractionEnabled = true
+        
+        objDiscount = ModelManager.sharedInstance.questionManager.dictQuestion["question6"] as? DiscountI
+        
+        txtDiscount.text = objDiscount?.recordName
+        
         if(txtDiscount.text == "No Thanks")
         {
+            objDiscount = nil
             txtDiscount.isUserInteractionEnabled = false
             isChecked = true
             txtDiscount.text = ""
@@ -87,7 +93,7 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         
         let discountObj = arrDiscounts.object(at: row) as! DiscountI
         
-        return discountObj.price?.description
+        return discountObj.recordName?.description
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -112,14 +118,14 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func clkDone(_ sender: Any) {
         
-        if(arrDiscounts.count > 0)
+        if((objDiscount == nil) && (arrDiscounts.count > 0))
         {
             objDiscount = arrDiscounts.object(at: 0) as? DiscountI
         }
         
-        ModelManager.sharedInstance.questionManager.dictQuestion["question6"] = objDiscount?.price?.description as AnyObject
+        ModelManager.sharedInstance.questionManager.dictQuestion["question6"] = objDiscount as AnyObject
         
-        txtDiscount.text = objDiscount?.price?.description
+        txtDiscount.text = objDiscount?.recordName?.description
         
         pickerSuperView.isHidden = true
     }
@@ -137,6 +143,7 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         {
             btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
             
+            objDiscount = nil
             isChecked = true
             txtDiscount.isUserInteractionEnabled = false
 

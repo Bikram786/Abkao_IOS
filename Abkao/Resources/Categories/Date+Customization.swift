@@ -65,7 +65,7 @@ extension NSDate{
     
     class func getDateObj(formaterType : String, dateString : String) -> Date
     {
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
         dateFormatter.timeZone = NSTimeZone.system
