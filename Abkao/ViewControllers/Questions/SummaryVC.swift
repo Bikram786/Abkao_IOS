@@ -39,13 +39,12 @@ class SummaryVC: AbstractControl {
         
         print(dictData)
         
-        let objSpecialProduct = dictData["question1"] as! SpecialProductI
         
         let objDepartment = dictData["question3"] as! DepartmentI
         
         
         
-        lbl1.text = objSpecialProduct.name
+        lbl1.text = "\(String(describing: dictData["question1"] as! String))"
         lbl2.text = "\(String(describing: dictData["question2"] as! String))$"
         lbl3.text = objDepartment.departmentName
         lbl4.text = "\(String(describing: dictData["question4"] as! String))"
@@ -85,7 +84,6 @@ class SummaryVC: AbstractControl {
         
         var dictPostData : [String : AnyObject] = [:]
         
-        let objSpecialProduct = dictData["question1"] as! SpecialProductI
         
         let objDepartment = dictData["question3"] as! DepartmentI
         
@@ -123,7 +121,7 @@ class SummaryVC: AbstractControl {
         
         dictPostData["Token"] = "NexgenceRetail$1" as AnyObject
 
-        dictPostData["ItemName"] = objSpecialProduct.name as AnyObject
+        dictPostData["ItemName"] = dictData["question1"] as AnyObject
         dictPostData["Price"] = dictData["question2"]
         dictPostData["DepartmentId"] = objDepartment.departmentNo as AnyObject
         dictPostData["ContainerSize"] = dictData["question4"]

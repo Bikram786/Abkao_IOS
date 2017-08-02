@@ -25,16 +25,18 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var scannedProductId : String?
     
+    var isDataReceived : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        //txtProduct.text = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? String
+        txtProduct.text = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? String
         
-        objSpecialProduct = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? SpecialProductI
+        //objSpecialProduct = ModelManager.sharedInstance.questionManager.dictQuestion["question1"] as? SpecialProductI
         
-        txtProduct.text = objSpecialProduct?.name
+        //txtProduct.text = objSpecialProduct?.name
         
         setViewShadow.viewdraw(setViewShadow.bounds)
         
@@ -56,25 +58,27 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
             self.arrProducts.addObjects(from: arrProductName!)
             self.pickerProduct.reloadAllComponents()
             
+            
+            
             if(arrProductName?.count == 0)
             {
+                isDataReceived = false
+                
                 let alert: UIAlertController = UIAlertController(title: "No product name found" as String, message: "I'm sorry but there is no commonly known name for this product." as String, preferredStyle: .alert)
                 
                 let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
                     
                     
-                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
-                    for aViewController in viewControllers {
-                        if aViewController is HomeControl {
-                            self.navigationController!.popToViewController(aViewController, animated: true)
-                        }
-                    }
                 }
                 
                 alert.addAction(nextAction)
                 
                 self.present(alert, animated: true, completion: nil)
                 
+            }
+            else
+            {
+                isDataReceived = true
             }
         }
         
@@ -123,7 +127,7 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         let specialProductObj = arrProducts.object(at: row) as! SpecialProductI
 
-        objSpecialProduct = specialProductObj
+        txtProduct.text = specialProductObj.name
         
         
     }
@@ -147,10 +151,11 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
             objSpecialProduct = arrProducts.object(at: 0) as? SpecialProductI
         }
         
-        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = objSpecialProduct as AnyObject
+        txtProduct.text = objSpecialProduct?.name
+        
+        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = txtProduct.text as AnyObject
             
         
-        txtProduct.text = objSpecialProduct?.name
         
         pickerSuperView.isHidden = true
     }
@@ -167,12 +172,44 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
 
     }
     
+    // MARK: - Default Functions
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: .UIKeyboardWillHide , object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        
+    }
+    
     // MARK: - TextFiels Delegates
     
     public func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        textField.resignFirstResponder()
-        self.pickerSuperView.isHidden = false
+        if(isDataReceived)
+        {
+            textField.resignFirstResponder()
+            
+            self.pickerSuperView.isHidden = false
+        }
+        else
+        {
+            self.pickerSuperView.isHidden = true
+        }
+
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        
+        print("Keyboard will hide!")
+        
+        ModelManager.sharedInstance.questionManager.dictQuestion["question1"] = txtProduct.text as AnyObject
+        
     }
     
 //    override var navTitle: String{
