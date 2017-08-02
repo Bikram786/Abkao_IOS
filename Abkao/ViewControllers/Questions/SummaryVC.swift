@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class SummaryVC: AbstractControl {
 
@@ -21,6 +23,9 @@ class SummaryVC: AbstractControl {
 
     @IBOutlet weak var constraintView4: NSLayoutConstraint!
     
+    @IBOutlet weak var viewContainerSize: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,9 +34,13 @@ class SummaryVC: AbstractControl {
         
         let strQuestion4 = ModelManager.sharedInstance.questionManager.dictQuestion["question4"] as! String
         
+        viewContainerSize.isHidden = false
+
+        
         if(strQuestion4 == "0")
         {
             constraintView4.constant = 0
+            viewContainerSize.isHidden = true
         }
         
         
@@ -109,11 +118,7 @@ class SummaryVC: AbstractControl {
         {
             let objDiscount = dictData["question6"] as! DiscountI
             dictPostData["DiscountItemCode"] = objDiscount.skuNo as AnyObject
-            
         }
-        
-        
-        
         
         
         dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj!.accountNo as AnyObject
@@ -123,16 +128,24 @@ class SummaryVC: AbstractControl {
 
         dictPostData["ItemName"] = dictData["question1"] as AnyObject
         dictPostData["Price"] = dictData["question2"]
-        dictPostData["DepartmentId"] = objDepartment.departmentNo as AnyObject
+        
+        dictPostData["DepartmentId"] = objDepartment.departmentId as AnyObject
+        dictPostData["MasterDepartmentNumber"] = objDepartment.masterDepartmentNo as AnyObject
+        
         dictPostData["ContainerSize"] = dictData["question4"]
         
         
         print("Response : \(dictPostData)")
         
         //temp code
-//        return
+        //return
+            
+            SVProgressHUD.show(withStatus: "Loading.......")
+
         
         ModelManager.sharedInstance.questionManager.saveNewProduct(dictProductInfo: dictPostData) { (isSuccess) in
+            
+            SVProgressHUD.dismiss()
             
             if(isSuccess)
             {
@@ -152,8 +165,6 @@ class SummaryVC: AbstractControl {
                 
                 ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Error!", strDialogMessege: "New product details not saved because of technical error, please try again.")
                 
-
-
             }
             
         }

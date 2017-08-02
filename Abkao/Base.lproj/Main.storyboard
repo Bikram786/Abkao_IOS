@@ -2804,7 +2804,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -6642,6 +6642,7 @@
                         <outlet property="setViewShadow" destination="EPc-Zn-6lZ" id="7E8-fs-NXO"/>
                         <outlet property="txtProductPrice" destination="spT-nf-MOn" id="sua-Iz-vb7"/>
                         <outlet property="viewPicker" destination="QvZ-dq-lyF" id="p7X-3Q-hG4"/>
+                        <outlet property="viewSuperView" destination="cZs-nC-rrn" id="U9r-fi-1iU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64q-nL-jYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8173,16 +8174,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-IS-kTq">
                                                         <rect key="frame" x="60" y="325" width="696" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apply a promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-rd-lH3">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply a promotion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-rd-lH3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="696" height="25"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="25" id="B1y-PL-8sx"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-LA-vHi">
                                                                 <rect key="frame" x="0.0" y="30" width="696" height="25"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="25" id="cvJ-V1-XPE"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -8190,7 +8195,13 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="gj4-rd-lH3" firstAttribute="top" secondItem="m2V-IS-kTq" secondAttribute="top" id="6Zm-Oa-9or"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yqr-LA-vHi" secondAttribute="trailing" id="JXY-vu-dhF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gj4-rd-lH3" secondAttribute="trailing" id="X9d-sB-ZG1"/>
+                                                            <constraint firstItem="gj4-rd-lH3" firstAttribute="leading" secondItem="m2V-IS-kTq" secondAttribute="leading" id="cPe-49-x7h"/>
+                                                            <constraint firstItem="yqr-LA-vHi" firstAttribute="leading" secondItem="m2V-IS-kTq" secondAttribute="leading" id="ewj-hw-bVF"/>
                                                             <constraint firstAttribute="height" constant="55" id="urs-3h-66L"/>
+                                                            <constraint firstItem="yqr-LA-vHi" firstAttribute="top" secondItem="gj4-rd-lH3" secondAttribute="bottom" constant="5" id="xqP-Sj-5H7"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHG-Ct-3A6">
@@ -8309,6 +8320,7 @@
                         <outlet property="lbl5" destination="yqr-LA-vHi" id="eeI-XV-L9g"/>
                         <outlet property="lbl6" destination="xdv-1M-Oqw" id="GtE-3N-psg"/>
                         <outlet property="setViewShadow" destination="cDk-gc-BxL" id="RKL-AU-TmU"/>
+                        <outlet property="viewContainerSize" destination="fac-tk-9Mo" id="DDS-vq-Iqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0c4-JH-0if" userLabel="First Responder" sceneMemberID="firstResponder"/>

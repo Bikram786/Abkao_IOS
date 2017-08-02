@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class Question2: AbstractControl,UITextFieldDelegate {
 
@@ -18,6 +20,7 @@ class Question2: AbstractControl,UITextFieldDelegate {
     @IBOutlet weak var lblLastPurchaseDate: UILabel!
     @IBOutlet weak var lblLastPurchaseVendor: UILabel!
 
+    @IBOutlet weak var viewSuperView: UIView!
     
     @IBOutlet weak var lblHeadGross: UILabel!
     @IBOutlet weak var lblHeadsugestedRetail: UILabel!
@@ -57,25 +60,29 @@ class Question2: AbstractControl,UITextFieldDelegate {
         txtProductPrice.addShadowToTextfield()
         
         
+        locationId =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
+        
+        scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
+        
         //temp code
         /*
         scannedProductId = "000002820000384"
         locationId = "93027"
         */
         
-        locationId =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
+        viewSuperView.isHidden = true
         
-        scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
- 
+        SVProgressHUD.show(withStatus: "Loading.......")
         
-
         ModelManager.sharedInstance.questionManager.getSellingPrice(productScannedId: (scannedProductId?.description)!, locationID: (locationId?.description)!) { (objSP, isSuccess, msg) in
         
+            SVProgressHUD.dismiss()
+            
             self.objSellingPrice = objSP
             
             if((self.txtProductPrice.text?.characters.count)! > 0)
             {                
-                if(ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count > 1)
+                if((ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count)! > 1)
                 {
                     self.calculateGrossMargin(spObj: self.objSellingPrice!)
                 }
@@ -107,6 +114,8 @@ class Question2: AbstractControl,UITextFieldDelegate {
     
     func calculateGrossMargin(spObj : SellingPriceI)  {
         
+        
+        viewSuperView.isHidden = false
         
         let strPrice = txtProductPrice.text
         let floatPrice = (strPrice! as NSString).floatValue
@@ -248,10 +257,14 @@ class Question2: AbstractControl,UITextFieldDelegate {
     func keyboardWillHide(_ notification: NSNotification) {
         print("Keyboard will hide!")
         
-        if(ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count > 1)
+        if(validateData())
         {
-            self.calculateGrossMargin(spObj: objSellingPrice!)
+            if((ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count)! > 1)
+            {
+                self.calculateGrossMargin(spObj: objSellingPrice!)
+            }
         }
+        
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField)
@@ -264,7 +277,13 @@ class Question2: AbstractControl,UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     
     {
-        if string == "" {return true}
+        if (string == "")
+        {
+            viewSuperView.isHidden = true
+            return true
+        }
+        
+        
         return string.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890.")) == nil ? false : true
     }
 

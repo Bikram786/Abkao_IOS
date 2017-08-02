@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -52,8 +54,11 @@ class Question6: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
         }
         
         
+        SVProgressHUD.show(withStatus: "Loading.......")
+
         ModelManager.sharedInstance.questionManager.getAllDiscounts(handler: { (arrDiscounts, isSuccess, msg) in
             
+            SVProgressHUD.dismiss()
             self.arrDiscounts.addObjects(from: arrDiscounts!)
             self.viewPicker.reloadAllComponents()
         })

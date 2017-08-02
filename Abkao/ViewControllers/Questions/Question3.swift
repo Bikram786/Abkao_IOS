@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -44,14 +46,18 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         departmentObj = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? DepartmentI
         
         txtDepartment.text = departmentObj?.departmentName?.description
+        
         //temp code
 
         //locationID = "93027"
 
         locationID =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
 
-        
+        SVProgressHUD.show(withStatus: "Loading.......")
+
         ModelManager.sharedInstance.questionManager.getDepartments(locationId: (locationID?.description)!) { (arrDepartMentsObj, isSuccess, msg) in
+            
+            SVProgressHUD.dismiss()
             
             self.arrDepartments.addObjects(from: arrDepartMentsObj!)
             self.pickerDepartments.reloadAllComponents()
@@ -123,7 +129,7 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         if(validateData())
         {
-            if((departmentObj?.departmentNo == 1) || (departmentObj?.departmentNo == 2))
+            if((departmentObj?.masterDepartmentNo == 1) || (departmentObj?.masterDepartmentNo == 2))
             {
                 let myVC = self.storyboard?.instantiateViewController(withIdentifier: "question4") as! Question4
                 self.navigationController?.pushViewController(myVC, animated: true)

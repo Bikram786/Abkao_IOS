@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var btnCheckBox: UIButton!
@@ -52,9 +54,14 @@ class Question5: AbstractControl,UIPickerViewDelegate, UIPickerViewDataSource {
             btnCheckBox.setImage(UIImage(named: "tick.png"), for: UIControlState.normal)
         }
 
+        
+        SVProgressHUD.show(withStatus: "Loading.......")
+
         ModelManager.sharedInstance.questionManager.getAllPromotions
             { (arrPromotions, isSuccess, msg) in
                 
+            SVProgressHUD.dismiss()
+
             self.arrPromotions.addObjects(from: arrPromotions!)
             self.viewPicker.reloadAllComponents()
 

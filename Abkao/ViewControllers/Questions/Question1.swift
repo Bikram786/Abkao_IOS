@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -47,22 +49,27 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerProduct.dataSource = self
         pickerProduct.delegate = self
         
-        //temp
-        //scannedProductId = "000002820000384"
         
         scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
         
+        //temp
+        /*
+        scannedProductId = "000002820000384"
+        */
+        
+        SVProgressHUD.show(withStatus: "Loading.......")
+
         ModelManager.sharedInstance.questionManager.getAllProductsNames(productScannedId: self.scannedProductId!) { (arrProductName, isSuccess, msg) in
             
             self.arrProducts.removeAllObjects()
             self.arrProducts.addObjects(from: arrProductName!)
             self.pickerProduct.reloadAllComponents()
             
-            
+            SVProgressHUD.dismiss()
             
             if(arrProductName?.count == 0)
             {
-                isDataReceived = false
+                self.isDataReceived = false
                 
                 let alert: UIAlertController = UIAlertController(title: "No product name found" as String, message: "I'm sorry but there is no commonly known name for this product." as String, preferredStyle: .alert)
                 
@@ -78,18 +85,14 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
             }
             else
             {
-                isDataReceived = true
+                self.isDataReceived = true
             }
         }
         
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        pickerSuperView.isHidden = true
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -177,6 +180,8 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         
         super.viewWillAppear(true)
         
+        pickerSuperView.isHidden = true
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: .UIKeyboardWillHide , object: nil)
     }
     
