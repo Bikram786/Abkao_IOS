@@ -74,8 +74,12 @@ class Question2: AbstractControl,UITextFieldDelegate {
             self.objSellingPrice = objSP
             
             if((self.txtProductPrice.text?.characters.count)! > 0)
-            {
-                self.calculateGrossMargin(spObj: self.objSellingPrice!)
+            {                
+                if(ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count > 1)
+                {
+                    self.calculateGrossMargin(spObj: self.objSellingPrice!)
+                }
+                
             }
             
         }
@@ -244,7 +248,10 @@ class Question2: AbstractControl,UITextFieldDelegate {
     func keyboardWillHide(_ notification: NSNotification) {
         print("Keyboard will hide!")
         
-        self.calculateGrossMargin(spObj: objSellingPrice!)
+        if(ModelManager.sharedInstance.questionManager.arrAllSpecialProducts?.count > 1)
+        {
+            self.calculateGrossMargin(spObj: objSellingPrice!)
+        }
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField)
