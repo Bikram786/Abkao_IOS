@@ -13,8 +13,9 @@ public struct Constants {
     
     static let kMainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
     
-    static let baseUrl = "http://6.abkao-webservices.appspot.com/"
+    //static let baseUrl = "http://6.abkao-webservices.appspot.com/"
 
+    static let baseUrl = "http://abkao-webservices.appspot.com/"
     static let azureBaseUrl = "http://nexportretail.azurewebsites.net/api/"
 
     

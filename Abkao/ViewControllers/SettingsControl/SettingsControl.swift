@@ -28,7 +28,8 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
      @IBOutlet weak var txt_DefaultURL: UITextField!
     @IBOutlet weak var setImageGrid: UISegmentedControl!
     @IBOutlet weak var setPriceGrid: UISegmentedControl!
-    @IBOutlet weak var lbl_AccountNo: UILabel!
+    
+    @IBOutlet weak var txtAccountNo: UITextField!
     
     @IBOutlet weak var lbl_AccountName: UILabel!
     
@@ -59,7 +60,7 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
         setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
         self.txt_DefaultURL.text = ModelManager.sharedInstance.settingsManager.settingObj?.videoURL
-        
+        //self.txtAccountNo.text = ModelManager.sharedInstance.settingsManager.settingObj?.accountNo
         //Text color for segments
         let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
@@ -99,6 +100,11 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
     
     func saveSetting(){
         
+        guard let strAccountNo = txtAccountNo.text, strAccountNo != "" else
+        {
+            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: "Enter account no")
+            return
+        }
         
         guard let vedURL = txt_DefaultURL.text, vedURL != "" else
         {
@@ -113,11 +119,14 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
         }
         
         var  dictData : [String : Any] =  [String : Any]()
+        dictData["account_number"] = txtAccountNo.text! as Any
         dictData["userid"] = ModelManager.sharedInstance.profileManager.userObj?.userID
         dictData["price_grid_dimension"] = String(describing: self.setPriceRows!)
         dictData["image_grid_row"] = String(describing: self.setGridRows!)
         dictData["video_url"] = self.txt_DefaultURL.text!
         dictData["backgroundColor"] = self.selectedBgColorHex
+        
+        print(dictData)
         
         SVProgressHUD.show(withStatus: "Loading.....")
         ModelManager.sharedInstance.settingsManager.updateSetting(userInfo: dictData) { (userObj, isSuccess, strMessage) in
@@ -190,11 +199,10 @@ class SettingsControl: AbstractControl,ChromaColorPickerDelegate {
             if(isSuccess){
                 
                 self.lbl_AccountName.text = ModelManager.sharedInstance.profileManager.userObj?.accountName
-                self.lbl_AccountNo.text = ModelManager.sharedInstance.profileManager.userObj?.accountNo
-                self.setGridRows = ModelManager.sharedInstance.settingsManager.settingObj?.imageGridRow
+                self.txtAccountNo.text =  ModelManager.sharedInstance.profileManager.userObj?.accountNo
+                
                 self.setPriceRows = ModelManager.sharedInstance.settingsManager.settingObj?.priceGridDimention
 
-                
                 
                 if (self.setGridRows == 4)
                 {

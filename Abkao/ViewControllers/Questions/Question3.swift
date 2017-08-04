@@ -46,12 +46,12 @@ class Question3: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         departmentObj = ModelManager.sharedInstance.questionManager.dictQuestion["question3"] as? DepartmentI
         
         txtDepartment.text = departmentObj?.departmentName?.description
+                
         
-        //temp code
-
-        //locationID = "93027"
-
         locationID =  ModelManager.sharedInstance.profileManager.userObj!.accountNo
+
+        //temp code
+        //locationID = "93027"
 
         SVProgressHUD.show(withStatus: "Loading.......")
 

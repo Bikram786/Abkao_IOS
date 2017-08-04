@@ -54,7 +54,7 @@ class SummaryVC: AbstractControl {
         
         
         lbl1.text = "\(String(describing: dictData["question1"] as! String))"
-        lbl2.text = "\(String(describing: dictData["question2"] as! String))$"
+        lbl2.text = "$\(String(describing: dictData["question2"] as! String))"
         lbl3.text = objDepartment.departmentName
         lbl4.text = "\(String(describing: dictData["question4"] as! String))"
         
@@ -121,8 +121,12 @@ class SummaryVC: AbstractControl {
         }
         
         
-        dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj!.accountNo as AnyObject
+        dictPostData["Locationid"] = ModelManager.sharedInstance.profileManager.userObj!.accountNo as AnyObject        
+        
         dictPostData["ItemCode"] = ModelManager.sharedInstance.barcodeManager.barCodeValue as AnyObject
+        
+        //Temp code
+        //dictPostData["ItemCode"] =  "000002820000384" as AnyObject
         
         dictPostData["Token"] = "NexgenceRetail$1" as AnyObject
 

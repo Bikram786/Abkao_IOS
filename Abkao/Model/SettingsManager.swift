@@ -35,6 +35,9 @@ class SettingsManager: NSObject {
                         self.settingObj?.videoURL = (jsonDict["video_url"] as? String ?? "")
                         self.settingObj?.backGroundColor = (jsonDict["backgroundColor"] as? String ?? "")
                         
+                        ModelManager.sharedInstance.profileManager.userObj?.accountNo = (jsonDict["account_number"] as? String ?? "")
+                        
+                        
                         //-------------Update Modal for Home screen data
                         let userinfo : [String : Any] = ["userID":ModelManager.sharedInstance.profileManager.userObj?.userID as Any]
                         
@@ -44,6 +47,12 @@ class SettingsManager: NSObject {
                         let userDefaults: UserDefaults = UserDefaults.standard
                         userDefaults.set(encodedSettings, forKey: "currentsetting")                        
                         userDefaults.synchronize()
+                        
+                        let encodedUser = NSKeyedArchiver.archivedData(withRootObject: ModelManager.sharedInstance.profileManager.userObj!)
+                        userDefaults.set(encodedUser, forKey: "userinfo")
+                        
+                        userDefaults.synchronize()
+
                         
                         ModelManager.sharedInstance.productManager.getAllProducts(userID: userinfo, handler: { (proObj, isSuccess, strMessage) in
                             
@@ -62,10 +71,7 @@ class SettingsManager: NSObject {
                 }else{
                     
                     handler(nil , false ,(jsonDict.value(forKey: "message") as? String)!)
-                }
-               
-                
-                
+                }                
         })
     }
 }

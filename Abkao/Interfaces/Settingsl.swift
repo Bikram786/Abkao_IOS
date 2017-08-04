@@ -15,6 +15,7 @@ class Settingsl: NSObject,NSCoding {
     public var priceGridDimention: Int?
     public var videoURL: String?
     public var backGroundColor : String?
+    public var accountNo : String?
   
     
     override init(){
@@ -38,6 +39,7 @@ class Settingsl: NSObject,NSCoding {
         self.priceGridDimention = decoder.decodeObject(forKey: "priceGridDimention") as? Int ?? decoder.decodeInteger(forKey: "priceGridDimention")
         self.imageGridRow = decoder.decodeObject(forKey: "imageGridRow") as? Int ?? decoder.decodeInteger(forKey: "imageGridRow")
         self.backGroundColor = decoder.decodeObject(forKey: "backGroundColor") as? String ?? ""
+        
     }
     
     

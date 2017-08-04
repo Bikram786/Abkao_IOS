@@ -53,9 +53,9 @@ class Question1: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSource {
         scannedProductId = ModelManager.sharedInstance.barcodeManager.barCodeValue
         
         //temp
-        /*
-        scannedProductId = "000002820000384"
-        */
+        
+        //scannedProductId = "000002820000384"
+        
         
         SVProgressHUD.show(withStatus: "Loading.......")
 

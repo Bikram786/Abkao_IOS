@@ -89,6 +89,10 @@ class ProductDetailsControl: AbstractControl {
             btnTransfer.isHidden = false
         }
         
+        //temp code
+//        btnTransfer.isHidden = false
+        
+        
         /*
         setViewShadow.viewdraw(setViewShadow.bounds)
         locationNameView.setViewBoarder()

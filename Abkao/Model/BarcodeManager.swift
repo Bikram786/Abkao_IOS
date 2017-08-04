@@ -31,7 +31,8 @@ class BarcodeManager: NSObject {
                 
                 }else{
                 
-                    handler(nil , false ,"Product information not available")
+                    let barcodeObj = BarcodeI()
+                    handler(barcodeObj , true ,"Response sucessfully")
                 }
         })
     }

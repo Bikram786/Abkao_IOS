@@ -125,8 +125,8 @@ class Question2: AbstractControl,UITextFieldDelegate {
         let twoDecimalPlaces = String(format: "%.2f", grossMargin)
 
         lblGrossMargin.text = "\(twoDecimalPlaces.description) %"
-        lblSugestedRetail.text = "\(String(describing: spObj.strSuggestedRetail!.description))$"
-        lblLastPurchasePrice.text = "\(String(describing: spObj.strLastPurcahsePrice!.description))$"
+        lblSugestedRetail.text = "$\(String(describing: spObj.strSuggestedRetail!.description))"
+        lblLastPurchasePrice.text = "$\(String(describing: spObj.strLastPurcahsePrice!.description))"
         //lblLastPurchaseDate.text = spObj.strLastPurchaseDate
         lblLastPurchaseVendor.text = spObj.strLastPurchaseVendor
         

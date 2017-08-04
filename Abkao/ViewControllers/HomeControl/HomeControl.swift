@@ -288,8 +288,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                 myVC.productBarCode = barcodeValue
                 myVC.getPreviousProducts = barCodeObj!
                 self.navigationController?.pushViewController(myVC, animated: true)
-            }else{
-                print("No product data found after scanning")
             }
             
         }
@@ -515,10 +513,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                             self.rightData.add(self.arrProductDes[i])
                         }
                     }
-                    
-                    
-                   
-                    
                 }
                 
                 if self.setPriceGrid != 0{
@@ -632,7 +626,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     let url = URL(string: proDescObj.productImgUrl!)
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
-                    cell?.lbl_ItemPrice.text = "$ \(String(describing: proDescObj.productPrice!))"
+                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice!))"
                     
                 }
                 
@@ -662,7 +656,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
                     let url = URL(string: proDescObj.productImgUrl!)
                     cell?.ItemImage.af_setImage(withURL: url!)
                     cell?.lbl_ItemTitle.text = proDescObj.productName
-                    cell?.lbl_ItemPrice.text = "$ \(String(describing: proDescObj.productPrice!))"
+                    cell?.lbl_ItemPrice.text = "$\(String(describing: proDescObj.productPrice!))"
 
                     
                 }
@@ -731,7 +725,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             let proDescObj = arrProductPrice[indexPath.row] as! ProductPriceI
             cell.lbl_Name.text = proDescObj.productName?.capitalized
-            cell.lbl_Price.text = "$ \(String(describing: proDescObj.productRate!))"
+            cell.lbl_Price.text = "$\(String(describing: proDescObj.productRate!))"
 
             cell.setShadow.viewdraw(cell.setShadow.bounds)
         }
@@ -780,9 +774,7 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
 
             //temp block
             
-            content.setValue("YES", forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
-            
-            
+            content.setValue(true , forKeyPath: "shouldAlwaysAlertWhileAppIsForeground")
             //content.body = ""
             
             //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,

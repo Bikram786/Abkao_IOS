@@ -163,6 +163,42 @@ class AuthManager: NSObject {
         })
     }
     
+    
+    
+    ///////
+    func isEmailExists(userInfo: [String : Any], handler : @escaping (Bool , String) -> Void)
+    {
+        BaseWebAccessLayer.requestURLWithDictionaryResponse(requestType: .post, strURL: "validateemail", headers: true, params: userInfo, result:
+            {
+                
+                (jsonDict,statusCode) in
+                
+                if(statusCode == 200)
+                {
+                    let isSuccess = jsonDict.value(forKey: "success") as! Bool
+                    
+                    if(isSuccess)
+                    {
+                        handler(true,(jsonDict.value(forKey: "message") as? String)!)
+                        
+                    }
+                    else
+                    {
+                        handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                    }
+                }else{
+                    
+                    handler(false,(jsonDict.value(forKey: "message") as? String)!)
+                }
+                
+                
+                
+        })
+    }
+    ///////
+    
+    
+    
     func setUserDefaultValues(dictData : [String : AnyObject])
     {
         print("dictdata after successful login : \(dictData)")

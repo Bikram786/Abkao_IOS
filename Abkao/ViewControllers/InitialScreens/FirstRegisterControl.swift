@@ -85,14 +85,32 @@ class FirstRegisterControl: AbstractControl {
                     
                 }else{
                     
-                    let myVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondRegisterControl") as! SecondRegisterControl
-                    myVC.firstName = txt_FirstName?.text
-                    myVC.lastName = txt_LastName?.text
-                    myVC.userName = txt_UserName?.text
-                    myVC.password = txt_Password?.text
-                    myVC.companyName = txt_Company?.text
-                    myVC.email = email
-                    self.navigationController?.pushViewController(myVC, animated: true)
+                    let strEmail = txt_Email?.text
+                    print(txt_Email?.text ?? "")
+                    
+                    var  dictData : [String : Any] =  [String : Any]()
+                    dictData["email"] = strEmail
+                     
+                    ModelManager.sharedInstance.authManager.isEmailExists(userInfo: dictData, handler: { (isEmailExist, msg) in
+                        
+                        if(!isEmailExist)
+                        {
+                            ShowAlerts.getAlertViewConroller(globleAlert: self, DialogTitle: "Alert", strDialogMessege: msg as NSString)
+                        }
+                        else
+                        {
+                            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondRegisterControl") as! SecondRegisterControl
+                            myVC.firstName = self.txt_FirstName?.text
+                            myVC.lastName = self.txt_LastName?.text
+                            myVC.userName = self.txt_UserName?.text
+                            myVC.password = self.txt_Password?.text
+                            myVC.companyName = self.txt_Company?.text
+                            myVC.email = email
+                            self.navigationController?.pushViewController(myVC, animated: true)
+                        }
+                    })
+                    
+
                     
                 }
             }
