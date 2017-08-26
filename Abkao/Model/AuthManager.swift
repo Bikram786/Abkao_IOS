@@ -120,7 +120,7 @@ class AuthManager: NSObject {
                         
                         //-------
                         
-                        handler(true,"User logout successfully")
+                        handler(true,"User Logout Successful")
                         
                     }else{
                         
@@ -179,7 +179,7 @@ class AuthManager: NSObject {
                     
                     if(isSuccess)
                     {
-                        handler(true,(jsonDict.value(forKey: "message") as? String)!)
+                        handler(true,"User email already exists")
                         
                     }
                     else

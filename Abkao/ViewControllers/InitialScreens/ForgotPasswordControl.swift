@@ -53,7 +53,7 @@ class ForgotPasswordControl: AbstractControl {
         
         guard let userEmail = txt_Email.text, userEmail != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill Email-ID")
+            SVProgressHUD.showError(withStatus: "Please enter Email-ID")
             
             return
         }
@@ -62,7 +62,7 @@ class ForgotPasswordControl: AbstractControl {
         
         if checkEmail != true{
             
-            SVProgressHUD.showError(withStatus: "Please fill valid Email-ID")
+            SVProgressHUD.showError(withStatus: "Email address not valid")
             
         }else{
             

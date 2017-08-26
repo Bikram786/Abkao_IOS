@@ -52,12 +52,12 @@ class LoginControl: AbstractControl {
         
         guard let userName = txt_UserName.text, userName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user name")
+            SVProgressHUD.showError(withStatus: "Please enter user name")
             return
         }
         guard let userPassword = txt_Password.text, userPassword != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user passowrd")
+            SVProgressHUD.showError(withStatus: "Please enter user passowrd")
             
             return
         }

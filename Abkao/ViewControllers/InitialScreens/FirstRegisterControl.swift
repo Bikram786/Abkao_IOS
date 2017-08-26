@@ -44,22 +44,22 @@ class FirstRegisterControl: AbstractControl {
         
         guard let firstName = txt_FirstName?.text, firstName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill first name")
+            SVProgressHUD.showError(withStatus: "Please enter first name")
             return
         }
         guard let lastName = txt_LastName?.text, lastName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user lastname")
+            SVProgressHUD.showError(withStatus: "Please enter user lastname")
             return
         }
         guard let userPassword = txt_Password?.text, userPassword != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user password")
+            SVProgressHUD.showError(withStatus: "Please enter user password")
             return
         }
         guard let confirmPassword = txt_ConfirmPassword?.text, confirmPassword != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill confirm password")
+            SVProgressHUD.showError(withStatus: "Please enter confirm password")
             return
         }
         
@@ -71,7 +71,7 @@ class FirstRegisterControl: AbstractControl {
             
             guard let email = txt_Email?.text, email != "" else {
                 
-                SVProgressHUD.showError(withStatus: "Please fill Email-ID")
+                SVProgressHUD.showError(withStatus: "Please enter Email-ID")
                 return
             }
             
@@ -81,7 +81,7 @@ class FirstRegisterControl: AbstractControl {
                 
                 if checkEmail != true{
                     
-                    SVProgressHUD.showError(withStatus: "Please fill valid Email-ID")
+                    SVProgressHUD.showError(withStatus: "Email address not valid")
                     
                 }else{
                     

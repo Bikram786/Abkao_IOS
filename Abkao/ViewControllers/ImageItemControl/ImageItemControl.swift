@@ -104,14 +104,14 @@ class ImageItemControl: AbstractControl, UIImagePickerControllerDelegate, UINavi
         
         guard let productName = txt_ProductName.text, productName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill product name")
+            SVProgressHUD.showError(withStatus: "Please enter product name")
             
             return
         }
         
         guard let productPrice = txt_ProductPrice.text, productPrice != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill product price")
+            SVProgressHUD.showError(withStatus: "Please enter product price")
             
             return
         }

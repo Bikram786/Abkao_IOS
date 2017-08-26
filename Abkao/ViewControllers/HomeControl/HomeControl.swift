@@ -463,8 +463,6 @@ class HomeControl: AbstractControl,UICollectionViewDataSource, UICollectionViewD
             
             getDayVideos()
         }
-        
-        
     }
     
     func playw(){

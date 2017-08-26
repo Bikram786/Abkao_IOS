@@ -123,74 +123,74 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
         
         guard let firstName = txt_FirstName.text, firstName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill first name")
+            SVProgressHUD.showError(withStatus: "Please enter first name")
             return
         }
         guard let accountNo = txt_AccountNo.text, accountNo != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill account number")
+            SVProgressHUD.showError(withStatus: "Please enter account number")
             return
         }
         guard let userCity = txt_City.text, userCity != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill city name")
+            SVProgressHUD.showError(withStatus: "Please enter city name")
             return
         }
         guard let userName = txt_UserName.text, userName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user ID")
+            SVProgressHUD.showError(withStatus: "Please enter user ID")
             return
         }
         guard let lastName = txt_LastName.text, lastName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user lastname")
+            SVProgressHUD.showError(withStatus: "Please enter user lastname")
             return
         }
         guard let accountName = txt_AccountName.text, accountName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill account name")
+            SVProgressHUD.showError(withStatus: "Please enter account name")
             return
         }
         guard let userTelephone = txt_Telephone.text, userTelephone != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill telephone")
+            SVProgressHUD.showError(withStatus: "Please enter telephone")
             return
         }
         guard let userPassword = txt_Password.text, userPassword != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill user password")
+            SVProgressHUD.showError(withStatus: "Please enter user password")
             return
         }
         guard let companyName = txt_Company.text, companyName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill company name")
+            SVProgressHUD.showError(withStatus: "Please enter company name")
             return
         }
         
         guard let address = txt_Address.text, address != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill address")
+            SVProgressHUD.showError(withStatus: "Please enter address")
             return
         }
         guard let zipCode = txt_ZipCode.text, zipCode != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill zip code")
+            SVProgressHUD.showError(withStatus: "Please enter zip code")
             return
         }
         guard let email = txt_Email.text, email != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill Email")
+            SVProgressHUD.showError(withStatus: "Please enter Email")
             return
         }
         guard let confirmPassword = txt_ConfirmPassword.text, confirmPassword != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill confirm password")
+            SVProgressHUD.showError(withStatus: "Please enter confirm password")
             return
         }
         
         guard let state = txt_State.text, state != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill state name")
+            SVProgressHUD.showError(withStatus: "Please enter state name")
             return
         }
         
@@ -203,12 +203,12 @@ class RegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerViewDataSo
         
         if checkEmail != true{
             
-            SVProgressHUD.showError(withStatus: "Please fill valid Email-ID")
+            SVProgressHUD.showError(withStatus: "Email address not valid")
             
         }else{
             
             if btn_Country.titleLabel?.text == "Country"{
-                SVProgressHUD.showError(withStatus: "Please fill country name")
+                SVProgressHUD.showError(withStatus: "Please enter country name")
             }else{
                 
                 var  dictData : [String : Any] =  [String : Any]()

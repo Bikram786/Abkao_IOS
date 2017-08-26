@@ -69,11 +69,11 @@ class SecondRegisterControl: AbstractControl, UIPickerViewDelegate, UIPickerView
         
         guard let accountName = txt_AccountName?.text, accountName != "" else {
             
-            SVProgressHUD.showError(withStatus: "Please fill account name")
+            SVProgressHUD.showError(withStatus: "Please enter account name")
             return
         }
             if btn_Country?.titleLabel?.text == "Country"{
-                SVProgressHUD.showError(withStatus: "Please fill country name")
+                SVProgressHUD.showError(withStatus: "Please enter country name")
             }else{
                 
                 var  dictData : [String : Any] =  [String : Any]()

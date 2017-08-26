@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NMq-cM-y4L">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -218,8 +218,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-i4-NPV">
-                                        <rect key="frame" x="278.5" y="349" width="51" height="33"/>
-                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
+                                        <rect key="frame" x="274" y="348" width="60" height="37"/>
+                                        <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="20"/>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -251,7 +251,7 @@
                                     <constraint firstItem="Uhi-7W-hjT" firstAttribute="top" secondItem="5Yr-qT-qJ7" secondAttribute="bottom" constant="10" id="fjs-qU-xsz"/>
                                     <constraint firstItem="jJU-4F-GmQ" firstAttribute="height" secondItem="ucw-Ga-A1q" secondAttribute="height" multiplier="0.0435" id="gMx-fF-1mO"/>
                                     <constraint firstItem="fmm-VK-bUP" firstAttribute="width" secondItem="Itm-Zv-AV7" secondAttribute="width" id="hcd-qk-svi"/>
-                                    <constraint firstItem="EU1-i4-NPV" firstAttribute="top" secondItem="QNF-7o-ulb" secondAttribute="bottom" constant="5" id="iIn-8p-anb"/>
+                                    <constraint firstItem="EU1-i4-NPV" firstAttribute="top" secondItem="QNF-7o-ulb" secondAttribute="bottom" constant="4" id="iIn-8p-anb"/>
                                     <constraint firstItem="jJU-4F-GmQ" firstAttribute="leading" secondItem="Itm-Zv-AV7" secondAttribute="leading" id="iTB-QE-ecM"/>
                                     <constraint firstItem="QNF-7o-ulb" firstAttribute="top" secondItem="Uhi-7W-hjT" secondAttribute="bottom" constant="15" id="klQ-4c-X4b"/>
                                     <constraint firstItem="Q0V-YF-6aS" firstAttribute="leading" secondItem="ucw-Ga-A1q" secondAttribute="leading" id="lHR-hU-icO"/>
@@ -1589,7 +1589,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT NO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-Eh-d2l">
-                                                <rect key="frame" x="519" y="11.5" width="126.5" height="22"/>
+                                                <rect key="frame" x="494" y="11.5" width="126.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="126.5" id="Lzc-oa-N9c"/>
                                                 </constraints>
@@ -1598,9 +1598,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foy-9k-fRn">
-                                                <rect key="frame" x="659" y="11.5" width="120" height="22"/>
+                                                <rect key="frame" x="634" y="11.5" width="140" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="eFP-ws-XX8"/>
+                                                    <constraint firstAttribute="width" constant="140" id="eFP-ws-XX8"/>
                                                     <constraint firstAttribute="height" constant="22" id="nnO-cD-Mbq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="18"/>
@@ -1625,7 +1625,7 @@
                                             <constraint firstItem="foy-9k-fRn" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="Gby-lN-QK2"/>
                                             <constraint firstItem="W7F-k0-Qgf" firstAttribute="leading" secondItem="W4k-0Z-vvA" secondAttribute="leading" id="PiA-MX-WdG"/>
                                             <constraint firstAttribute="trailing" secondItem="W7F-k0-Qgf" secondAttribute="trailing" id="bXE-V1-QUS"/>
-                                            <constraint firstAttribute="trailing" secondItem="foy-9k-fRn" secondAttribute="trailing" constant="-6" id="goD-9I-02U"/>
+                                            <constraint firstAttribute="trailing" secondItem="foy-9k-fRn" secondAttribute="trailing" constant="-1" id="goD-9I-02U"/>
                                             <constraint firstItem="o7M-7X-UyD" firstAttribute="leading" secondItem="W4k-0Z-vvA" secondAttribute="leading" id="iz3-Tx-uFm"/>
                                             <constraint firstItem="D2P-kg-cHF" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="qEU-Od-gRh"/>
                                             <constraint firstItem="o7M-7X-UyD" firstAttribute="centerY" secondItem="W4k-0Z-vvA" secondAttribute="centerY" id="qTi-XO-9XS"/>
@@ -1643,8 +1643,8 @@
                                         <rect key="frame" x="43" y="70" width="773" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfJ-Zp-haG">
-                                                <rect key="frame" x="20" y="0.0" width="37.5" height="44.5"/>
-                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
+                                                <rect key="frame" x="20" y="0.0" width="44.5" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1666,8 +1666,8 @@
                                         <rect key="frame" x="43" y="139.5" width="773" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-fd-DEp">
-                                                <rect key="frame" x="20" y="0.0" width="37.5" height="45"/>
-                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
+                                                <rect key="frame" x="20" y="0.0" width="44.5" height="45"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1689,8 +1689,8 @@
                                         <rect key="frame" x="43" y="209.5" width="773" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdc-Xg-7m4">
-                                                <rect key="frame" x="20" y="0.0" width="37.5" height="44.5"/>
-                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
+                                                <rect key="frame" x="20" y="0.0" width="44.5" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1713,8 +1713,8 @@
                                         <rect key="frame" x="43" y="279" width="773" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd8-hP-wx1">
-                                                <rect key="frame" x="20" y="0.0" width="37.5" height="45"/>
-                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="21"/>
+                                                <rect key="frame" x="20" y="0.0" width="44.5" height="45"/>
+                                                <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2808,7 +2808,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMq-cM-y4L" customClass="UINavigationControl" customModule="Abkao" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-ZQ-UWi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VR1-ZQ-UWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3652,98 +3652,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-kb-IYf">
-                                        <rect key="frame" x="308" y="18.5" width="409.5" height="49"/>
+                                        <rect key="frame" x="346.5" y="18.5" width="331" height="49"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="S">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="42"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="ET ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="35"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28.299999237060547">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56.650001525878906">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="85">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="113.34999847412109">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="141.69999694824219">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="170.05000305175781">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="198.39999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="226.75">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="255.10000610351562">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="283.45001220703125">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="311.79998779296875">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="340.14999389648438">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
                                             <fragment content="V">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="42"/>
@@ -3950,9 +3860,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-XL-9b5">
-                                        <rect key="frame" x="343" y="29" width="94" height="35"/>
+                                        <rect key="frame" x="283" y="29" width="154" height="35"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
-                                        <state key="normal" title="Start At " image="dropdown">
+                                        <state key="normal" title="Video Start Time:" image="dropdown">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -3960,9 +3870,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av8-Ib-Onr">
-                                        <rect key="frame" x="487" y="29" width="94" height="35"/>
+                                        <rect key="frame" x="487" y="29" width="154" height="35"/>
                                         <fontDescription key="fontDescription" name="Cormorant-Regular" family="Cormorant" pointSize="17"/>
-                                        <state key="normal" title="End At " image="dropdown">
+                                        <state key="normal" title="Video End Time:" image="dropdown">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -8338,7 +8248,7 @@
         <image name="untick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nlw-eG-AIb"/>
+        <segue reference="Zmb-0N-iGw"/>
         <segue reference="Fng-wD-aR9"/>
     </inferredMetricsTieBreakers>
 </document>
