@@ -105,8 +105,8 @@ class VideoSchedulerControl: AbstractControl,UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoScheduler", for: indexPath) as! VideoScheduler
         
         let sehedulerObj = arrProductImages[indexPath.row] as! SchedulerI
-        cell.lbl_StartTime.text = "Video Start time " + sehedulerObj.startTime!
-        cell.lbl_EndTime.text = "Video End time " + sehedulerObj.endTime!
+        cell.lbl_StartTime.text = "Video Start time: " + sehedulerObj.startTime!
+        cell.lbl_EndTime.text = "Video End time: " + sehedulerObj.endTime!
         cell.lbl_VideoURL.text = sehedulerObj.productVedUrl!
         
         for var day in sehedulerObj.arrDays! {
